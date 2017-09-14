@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule } from '@angular/material';
+import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdMenuModule } from '@angular/material';
 import { DashComponent } from './dash/dash.component';
 
-import { RouterModule }   from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
-
-
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -23,10 +23,13 @@ import { RouterModule }   from '@angular/router';
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MdButtonModule, 
+    MdButtonModule,
     MdCheckboxModule,
     MdToolbarModule,
     MdIconModule,
+    SlimLoadingBarModule,
+    FlexLayoutModule,
+    MdMenuModule,
     RouterModule.forRoot([
       {
         path: 'dash',

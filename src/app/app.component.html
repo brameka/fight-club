@@ -1,18 +1,33 @@
 <md-toolbar color="primary">
-  <span>Third Line</span>
-  
+  <button md-icon-button routerLink="/dash">
+    <md-icon>dashboard</md-icon>
+  </button>
+
   <span class="example-spacer"></span>
 
-  <button md-icon-button>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+      <button md-icon-button routerLink="/dash"><md-icon>favorite</md-icon></button>
+      <button md-icon-button routerLink="/dash"> <md-icon>delete</md-icon></button>
+  </div>
+  <button md-button [md-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+    <md-icon>menu</md-icon>
+  </button>
+
+  <!--<button md-icon-button>
     <md-icon>favorite</md-icon>
   </button>
 
-  <button md-icon-button>
+  <button- md-iconbutton>
     <md-icon>delete</md-icon>
-  </button>
-  
-  
-</md-toolbar>
-<a routerLink="/dash">Dash</a>
-<router-outlet></router-outlet>
+  </button>-->
 
+
+</md-toolbar>
+
+<md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item routerLink="/dash">Products</button>
+    <button md-menu-item routerLink="/dash">Dashboard</button>
+</md-menu>
+
+<router-outlet></router-outlet>
+<ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
