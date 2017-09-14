@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdMenuModule } from '@angular/material';
+import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdMenuModule, MdSidenavModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
 import { SearchComponent } from './ui/search.component';
@@ -34,6 +34,7 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     SlimLoadingBarModule,
     FlexLayoutModule,
     MdMenuModule,
+    MdSidenavModule,
     RouterModule.forRoot([
       {
         path: 'dash',
