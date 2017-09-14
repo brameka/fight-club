@@ -1,0 +1,35 @@
+@import '../styles/variables';
+
+.app-search {
+
+  position: relative;
+  padding: 5px 10px;
+  max-width: 720px;
+
+  // &:after {
+  //   display: block;
+  //   content: 'search';
+  //   font-family: 'Material Icons';
+  //   font-size: 20px;
+  //   color: $black;
+  //   position: absolute;
+  //   top: 12px;
+  //   left: 14px;
+  // }
+
+  &__input {
+    background: rgba(0,0,0,.1);
+    width: 360px;
+    height: 44px;
+    border: none;
+    border-radius: $border-radius;
+    // background-color: $white;
+    padding: 10px 10px 10px 40px;
+    color: $black;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+}
