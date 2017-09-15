@@ -18,28 +18,7 @@ export class NotificationsComponent implements OnChanges, OnDestroy, OnInit {
   subscription: Subscription;
 
   constructor (private router: Router) {
-    this.notifications = [
-      {
-        title: 'Notification',
-        message: 'This is a message',
-        action: 'This is a action',
-        priority: 1
-      },
-      {
-        title: 'Notification',
-        message: 'This is a message',
-        action: 'This is a action',
-        priority: 1
-      },
-      {
-        title: 'Notification',
-        message: 'This is a message',
-        action: 'This is a action',
-        priority: 1
-      }
-    ];
 
-    console.log(this.notifications);
   }
 
   ngOnInit () {

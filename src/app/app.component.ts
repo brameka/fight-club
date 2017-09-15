@@ -11,6 +11,7 @@ import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationErr
 export class AppComponent implements OnDestroy {
   title = 'app';
   private sub: any;
+  notifications: any;
 
   constructor (private slimLoader: SlimLoadingBarService, private router: Router) {
     // this.slimLoader.color = 'firebrick';
@@ -26,6 +27,27 @@ export class AppComponent implements OnDestroy {
     }, (error: any) => {
         this.slimLoader.complete();
     });
+
+    this.notifications = [
+      {
+        title: 'Notification',
+        message: 'This is a message',
+        action: 'This is a action',
+        priority: 1
+      },
+      {
+        title: 'Notification',
+        message: 'This is a message',
+        action: 'This is a action',
+        priority: 1
+      },
+      {
+        title: 'Notification',
+        message: 'This is a message',
+        action: 'This is a action',
+        priority: 1
+      }
+    ];
   }
 
   dash () {
@@ -34,6 +56,10 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): any {
       this.sub.unsubscribe();
+  }
+
+  updateNotifications () {
+
   }
 
 }
