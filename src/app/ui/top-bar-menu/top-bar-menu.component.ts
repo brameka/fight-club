@@ -10,7 +10,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         <div class="app-top-bar-menu__body"><ng-content></ng-content></div>
       </div>
     </div>
-    `
+    `,
+  styleUrls: ['./top-bar-menu.component.scss']
 })
 export class TopBarMenuComponent {
   @Input() open: boolean;

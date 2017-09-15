@@ -22,6 +22,30 @@ $placeholder: #999;
 
 $border-radius: 5px;
 
+$umbra-color: black(0.2);
+$penumbra-color: black(0.14);
+$ambient-color: black(0.12);
+
 $white-light-trans: white(.7);
 $black-trans: black(.03);
 $white-trans: white(.3);
+
+$z-index-component-overlay:  100; // overlays that cover a local component
+$z-index-header:             200; // fixed headers on pages
+$z-index-sidebar:            400; // sidebar navigation
+$z-index-top-bar:            800; // sidebar navigation
+$z-index-popover-menu:      1600; // non-modal popover menus
+$z-index-modal-overlay:     3200; // modal overlays that cover entire page
+$z-index-goku:              9001; // for when you need a lot of z-index
+
+$box-shadow-1: 0 2px 1px -2px $umbra-color, 0 1px 1px 0 $penumbra-color, 0 1px 3px 0 $ambient-color;
+$box-shadow-2: 0 3px 1px -2px $umbra-color, 0 2px 2px 0 $penumbra-color, 0 1px 5px 0 $ambient-color;
+$box-shadow-3: 0 3px 3px -2px $umbra-color, 0 3px 4px 0 $penumbra-color, 0 1px 8px 0 $ambient-color;
+$box-shadow-4: 0 2px 4px -1px $umbra-color, 0 4px 5px 0 $penumbra-color, 0 1px 10px 0 $ambient-color;
+$box-shadow-5: 0 3px 5px -1px $umbra-color, 0 5px 8px 0 $penumbra-color, 0 1px 14px 0 $ambient-color;
+$box-shadow-6: 0 3px 6px -1px $umbra-color, 0 6px 10px 0 $penumbra-color, 0 1px 18px 0 $ambient-color;
+
+$grey-border: 1px solid $grey;
+$border-radius: 2px;
+$circle-radius: 50%;
+

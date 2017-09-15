@@ -7,7 +7,8 @@ import { NotificationData } from '../../models/notification.data';
 @Component({
   selector: 'app-notifications',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './notifications.component.html'
+  templateUrl: './notifications.component.html',
+  styleUrls: ['./notifications.component.scss']
 })
 export class NotificationsComponent implements OnChanges, OnDestroy, OnInit {
   @Input() notifications: NotificationData[];
@@ -36,8 +37,9 @@ export class NotificationsComponent implements OnChanges, OnDestroy, OnInit {
         action: 'This is a action',
         priority: 1
       }
-
     ];
+
+    console.log(this.notifications);
   }
 
   ngOnInit () {
