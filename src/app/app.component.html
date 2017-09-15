@@ -6,6 +6,7 @@
   <app-search></app-search>
 
   <span class="spacer"></span>
+  <app-notifications></app-notifications>
 
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
       <button md-icon-button routerLink="/dash">
@@ -35,7 +36,7 @@
 </md-menu>
 
 <md-sidenav-container class="app-container">
-  <md-sidenav #sidenav class="app-sidenav">
+  <md-sidenav #sidenav class="app-sidenav" mode="side">
     Jolly good!
   </md-sidenav>
   <div class="app-content">
@@ -43,8 +44,11 @@
     <button type="button" md-button (click)="sidenav.open()">
       Open sidenav
     </button>
+    <button type="button" md-button (click)="sidenav.close()">
+      Open sidenav
+    </button>
   </div>
-  
+
 </md-sidenav-container>
 
 

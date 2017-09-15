@@ -10,18 +10,23 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdMenuModule, MdSidenavModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
-import { SearchComponent } from './ui/search.component';
+import { SearchComponent } from './ui/search/search.component';
+import { NotificationsComponent } from './ui/notifications/notifications.component';
+import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
+
 
 import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
-import {FlexLayoutModule} from "@angular/flex-layout";
+// import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
     AppComponent,
     DashComponent,
-    SearchComponent
+    SearchComponent,
+    NotificationsComponent,
+    TopBarMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MdToolbarModule,
     MdIconModule,
     SlimLoadingBarModule,
-    FlexLayoutModule,
     MdMenuModule,
     MdSidenavModule,
     RouterModule.forRoot([
@@ -43,6 +47,6 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent, SearchComponent]
+  bootstrap: [AppComponent, SearchComponent, NotificationsComponent, TopBarMenuComponent]
 })
 export class AppModule { }
