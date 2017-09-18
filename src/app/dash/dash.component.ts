@@ -9,7 +9,10 @@ import { MdSidenav } from '@angular/material';
 export class DashComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MdSidenav;
   notifications: any[];
-  constructor() { 
+
+  cards: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+  constructor() {
     this.notifications = [
       {
         title: 'Notification',
