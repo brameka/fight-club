@@ -9,6 +9,7 @@
   </button>
 
   <app-top-bar-menu [open]="notificationsOpen" (clickAway)="hideNotifications()">
+    
     <button class="mat-menu-item app-notifications__item" md-menu-item="" *ngFor="let notification of notifications" (click)="handleClick(notification)">
       <h3>
         <span *ngIf="notification.priority == 1" class="app-notifications__indicator app-notifications__red"></span>
@@ -22,5 +23,6 @@
     <div *ngIf="!hasNotifications" class="app-notifications__empty">
       No new notifications
     </div>
+
   </app-top-bar-menu>
 </div>

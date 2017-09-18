@@ -1,3 +1,71 @@
-<p>
-  <button md-button>Click me!</button>
-</p>
+<md-toolbar>
+  <button md-icon-button (click)="toggle()">
+    <md-icon>menu</md-icon>
+  </button>
+
+  <app-search></app-search>
+
+  <span class="spacer"></span>
+
+  <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
+  
+  <button md-icon-button routerLink="/dash"><md-icon>favorite</md-icon></button>
+  <button md-icon-button routerLink="/dash"> <md-icon>delete</md-icon></button>
+  
+  
+  <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
+</md-toolbar>
+
+<md-menu></md-menu>
+
+<md-sidenav-container fullscreen class="app-container">
+
+  
+  <md-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
+
+      <div class="menu-container">
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>home</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+      </div>
+
+
+  </md-sidenav>
+
+  <div class="app-content">
+    
+    <div layout="row">
+      <div flex>First item in row</div>
+      <div flex>Second item in row</div>
+    </div>
+
+    <div layout="row" layout-sm="column">
+      <div flex>
+        I'm above on mobile, and to the left on larger devices.
+      </div>
+      <div flex>
+        I'm below on mobile, and to the right on larger devices.
+      </div>
+    </div>
+
+    <div layout="row" layout-align="center center">
+      <div>one</div>
+      <div>two</div>
+      <div>three</div>
+    </div>
+
+  </div>
+
+</md-sidenav-container>
+
+

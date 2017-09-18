@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdMenuModule, MdSidenavModule } from '@angular/material';
+import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdMenuModule, MdSidenavModule, MdListModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
-import { SearchComponent } from './ui/search/search.component';
 import { NotificationsComponent } from './ui/notifications/notifications.component';
 import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
+import { SearchComponent } from './ui/search/search.component';
 
 
 import { RouterModule } from '@angular/router';
@@ -24,9 +24,9 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
   declarations: [
     AppComponent,
     DashComponent,
-    SearchComponent,
     NotificationsComponent,
-    TopBarMenuComponent
+    TopBarMenuComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +39,7 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
     SlimLoadingBarModule,
     MdMenuModule,
     MdSidenavModule,
+    MdListModule,
     RouterModule.forRoot([
       {
         path: 'dash',
@@ -47,6 +48,6 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
     ])
   ],
   providers: [],
-  bootstrap: [AppComponent, SearchComponent, NotificationsComponent, TopBarMenuComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

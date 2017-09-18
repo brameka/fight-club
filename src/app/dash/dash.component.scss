@@ -1,0 +1,37 @@
+
+.app-container {
+    margin-top: 64px;
+    width: 100%;
+
+    &__list-item {
+        padding: 0;
+        margin: 0;
+    }
+
+    .app-content {
+        height: 0;
+    }
+
+    .mat-pseudo-checkbox {
+        display: none;
+    }
+
+    .app-sidenav {
+        width: 200px;
+    }
+
+    .menu-container {
+        margin-top: 20px;
+    }
+
+    .mat-menu-item {
+        padding: 0 22px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .mat-menu-item .mat-icon {
+        // font-size: 22px;
+        color: #757575;
+    }
+}

@@ -18,10 +18,11 @@ export class NotificationsComponent implements OnChanges, OnDestroy, OnInit {
   subscription: Subscription;
 
   constructor (private router: Router) {
-
+    
   }
 
   ngOnInit () {
+    
   }
 
   ngOnDestroy () {

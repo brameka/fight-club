@@ -16,14 +16,15 @@
     position: absolute;
 
     // TODO: consider making the position and size configurable
-    top: 10px;
+    top: 28px;
     right: -10px;
     max-width: 440px;
     min-width: 400px;
 
     background-color: $white;
     border-radius: $border-radius;
-    box-shadow: $box-shadow-6;
+    // box-shadow: $box-shadow-6;
+    border: 1px solid #e4e4e4
   }
 
   &__caret {
@@ -40,6 +41,6 @@
   }
 
   &__body {
-    margin: 24px;
+    // margin: 24px;
   }
 }
