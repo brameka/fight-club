@@ -7,7 +7,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdIconModule, MdToolbarModule, MdButtonModule, MdCheckboxModule, MdMenuModule, MdSidenavModule, MdListModule } from '@angular/material';
+import {
+  MdIconModule,
+  MdToolbarModule,
+  MdButtonModule,
+  MdCheckboxModule,
+  MdMenuModule,
+  MdSidenavModule,
+  MdListModule,
+  MdCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
 import { NotificationsComponent } from './ui/notifications/notifications.component';
@@ -40,6 +48,7 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
     MdMenuModule,
     MdSidenavModule,
     MdListModule,
+    MdCardModule,
     RouterModule.forRoot([
       {
         path: 'dash',

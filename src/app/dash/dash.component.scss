@@ -9,7 +9,6 @@
     }
 
     .app-content {
-        height: 0;
     }
 
     .mat-pseudo-checkbox {
@@ -33,5 +32,46 @@
     .mat-menu-item .mat-icon {
         // font-size: 22px;
         color: #757575;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .card {
+      flex: 1 0 200px;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+
+    .example-header-image {
+      background-image: url('/assets/images/cf.jpg');
+      background-size: cover;
+    }
+
+}
+
+@media screen and (min-width: 40em) {
+    .card {
+       max-width: calc(50% -  1em);
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .card {
+        max-width: calc(25% - 1em);
+    }
+}
+
+.centered {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+@media screen and (min-width: 52em) {
+    .centered {
+        max-width: 52em;
     }
 }
