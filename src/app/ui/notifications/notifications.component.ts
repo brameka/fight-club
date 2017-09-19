@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 import { Router } from '@angular/router';
-import { NotificationData } from '../../models/notification.data';
+import { NotificationData } from '../../_models/notification';
 
 
 @Component({
@@ -18,11 +18,9 @@ export class NotificationsComponent implements OnChanges, OnDestroy, OnInit {
   subscription: Subscription;
 
   constructor (private router: Router) {
-    
   }
 
   ngOnInit () {
-    
   }
 
   ngOnDestroy () {
@@ -58,7 +56,7 @@ export class NotificationsComponent implements OnChanges, OnDestroy, OnInit {
   // }
 
   // navigate (notificationAction: NotificationAction) {
-  //   this.router.navigate([notificationAction.route]);
-  //   this.hideNotifications();
+  //  this.router.navigate([notificationAction.route]);
+  //  this.hideNotifications();
   // }
 }
