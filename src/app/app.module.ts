@@ -11,6 +11,8 @@ import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { routes } from './app.routes';
 
 import {
@@ -61,6 +63,7 @@ import { UserService } from './_services/user.service';
     FormsModule,
     HttpModule,
     routes,
+    FlexLayoutModule
   ],
   providers: [
     AuthGuard,
