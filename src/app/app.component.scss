@@ -58,3 +58,8 @@
   width: 100%;
   max-width: 1200px;
 }
+
+.mat-toolbar {
+  z-index: 100;
+  position: absolute;
+}

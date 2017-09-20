@@ -18,6 +18,7 @@
 
 <md-menu></md-menu>
 
+
 <md-sidenav-container fullscreen class="app-container">
 
 
@@ -38,7 +39,6 @@
         </button>
 
       </div>
-
 
   </md-sidenav>
 
@@ -67,5 +67,114 @@
   </div>
 
 </md-sidenav-container>
+
+
+<!--<md-toolbar>
+  <button md-icon-button (click)="toggle()">
+    <md-icon>menu</md-icon>
+  </button>
+  <app-search></app-search>
+  <span class="spacer"></span>
+  <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
+  <button md-icon-button routerLink="/dash"><md-icon>favorite</md-icon></button>
+  <button md-icon-button routerLink="/dash"> <md-icon>delete</md-icon></button>
+  <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
+</md-toolbar>
+
+<md-sidenav-container fullscreen class="app-container">
+
+  <md-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
+
+      <div class="menu-container">
+        <button class="mat-menu-item" md-menu-item=""><md-icon>home</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+      </div>
+
+  </md-sidenav>
+
+  <div class="app-content">
+    Test
+  </div>
+
+</md-sidenav-container>-->
+
+<!--<md-toolbar>
+  <button md-icon-button (click)="toggle()">
+    <md-icon>menu</md-icon>
+  </button>
+
+  <app-search></app-search>
+
+  <span class="spacer"></span>
+
+  <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
+
+  <button md-icon-button routerLink="/dash"><md-icon>favorite</md-icon></button>
+  <button md-icon-button routerLink="/dash"> <md-icon>delete</md-icon></button>
+
+
+  <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
+</md-toolbar>
+
+<md-menu></md-menu>
+
+
+<md-sidenav-container fullscreen class="app-container">
+
+
+  <md-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
+
+      <div class="menu-container">
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>home</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        </button>
+
+      </div>
+
+  </md-sidenav>
+
+  <div class="app-content">
+
+      <div class="container">
+        <div class="cards">
+          <md-card class="card" *ngFor="let card of cards">
+            <md-card-header>
+              <div md-card-avatar class="example-header-image"></div>
+              <md-card-title>Shiba Inu</md-card-title>
+              <md-card-subtitle>Dog Breed</md-card-subtitle>
+            </md-card-header>
+            <img md-card-image src="assets/images/cf.jpg" alt="Photo of a Shiba Inu">
+            <md-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+
+  </div>
+
+</md-sidenav-container>-->
 
 
