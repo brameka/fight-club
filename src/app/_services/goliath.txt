@@ -300,22 +300,21 @@ void OnTick()
   //Close Long Positions, instant signal is tested first
   if(Cross(1, iAC(NULL, PERIOD_CURRENT, 0) > iRSI(NULL, PERIOD_CURRENT, 14, PRICE_CLOSE, 0)) //Accelerator Oscillator crosses above Relative Strength Index
   )
-    {
+  {
     if(IsTradeAllowed())
         myOrderClose(OP_BUY, 100, "");
     else //not autotrading => only send alert
         myAlert("order", "");
-    }
+  }
 
   //Close Short Positions, instant signal is tested first
-  if(Cross(0, iAC(NULL, PERIOD_CURRENT, 0) < iRSI(NULL, PERIOD_CURRENT, 14, PRICE_CLOSE, 0)) //Accelerator Oscillator crosses below Relative Strength Index
-  )
-    {
+  if(Cross(0, iAC(NULL, PERIOD_CURRENT, 0) < iRSI(NULL, PERIOD_CURRENT, 14, PRICE_CLOSE, 0)))
+  {
     if(IsTradeAllowed())
         myOrderClose(OP_SELL, 100, "");
     else //not autotrading => only send alert
         myAlert("order", "");
-    }
+  }
 
   //Open Buy Order, instant signal is tested first
   if(Cross(2, iRSI(NULL, PERIOD_CURRENT, 14, PRICE_CLOSE, 0) > 10))
