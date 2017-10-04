@@ -30,6 +30,7 @@ import { LoginComponent } from './login/login.component';
 import { NotificationsComponent } from './ui/notifications/notifications.component';
 import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './ui/search/search.component';
+import { UsersComponent } from './_components/users.component';
 
 import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
@@ -38,6 +39,8 @@ import { AuthGuard } from './_guards/auth.guard';
 import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,8 @@ import { UserService } from './_services/user.service';
     LoginComponent,
     NotificationsComponent,
     TopBarMenuComponent,
-    SearchComponent
+    SearchComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -63,13 +67,13 @@ import { UserService } from './_services/user.service';
     FormsModule,
     HttpModule,
     routes,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AuthGuard,
     AuthenticationService,
     UserService,
-
     fakeBackendProvider,
     MockBackend,
     BaseRequestOptions
