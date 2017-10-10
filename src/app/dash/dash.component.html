@@ -1,6 +1,6 @@
-<md-toolbar>
-  <button md-icon-button (click)="toggle()">
-    <md-icon>menu</md-icon>
+<mat-toolbar>
+  <button mat-icon-button (click)="toggle()">
+    <mat-icon>menu</mat-icon>
   </button>
 
   <app-search></app-search>
@@ -9,107 +9,107 @@
 
   <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
 
-  <button md-icon-button routerLink="/dash"><md-icon>favorite</md-icon></button>
-  <button md-icon-button routerLink="/dash"> <md-icon>delete</md-icon></button>
+  <button mat-icon-button routerLink="/dash"><mat-icon>favorite</mat-icon></button>
+  <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
 
 
   <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
-</md-toolbar>
+</mat-toolbar>
 
-<md-menu></md-menu>
-
-
-<md-sidenav-container fullscreen class="app-container">
+<mat-menu></mat-menu>
 
 
-  <md-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
+<mat-sidenav-container fullscreen class="app-container">
+
+
+  <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
       <div class="menu-container">
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>home</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
       </div>
 
-  </md-sidenav>
+  </mat-sidenav>
 
   <div class="app-content">
 
       <div class="container">
         <div class="cards">
-          <md-card class="card" *ngFor="let card of cards">
-            <md-card-header>
-              <div md-card-avatar class="example-header-image"></div>
-              <md-card-title>Shiba Inu</md-card-title>
-              <md-card-subtitle>Dog Breed</md-card-subtitle>
-            </md-card-header>
-            <img md-card-image src="assets/images/cf.jpg" alt="Photo of a Shiba Inu">
-            <md-card-content>
+          <mat-card class="card" *ngFor="let card of cards">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/images/cf.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
               <p>
                 The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
                 A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
                 bred for hunting.
               </p>
-            </md-card-content>
-          </md-card>
+            </mat-card-content>
+          </mat-card>
         </div>
       </div>
 
   </div>
 
-</md-sidenav-container>
+</mat-sidenav-container>
 
 
-<!--<md-toolbar>
-  <button md-icon-button (click)="toggle()">
-    <md-icon>menu</md-icon>
+<!--<mat-toolbar>
+  <button mat-icon-button (click)="toggle()">
+    <mat-icon>menu</mat-icon>
   </button>
   <app-search></app-search>
   <span class="spacer"></span>
   <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
-  <button md-icon-button routerLink="/dash"><md-icon>favorite</md-icon></button>
-  <button md-icon-button routerLink="/dash"> <md-icon>delete</md-icon></button>
+  <button mat-icon-button routerLink="/dash"><mat-icon>favorite</mat-icon></button>
+  <button mat-icon-button routerLink="/dash"> <mat-icon>delete</mat-icon></button>
   <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
-</md-toolbar>
+</mat-toolbar>
 
-<md-sidenav-container fullscreen class="app-container">
+<mat-sidenav-container fullscreen class="app-container">
 
-  <md-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
+  <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
       <div class="menu-container">
-        <button class="mat-menu-item" md-menu-item=""><md-icon>home</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
       </div>
 
-  </md-sidenav>
+  </mat-sidenav>
 
   <div class="app-content">
     Test
   </div>
 
-</md-sidenav-container>-->
+</mat-sidenav-container>-->
 
-<!--<md-toolbar>
-  <button md-icon-button (click)="toggle()">
-    <md-icon>menu</md-icon>
+<!--<mat-toolbar>
+  <button mat-icon-button (click)="toggle()">
+    <mat-icon>menu</mat-icon>
   </button>
 
   <app-search></app-search>
@@ -118,63 +118,63 @@
 
   <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
 
-  <button md-icon-button routerLink="/dash"><md-icon>favorite</md-icon></button>
-  <button md-icon-button routerLink="/dash"> <md-icon>delete</md-icon></button>
+  <button mat-icon-button routerLink="/dash"><mat-icon>favorite</mat-icon></button>
+  <button mat-icon-button routerLink="/dash"> <mat-icon>delete</mat-icon></button>
 
 
   <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
-</md-toolbar>
+</mat-toolbar>
 
-<md-menu></md-menu>
-
-
-<md-sidenav-container fullscreen class="app-container">
+<mat-menu></mat-menu>
 
 
-  <md-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
+<mat-sidenav-container fullscreen class="app-container">
+
+
+  <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
       <div class="menu-container">
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>home</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" md-menu-item=""><md-icon>favorite</md-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" mdRipple></div>
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
       </div>
 
-  </md-sidenav>
+  </mat-sidenav>
 
   <div class="app-content">
 
       <div class="container">
         <div class="cards">
-          <md-card class="card" *ngFor="let card of cards">
-            <md-card-header>
-              <div md-card-avatar class="example-header-image"></div>
-              <md-card-title>Shiba Inu</md-card-title>
-              <md-card-subtitle>Dog Breed</md-card-subtitle>
-            </md-card-header>
-            <img md-card-image src="assets/images/cf.jpg" alt="Photo of a Shiba Inu">
-            <md-card-content>
+          <mat-card class="card" *ngFor="let card of cards">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/images/cf.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
               <p>
                 The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
                 A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
                 bred for hunting.
               </p>
-            </md-card-content>
-          </md-card>
+            </mat-card-content>
+          </mat-card>
         </div>
       </div>
 
   </div>
 
-</md-sidenav-container>-->
+</mat-sidenav-container>-->
 
 

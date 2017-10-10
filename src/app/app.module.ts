@@ -16,14 +16,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { routes } from './app.routes';
 
 import {
-  MdIconModule,
-  MdToolbarModule,
-  MdButtonModule,
-  MdCheckboxModule,
-  MdMenuModule,
-  MdSidenavModule,
-  MdListModule,
-  MdCardModule } from '@angular/material';
+  MatIconModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatListModule,
+  MatCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
@@ -31,6 +31,7 @@ import { NotificationsComponent } from './ui/notifications/notifications.compone
 import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './ui/search/search.component';
 import { UsersComponent } from './_components/users.component';
+import { DayCalendarComponent } from './_components/calendar/day-calendar.component';
 
 import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
@@ -40,6 +41,8 @@ import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarModule } from 'ap-angular2-fullcalendar';
+
 
 @NgModule({
   declarations: [
@@ -49,25 +52,27 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NotificationsComponent,
     TopBarMenuComponent,
     SearchComponent,
-    UsersComponent
+    UsersComponent,
+    DayCalendarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MdButtonModule,
-    MdCheckboxModule,
-    MdToolbarModule,
-    MdIconModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatIconModule,
     SlimLoadingBarModule,
-    MdMenuModule,
-    MdSidenavModule,
-    MdListModule,
-    MdCardModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
     FormsModule,
     HttpModule,
     routes,
     FlexLayoutModule,
+    CalendarModule,
     NgbModule.forRoot()
   ],
   providers: [

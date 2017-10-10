@@ -1,4 +1,12 @@
-<div class="btn-group" data-toggle="buttons">
+<!--<div style="width: 100%; height: 600px;">
+  <angular2-fullcalendar [options]="calendarOptions" (initialized)="onCalendarInit($event)"></angular2-fullcalendar>
+</div>-->
+
+<div style="padding: 50px">
+  <app-day-calendar></app-day-calendar>
+</div>
+
+<!--<div class="btn-group" data-toggle="buttons">
   <label class="btn-primary" ngbButtonLabel>
     <input type="checkbox" ngbButton [(ngModel)]="model.left"> Left (pre-checked)
   </label>
@@ -10,4 +18,4 @@
   </label>
 </div>
 <hr>
-<pre>{{model | json}}</pre>
+<pre>{{model | json}}</pre>-->

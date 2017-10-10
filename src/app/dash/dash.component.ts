@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MdSidenav } from '@angular/material';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-dash',
@@ -7,7 +7,7 @@ import { MdSidenav } from '@angular/material';
   styleUrls: ['./dash.component.scss']
 })
 export class DashComponent implements OnInit {
-  @ViewChild('sidenav') sidenav: MdSidenav;
+  @ViewChild('sidenav') sidenav: MatSidenav;
   notifications: any[];
 
   cards: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

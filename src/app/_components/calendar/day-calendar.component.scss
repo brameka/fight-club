@@ -1,0 +1,52 @@
+.app-calendar {
+  border: 1px solid  #e1e1e1;
+
+  &__hour-row .row {
+    border-bottom: thin dotted #e1e1e1;
+    min-height: 15px;
+    margin-right: 0;
+    margin-left: 0;
+    line-height: 10px;
+  }
+
+  &__hour-row .row.row-border {
+    border-bottom: thin dashed #ccc;
+  }
+
+  &__hour-row:nth-child(even) {
+    background: #fafafa;
+  }
+
+  &__hour-row:nth-child(odd) {
+    background: #fff;
+  }
+
+  &__hour-row .row .col:not(:last-child) {
+    border-right: solid 1px #e1e1e1;
+  }
+
+  &__hour-row .row .col {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__hour-row .row:hover {
+    background-color: #f3f3f3;
+  }
+
+   &__hour-row .row .label {
+     font-size: 10px;
+     color: #333;
+     line-height: 0;
+   }
+
+
+
+
+
+
+
+
+
+
+}
