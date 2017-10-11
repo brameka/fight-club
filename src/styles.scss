@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import 'app/styles/variables';
-@import "../node_modules/fullcalendar/dist/fullcalendar.min.css";
+@import '~ng2-dnd/bundles/style.css';
+//@import "../node_modules/fullcalendar/dist/fullcalendar.min.css";
+
+
 
 html {
   height: 100%;
@@ -41,6 +44,10 @@ small {
 
 code {
     word-break: break-word;
+}
+
+.input:focus, button:focus, .btn:focus {
+  outline: none;
 }
 
 @media (max-width: 400px) {

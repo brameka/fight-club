@@ -30,3 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 https://ng-bootstrap.github.io/#/getting-started
 
 https://github.com/lbertenasco/ap-ng2-fullcalendar
+
+https://stackoverflow.com/questions/40269353/angular-2-drag-drop-interface
+
+- make change to npm module fork changes and install using npm to the master of the forked repo
+https://stackoverflow.com/questions/13300137/how-to-edit-a-node-module-installed-via-npm

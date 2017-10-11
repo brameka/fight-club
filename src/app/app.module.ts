@@ -32,6 +32,7 @@ import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './ui/search/search.component';
 import { UsersComponent } from './_components/users.component';
 import { DayCalendarComponent } from './_components/calendar/day-calendar.component';
+import { DragComponent } from './_components/drag.component';
 
 import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
@@ -42,7 +43,7 @@ import { UserService } from './_services/user.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'ap-angular2-fullcalendar';
-
+import { DndModule } from 'ng2-dnd';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { CalendarModule } from 'ap-angular2-fullcalendar';
     TopBarMenuComponent,
     SearchComponent,
     UsersComponent,
-    DayCalendarComponent
+    DayCalendarComponent,
+    DragComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +75,7 @@ import { CalendarModule } from 'ap-angular2-fullcalendar';
     routes,
     FlexLayoutModule,
     CalendarModule,
+    DndModule.forRoot(),
     NgbModule.forRoot()
   ],
   providers: [
