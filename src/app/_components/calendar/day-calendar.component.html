@@ -3,37 +3,43 @@
 
 
 
-    <div class="row">
+    <div class="row app-calendar__header-row">
       <!--<div class="col-sm-1"></div>-->
       <div class="col">
-
+        MON
       </div>
-      <div class="col">Tue</div>
-      <div class="col">Wed</div>
-      <div class="col">Thu</div>
-      <div class="col">Fri</div>
-      <div class="col">Sat</div>
-      <div class="col">Sun</div>
+      <div class="col">TUE</div>
+      <div class="col">WED</div>
+      <div class="col">THU</div>
+      <div class="col">FRI</div>
+      <div class="col">SAT</div>
+      <div class="col">SUN</div>
     </div>
 
     <div class="app-calendar__hour-row" *ngFor="let hr of hours" >
 
       <div class="row">
         <div class="col">
-          <!--<span class="label">12am</span>-->
-          <div class="app-calendar__block" *ngIf="hr.hour==3"><div class="app-calendar__block--inner"></div></div>
+          <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="3"></app-calendar-block>
+          <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="5"></app-calendar-block>
+          <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="9"></app-calendar-block>
+        </div>
+        <div class="col">
         </div>
         <div class="col"></div>
+        <div class="col">
+        </div>
         <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
+        <div class="col">
+        </div>
         <div class="col"></div>
       </div>
 
       <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
+        <div class="col" (click)="addNewBlock()"></div>
+        <div class="col">
+
+        </div>
         <div class="col"></div>
         <div class="col"></div>
         <div class="col"></div>

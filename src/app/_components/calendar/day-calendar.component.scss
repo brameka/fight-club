@@ -15,15 +15,7 @@
     z-index: 100;
   }
 
-   &__block {
-    width: 100%;
-    height: 60px;
-    position: absolute;
-    z-index: 100;
-    padding: 2px;
-  }
-
-  &__block--inner {
+  &__block--booking {
     width: 100%;
     height: 100%;
     border-radius: 4px;
@@ -63,9 +55,17 @@
     position: relative;
   }
 
-  &__hour-row .row:hover {
-    background-color: #f3f3f3;
+  &__header-row {
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #fff;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+    border-bottom: solid 1px #e1e1e1;
+    padding: 8px 0;
   }
+
 
    &__hour-row .row .label {
      font-size: 10px;

@@ -23,6 +23,7 @@ import {
   MatMenuModule,
   MatSidenavModule,
   MatListModule,
+  MatDialogModule,
   MatCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
@@ -31,7 +32,13 @@ import { NotificationsComponent } from './ui/notifications/notifications.compone
 import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './ui/search/search.component';
 import { UsersComponent } from './_components/users.component';
+
+
 import { DayCalendarComponent } from './_components/calendar/day-calendar.component';
+import { CalendarBlockComponent } from './_components/calendar/calendar-block.component';
+import { CalendarDraggableDirective } from './_components/calendar/calendar-draggable';
+import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
+
 import { DragComponent } from './_components/drag.component';
 
 import { RouterModule } from '@angular/router';
@@ -44,6 +51,7 @@ import { UserService } from './_services/user.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule } from 'ap-angular2-fullcalendar';
 import { DndModule } from 'ng2-dnd';
+import { ResizableModule } from 'angular-resizable-element';
 
 @NgModule({
   declarations: [
@@ -55,7 +63,10 @@ import { DndModule } from 'ng2-dnd';
     SearchComponent,
     UsersComponent,
     DayCalendarComponent,
-    DragComponent
+    CalendarBlockComponent,
+    BlockDialogComponent,
+    DragComponent,
+    CalendarDraggableDirective
   ],
   imports: [
     BrowserModule,
@@ -65,6 +76,7 @@ import { DndModule } from 'ng2-dnd';
     MatCheckboxModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule,
     SlimLoadingBarModule,
     MatMenuModule,
     MatSidenavModule,
@@ -75,6 +87,7 @@ import { DndModule } from 'ng2-dnd';
     routes,
     FlexLayoutModule,
     CalendarModule,
+    ResizableModule,
     DndModule.forRoot(),
     NgbModule.forRoot()
   ],

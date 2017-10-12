@@ -14,4 +14,8 @@ export class DayCalendarComponent {
     }
   }
 
+  addNewBlock() {
+    console.log('add new block');
+  }
+
 }

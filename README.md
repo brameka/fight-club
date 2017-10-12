@@ -35,3 +35,12 @@ https://stackoverflow.com/questions/40269353/angular-2-drag-drop-interface
 
 - make change to npm module fork changes and install using npm to the master of the forked repo
 https://stackoverflow.com/questions/13300137/how-to-edit-a-node-module-installed-via-npm
+
+
+https://github.com/hootsuite/grid
+
+https://swiety85.github.io/angular2gridster/
+
+https://mattlewis92.github.io/angular-resizable-element/docs/
+
+https://github.com/akserg/ng2-dnd

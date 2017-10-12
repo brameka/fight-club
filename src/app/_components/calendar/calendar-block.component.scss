@@ -1,0 +1,29 @@
+mwlResizable {
+  box-sizing: border-box; // required for the enableGhostResize option to work
+}
+
+.app-calendar-block {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  z-index: 100;
+  padding: 1px;
+  display: flex;
+
+  &__inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background: rgba(204, 204, 204, 0.49);
+    border: 2px dashed #8e8e8e;
+    padding: 3px;
+  }
+
+  &__inner span {
+    font-size: 10px;
+    color: #999;
+  }
+
+}
+
+
