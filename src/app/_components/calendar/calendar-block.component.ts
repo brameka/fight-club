@@ -37,13 +37,13 @@ export class CalendarBlockComponent implements AfterViewInit {
   @Input() type: string;
   @Input() boundry: number;
   @Input() time: number;
+  @Input() color: string;
 
   resizing = false;
 
   constructor(public dialog: MatDialog) {}
 
   ngAfterViewInit(): void {
-    console.log('block boundry: ' + this.boundry);
   }
 
   onResizeEnd(event: ResizeEvent): void {
@@ -68,7 +68,6 @@ export class CalendarBlockComponent implements AfterViewInit {
 
   onUp (event) {
     if (!this.resizing) {
-      console.log('position y: ' + event.y);
       event.element.nativeElement.style.top = event.y + 'px';
     }
   }
@@ -76,6 +75,14 @@ export class CalendarBlockComponent implements AfterViewInit {
   onMove (event) {
     if (!this.resizing) {
       event.element.nativeElement.style.top = event.top;
+      // const deltax = event.coordinates.deltax / event.coordinates.width;
+      // const rounded = Math.floor(deltax);
+      // const left = rounded * event.coordinates.width;
+      // console.log(event.coordinates);
+      // console.log(deltax);
+      // console.log(rounded);
+      // console.log(left);
+      // event.element.nativeElement.style.left = `${event.coordinates.left + left}px`;
     }
   }
 

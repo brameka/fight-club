@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import 'app/styles/variables';
-@import '~ng2-dnd/bundles/style.css';
-//@import "../node_modules/fullcalendar/dist/fullcalendar.min.css";
-
 
 
 html {
@@ -14,6 +11,11 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f1f1f1;
+}
+
+// hack for calendar bar
+label.mat-button-toggle-label {
+  margin-bottom: 0 !important;
 }
 
 .navbar-list {

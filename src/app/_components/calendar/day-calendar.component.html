@@ -1,7 +1,8 @@
 <div class="app-calendar">
+
+  <app-calendar-bar text="Oct 8 – 14, 2017"></app-calendar-bar>
+
   <div class="app-calendar__grid">
-
-
 
     <div class="row app-calendar__header-row">
       <!--<div class="col-sm-1"></div>-->
@@ -16,56 +17,51 @@
       <div class="col">SUN</div>
     </div>
 
-    <div class="app-calendar__hour-row" *ngFor="let hr of hours" >
+    <div #grid class="app-calendar__container">
 
-      <div class="row">
-        <div class="col">
-          <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="3"></app-calendar-block>
-          <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="5"></app-calendar-block>
-          <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="9"></app-calendar-block>
+      <div class="app-calendar__hour-row" *ngFor="let hr of hours" >
+        <div class="row">
+          <app-calendar-cell class="col">
+            <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="3"></app-calendar-block>
+            <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="5"></app-calendar-block>
+            <app-calendar-block text="2.00-3.00p" *ngIf="hr.hour==0" boundry="0" time="9"></app-calendar-block>
+          </app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
         </div>
-        <div class="col">
+        <div class="row">
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
         </div>
-        <div class="col"></div>
-        <div class="col">
+        <div class="row">
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
         </div>
-        <div class="col"></div>
-        <div class="col">
+        <div class="row row-border">
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
+          <app-calendar-cell class="col" (clicked)="cellClicked($event)"></app-calendar-cell>
         </div>
-        <div class="col"></div>
       </div>
 
-      <div class="row">
-        <div class="col" (click)="addNewBlock()"></div>
-        <div class="col">
-
-        </div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
-
-      <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
-
-      <div class="row row-border">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-      </div>
     </div>
   </div>
 </div>

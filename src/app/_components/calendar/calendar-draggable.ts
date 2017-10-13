@@ -13,6 +13,13 @@ export class CalendarDraggableDirective implements OnInit, AfterViewInit {
 
     initialY = 0;
 
+    x = 0;
+    y = 0;
+    top = 0;
+    left = 0;
+    width = 0;
+    height = 0;
+
     @Input() stepSize: number;
     @Input() boundry: number;
     @Input() time: number;
@@ -33,6 +40,14 @@ export class CalendarDraggableDirective implements OnInit, AfterViewInit {
 
         ngAfterViewInit() {
           this.element.nativeElement.style.top = this.initialY + 'px';
+          this.setCoordinates();
+        }
+
+        setCoordinates() {
+          this.top = this.element.nativeElement.clientTop;
+          this.left = this.element.nativeElement.clientTop;
+          this.width = this.element.nativeElement.clientWidth;
+          this.height = this.element.nativeElement.clientHeight;
         }
 
         @HostListener('mousedown', ['$event'])
@@ -44,6 +59,9 @@ export class CalendarDraggableDirective implements OnInit, AfterViewInit {
           this.topStart = event.clientY - this.element.nativeElement.style.top.replace('px', '');
           this.leftStart = event.clientX - this.element.nativeElement.style.left.replace('px', '');
           this.deltaStart = event.clientY;
+          this.setCoordinates();
+          this.x = event.x;
+          this.y = event.y;
         }
 
         @HostListener('document:mouseup', ['$event'])
@@ -58,8 +76,6 @@ export class CalendarDraggableDirective implements OnInit, AfterViewInit {
             if (y < this.boundry) {
               y = this.boundry;
             }
-
-            // this.element.nativeElement.style.top = y + 'px';
 
             const data = {
               event: event,
@@ -82,10 +98,21 @@ export class CalendarDraggableDirective implements OnInit, AfterViewInit {
             if ((event.clientY - this.topStart) > this.boundry) {
               const data = {
                 top: (event.clientY - this.topStart) + 'px',
-                element: this.element
+                left: (event.clientX - this.leftStart) + 'px',
+                x: event.clientX,
+                element: this.element,
+                coordinates: {
+                  x: this.x,
+                  y: this.y,
+                  deltax: event.clientX - this.x,
+                  deltay: event.clientY - this.y,
+                  top: this.top,
+                  left: this.left,
+                  width: this.width,
+                  height: this.height
+                }
               };
               this.move.emit(data);
-              // this.element.nativeElement.style.top = ;
             }
           }
         }

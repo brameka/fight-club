@@ -24,6 +24,7 @@ import {
   MatSidenavModule,
   MatListModule,
   MatDialogModule,
+  MatButtonToggleModule,
   MatCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
@@ -37,6 +38,9 @@ import { UsersComponent } from './_components/users.component';
 import { DayCalendarComponent } from './_components/calendar/day-calendar.component';
 import { CalendarBlockComponent } from './_components/calendar/calendar-block.component';
 import { CalendarDraggableDirective } from './_components/calendar/calendar-draggable';
+import { CalendarCellComponent } from './_components/calendar/calendar-cell.component';
+import { CalendarBarComponent } from './_components/calendar/calendar-bar.component';
+
 import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
 
 import { DragComponent } from './_components/drag.component';
@@ -64,6 +68,8 @@ import { ResizableModule } from 'angular-resizable-element';
     UsersComponent,
     DayCalendarComponent,
     CalendarBlockComponent,
+    CalendarCellComponent,
+    CalendarBarComponent,
     BlockDialogComponent,
     DragComponent,
     CalendarDraggableDirective
@@ -77,6 +83,7 @@ import { ResizableModule } from 'angular-resizable-element';
     MatToolbarModule,
     MatIconModule,
     MatDialogModule,
+    MatButtonToggleModule,
     SlimLoadingBarModule,
     MatMenuModule,
     MatSidenavModule,
