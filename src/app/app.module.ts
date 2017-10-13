@@ -40,6 +40,7 @@ import { CalendarBlockComponent } from './_components/calendar/calendar-block.co
 import { CalendarDraggableDirective } from './_components/calendar/calendar-draggable';
 import { CalendarCellComponent } from './_components/calendar/calendar-cell.component';
 import { CalendarBarComponent } from './_components/calendar/calendar-bar.component';
+import { CalendarActionsComponent } from './_components/calendar/calendar-actions.component';
 
 import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
 
@@ -70,6 +71,7 @@ import { ResizableModule } from 'angular-resizable-element';
     CalendarBlockComponent,
     CalendarCellComponent,
     CalendarBarComponent,
+    CalendarActionsComponent,
     BlockDialogComponent,
     DragComponent,
     CalendarDraggableDirective

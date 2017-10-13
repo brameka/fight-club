@@ -1,3 +1,5 @@
+import { Injectable } from "@angular/core";
+
 function hexToRgbA (hex) {
     let c;
     if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {

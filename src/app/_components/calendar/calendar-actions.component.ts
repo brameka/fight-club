@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@angular/core';
 
 @Component({
-  selector: 'app-calendar-bar',
+  selector: 'app-actions-bar',
   template: `
-    <div class="app-calendar-bar">
-      <button mat-raised-button color="primary" class="app-calendar-bar__today">
-        TODAY
+    <div class="app-actions-bar">
+      <!--<button mat-raised-button color="primary" class="app-actions-bar__today">
+        <mat-icon>favorite</mat-icon> TODAY
       </button>
       <button mat-icon-button color="primary">
         <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
@@ -13,14 +13,14 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
       <button mat-icon-button color="primary">
         <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
       </button>
-      <button mat-icon-button color="primary" class="app-calendar-bar__calendar-button">
+      <button mat-icon-button color="primary" class="app-actions-bar__calendar-button">
         <mat-icon aria-label="Example icon-button with a heart icon">event</mat-icon>
       </button>
-      <span class="app-calendar-bar__title">{{text}}</span>
+      <span class="app-actions-bar__title">{{text}}</span>-->
 
       <div class="spacer"></div>
 
-      <mat-button-toggle-group #group="matButtonToggleGroup">
+      <!--<mat-button-toggle-group #group="matButtonToggleGroup">
         <mat-button-toggle value="left">
           <mat-icon>view_stream</mat-icon>
         </mat-button-toggle>
@@ -34,13 +34,17 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
 
       <button mat-icon-button>
         <mat-icon aria-label="Example icon-button with a heart icon">more_vert</mat-icon>
+      </button>-->
+
+      <button mat-raised-button color="primary" class="app-actions-bar__today">
+        <mat-icon>add</mat-icon> NEW
       </button>
 
     </div>`,
-  styleUrls: ['./calendar-bar.component.scss']
+  styleUrls: ['./calendar-actions.component.scss']
 })
 
-export class CalendarBarComponent implements AfterViewInit {
+export class CalendarActionsComponent implements AfterViewInit {
   @Input() text: string;
   @Output() action: string;
 
