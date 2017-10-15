@@ -1,3 +1,62 @@
-<div class="layout" fxFlex="grow">
-  <router-outlet></router-outlet>
-</div>
+<ng2-slim-loading-bar [color]="'#3f51b5'"></ng2-slim-loading-bar>
+<mat-toolbar>
+
+    <button mat-icon-button (click)="toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-button>Schedules</button>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+    <button mat-button>Scheduler</button>
+
+    <!--<app-search></app-search>-->
+
+    <span class="spacer"></span>
+
+    <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
+
+    <button mat-icon-button routerLink="/"><mat-icon>favorite</mat-icon></button>
+    <button mat-icon-button routerLink="/drag"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
+
+    <!--<mat-toolbar-row>
+      <span>Second Row</span>
+    </mat-toolbar-row>-->
+
+</mat-toolbar>
+<mat-menu></mat-menu>
+
+<mat-sidenav-container fullscreen class="app-container">
+
+  <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
+
+      <div class="menu-container">
+
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Home
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>language</mat-icon> Schedules
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>fingerprint</mat-icon> Australia
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>account_circle</mat-icon> Users
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+      </div>
+
+  </mat-sidenav>
+
+  <div class="app-content">
+
+      <div class="container" style="padding-top: 20px;">
+        <router-outlet></router-outlet>
+      </div>
+
+  </div>
+</mat-sidenav-container>

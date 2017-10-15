@@ -11,6 +11,10 @@ const appRoutes: Routes = [
     { path: 'dash', component: DashComponent },
     { path: 'users', component: UsersComponent },
     { path: 'drag', component: DragComponent },
+    // {   path: '',
+    //     redirectTo: '/users',
+    //     pathMatch: 'full'
+    // },
     // { path: 'dash', component: DashComponent, canActivate: [AuthGuard] },
 
     // otherwise redirect to home

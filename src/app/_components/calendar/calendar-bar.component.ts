@@ -4,9 +4,16 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
   selector: 'app-calendar-bar',
   template: `
     <div class="app-calendar-bar">
-      <!--<button mat-raised-button class="app-calendar-bar__today">
-        TODAY
+      <!--<button mat-raised-button color="primary" class="app-calendar-bar__today">
+        NEW
       </button>-->
+
+      <button color="primary" mat-raised-button [matMenuTriggerFor]="menu">NEW</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+
       <button mat-icon-button color="primary">
         <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
       </button>
@@ -35,9 +42,7 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
       <!--<button mat-icon-button>
         <mat-icon aria-label="Example icon-button with a heart icon">more_vert</mat-icon>
       </button>-->
-      <button mat-raised-button color="primary" class="app-calendar-bar__today">
-        NEW
-      </button>
+      
 
     </div>`,
   styleUrls: ['./calendar-bar.component.scss']

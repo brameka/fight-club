@@ -1,23 +1,74 @@
-<mat-toolbar>
-  <button mat-icon-button (click)="toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
+  <div class="bar">
+    <!--<h4 class="title">Dr. Schnoz</h4>-->
+    <button [matMenuTriggerFor]="schedMenu" mat-button class="schedule-title">
+      <mat-icon class="indicator">lens</mat-icon> 
+      Dr. Schnoz <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #schedMenu="matMenu">
+      <button mat-menu-item class="important-menu-item"><mat-icon>dashboard</mat-icon> All</button>
+      <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Arabicsxxx</button>
+      <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Australia</button>
+      <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Angola</button>
+      <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Bermuda</button>
+      <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Brazil</button>
+    </mat-menu>
+    
+    <span class="spacer"></span>
 
-  <app-search></app-search>
+    <mat-button-toggle-group #group="matButtonToggleGroup">
+      <mat-button-toggle value="left">
+        <mat-icon>view_stream</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="center">
+        <mat-icon>view_week</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="right">
+        <mat-icon>view_module</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
 
-  <span class="spacer"></span>
+    <!--<button class="event-selector" mat-button color="primary" [matMenuTriggerFor]="menu">
+      <mat-icon>event</mat-icon>
+      Appointment
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Default</button>
+      <button mat-menu-item>Appointment</button>
+    </mat-menu>
 
-  <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
+    <button color="primary" mat-raised-button><mat-icon>add</mat-icon> NEW</button>-->
+    
+  </div>
+  <app-day-calendar></app-day-calendar>
 
-  <button mat-icon-button routerLink="/dash"><mat-icon>favorite</mat-icon></button>
-  <button mat-icon-button routerLink="/dash"><mat-icon>keyboard_arrow_left</mat-icon></button>
-  <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
+<!--<mat-toolbar>
 
+    <button mat-icon-button (click)="toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
-</mat-toolbar>
+    <button mat-button>Schedules</button>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+    <button mat-button>Dr Schnoz</button>
 
-<mat-menu></mat-menu>
+    <app-search></app-search>
+
+    <span class="spacer"></span>
+
+    <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
+
+    <button mat-icon-button routerLink=""><mat-icon>favorite</mat-icon></button>
+    <button mat-icon-button routerLink=""><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <button mat-icon-button routerLink=""><mat-icon>delete</mat-icon></button>
+
+  <mat-toolbar-row>
+    <span>Second Row</span>
+  </mat-toolbar-row>
+
+</mat-toolbar>-->
+
+<!--<mat-menu></mat-menu>
 
 
 <mat-sidenav-container fullscreen class="app-container">
@@ -27,15 +78,19 @@
 
       <div class="menu-container">
 
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Item 1
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Home
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>language</mat-icon> Schedules
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>fingerprint</mat-icon> Australia
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item=""><mat-icon>account_circle</mat-icon> Users
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
@@ -47,121 +102,48 @@
 
       <div class="container" style="padding-top: 20px;">
 
-        <!--<app-calendar-bar></app-calendar-bar>-->
+          <div class="col-sm-9" style="float: left;">
+            <div class="bar">
+              <h4 class="title">Dr. Schnoz</h4>
+              <button [matMenuTriggerFor]="schedMenu" mat-button class="schedule-title">Dr. Schnoz <mat-icon>keyboard_arrow_down</mat-icon></button>
+              <mat-menu #schedMenu="matMenu">
+                <button mat-menu-item (click)="startLoading()">Arabic</button>
+                <button mat-menu-item>Australia</button>
+                <button mat-menu-item>Angola</button>
+                <button mat-menu-item>Bermuda</button>
+                <button mat-menu-item>Brazil</button>
+              </mat-menu>
+              
+              <span class="spacer"></span>
+              <button color="primary" mat-raised-button [matMenuTriggerFor]="menu">NEW <mat-icon>keyboard_arrow_down</mat-icon></button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Arabic</button>
+                <button mat-menu-item>Australia</button>
+                <button mat-menu-item>Angola</button>
+                <button mat-menu-item>Bermuda</button>
+                <button mat-menu-item>Brazil</button>
+              </mat-menu>
+            </div>
+            <app-day-calendar></app-day-calendar>
+          </div>
+          <div class="col-sm-3" style="float: left;">
+            <mat-card class="card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image src="assets/images/cf.jpg" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                  A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                  bred for hunting.
+                </p>
+              </mat-card-content>
+            </mat-card>
+          </div>
 
-        <app-day-calendar></app-day-calendar>
-
-        <!--<div class="cards">
-          <mat-card class="card" *ngFor="let card of cards">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Shiba Inu</mat-card-title>
-              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="assets/images/cf.jpg" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>-->
-
-
-      </div>
-
-  </div>
-
-</mat-sidenav-container>
-
-
-<!--<mat-toolbar>
-  <button mat-icon-button (click)="toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <app-search></app-search>
-  <span class="spacer"></span>
-  <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
-  <button mat-icon-button routerLink="/dash"><mat-icon>favorite</mat-icon></button>
-  <button mat-icon-button routerLink="/dash"> <mat-icon>delete</mat-icon></button>
-  <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
-</mat-toolbar>
-
-<mat-sidenav-container fullscreen class="app-container">
-
-  <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
-
-      <div class="menu-container">
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-      </div>
-
-  </mat-sidenav>
-
-  <div class="app-content">
-    Test
-  </div>
-
-</mat-sidenav-container>-->
-
-<!--<mat-toolbar>
-  <button mat-icon-button (click)="toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <app-search></app-search>
-
-  <span class="spacer"></span>
-
-  <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
-
-  <button mat-icon-button routerLink="/dash"><mat-icon>favorite</mat-icon></button>
-  <button mat-icon-button routerLink="/dash"> <mat-icon>delete</mat-icon></button>
-
-
-  <ng2-slim-loading-bar [color]="'red'"></ng2-slim-loading-bar>
-</mat-toolbar>
-
-<mat-menu></mat-menu>
-
-
-<mat-sidenav-container fullscreen class="app-container">
-
-
-  <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
-
-      <div class="menu-container">
-
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>favorite</mat-icon> Item 1
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-      </div>
-
-  </mat-sidenav>
-
-  <div class="app-content">
-
-      <div class="container">
         <div class="cards">
           <mat-card class="card" *ngFor="let card of cards">
             <mat-card-header>
@@ -179,10 +161,7 @@
             </mat-card-content>
           </mat-card>
         </div>
+
       </div>
-
   </div>
-
 </mat-sidenav-container>-->
-
-

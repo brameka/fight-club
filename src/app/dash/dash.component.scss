@@ -1,54 +1,29 @@
+@import '../styles/variables';
 
-.app-container {
-    margin-top: 64px;
-    width: 100%;
+.mat-menu-item .mat-icon.indicator, .schedule-title .mat-icon.indicator {
+  color: $primary;
+  margin-right: 8px;
+  font-size: 12px;
+  width: 12px;
+  height: 14px;
+}
 
-    &__list-item {
-        padding: 0;
-        margin: 0;
-    }
+.mat-button-toggle {
+    color: #666;
+}
 
-    .app-content {
-    }
+.mat-button-toggle-group, .mat-button-toggle-standalone {
+    box-shadow: none;
+}
 
-    .mat-pseudo-checkbox {
-        display: none;
-    }
+.centered {
+    margin: 0 auto;
+    padding: 0 1em;
+}
 
-    .app-sidenav {
-        width: 200px;
-    }
-
-    .menu-container {
-        margin-top: 20px;
-    }
-
-    .mat-menu-item {
-        padding: 0 22px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .mat-menu-item .mat-icon {
-        // font-size: 22px;
-        color: #757575;
-    }
-
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 10px;
-    }
-
-    .card {
-      flex: 1 0 280px;
-      margin: 10px;
-      box-sizing: border-box;
-    }
-
-    .example-header-image {
-      background-image: url('/assets/images/cf.jpg');
-      background-size: cover;
+@media screen and (min-width: 52em) {
+    .centered {
+        max-width: 52em;
     }
 }
 
@@ -63,14 +38,3 @@
 //         max-width: calc(25% - 1em);
 //     }
 // }
-
-.centered {
-    margin: 0 auto;
-    padding: 0 1em;
-}
-
-@media screen and (min-width: 52em) {
-    .centered {
-        max-width: 52em;
-    }
-}

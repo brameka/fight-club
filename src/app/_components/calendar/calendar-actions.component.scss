@@ -8,12 +8,15 @@
   flex-direction: row;
   align-items: center;
   white-space: nowrap;
-  padding: 10px;
+  padding: 4px 10px;
   border-bottom: 1px solid #dedede;
+
+  
 
   &__title {
     color: $primary;
     font-weight: 500;
+    font-size: 13px;
   }
 
   &__today, &__calendar-button  {
@@ -28,6 +31,26 @@
       box-shadow: none;
   }
 
+  .event-selector {
+    margin-right: 5px;
+  }
+
+}
+
+.mat-menu-item .mat-icon.indicator {
+  color: $primary;
+  margin-right: 8px;
+  font-size: 12px;
+  width: 12px;
+  height: 14px;
+}
+
+.mat-menu-item {
+  font-size: 14px;
+}
+
+.mat-menu-panel {
+  width: 215px;
 }
 
 .spacer {
