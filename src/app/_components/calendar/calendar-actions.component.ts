@@ -37,9 +37,9 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
       <div class="spacer"></div>
 
       <button class="event-selector" mat-button color="primary" [matMenuTriggerFor]="menu">
-        <mat-icon>event</mat-icon>
+        <mat-icon><i class="material-icons">event_available</i></mat-icon>
         Appointment
-        <mat-icon>keyboard_arrow_down</mat-icon>
+        <!--<mat-icon>keyboard_arrow_down</mat-icon>-->
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Default</button>

@@ -25,6 +25,7 @@ import {
   MatListModule,
   MatDialogModule,
   MatButtonToggleModule,
+  MatTabsModule,
   MatCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
@@ -86,6 +87,7 @@ import { ResizableModule } from 'angular-resizable-element';
     MatIconModule,
     MatDialogModule,
     MatButtonToggleModule,
+    MatTabsModule,
     SlimLoadingBarModule,
     MatMenuModule,
     MatSidenavModule,
