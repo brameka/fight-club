@@ -5,8 +5,11 @@ import { DashComponent } from './dash/dash.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { UsersComponent } from './_components/users.component';
 import { DragComponent } from './_components/drag.component';
+import { SchedulesComponent } from './_components/schedules/schedules.component';
 
 const appRoutes: Routes = [
+
+    { path: 'schedules', component: SchedulesComponent },
     { path: 'login', component: LoginComponent },
     { path: 'dash', component: DashComponent },
     { path: 'users', component: UsersComponent },

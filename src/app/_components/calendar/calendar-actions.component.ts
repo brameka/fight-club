@@ -23,8 +23,7 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
       </button>
       <span class="app-actions-bar__title">{{text}}</span>
       <div class="separator"></div>
-      <span class="app-actions-bar__title">Active</span>
-      
+      <span class="app-actions-bar__status">Active</span>
       <!--<button class="event-selector" mat-button color="primary" [matMenuTriggerFor]="statusMenu">
         <mat-icon class="indicator">lens</mat-icon>
         Active

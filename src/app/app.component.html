@@ -5,55 +5,57 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <button mat-button>Schedules</button>
-    <mat-icon>keyboard_arrow_right</mat-icon>
-    <button mat-button>Scheduler</button>
-
     <!--<app-search></app-search>-->
 
     <span class="spacer"></span>
 
     <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
 
-    <button mat-icon-button routerLink="/"><mat-icon>favorite</mat-icon></button>
+    <button mat-icon-button routerLink="/schedules"><mat-icon>favorite</mat-icon></button>
     <button mat-icon-button routerLink="/drag"><mat-icon>keyboard_arrow_left</mat-icon></button>
     <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
 
-    <mat-toolbar-row class="action-row">
-      
+    <mat-toolbar-row class="action-row" *ngIf="location == '/dash'">
+
+      <button mat-button>Schedules</button>
+      <mat-icon>keyboard_arrow_right</mat-icon>
+      <button mat-button>Scheduler</button>
+
       <div class="sub-menu">
         <mat-tab-group>
-          <mat-tab label="Schedules"></mat-tab>
-          <mat-tab label="Scheduler"></mat-tab>
-          <mat-tab label="Types"></mat-tab>
+          <mat-tab label="FOLLOWING"></mat-tab>
+          <mat-tab label="SCHEDULER"></mat-tab>
+          <mat-tab label="TYPES"></mat-tab>
         </mat-tab-group>
+        <div class="separator" style="margin-top: 16px;"></div>
+        <button mat-button color="primary">SCHEDULE</button>
       </div>
-      
+
 
     </mat-toolbar-row>
 
 </mat-toolbar>
 <mat-menu></mat-menu>
 
-<mat-sidenav-container fullscreen class="app-container">
+<mat-sidenav-container fullscreen class="app-container" [style.marginTop]="marginTop" >
 
   <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
       <div class="menu-container">
 
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>home</mat-icon> Home
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/dash"><mat-icon>home</mat-icon> Home
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>language</mat-icon> Schedules
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>language</mat-icon> Schedules
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>fingerprint</mat-icon> Australia
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>fingerprint</mat-icon> Australia
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item=""><mat-icon>account_circle</mat-icon> Users
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>account_circle</mat-icon> Users
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
@@ -64,8 +66,17 @@
   <div class="app-content">
 
       <div class="container" style="padding-top: 20px;">
+
         <router-outlet></router-outlet>
+
       </div>
 
   </div>
 </mat-sidenav-container>
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "assets/css/indigo-pink.css";
 @import 'app/styles/variables';
 
 
@@ -12,7 +13,20 @@ body {
   margin: 0;
   background-color: #f1f1f1;
   position: relative;
+  font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif !important;
 }
+
+// Menu
+.mat-menu-item-highlighted:not([disabled]), .mat-menu-item:focus:not([disabled]), .mat-menu-item:hover:not([disabled]) {
+    font-weight: 500;
+    color: #212121;
+}
+
+.sub-menu .mat-tab-label, .sub-menu .mat-tab-link, .sub-menu .mat-button, .sub-menu .mat-fab, .sub-menu .mat-icon-button, .sub-menu .mat-mini-fab, .sub-menu .mat-raised-button
+{
+  font-size: 13px;
+}
+
 
 // hack for calendar bar
 label.mat-button-toggle-label {

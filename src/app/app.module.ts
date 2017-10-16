@@ -43,6 +43,8 @@ import { CalendarCellComponent } from './_components/calendar/calendar-cell.comp
 import { CalendarBarComponent } from './_components/calendar/calendar-bar.component';
 import { CalendarActionsComponent } from './_components/calendar/calendar-actions.component';
 
+import { SchedulesComponent } from './_components/schedules/schedules.component';
+
 import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
 
 import { DragComponent } from './_components/drag.component';
@@ -75,6 +77,7 @@ import { ResizableModule } from 'angular-resizable-element';
     CalendarActionsComponent,
     BlockDialogComponent,
     DragComponent,
+    SchedulesComponent,
     CalendarDraggableDirective
   ],
   imports: [
