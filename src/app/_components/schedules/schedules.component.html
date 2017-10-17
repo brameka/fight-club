@@ -8,9 +8,84 @@
     <button color="primary" mat-raised-button>CREATE SCHEDULE</button>
   </div>-->
 
-  <div class="item">
-    <span>Pilates</span>
+  <div class="app-schedules__header">
+      <button mat-icon-button color="primary">
+        <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
+      </button>
+      <button mat-icon-button color="primary">
+        <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" class="app-actions-bar__calendar-button">
+        <mat-icon>event</mat-icon>
+      </button>
+
+      <div class="spacer"></div>
+
+      <button class="event-selector" mat-button color="primary" [matMenuTriggerFor]="menu">
+        <mat-icon><i class="material-icons">event_available</i></mat-icon>
+        Appointment
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Default</button>
+        <button mat-menu-item>Appointment</button>
+      </mat-menu>
+      <button color="primary" mat-raised-button>NEW <mat-icon>add</mat-icon></button>
   </div>
+
+  <div class="app-schedules__item" ng-reflect-layout="row">
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+  </div>
+
+  <div class="app-schedules__item" ng-reflect-layout="row">
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+  </div>
+
+
+  <!--<mat-card>
+    <mat-card-content class="mat-card-content">
+
+      <div class="app-schedules__item" ng-reflect-layout="row">
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      </div>
+
+      <div class="app-schedules__item" ng-reflect-layout="row">
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      </div>
+
+      <div class="app-schedules__item" ng-reflect-layout="row">
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      </div>
+
+      <div class="app-schedules__item" ng-reflect-layout="row">
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+          <div class="app-schedules__item--col" fxflex="" ng-reflect-flex=""> fxFlex</div>
+      </div>
+
+    </mat-card-content>
+  </mat-card>-->
 
 
 
