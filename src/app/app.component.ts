@@ -12,6 +12,7 @@ export class AppComponent implements OnDestroy {
   private sub: any;
   styles = {};
   location: string;
+  title: string;
 
   constructor (private slimLoader: SlimLoadingBarService, private router: Router) {
     this.sub = this.router.events.subscribe(event => {
@@ -21,14 +22,30 @@ export class AppComponent implements OnDestroy {
                     event instanceof NavigationCancel ||
                     event instanceof NavigationError) {
             this.location = router.url;
-            console.log('location: ' + this.location);
-            this.styles = {
-              'margin-top': '200px'
-            };
+            this.setStyles();
         }
     }, (error: any) => {
         // this.slimLoader.complete();
     });
+  }
+
+  setStyles() {
+    switch (this.location) {
+      case '/dash': {
+        this.title = 'Scheduler';
+        this.styles = {
+          'margin-top': '110px'
+        };
+      }
+      break;
+
+      default: {
+        this.title = 'Schedules';
+        this.styles = {
+          'margin-top': '64px'
+        };
+      }
+    }
   }
 
   ngOnDestroy(): any {

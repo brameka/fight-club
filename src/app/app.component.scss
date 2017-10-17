@@ -1,5 +1,17 @@
 @import 'styles/variables';
 
+.app-header {
+  &__title {
+    color: #666;
+  }
+}
+
+.mat-toolbar h5.app-header__logo {
+  margin-left: 20px;
+}
+
+
+
 
 .mat-toolbar {
   background-color: #fff;

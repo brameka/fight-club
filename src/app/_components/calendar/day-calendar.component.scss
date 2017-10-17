@@ -9,6 +9,10 @@
 
   &__container {
     width: 100%;
+    overflow: auto;
+    min-height: 400px;
+    max-height: calc(100vh - 300px);
+    //max-height: 700px;
   }
 
   &__layout {

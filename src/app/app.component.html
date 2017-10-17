@@ -1,9 +1,13 @@
 <ng2-slim-loading-bar [color]="'#3f51b5'"></ng2-slim-loading-bar>
-<mat-toolbar>
+<mat-toolbar class="app-header">
 
     <button mat-icon-button (click)="toggle()">
       <mat-icon>menu</mat-icon>
     </button>
+
+    <h5 class="app-header__logo">Cupcake</h5>
+    <div class="menu-separator"></div>
+    <h5 class="app-header__title">{{title}}</h5>
 
     <!--<app-search></app-search>-->
 
@@ -37,7 +41,7 @@
 </mat-toolbar>
 <mat-menu></mat-menu>
 
-<mat-sidenav-container fullscreen class="app-container" [style.marginTop]="marginTop" >
+<mat-sidenav-container fullscreen class="app-container" [ngStyle]="styles" >
 
   <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
