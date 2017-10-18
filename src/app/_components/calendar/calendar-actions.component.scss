@@ -8,7 +8,7 @@
   flex-direction: row;
   align-items: center;
   white-space: nowrap;
-  padding: 4px 10px;
+  padding: 4px;
   border-bottom: 1px solid #dedede;
 
 
@@ -46,7 +46,7 @@
 
 }
 
-.mat-menu-item .mat-icon.indicator {
+.mat-menu-item .mat-icon.indicator, .schedule-title .mat-icon.indicator {
   color: $primary;
   margin-right: 8px;
   font-size: 12px;

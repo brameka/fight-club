@@ -7,15 +7,15 @@ mwlResizable {
   height: 60px;
   position: absolute;
   z-index: 100;
-  padding: 1px;
+  padding: 0;
   display: flex;
 
   &__inner {
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    background: rgba(204, 204, 204, 0.49);
-    border: 2px dashed #8e8e8e;
+    background: rgba(182, 236, 199, 0.2);
+    border: 1px dashed #1ebd4b;
     padding: 3px;
   }
 

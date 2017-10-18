@@ -4,14 +4,21 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
   selector: 'app-actions-bar',
   template: `
     <div class="app-actions-bar">
-      <!--<button color="primary" mat-raised-button [matMenuTriggerFor]="menu">NEW <mat-icon>keyboard_arrow_down</mat-icon></button>
-      <mat-menu #menu="matMenu">
+      <button [matMenuTriggerFor]="schedMenu" mat-button class="schedule-title">
+        <mat-icon class="indicator">lens</mat-icon>
+        Dr. Schnoz <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+      <mat-menu #schedMenu="matMenu">
+        <button mat-menu-item class="important-menu-item"><mat-icon>dashboard</mat-icon> All</button>
         <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Arabicsxxx</button>
         <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Australia</button>
         <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Angola</button>
         <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Bermuda</button>
         <button mat-menu-item><mat-icon class="indicator">lens</mat-icon> Brazil</button>
-      </mat-menu>-->
+      </mat-menu>
+
+      <div class="separator"></div>
+
       <button mat-icon-button color="primary">
         <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
       </button>
@@ -22,7 +29,9 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
         <mat-icon>event</mat-icon>
       </button>
       <span class="app-actions-bar__title">{{text}}</span>
+
       <div class="separator"></div>
+
       <span class="app-actions-bar__status">Active</span>
       <!--<button class="event-selector" mat-button color="primary" [matMenuTriggerFor]="statusMenu">
         <mat-icon class="indicator">lens</mat-icon>
@@ -35,15 +44,26 @@ import { Component, Input, Output, EventEmitter, AfterViewInit, Inject } from '@
 
       <div class="spacer"></div>
 
-      <button class="event-selector" mat-button color="primary" [matMenuTriggerFor]="menu">
+      <mat-button-toggle-group #group="matButtonToggleGroup">
+        <mat-button-toggle value="left">
+          <mat-icon>view_stream</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="center">
+          <mat-icon>view_week</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="right">
+          <mat-icon>view_module</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+
+      <!--<button class="event-selector" mat-button color="primary" [matMenuTriggerFor]="menu">
         <mat-icon><i class="material-icons">event_available</i></mat-icon>
         Appointment
-        <!--<mat-icon>keyboard_arrow_down</mat-icon>-->
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Default</button>
         <button mat-menu-item>Appointment</button>
-      </mat-menu>
+      </mat-menu>-->
 
       <button color="primary" mat-raised-button>NEW <mat-icon>add</mat-icon></button>
 
