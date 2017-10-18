@@ -6,6 +6,7 @@ import { AuthGuard } from './_guards/auth.guard';
 import { UsersComponent } from './_components/users.component';
 import { DragComponent } from './_components/drag.component';
 import { SchedulesComponent } from './_components/schedules/schedules.component';
+import { CustomersComponent } from './_components/customers/customers.component';
 
 const appRoutes: Routes = [
 
@@ -13,7 +14,8 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'dash', component: DashComponent },
     { path: 'users', component: UsersComponent },
-    { path: 'drag', component: DragComponent },
+    { path: 'customers', component: CustomersComponent },
+
     // {   path: '',
     //     redirectTo: '/users',
     //     pathMatch: 'full'

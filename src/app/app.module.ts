@@ -35,7 +35,6 @@ import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './ui/search/search.component';
 import { UsersComponent } from './_components/users.component';
 
-
 import { DayCalendarComponent } from './_components/calendar/day-calendar.component';
 import { CalendarBlockComponent } from './_components/calendar/calendar-block.component';
 import { CalendarDraggableDirective } from './_components/calendar/calendar-draggable';
@@ -44,6 +43,7 @@ import { CalendarBarComponent } from './_components/calendar/calendar-bar.compon
 import { CalendarActionsComponent } from './_components/calendar/calendar-actions.component';
 
 import { SchedulesComponent } from './_components/schedules/schedules.component';
+import { CustomersComponent } from './_components/customers/customers.component';
 
 import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
 
@@ -78,6 +78,7 @@ import { ResizableModule } from 'angular-resizable-element';
     BlockDialogComponent,
     DragComponent,
     SchedulesComponent,
+    CustomersComponent,
     CalendarDraggableDirective
   ],
   imports: [
