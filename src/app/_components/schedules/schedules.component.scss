@@ -1,6 +1,14 @@
 .app-schedules {
   margin-top: 10px;
 
+  &__card {
+    flex: 1 0 200px;
+    flex: 1 0 280px;
+    margin: 10px;
+    box-sizing: border-box;
+    max-width: 300px;
+  }
+
   &__header {
     background: #f7f7f7;
     display: flex;

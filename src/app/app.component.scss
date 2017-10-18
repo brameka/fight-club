@@ -3,15 +3,13 @@
 .app-header {
   &__title {
     color: #666;
+    margin-right: 20px !important;
   }
 }
 
 .mat-toolbar h5.app-header__logo {
   margin-left: 20px;
 }
-
-
-
 
 .mat-toolbar {
   background-color: #fff;
@@ -128,6 +126,7 @@
 
     .title {
         margin-left: 15px;
+        margin-right: 15px;
         font-size: 1.2rem;
         display: inline-block;
         line-height: 2.2rem;
