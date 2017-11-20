@@ -43,40 +43,37 @@
     top: -1px;
   }
 
-  .WorkHistory__timeIndicator___JC-ni {
+  &__time-indicator {
     height: 1px;
     background: #ced8db;
     position: absolute;
     top: 0;
-    left: 80px;
+    left: -6px;
     right: 0;
     z-index: 5;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     pointer-events: none;
-}
+  }
 
-.WorkHistory__timeIndicator___JC-ni .WorkHistory__timestamp___1xAKS {
+  &__timestamp {
     position: absolute;
     color: #6e848b;
     background: #ced8db;
-    border-radius: 4px;
-    padding: 8px 5px 6px;
+    border-radius: 3px;
+    padding: 2px 5px;
     text-align: right;
-    font-weight: 700;
-    display: -webkit-flex;
+    font-weight: 500;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
-    -webkit-align-content: center;
     -ms-flex-line-pack: center;
     align-content: center;
     font-size: 12px;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
-    left: -36px;
-}
-
-
+    left: -43px;
+  }
 
   &__grid {
     position: relative;

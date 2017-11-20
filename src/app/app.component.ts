@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation, OnDestroy  } from '@angular/core';
+import { Component, ViewEncapsulation, OnDestroy, ViewChild  } from '@angular/core';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationErr
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnDestroy {
+  @ViewChild('sidenav') sidenav: MatSidenav;
   private sub: any;
   styles = {};
   location: string;
@@ -50,5 +52,9 @@ export class AppComponent implements OnDestroy {
 
   ngOnDestroy(): any {
       this.sub.unsubscribe();
+  }
+
+  toggle () {
+    this.sidenav.toggle();
   }
 }
