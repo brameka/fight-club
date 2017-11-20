@@ -10,7 +10,7 @@
   }
 
   &__header {
-    background: #f7f7f7;
+    background: #fafafa;
     display: flex;
     box-sizing: border-box;
     width: 100%;
@@ -19,6 +19,7 @@
     white-space: nowrap;
     padding: 4px 10px;
     border: 1px solid #dedede;
+    margin-bottom: 10px;
   }
 
   &__empty-state {
@@ -32,20 +33,47 @@
     justify-content: center;
   }
 
-  &__item {
-    cursor: pointer; display: flex; box-sizing: border-box; flex-direction: row; border-bottom: 1px solid #dedede;
-  }
-
-  &__item--col {
-    flex: 1 1 0; box-sizing: border-box;
-    padding: 10px;
-  }
-
-  &__item:nth-child(even) {
-  }
-
-  &__item:nth-child(odd) {
+  &__content { 
+    border: 1px solid #dedede;
     background: #fafafa;
   }
+
+  &__item {
+    padding: 5px 10px 5px 20px;
+    cursor: pointer;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    border-bottom: 1px dashed #eaeaea;
+  }
+
+  &__item:hover {
+    background: rgba(0,0,0,.01);
+  }
+
+  &__action {
+    color: #666;
+  }
+
+  
+
+  // &__item {
+  //   cursor: pointer; display: flex; box-sizing: border-box; flex-direction: row; border-bottom: 1px solid #dedede;
+  // }
+
+  // &__item--col {
+  //   flex: 1 1 0; box-sizing: border-box;
+  //   padding: 10px;
+  // }
+
+  // &__item:nth-child(even) {
+  // }
+
+  // &__item:nth-child(odd) {
+  //   background: #fafafa;
+  // }
 
 }

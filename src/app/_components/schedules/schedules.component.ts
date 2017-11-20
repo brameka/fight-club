@@ -8,6 +8,8 @@ import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 })
 export class SchedulesComponent implements AfterViewInit  {
 
+  items: any[] = [1, 2, 3, 4, 5];
+
   constructor(private slimService: SlimLoadingBarService) {}
 
   ngAfterViewInit(): void {
