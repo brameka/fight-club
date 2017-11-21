@@ -46,3 +46,8 @@ https://mattlewis92.github.io/angular-resizable-element/docs/
 https://github.com/akserg/ng2-dnd
 
 https://foundation.zurb.com/sites/docs/flex-grid.html
+
+deleted node_modules library (not sure if required)
+npm install -g @angular/cli
+npm install @angular/cli
+npm install

@@ -1,6 +1,7 @@
 <ng2-slim-loading-bar [color]="'#3f51b5'"></ng2-slim-loading-bar>
 <mat-toolbar class="app-header">
 
+  <mat-toolbar-row>
     <button mat-icon-button (click)="toggle()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -12,33 +13,29 @@
     <app-search></app-search>
 
     <span class="spacer"></span>
-
     <app-notifications [notifications]="notifications" (update)="updateNotifications()"></app-notifications>
-
     <button mat-icon-button routerLink="/schedules"><mat-icon>favorite</mat-icon></button>
     <button mat-icon-button routerLink="/drag"><mat-icon>keyboard_arrow_left</mat-icon></button>
     <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
+  </mat-toolbar-row>
 
-    <mat-toolbar-row class="action-row" *ngIf="location == '/dash'">
-
-      <button mat-button>Schedules</button>
-      <mat-icon>keyboard_arrow_right</mat-icon>
-      <button mat-button>Scheduler</button>
-
-      <div class="sub-menu">
-        <mat-tab-group>
-          <mat-tab label="FOLLOWING"></mat-tab>
-          <mat-tab label="SCHEDULER"></mat-tab>
-          <mat-tab label="TYPES"></mat-tab>
-        </mat-tab-group>
-        <div class="separator" style="margin-top: 16px;"></div>
-        <button mat-button color="primary">SCHEDULE</button>
-      </div>
-
-
-    </mat-toolbar-row>
+  <mat-toolbar-row class="action-row">
+    <button mat-button>Schedules</button>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+    <button mat-button>Scheduler</button>
+    <div class="sub-menu">
+      <mat-tab-group>
+        <mat-tab label="FOLLOWING"></mat-tab>
+        <mat-tab label="SCHEDULER"></mat-tab>
+        <mat-tab label="TYPES"></mat-tab>
+      </mat-tab-group>
+      <div class="separator" style="margin-top: 16px;"></div>
+      <button mat-button color="primary">SCHEDULE</button>
+    </div>
+  </mat-toolbar-row>
 
 </mat-toolbar>
+
 <mat-menu></mat-menu>
 
 <mat-sidenav-container fullscreen class="app-container" [ngStyle]="styles" >

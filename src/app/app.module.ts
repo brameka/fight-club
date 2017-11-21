@@ -57,7 +57,6 @@ import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarModule } from 'ap-angular2-fullcalendar';
 import { DndModule } from 'ng2-dnd';
 import { ResizableModule } from 'angular-resizable-element';
 
@@ -101,7 +100,6 @@ import { ResizableModule } from 'angular-resizable-element';
     HttpModule,
     routes,
     FlexLayoutModule,
-    CalendarModule,
     ResizableModule,
     DndModule.forRoot(),
     NgbModule.forRoot()

@@ -17,18 +17,18 @@ export class AppComponent implements OnDestroy {
   title: string;
 
   constructor (private slimLoader: SlimLoadingBarService, private router: Router) {
-    this.sub = this.router.events.subscribe(event => {
-        if (event instanceof NavigationStart) {
-            this.slimLoader.start();
-        } else if ( event instanceof NavigationEnd ||
-                    event instanceof NavigationCancel ||
-                    event instanceof NavigationError) {
-            this.location = router.url;
-            this.setStyles();
-        }
-    }, (error: any) => {
-        // this.slimLoader.complete();
-    });
+    // this.sub = this.router.events.subscribe(event => {
+    //     if (event instanceof NavigationStart) {
+    //         this.slimLoader.start();
+    //     } else if ( event instanceof NavigationEnd ||
+    //                 event instanceof NavigationCancel ||
+    //                 event instanceof NavigationError) {
+    //         this.location = router.url;
+    //         this.setStyles();
+    //     }
+    // }, (error: any) => {
+    //     // this.slimLoader.complete();
+    // });
   }
 
   setStyles() {
