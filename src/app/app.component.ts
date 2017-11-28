@@ -15,29 +15,41 @@ export class AppComponent implements OnDestroy {
   styles = {};
   location: string;
   title: string;
-
+  status: 'customers'|'customer'|'scheduler'|'default';
+  
   constructor (private slimLoader: SlimLoadingBarService, private router: Router) {
-    // this.sub = this.router.events.subscribe(event => {
-    //     if (event instanceof NavigationStart) {
-    //         this.slimLoader.start();
-    //     } else if ( event instanceof NavigationEnd ||
-    //                 event instanceof NavigationCancel ||
-    //                 event instanceof NavigationError) {
-    //         this.location = router.url;
-    //         this.setStyles();
-    //     }
-    // }, (error: any) => {
-    //     // this.slimLoader.complete();
-    // });
+    this.sub = this.router.events.subscribe(event => {
+        if (event instanceof NavigationStart) {
+            this.slimLoader.start();
+        } else if ( event instanceof NavigationEnd ||
+                    event instanceof NavigationCancel ||
+                    event instanceof NavigationError) {
+            this.location = router.url;
+            this.setStyles();
+        }
+    }, (error: any) => {
+        // this.slimLoader.complete();
+    });
   }
 
   setStyles() {
+    console.log('location: ', this.location);
     switch (this.location) {
       case '/dash': {
         this.title = 'Scheduler';
         this.styles = {
           'margin-top': '110px'
         };
+        this.status = 'scheduler';
+      }
+      break;
+
+      case '/customers': {
+        this.title = 'Customers';
+        this.styles = {
+          'margin-top': '64px'
+        };
+        this.status = 'customers';
       }
       break;
 
@@ -46,6 +58,7 @@ export class AppComponent implements OnDestroy {
         this.styles = {
           'margin-top': '64px'
         };
+        this.status = 'default';
       }
     }
   }

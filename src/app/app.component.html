@@ -19,7 +19,7 @@
     <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
   </mat-toolbar-row>
 
-  <mat-toolbar-row class="action-row">
+  <mat-toolbar-row class="action-row" *ngIf="status == 'scheduler'">
     <button mat-button>Schedules</button>
     <mat-icon>keyboard_arrow_right</mat-icon>
     <button mat-button>Scheduler</button>
@@ -28,6 +28,21 @@
         <mat-tab label="FOLLOWING"></mat-tab>
         <mat-tab label="SCHEDULER"></mat-tab>
         <mat-tab label="TYPES"></mat-tab>
+      </mat-tab-group>
+      <div class="separator" style="margin-top: 16px;"></div>
+      <button mat-button color="primary">SCHEDULE</button>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="action-row" *ngIf="status == 'customer'">
+    <button mat-button>Customers</button>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+    <button mat-button>Details</button>
+    <div class="sub-menu">
+      <mat-tab-group>
+        <mat-tab label="DETAILS"></mat-tab>
+        <mat-tab label="WORKFLOW"></mat-tab>
+        <mat-tab label="NOTIFICATIONS"></mat-tab>
       </mat-tab-group>
       <div class="separator" style="margin-top: 16px;"></div>
       <button mat-button color="primary">SCHEDULE</button>
@@ -48,27 +63,27 @@
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>language</mat-icon> Schedules
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>language</mat-icon> Schedules
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>event</mat-icon> Sessions
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>event</mat-icon> Sessions
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>fingerprint</mat-icon> Australia
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>fingerprint</mat-icon> Australia
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>person</mat-icon> Staff
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>person</mat-icon> Staff
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>people</mat-icon> Customers
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>people</mat-icon> Customers
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/schedules"><mat-icon>account_circle</mat-icon> Account
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>account_circle</mat-icon> Account
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 

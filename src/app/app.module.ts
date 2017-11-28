@@ -26,6 +26,10 @@ import {
   MatDialogModule,
   MatButtonToggleModule,
   MatTabsModule,
+  MatFormFieldModule,
+  MatTableModule,
+  MatOptionModule,
+  MatSelectModule,
   MatCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
@@ -44,6 +48,8 @@ import { CalendarActionsComponent } from './_components/calendar/calendar-action
 
 import { SchedulesComponent } from './_components/schedules/schedules.component';
 import { CustomersComponent } from './_components/customers/customers.component';
+import { CustomerComponent } from './_components/customers/customer.component';
+import { NotesComponent } from './_components/customers/notes.component';
 
 import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
 
@@ -78,6 +84,8 @@ import { ResizableModule } from 'angular-resizable-element';
     DragComponent,
     SchedulesComponent,
     CustomersComponent,
+    CustomerComponent,
+    NotesComponent,
     CalendarDraggableDirective
   ],
   imports: [
@@ -96,6 +104,10 @@ import { ResizableModule } from 'angular-resizable-element';
     MatSidenavModule,
     MatListModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatOptionModule,
+    MatSelectModule,
     FormsModule,
     HttpModule,
     routes,

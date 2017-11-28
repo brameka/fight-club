@@ -7,6 +7,7 @@ import { UsersComponent } from './_components/users.component';
 import { DragComponent } from './_components/drag.component';
 import { SchedulesComponent } from './_components/schedules/schedules.component';
 import { CustomersComponent } from './_components/customers/customers.component';
+import { CustomerComponent } from './_components/customers/customer.component';
 
 const appRoutes: Routes = [
 
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     { path: 'dash', component: DashComponent },
     { path: 'users', component: UsersComponent },
     { path: 'customers', component: CustomersComponent },
+    { path: 'customers/:id', component: CustomerComponent },
 
     // {   path: '',
     //     redirectTo: '/users',

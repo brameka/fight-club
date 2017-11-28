@@ -1,3 +1,41 @@
-<div class="app-customers">
-    customers
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      
+      <div class="app-customers">
+
+        <div class="app-customers__header">
+            <button mat-icon-button color="primary">
+              <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_left</mat-icon>
+            </button>
+            <button mat-icon-button color="primary">
+              <mat-icon aria-label="Example icon-button with a heart icon">keyboard_arrow_right</mat-icon>
+            </button>
+            <div class="spacer"></div>
+            <button color="primary" mat-raised-button>NEW <mat-icon>add</mat-icon></button>
+        </div>
+
+        <div class="app-customers__content">
+          <div class="app-customers__item" *ngFor="let contact of contacts" (click)="details(contact)">
+            Incredible Hulk
+            <span class="spacer"></span>
+            <!--<button class="app-customers__action" mat-icon-button><mat-icon>more_vert</mat-icon></button>-->
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="col-sm-3">
+      <div class="app-customers__recent-header">
+        <div class="app-customers__recent-title">
+          Latest Activity
+        </div>
+      </div>
+      <div class="app-customers__recent" *ngFor="let contact of contacts">
+        {{ contact.name }}
+      </div>
+
+    </div>
+  </div>
 </div>

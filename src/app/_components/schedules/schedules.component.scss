@@ -1,5 +1,6 @@
+@import '../../styles/variables';
+
 .app-schedules {
-  margin-top: 10px;
 
   &__card {
     flex: 1 0 200px;
@@ -19,7 +20,6 @@
     white-space: nowrap;
     padding: 4px 10px;
     border: 1px solid #dedede;
-    margin-bottom: 10px;
   }
 
   &__empty-state {
@@ -35,11 +35,12 @@
 
   &__content { 
     border: 1px solid #dedede;
+    border-top: none;
     background: #fafafa;
   }
 
   &__item {
-    padding: 5px 10px 5px 20px;
+    padding: 0 10px 0 20px;
     cursor: pointer;
     display: flex;
     box-sizing: border-box;
@@ -48,6 +49,7 @@
     align-items: center;
     white-space: nowrap;
     border-bottom: 1px dashed #eaeaea;
+    font-size: 0.8rem;
   }
 
   &__item:hover {
@@ -56,6 +58,32 @@
 
   &__action {
     color: #666;
+  }
+
+  &__recent:not(:first-child):not(:last-child) {
+    border-top: 1px solid #f9f9f9;
+    border-bottom: 1px solid #e6e5e5;
+  }
+
+  &__recent-title {
+    color: #333;
+    padding: 10px;
+    border-bottom: 1px solid #e6e5e5;
+  }
+
+  &__recent:last-child {
+    border-top: 1px solid #f9f9f9;
+  }
+
+  &__recent {
+    font-size: 0.8rem;
+    color: $primary;
+    padding: 7px;
+    cursor: pointer;
+  }
+
+  &__recent:hover {
+    background: #f5f5f5;
   }
 
   

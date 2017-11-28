@@ -1,0 +1,43 @@
+@import '../../styles/variables';
+
+.app-notes {
+    &__header {
+        background: #fafafa;
+        display: flex;
+        box-sizing: border-box;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        white-space: nowrap;
+        padding: 5px;
+        border: 1px solid #dedede;
+    }
+
+    &__header .gray-btn {
+        color: #999;
+    }
+
+    &__notes-input {
+        width: 100%;
+        border: none;
+        background: #fafafa;
+    }
+
+    &__note {
+        padding: 15px;
+        border-left: 1px solid #dedede;
+        border-right: 1px solid #dedede;
+        border-bottom: 1px dashed #dedede;
+        background: #fff;
+    }
+
+    &__heading {
+        color: #000;
+        font-size: 0.9rem;
+    }
+
+    &__text {
+        font-size: 0.9rem;
+        color: #444;
+    }
+}

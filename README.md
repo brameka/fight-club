@@ -51,3 +51,5 @@ deleted node_modules library (not sure if required)
 npm install -g @angular/cli
 npm install @angular/cli
 npm install
+
+npm install webpack
