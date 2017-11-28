@@ -1,7 +1,8 @@
 <div class="app-notes">
     <div class="app-notes__header">
         <button mat-icon-button class="gray-btn"><mat-icon>photo</mat-icon></button>
-        <input type="text" class="app-notes__notes-input form-control" placeholder="Add a comment">
+        <!--<input type="text" class="app-notes__notes-input form-control" placeholder="Add a comment">-->
+        <textarea autosize [minHeight]="0" [maxHeight]="120" class="app-notes__notes-input form-control" placeholder="Add a comment"></textarea>
         <button mat-icon-button><mat-icon>send</mat-icon></button>
     </div>
     <div class="app-notes__note" *ngFor="let note of notes">
