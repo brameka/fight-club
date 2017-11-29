@@ -16,7 +16,7 @@ export class AppComponent implements OnDestroy {
   location: string;
   title: string;
   status: 'customers'|'customer'|'scheduler'|'default';
-  
+
   constructor (private slimLoader: SlimLoadingBarService, private router: Router) {
     this.sub = this.router.events.subscribe(event => {
         if (event instanceof NavigationStart) {
@@ -25,6 +25,7 @@ export class AppComponent implements OnDestroy {
                     event instanceof NavigationCancel ||
                     event instanceof NavigationError) {
             this.location = router.url;
+            console.log('router: ', router);
             this.setStyles();
         }
     }, (error: any) => {
@@ -33,7 +34,6 @@ export class AppComponent implements OnDestroy {
   }
 
   setStyles() {
-    console.log('location: ', this.location);
     switch (this.location) {
       case '/dash': {
         this.title = 'Scheduler';
@@ -50,6 +50,15 @@ export class AppComponent implements OnDestroy {
           'margin-top': '64px'
         };
         this.status = 'customers';
+      }
+      break;
+
+      case '/customers/1': {
+        this.title = 'Customer';
+        this.styles = {
+          'margin-top': '110px'
+        };
+        this.status = 'customer';
       }
       break;
 

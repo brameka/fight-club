@@ -66,7 +66,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DndModule } from 'ng2-dnd';
 import { ResizableModule } from 'angular-resizable-element';
 
-import { Autosize } from 'ng-autosize';
+// import { Autosize } from 'ng-autosize';
+
+import { AutoresizeDirective } from './_directives/autoresize.directive';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,7 @@ import { Autosize } from 'ng-autosize';
     CustomerComponent,
     NotesComponent,
     CalendarDraggableDirective,
-    Autosize
+    AutoresizeDirective
   ],
   imports: [
     BrowserModule,
