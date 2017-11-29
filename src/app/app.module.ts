@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
 
 import { fakeBackendProvider } from './_helpers/fake-backend';
@@ -30,6 +30,7 @@ import {
   MatTableModule,
   MatOptionModule,
   MatSelectModule,
+  MatInputModule,
   MatCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
@@ -49,6 +50,7 @@ import { CalendarActionsComponent } from './_components/calendar/calendar-action
 import { SchedulesComponent } from './_components/schedules/schedules.component';
 import { CustomersComponent } from './_components/customers/customers.component';
 import { CustomerComponent } from './_components/customers/customer.component';
+import { CustomerFormComponent } from './_components/customers/customer-form.component';
 import { NotesComponent } from './_components/customers/notes.component';
 
 import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
@@ -89,6 +91,7 @@ import { AutoresizeDirective } from './_directives/autoresize.directive';
     SchedulesComponent,
     CustomersComponent,
     CustomerComponent,
+    CustomerFormComponent,
     NotesComponent,
     CalendarDraggableDirective,
     AutoresizeDirective
@@ -113,7 +116,9 @@ import { AutoresizeDirective } from './_directives/autoresize.directive';
     MatTableModule,
     MatOptionModule,
     MatSelectModule,
+    MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routes,
     FlexLayoutModule,

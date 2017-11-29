@@ -1,0 +1,59 @@
+<div class="app-customer-form">
+    <form>
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-form-field class="app-customer-form__field">
+                    <input matInput placeholder="Email" [formControl]="emailFormControl">
+                    <mat-error *ngIf="emailFormControl.hasError('pattern')">
+                    Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field class="app-customer-form__field">
+                    <input matInput placeholder="First Name" [formControl]="firstNameControl">
+                    <mat-error *ngIf="firstNameControl.hasError('required')">
+                        First name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field class="app-customer-form__field">
+                    <input matInput placeholder="Last Name" [formControl]="lastNameControl">
+                    <mat-error *ngIf="lastNameControl.hasError('required')">
+                        First name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        
+
+
+        <!--<div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" placeholder="Password">
+        </div>
+
+        <div class="form-inline">
+            <div class="form-group">
+                <label for="staticEmail2" class="sr-only">Email</label>
+                <input type="text" class="form-control-plaintext plain" value="email@example.com">
+            </div>
+            <div class="form-group mx-sm-3">
+                <label for="inputPassword2" class="sr-only">Password</label>
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+        </div>-->
+    </form>
+</div>

@@ -7,6 +7,9 @@ import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements AfterViewInit  {
+
+    mode: 'static'|'edit' = 'static';
+
     contact: any = {
         id: 3,
         name: 'Colin Farrell'
@@ -20,5 +23,13 @@ export class CustomerComponent implements AfterViewInit  {
 
     ngOnInit() {
 
+    }
+
+    status() {
+        if(this.mode === 'static') {
+            this.mode = 'edit';
+        } else {
+            this.mode = 'static';
+        }
     }
 }
