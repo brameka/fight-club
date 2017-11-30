@@ -15,6 +15,10 @@ export class CustomerFormComponent implements AfterViewInit  {
 
     firstNameControl = new FormControl('', [Validators.required]);
     lastNameControl = new FormControl('', [Validators.required]);
+    addressControl = new FormControl('', [Validators.required]);
+    suburbControl = new FormControl('', [Validators.required]);
+    cityControl = new FormControl('', [Validators.required]);
+    postcodeControl = new FormControl('', [Validators.required]);
 
     constructor() {}
 

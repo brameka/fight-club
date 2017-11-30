@@ -33,7 +33,7 @@
     justify-content: center;
   }
 
-  &__content { 
+  &__content {
     border: 1px solid #dedede;
     border-top: none;
     background: #fafafa;
@@ -61,18 +61,13 @@
   }
 
   &__recent:not(:first-child):not(:last-child) {
-    border-top: 1px solid #f9f9f9;
-    border-bottom: 1px solid #e6e5e5;
+    border-bottom: 1px solid #dcdcdc;
   }
 
   &__recent-title {
     color: #333;
     padding: 10px;
-    border-bottom: 1px solid #e6e5e5;
-  }
-
-  &__recent:last-child {
-    border-top: 1px solid #f9f9f9;
+    border-bottom: 1px solid #dcdcdc;
   }
 
   &__recent {
