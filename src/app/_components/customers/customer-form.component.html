@@ -1,20 +1,22 @@
 <div class="app-customer-form">
-    <form>
-        <div class="row">
+
+    <mat-horizontal-stepper [linear]="true">
+      <mat-step [stepControl]="personalFormGroup">
+        <form [formGroup]="personalFormGroup">
+          <div class="row">
             <div class="col-sm-12">
                 <mat-form-field class="app-customer-form__field">
-                    <input matInput placeholder="Email" [formControl]="emailFormControl">
-                    <mat-error *ngIf="emailFormControl.hasError('pattern')">
+                    <input matInput placeholder="Email" formControlName="emailFormControl">
+                    <!-- <mat-error *ngIf="personalFormGroup.emailFormControl.hasError('pattern')">
                     Please enter a valid email address
                     </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                    <mat-error *ngIf="personalFormGroup.emailFormControl.hasError('required')">
                     Email is <strong>required</strong>
-                    </mat-error>
+                    </mat-error> -->
                 </mat-form-field>
             </div>
-        </div>
-
-        <div class="row">
+          </div>
+          <!-- <div class="row">
             <div class="col-sm-6">
                 <mat-form-field class="app-customer-form__field">
                     <input matInput placeholder="First Name" [formControl]="firstNameControl">
@@ -31,45 +33,82 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-12">
+          </div>
+          <div class="row">
+              <div class="col-sm-12">
                 <mat-form-field class="app-customer-form__field">
                     <input matInput placeholder="Address" [formControl]="addressControl">
                     <mat-error *ngIf="addressControl.hasError('required')">
                         Address is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-            </div>
-        </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-4">
+                  <mat-form-field class="app-customer-form__field">
+                      <input matInput placeholder="Suburb" [formControl]="suburbControl">
+                      <mat-error *ngIf="suburbControl.hasError('required')">
+                          Suburb is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                  <mat-form-field class="app-customer-form__field">
+                      <input matInput placeholder="City/Town" [formControl]="cityControl">
+                      <mat-error *ngIf="cityControl.hasError('required')">
+                          City is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col-sm-4">
+                  <mat-form-field class="app-customer-form__field">
+                      <input matInput placeholder="Postcode" [formControl]="postcodeControl">
+                      <mat-error *ngIf="postcodeControl.hasError('required')">
+                          Postcode is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+          </div> -->
+          <button mat-button matStepperNext>Next</button>
+        </form>
 
-        <div class="row">
-            <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
-                    <input matInput placeholder="Suburb" [formControl]="suburbControl">
-                    <mat-error *ngIf="suburbControl.hasError('required')">
-                        Suburb is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
-                    <input matInput placeholder="City/Town" [formControl]="cityControl">
-                    <mat-error *ngIf="cityControl.hasError('required')">
-                        City is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </div>
-            <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
-                    <input matInput placeholder="Postcode" [formControl]="postcodeControl">
-                    <mat-error *ngIf="postcodeControl.hasError('required')">
-                        Postcode is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </div>
+      </mat-step>
+      <mat-step [stepControl]="contactFormGroup">
+        <form [formGroup]="contactFormGroup">
+          <ng-template matStepLabel>Contact Information</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Address" formControlName="secondCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
         </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -92,5 +131,5 @@
                 <input type="password" class="form-control" placeholder="Password">
             </div>
         </div>-->
-    </form>
+
 </div>

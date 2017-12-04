@@ -31,6 +31,7 @@ import {
   MatOptionModule,
   MatSelectModule,
   MatInputModule,
+  MatStepperModule,
   MatCardModule } from '@angular/material';
 
 import { DashComponent } from './dash/dash.component';
@@ -117,6 +118,7 @@ import { AutoresizeDirective } from './_directives/autoresize.directive';
     MatOptionModule,
     MatSelectModule,
     MatInputModule,
+    MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,

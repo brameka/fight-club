@@ -1,5 +1,5 @@
-import { Component, AfterViewInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -8,20 +8,29 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
   templateUrl: './customer-form.component.html',
   styleUrls: ['./customer-form.component.scss']
 })
-export class CustomerFormComponent implements AfterViewInit  {
-    emailFormControl = new FormControl('', [
+export class CustomerFormComponent implements AfterViewInit, OnInit  {
+  personalFormGroup: FormGroup;
+  contactFormGroup: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.personalFormGroup = this.formBuilder.group({
+      emailFormControl: ['', [
         Validators.required, Validators.pattern(EMAIL_REGEX)
-    ]);
+      ]],
+      firstNameControl: ['', Validators.required],
+      lastNameControl: ['', Validators.required],
+      addressControl: ['', Validators.required],
+      suburbControl: ['', Validators.required],
+      cityControl: ['', Validators.required],
+      postcodeControl: ['', Validators.required]
+    });
+    this.contactFormGroup = this.formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+  }
 
-    firstNameControl = new FormControl('', [Validators.required]);
-    lastNameControl = new FormControl('', [Validators.required]);
-    addressControl = new FormControl('', [Validators.required]);
-    suburbControl = new FormControl('', [Validators.required]);
-    cityControl = new FormControl('', [Validators.required]);
-    postcodeControl = new FormControl('', [Validators.required]);
-
-    constructor() {}
-
-    ngAfterViewInit() {
-    }
+  ngAfterViewInit() {
+  }
 }
