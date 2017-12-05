@@ -20,6 +20,7 @@ export class CustomerFormComponent implements AfterViewInit, OnInit  {
         Validators.required, Validators.pattern(EMAIL_REGEX)
       ]],
       firstNameControl: ['', Validators.required],
+      middleNameControl: ['', Validators.required],
       lastNameControl: ['', Validators.required],
       addressControl: ['', Validators.required],
       suburbControl: ['', Validators.required],
