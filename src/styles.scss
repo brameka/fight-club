@@ -17,15 +17,14 @@ body {
 }
 
 .mat-form-field-underline {
-    background-color: #fff;
-    border-bottom: 0.5px dashed #cccccc
+  background-color: #fff;
+  border-bottom: 0.5px dashed #cccccc
 }
 
 .mat-raised-button .material-icons {
   line-height: 20px;
 }
 
-// Menu
 .mat-menu-item-highlighted:not([disabled]), .mat-menu-item:focus:not([disabled]), .mat-menu-item:hover:not([disabled]) {
     // font-weight: 500;
     color: #212121;

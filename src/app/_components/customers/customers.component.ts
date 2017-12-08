@@ -19,7 +19,7 @@ export class CustomersComponent implements AfterViewInit  {
       id: 3,
       name: 'Colin Farrell'
     }
-  ]
+  ];
 
   constructor(private slimService: SlimLoadingBarService, private router: Router) {}
 
@@ -27,7 +27,7 @@ export class CustomersComponent implements AfterViewInit  {
     this.slimService.complete();
   }
 
-  ngOnInit() {
+  // ngOnInit() {
     // Observable.fromEvent(this.filter.nativeElement, 'keyup')
     //     .debounceTime(150)
     //     .distinctUntilChanged()
@@ -35,7 +35,7 @@ export class CustomersComponent implements AfterViewInit  {
     //       if (!this.dataSource) { return; }
     //       this.dataSource.filter = this.filter.nativeElement.value;
     //     });
-  }
+  // }
 
   details(customer: any) {
     this.router.navigate(['/customers/', customer.id]);

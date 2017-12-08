@@ -1,0 +1,15 @@
+<mat-form-field>
+  <input
+    matInput
+    placeholder="{{ placeholder }}"
+    (blur)="inputChanged($event)"
+    [formControl]="dateControl"
+    [matDatepicker]="picker"
+    [matDatepickerFilter]="dateFilter"
+  >
+  <mat-error *ngIf="!dateValid">Invalid Date</mat-error>
+  <mat-error *ngIf="!dateInRange">Date is out of range</mat-error>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker (selectedChanged)="selectedChanged($event)"></mat-datepicker>
+</mat-form-field>
+

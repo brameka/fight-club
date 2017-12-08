@@ -21,12 +21,8 @@ export class CustomerComponent implements AfterViewInit  {
         this.slimService.complete();
     }
 
-    ngOnInit() {
-
-    }
-
     status() {
-        if(this.mode === 'static') {
+        if (this.mode === 'static') {
             this.mode = 'edit';
         } else {
             this.mode = 'static';

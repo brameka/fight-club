@@ -11,24 +11,49 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 export class CustomerFormComponent implements AfterViewInit, OnInit  {
   personalFormGroup: FormGroup;
   contactFormGroup: FormGroup;
+  isLinear = false;
+
+  roles: any[] = [
+    'Adult',
+    'Child',
+    'Other',
+    'Guarantor',
+    'Policy Owner'
+  ];
+
+  titles: any[] = [
+    'Mr',
+    'Mrs',
+    'Ms',
+    'Miss',
+    'Dr'
+  ];
+
+  genders: any[] = [ 'Male', 'Female' ];
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit() {
     this.personalFormGroup = this.formBuilder.group({
-      emailFormControl: ['', [
+      email: ['', [
         Validators.required, Validators.pattern(EMAIL_REGEX)
       ]],
-      firstNameControl: ['', Validators.required],
-      middleNameControl: ['', Validators.required],
-      lastNameControl: ['', Validators.required],
-      addressControl: ['', Validators.required],
-      suburbControl: ['', Validators.required],
-      cityControl: ['', Validators.required],
-      postcodeControl: ['', Validators.required]
+      firstname: ['', Validators.required],
+      middlename: [''],
+      surname: ['', Validators.required],
+      preferred: [''],
+      gender: ['', Validators.required],
+      role: [''],
+      title: [''],
+      dob: ['', Validators.required]
     });
     this.contactFormGroup = this.formBuilder.group({
-      secondCtrl: ['', Validators.required]
+      homePhone: ['', Validators.required],
+      businessPhone: [''],
+      mobilePhone: [''],
+      time: [''],
+      occupation: [''],
+      company: ['']
     });
   }
 

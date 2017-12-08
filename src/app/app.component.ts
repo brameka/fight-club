@@ -25,7 +25,6 @@ export class AppComponent implements OnDestroy {
                     event instanceof NavigationCancel ||
                     event instanceof NavigationError) {
             this.location = router.url;
-            console.log('router: ', router);
             this.setStyles();
         }
     }, (error: any) => {

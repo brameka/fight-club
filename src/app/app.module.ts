@@ -15,25 +15,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { routes } from './app.routes';
 
-import {
-  MatIconModule,
-  MatToolbarModule,
-  MatButtonModule,
-  MatCheckboxModule,
-  MatMenuModule,
-  MatSidenavModule,
-  MatListModule,
-  MatDialogModule,
-  MatButtonToggleModule,
-  MatTabsModule,
-  MatFormFieldModule,
-  MatTableModule,
-  MatOptionModule,
-  MatSelectModule,
-  MatInputModule,
-  MatStepperModule,
-  MatCardModule } from '@angular/material';
-
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
 import { NotificationsComponent } from './ui/notifications/notifications.component';
@@ -55,23 +36,21 @@ import { CustomerFormComponent } from './_components/customers/customer-form.com
 import { NotesComponent } from './_components/customers/notes.component';
 
 import { BlockDialogComponent } from './_components/calendar/calendar-block.component';
-
 import { DragComponent } from './_components/drag.component';
-
 import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
-
 import { AuthGuard } from './_guards/auth.guard';
 import { AuthenticationService } from './_services/authentication.service';
 import { UserService } from './_services/user.service';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DndModule } from 'ng2-dnd';
 import { ResizableModule } from 'angular-resizable-element';
-
-// import { Autosize } from 'ng-autosize';
-
 import { AutoresizeDirective } from './_directives/autoresize.directive';
+
+import { ComponentsModule } from './ui/components/components.module';
+import { MaterialComponentsModule } from './ui/material.module';
+
+
 
 @NgModule({
   declarations: [
@@ -101,30 +80,15 @@ import { AutoresizeDirective } from './_directives/autoresize.directive';
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatDialogModule,
-    MatButtonToggleModule,
-    MatTabsModule,
     SlimLoadingBarModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatListModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatTableModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatInputModule,
-    MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
     routes,
     FlexLayoutModule,
     ResizableModule,
+    ComponentsModule,
+    MaterialComponentsModule,
     DndModule.forRoot(),
     NgbModule.forRoot()
   ],
