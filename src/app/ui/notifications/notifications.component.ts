@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
 import { Router } from '@angular/router';
-import { NotificationData } from '../../_models/notification';
+import { NotificationData } from '../../models/notification';
 
 
 @Component({

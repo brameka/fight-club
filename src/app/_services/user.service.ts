@@ -1,10 +1,10 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { AuthenticationService } from './authentication.service';
-import { User } from '../_models/user';
+import { User } from '../models/user';
 
 @Injectable()
 export class UserService {

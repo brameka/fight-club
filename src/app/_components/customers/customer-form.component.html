@@ -127,7 +127,7 @@
           <div class="row app-customer-form__actions">
               <div class="spacer"></div>
               <button mat-button matStepperPrevious class="app-customer-form__back">Back</button>
-              <button mat-button color="primary" mat-raised-button>Save</button>
+              <button mat-button color="primary" mat-raised-button (click)='save()' [disabled]="this.personalFormGroup.valid === false">Save</button>
           </div>
         </form>
       </mat-step>

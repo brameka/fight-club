@@ -51,6 +51,16 @@ import { ComponentsModule } from './ui/components/components.module';
 import { MaterialComponentsModule } from './ui/material.module';
 
 
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
+
+import { environment } from '../environments/environment';
+export const firebaseConfig = environment.firebase;
+
+import { StateModule } from './state/state.module';
+
 
 @NgModule({
   declarations: [
@@ -89,6 +99,7 @@ import { MaterialComponentsModule } from './ui/material.module';
     ResizableModule,
     ComponentsModule,
     MaterialComponentsModule,
+    StateModule,
     DndModule.forRoot(),
     NgbModule.forRoot()
   ],

@@ -35,6 +35,9 @@
               </div>
               <div class="col-9">44 Mesa Link, Baldivis, Perth 6171</div>
           </div>
+          <div class="row">
+            <button mat-button color="primary" mat-raised-button (click)="getCustomer()">Save</button>
+          </div>
         </div>
 
         <div class="app-customer__details" *ngIf="mode == 'edit'">
