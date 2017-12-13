@@ -6,17 +6,20 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CustomerEffects } from './customer/customer.effects';
 import { customerReducer } from './customer/customer.reducer';
 
-const modules = [
-  EffectsModule,
-  StoreModule,
-  StoreDevtoolsModule
+import { NotificationEffects } from './notification/notification.effects';
+import { notificationReducer } from './notification/notification.reducer';
+
+const effects = [
+  CustomerEffects,
+  NotificationEffects
 ];
 
 @NgModule({
   imports: [
-    EffectsModule.forRoot([CustomerEffects]),
+    EffectsModule.forRoot([...effects]),
     StoreModule.forRoot({
-      customer: customerReducer
+      customer: customerReducer,
+      notification: notificationReducer
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ]

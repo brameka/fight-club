@@ -22,3 +22,17 @@ export enum SnackType {
   warning,
   error
 }
+
+enum Priority {
+  High = 1,
+  Medium = 2,
+  Low = 3
+}
+
+export enum NotificationClasses {
+  notification = 'app-snackbar-notification',
+  default = 'app-snackbar-notification__block--default',
+  success = 'app-snackbar-notification__block--success',
+  error = 'app-snackbar-notification__block--error',
+  warning = 'app-snackbar-notification__block--warning'
+}

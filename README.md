@@ -53,3 +53,6 @@ npm install @angular/cli
 npm install
 
 npm install webpack
+
+npm-install firebase 
+https://github.com/grpc/grpc/issues/11239

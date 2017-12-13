@@ -40,8 +40,8 @@ import { DragComponent } from './_components/drag.component';
 import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { AuthGuard } from './_guards/auth.guard';
-import { AuthenticationService } from './_services/authentication.service';
-import { UserService } from './_services/user.service';
+import { AuthenticationService } from './services/authentication.service';
+import { UserService } from './services/user.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DndModule } from 'ng2-dnd';
 import { ResizableModule } from 'angular-resizable-element';
@@ -50,17 +50,14 @@ import { AutoresizeDirective } from './_directives/autoresize.directive';
 import { ComponentsModule } from './ui/components/components.module';
 import { MaterialComponentsModule } from './ui/material.module';
 
-
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireDatabaseModule } from 'angularfire2/database';
-
-
 
 import { environment } from '../environments/environment';
 export const firebaseConfig = environment.firebase;
 
 import { StateModule } from './state/state.module';
-
+import { ServicesModule } from './services/services.module';
 
 @NgModule({
   declarations: [
@@ -100,13 +97,12 @@ import { StateModule } from './state/state.module';
     ComponentsModule,
     MaterialComponentsModule,
     StateModule,
+    ServicesModule,
     DndModule.forRoot(),
     NgbModule.forRoot()
   ],
   providers: [
     AuthGuard,
-    AuthenticationService,
-    UserService,
     fakeBackendProvider,
     MockBackend,
     BaseRequestOptions

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Store, Action } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -8,13 +9,14 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/delay';
 
 import * as customerActions from './customer.actions';
+import * as notificationActions from '../notification/notification.actions';
 
 export type Action = customerActions.All;
 
 @Injectable()
 export class CustomerEffects {
 
-  constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions, private store$: Store<object>) {}
 
   @Effect()
   getCustomer$: Observable<Action> = this.actions$.ofType(customerActions.GET_CUSTOMER)
@@ -34,6 +36,8 @@ export class CustomerEffects {
   createCustomer$: Observable<Action> = this.actions$.ofType(customerActions.CREATE_CUSTOMER)
     .map((action: customerActions.CreateCustomer) => action.payload )
     .mergeMap(payload => [
+      console.log('notify store'),
+      this.store$.dispatch(new notificationActions.Notify({ message: 'New tag successfully created', type: 'success' })),
       console.log('create user')
     ])
     .map(() => new customerActions.CreateCustomerSuccess())
