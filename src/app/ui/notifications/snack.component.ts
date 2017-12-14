@@ -3,6 +3,7 @@ import { SnackType } from '../../models/notification';
 
 @Component({
   selector: 'app-notification',
+  styleUrls: ['./snack.component.scss'],
   template: `
   <mat-icon *ngIf="isSuccess" matSuffix class="app-snackbar-notification__icon app-snackbar-notification__icon--success">
     done
@@ -11,7 +12,7 @@ import { SnackType } from '../../models/notification';
   <mat-icon *ngIf="isError" matSuffix class="app-snackbar-notification__icon app-snackbar-notification__icon--error">error</mat-icon>
   {{ message }}`
 })
-export class SnackbarNotificationComponent {
+export class SnackComponent {
   message: string;
   icon: string;
   type: SnackType = SnackType.success;

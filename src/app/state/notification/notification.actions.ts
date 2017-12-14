@@ -1,12 +1,18 @@
 import { Action } from '@ngrx/store';
 import { Notification } from '../../models/notification';
 
-export const NOTIFY = 'Notify';
+export const SHOW_NOTIFICATION = 'Show Notification';
+export const SHOW_NOTIFICATION_SUCCESS = 'Show Notification Success';
 
-export class Notify implements Action {
-  readonly type = NOTIFY;
+export class ShowNotification implements Action {
+  readonly type = SHOW_NOTIFICATION;
   constructor(public payload: Notification) {}
 }
 
+export class ShowNotificationSuccess implements Action {
+  readonly type = SHOW_NOTIFICATION_SUCCESS;
+}
+
 export type All
-  = Notify;
+  = ShowNotification
+  | ShowNotificationSuccess;

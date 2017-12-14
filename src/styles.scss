@@ -154,3 +154,39 @@ code {
     background: transparent;
 }
 
+.cdk-overlay-pane .app-snackbar-notification {
+  color: $true-black;
+  padding: 20px 32px;
+
+  &__block--success {
+    background: $success-background;
+  }
+
+  &__block--error {
+    background: $error-background;
+  }
+
+  &__block--warning {
+    background: $warning-background;
+  }
+
+  &__icon {
+    vertical-align: middle;
+    line-height: 20px;
+    margin-right: 10px;
+
+    &--success {
+      color: $success;
+    }
+
+    &--error {
+      color: $error;
+    }
+
+    &--warning {
+      color: $warning;
+    }
+  }
+
+}
+

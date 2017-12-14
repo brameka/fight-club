@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UiDatePickerComponent } from './date-picker/ui-date-picker.component';
-import { MaterialComponentsModule } from '../material.module';
+import { UiDatePickerComponent } from './components/date-picker/ui-date-picker.component';
+import { MaterialComponentsModule } from './material.module';
+import { SnackComponent } from './notifications/snack.component';
 
 const components = [
-  UiDatePickerComponent
+  UiDatePickerComponent,
+  SnackComponent
 ];
 
 @NgModule({
@@ -21,6 +23,9 @@ const components = [
     ReactiveFormsModule,
     MaterialComponentsModule,
     ...components,
+  ],
+  entryComponents: [
+    SnackComponent
   ]
 })
 export class ComponentsModule {}

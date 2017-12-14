@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs/Rx';
 import { Notification, SnackType, NotificationClasses } from '../models/notification';
-import { SnackbarNotificationComponent } from '../ui/notifications/snack.component';
+import { SnackComponent } from '../ui/notifications/snack.component';
 
 @Injectable()
 export class NotificationService {
@@ -13,7 +13,8 @@ export class NotificationService {
     const duration = 3000;
     const notificationClass = this.getClass(type);
     const classes = [NotificationClasses.notification, notificationClass];
-    const snackBarRef = this.snackBar.openFromComponent(SnackbarNotificationComponent, {
+    console.log('classes: ', classes);
+    const snackBarRef = this.snackBar.openFromComponent(SnackComponent, {
       duration,
       extraClasses: classes
     });

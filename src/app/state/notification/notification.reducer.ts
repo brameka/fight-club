@@ -1,5 +1,5 @@
 import * as NotificationActions from './notification.actions';
-import { Customer } from '../../models/customer';
+import { Notification } from '../../models/notification';
 
 export interface NotificationState {
   active: boolean;
@@ -13,7 +13,7 @@ export type Action = NotificationActions.All;
 
 export function notificationReducer(state: NotificationState = initialState, action: Action): NotificationState {
   switch (action.type) {
-    case NotificationActions.NOTIFY:
+    case NotificationActions.SHOW_NOTIFICATION:
       return { ...state, active: true };
     default:
       return state;

@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Customer } from '../../models/customer';
 import * as actions from '../../state/customer/customer.actions';
+import * as notifications from '../../state/notification/notification.actions';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -72,6 +73,10 @@ export class CustomerFormComponent implements AfterViewInit, OnInit  {
       mobile: '0456569896',
       email: 'bronson.rameka@gmail.com'
     };
-    this.store.dispatch(new actions.CreateCustomer(this.customer));
+    // this.store.dispatch(new actions.CreateCustomer(this.customer));
+    this.store.dispatch(new notifications.ShowNotification({
+      message: 'hello',
+      type: 'success'
+    }));
   }
 }

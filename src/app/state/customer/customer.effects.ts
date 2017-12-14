@@ -11,12 +11,14 @@ import 'rxjs/add/operator/delay';
 import * as customerActions from './customer.actions';
 import * as notificationActions from '../notification/notification.actions';
 
+import { CustomerService } from '../../services/customer.service';
+
 export type Action = customerActions.All;
 
 @Injectable()
 export class CustomerEffects {
 
-  constructor(private actions$: Actions, private store$: Store<object>) {}
+  constructor(private actions$: Actions, private store$: Store<object>, private service: CustomerService) {}
 
   @Effect()
   getCustomer$: Observable<Action> = this.actions$.ofType(customerActions.GET_CUSTOMER)
@@ -34,14 +36,33 @@ export class CustomerEffects {
 
   @Effect()
   createCustomer$: Observable<Action> = this.actions$.ofType(customerActions.CREATE_CUSTOMER)
-    .map((action: customerActions.CreateCustomer) => action.payload )
-    .mergeMap(payload => [
-      console.log('notify store'),
-      this.store$.dispatch(new notificationActions.Notify({ message: 'New tag successfully created', type: 'success' })),
-      console.log('create user')
-    ])
-    .map(() => new customerActions.CreateCustomerSuccess())
-    .catch(err => of (new customerActions.CreateCustomerFail({ error: err.message })) );
+    .switchMap((action: any) => this.service.createCustomer(action.payload)
+      .mergeMap(res => [
+        new notificationActions.ShowNotification({ message: 'New tag successfully created', type: 'success' }),
+        new customerActions.CreateCustomerSuccess()
+      ])
+      .do((respAction: customerActions.CreateCustomerSuccess) => {
+        console.log('navigate to new customer');
+        // if (respAction.payload.id) {
+        //   this.router.navigate(['/crm/users/' + respAction.payload.id + '/edit/']);
+        // }
+      })
+      .catch(error => {
+        console.log('failed: ', error);
+        return Observable.of(new customerActions.CreateCustomerFail(error));
+      })
+  );
+
+
+
+  // .map((action: customerActions.CreateCustomer) => action.payload )
+  // .mergeMap(payload => [
+  //   console.log('notify store'),
+  //   this.store$.dispatch(new notificationActions.Notify({ message: 'New tag successfully created', type: 'success' })),
+  //   console.log('create user')
+  // ])
+  // .map(() => new customerActions.CreateCustomerSuccess())
+  // .catch(err => of (new customerActions.CreateCustomerFail({ error: err.message })) );
 
   // @Effect()
   // createCustomer$: Observable<Action> = this.actions$.ofType(customerActions.CREATE_CUSTOMER)

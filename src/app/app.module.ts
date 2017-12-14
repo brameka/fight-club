@@ -4,31 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
-
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { MockBackend, MockConnection } from '@angular/http/testing';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 import { routes } from './app.routes';
-
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
 import { NotificationsComponent } from './ui/notifications/notifications.component';
 import { TopBarMenuComponent } from './ui/top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './ui/search/search.component';
 import { UsersComponent } from './_components/users.component';
-
 import { DayCalendarComponent } from './_components/calendar/day-calendar.component';
 import { CalendarBlockComponent } from './_components/calendar/calendar-block.component';
 import { CalendarDraggableDirective } from './_components/calendar/calendar-draggable';
 import { CalendarCellComponent } from './_components/calendar/calendar-cell.component';
 import { CalendarBarComponent } from './_components/calendar/calendar-bar.component';
 import { CalendarActionsComponent } from './_components/calendar/calendar-actions.component';
-
 import { SchedulesComponent } from './_components/schedules/schedules.component';
 import { CustomersComponent } from './_components/customers/customers.component';
 import { CustomerComponent } from './_components/customers/customer.component';
@@ -47,7 +39,7 @@ import { DndModule } from 'ng2-dnd';
 import { ResizableModule } from 'angular-resizable-element';
 import { AutoresizeDirective } from './_directives/autoresize.directive';
 
-import { ComponentsModule } from './ui/components/components.module';
+import { ComponentsModule } from './ui/components.module';
 import { MaterialComponentsModule } from './ui/material.module';
 
 // import { AngularFireModule } from 'angularfire2';
@@ -86,7 +78,6 @@ import { ServicesModule } from './services/services.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     SlimLoadingBarModule,
     FormsModule,
     ReactiveFormsModule,

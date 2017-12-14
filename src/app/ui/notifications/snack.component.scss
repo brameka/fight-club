@@ -1,8 +1,14 @@
 @import '../../styles/variables';
 
+.app-snackbar-notification {
+  background: #ff0000 !important;
+}
+
+
 .cdk-overlay-pane .app-snackbar-notification {
   color: $true-black;
   padding: 20px 32px;
+
 
   &__block--success {
     background: $success-background;

@@ -22,7 +22,7 @@ import {
   MatSnackBarModule,
   MatCardModule } from '@angular/material';
 
-const components = [
+const modules = [
   MatIconModule,
   MatToolbarModule,
   MatButtonModule,
@@ -47,10 +47,10 @@ const components = [
 
 @NgModule({
   imports: [
-    ...components
+    ...modules
   ],
   exports: [
-    ...components
+    ...modules
   ]
 })
 export class MaterialComponentsModule {}
