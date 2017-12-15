@@ -1,20 +1,19 @@
 import { Routes, RouterModule } from '@angular/router';
-
-import { LoginComponent } from './login/login.component';
-import { DashComponent } from './dash/dash.component';
-import { AuthGuard } from './_guards/auth.guard';
-import { UsersComponent } from './_components/users.component';
-import { DragComponent } from './_components/drag.component';
-import { SchedulesComponent } from './_components/schedules/schedules.component';
-import { CustomersComponent } from './_components/customers/customers.component';
-import { CustomerComponent } from './_components/customers/customer.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashComponent } from './components/dash/dash.component';
+import { AuthGuard } from './guards/auth.guard';
+import { UsersComponent } from './components/users.component';
+import { DragComponent } from './components/drag.component';
+import { SchedulesComponent } from './components/schedules/schedules.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { CustomerComponent } from './components/customers/customer.component';
 
 const appRoutes: Routes = [
 
-    { path: 'schedules', component: SchedulesComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'dash', component: DashComponent },
-    { path: 'users', component: UsersComponent },
+    { path: 'schedules', component: CustomersComponent },
+    { path: 'login', component: CustomersComponent },
+    { path: 'dash', component: CustomersComponent },
+    { path: 'users', component: CustomersComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'customers/:id', component: CustomerComponent },
 
@@ -28,4 +27,4 @@ const appRoutes: Routes = [
     { path: '**', redirectTo: '' }
 ];
 
-export const routes = RouterModule.forRoot(appRoutes);
+export const routes = RouterModule.forRoot(appRoutes, { useHash: true });

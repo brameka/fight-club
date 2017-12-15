@@ -4,10 +4,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiDatePickerComponent } from './components/date-picker/ui-date-picker.component';
 import { MaterialComponentsModule } from './material.module';
 import { SnackComponent } from './notifications/snack.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { TopBarMenuComponent } from './top-bar-menu/top-bar-menu.component';
+import { SearchComponent } from './search/search.component';
 
 const components = [
   UiDatePickerComponent,
-  SnackComponent
+  SnackComponent,
+  NotificationsComponent,
+  TopBarMenuComponent,
+  SearchComponent
 ];
 
 @NgModule({
@@ -28,4 +34,4 @@ const components = [
     SnackComponent
   ]
 })
-export class ComponentsModule {}
+export class UiComponentsModule {}

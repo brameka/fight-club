@@ -1,6 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { CustomerCreateDialogComponent } from './customer-create-dialog-component';
 
 @Component({
   selector: 'app-customers',
@@ -21,21 +23,22 @@ export class CustomersComponent implements AfterViewInit  {
     }
   ];
 
-  constructor(private slimService: SlimLoadingBarService, private router: Router) {}
+  constructor(private slimService: SlimLoadingBarService, private router: Router, public dialog: MatDialog) {}
 
   ngAfterViewInit() {
     this.slimService.complete();
   }
 
-  // ngOnInit() {
-    // Observable.fromEvent(this.filter.nativeElement, 'keyup')
-    //     .debounceTime(150)
-    //     .distinctUntilChanged()
-    //     .subscribe(() => {
-    //       if (!this.dataSource) { return; }
-    //       this.dataSource.filter = this.filter.nativeElement.value;
-    //     });
-  // }
+  create (): void {
+    const width = '800px';
+    const ref = this.dialog.open(CustomerCreateDialogComponent, {
+      width: width
+    });
+
+    ref.afterClosed().subscribe(result => {
+    });
+  }
+
 
   details(customer: any) {
     this.router.navigate(['/customers/', customer.id]);

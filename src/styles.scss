@@ -187,6 +187,9 @@ code {
       color: $warning;
     }
   }
+}
 
+.mat-stepper-horizontal-line {
+  flex: none !important;
 }
 
