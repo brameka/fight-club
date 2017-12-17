@@ -23,6 +23,10 @@ import { BlockDialogComponent } from './calendar/calendar-block.component';
 import { DragComponent } from './drag.component';
 import { AutoresizeDirective } from '../directives/autoresize.directive';
 
+import { InsuranceSummaryComponent } from './insurance/insurance-summary.component';
+import { TableSpikeComponent } from './insurance/table-spike.component';
+import { InsuranceComponent } from './insurance/insurance.component';
+
 const components = [
   DashComponent,
   LoginComponent,
@@ -32,18 +36,11 @@ const components = [
   CustomerFormComponent,
   CustomerCreateDialogComponent,
   NotesComponent,
+  InsuranceSummaryComponent,
+  InsuranceComponent,
+  TableSpikeComponent,
   AutoresizeDirective
 ];
-
-// CalendarDraggableDirective,
-// DayCalendarComponent,
-// CalendarBlockComponent,
-// CalendarCellComponent,
-// CalendarBarComponent,
-// CalendarActionsComponent,
-// DragComponent,
-// SchedulesComponent,
-// BlockDialogComponent,
 
 @NgModule({
   imports: [

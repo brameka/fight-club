@@ -1,0 +1,14 @@
+<div class="app-insurance__header">
+    <mat-icon class="app-insurance__avatar-icon">assignment_turned_in</mat-icon>
+    <div class="app-insurance__header-details">
+        <h4>Insurance</h4>
+    </div>
+    <div class="spacer"></div>
+    <button mat-icon-button (click)="show()"><mat-icon>more_vert</mat-icon></button>
+</div>
+
+<div class="app-insurance__details">
+    <div class="app-insurance__item" *ngFor="let item of items">
+        {{item.title}} 
+    </div>
+</div>

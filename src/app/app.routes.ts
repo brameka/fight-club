@@ -7,6 +7,7 @@ import { DragComponent } from './components/drag.component';
 import { SchedulesComponent } from './components/schedules/schedules.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CustomerComponent } from './components/customers/customer.component';
+import { InsuranceComponent } from './components/insurance/insurance.component';
 
 const appRoutes: Routes = [
 
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'users', component: CustomersComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'customers/:id', component: CustomerComponent },
+    { path: 'customers/:id/insurance', component: InsuranceComponent },
 
     // {   path: '',
     //     redirectTo: '/users',

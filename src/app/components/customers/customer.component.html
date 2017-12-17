@@ -1,6 +1,12 @@
 
 <div class="container app-customer">
-  <div class="row">
+  <div *ngIf="mode == 'insurance'" class="row">
+      <div class="col-sm-8">
+          <app-table-spike></app-table-spike>
+      </div>
+  </div>
+
+  <div *ngIf="mode != 'insurance'" class="row">
     <div class="col-sm-8">
         <div class="app-customer__header">
             <mat-icon class="app-customer__avatar-icon">account_circle</mat-icon>
@@ -33,18 +39,22 @@
               <div class="col-3">
                   <span class="app-customer__label">Address:</span>
               </div>
-              <div class="col-9">44 Mesa Link, Baldivis, Perth 6171</div>
+              <div class="col-9">
+                  44 Mesa Link, Baldivis, Perth 6171
+              </div>
           </div>
         </div>
         <div class="app-customer__details" *ngIf="mode == 'edit'">
             <app-customer-form></app-customer-form>
         </div>
 
+        <app-insurance-summary (update)="update()"></app-insurance-summary>
+
         <app-notes></app-notes>
 
     </div>
     <div class="col-sm-4">
-
+        
     </div>
   </div>
 </div>

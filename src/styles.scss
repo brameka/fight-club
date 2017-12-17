@@ -66,12 +66,6 @@ label.mat-button-toggle-label {
     color: $primary;
 }
 
-.mat-menu-content {
-    width: 250px;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-
 .navbar-list {
     list-style: none;
     margin-bottom: 0;
@@ -193,3 +187,45 @@ code {
   flex: none !important;
 }
 
+
+//Page specific material stuff
+.app-insurance__container {
+  .mat-paginator-container {
+      border: 1px solid #dedede;
+      border-top: none;
+  }
+
+  .mat-menu-item {
+      font-size: 14px;
+  }
+
+
+}
+
+.specific-page {
+    .mat-menu-content {
+        width: 250px;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+.insurance-actions {
+    .mat-menu-item {
+        font-size: 14px;
+    }
+
+    .material-icons {
+        font-size: 20px;
+    }
+
+    .mat-menu-item .mat-icon {
+        margin-right: 10px;
+    }
+}
+
+.app-customer-form {
+    .mat-form-field {
+        width: inherit;
+    }
+}
