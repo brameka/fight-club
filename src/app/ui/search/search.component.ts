@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs/Rx';
 import { Router } from '@angular/router';
 
@@ -9,8 +10,29 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent implements OnChanges, OnDestroy, OnInit {
   @Output() update = new EventEmitter();
+  @Input() placeholder: string;
+  searchField: FormControl;
+  form: FormGroup;
 
-  constructor (private router: Router) {}
+  constructor (private router: Router, private formBuilder: FormBuilder) {
+    this.searchField = new FormControl();
+    this.form = formBuilder.group({search: this.searchField});
+
+    this.searchField.valueChanges
+    .debounceTime(500)
+    .distinctUntilChanged()
+    .subscribe(term => {
+      this.update.emit(term);
+    });
+
+    // this.searchField.valueChanges
+    // .debounceTime(400)
+    //   .switchMap(term => this.searchService.search(term))
+    //   .subscribe((result) => {
+    //       this.result = result.artists.items
+    //   });
+
+  }
 
   ngOnInit () {
   }

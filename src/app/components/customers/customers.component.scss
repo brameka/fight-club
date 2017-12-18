@@ -1,84 +1,101 @@
 @import '../../styles/variables';
 
 .app-customers {
-
-  &__card {
-    flex: 1 0 200px;
-    flex: 1 0 280px;
-    margin: 10px;
-    box-sizing: border-box;
-    max-width: 300px;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 
   &__header {
-    background: #fafafa;
+    background: #fff;
     display: flex;
     box-sizing: border-box;
     width: 100%;
     flex-direction: row;
     align-items: center;
     white-space: nowrap;
-    padding: 4px 10px;
+    padding: 4px 4px 4px 6px;
     border: 1px solid #dedede;
+    margin-bottom: 10px;
   }
 
-  &__empty-state {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column; /* works with row or column */
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+  &__header--total {
+    color: $primary;
+    font-weight: 600;
   }
 
-  &__content {
-    border: 1px solid #dedede;
-    border-top: none;
+  .mat-header-row {
     background: #fafafa;
+    padding: 1px 10px 1px 20px;
+    color: inherit;
   }
 
-  &__item {
-    padding: 10px 10px 10px 20px;
+  .mat-header-cell {
+    color: inherit;
+  }
+
+  .mat-row {
+    padding: 1px 10px 1px 20px;
     cursor: pointer;
-    display: flex;
-    box-sizing: border-box;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    white-space: nowrap;
     border-bottom: 1px dashed #eaeaea;
     font-size: 0.9rem;
   }
 
-  &__item:hover {
-    background: rgba(0,0,0,.01);
+  .mat-header-row, .mat-row {
+    min-height: 36px;
   }
 
-  &__action {
-    color: #666;
+  .mat-table {
+      border: 1px solid #dedede;
+      border-bottom: none;
+      overflow: auto;
   }
 
-  &__recent:not(:first-child):not(:last-child) {
-    border-bottom: 1px solid #dcdcdc;
+  .actions-cell {
+      flex: 0.15;
   }
 
-  &__recent-title {
-    color: #333;
-    padding: 10px;
-    border-bottom: 1px solid #dcdcdc;
+  .name-cell {
+    // flex: 3;
   }
 
-  &__recent {
-    font-size: 0.9rem;
+  .name-cell-value {
     color: $primary;
-    padding: 7px;
-    cursor: pointer;
+    font-weight: 600;
   }
 
-  &__recent:hover {
-    background: #f5f5f5;
+  .mat-cell {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .flx-1 {
+    flex: 1;
+  }
+
+  .flx-2 {
+    flex: 2;
+  }
+
+  .flx-3 {
+    flex: 2;
+  }
+
+  .flx--6 {
+    flex: 0.6;
+  }
+
+  .flx--4 {
+    flex: 0.4;
+  }
+
+  .mat-paginator {
+    border: 1px solid #dedede;
+    border-top: none;
+  }
+
+  .mat-sort-header-arrow {
+    margin: 3px 0 0 6px;
   }
 
 }

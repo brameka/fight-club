@@ -229,3 +229,15 @@ code {
         width: inherit;
     }
 }
+
+//margins:
+.mr5 {
+  margin-right: 5px !important;
+}
+
+//Hacks:
+
+//Fix for sorting arrows on table
+.mat-sort-header-arrow {
+  margin: 3px 0 0 6px !important;
+}

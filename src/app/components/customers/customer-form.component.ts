@@ -37,7 +37,7 @@ export class CustomerFormComponent implements AfterViewInit, OnInit  {
 
   genders: any[] = [ 'Male', 'Female' ];
 
-  constructor(private formBuilder: FormBuilder, private store: Store<object>) {}
+  constructor(private formBuilder: FormBuilder, private store: Store<object>) { }
 
   ngOnInit() {
     this.personalFormGroup = this.formBuilder.group({
@@ -68,15 +68,13 @@ export class CustomerFormComponent implements AfterViewInit, OnInit  {
 
   save() {
     this.customer = {
+      name: 'test',
       firstname: 'test',
       lastname: 'test',
       mobile: '0456569896',
-      email: 'bronson.rameka@gmail.com'
+      email: 'bronson.rameka@gmail.com',
+      city: 'Perth'
     };
-    // this.store.dispatch(new actions.CreateCustomer(this.customer));
-    this.store.dispatch(new notifications.ShowNotification({
-      message: 'hello',
-      type: 'success'
-    }));
+    this.store.dispatch(new actions.CreateCustomer(this.customer));
   }
 }

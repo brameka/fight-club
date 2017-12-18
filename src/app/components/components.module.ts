@@ -24,8 +24,8 @@ import { DragComponent } from './drag.component';
 import { AutoresizeDirective } from '../directives/autoresize.directive';
 
 import { InsuranceSummaryComponent } from './insurance/insurance-summary.component';
-import { TableSpikeComponent } from './insurance/table-spike.component';
 import { InsuranceComponent } from './insurance/insurance.component';
+import { UiComponentsModule } from '../ui/ui-components.module';
 
 const components = [
   DashComponent,
@@ -38,7 +38,6 @@ const components = [
   NotesComponent,
   InsuranceSummaryComponent,
   InsuranceComponent,
-  TableSpikeComponent,
   AutoresizeDirective
 ];
 
@@ -47,7 +46,8 @@ const components = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    UiComponentsModule
   ],
   declarations: [ ...components ],
   exports: [

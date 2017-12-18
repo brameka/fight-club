@@ -33,7 +33,6 @@ export class NotificationEffects {
   showNotification$: Observable<Action> = this.actions$
     .ofType(actions.SHOW_NOTIFICATION)
     .do((action: actions.ShowNotification) => {
-        console.log('show notificaiton');
         return this.notificationService.openSnackBar(action.payload);
         // return new actions.ShowNotificationSuccess();
       });

@@ -3,12 +3,15 @@ import { Customer } from '../../models/customer';
 
 export interface CustomerState {
   loading: boolean;
+  isCloseDialog: boolean;
   id: number;
+
 }
 
 export const initialState: CustomerState = {
   id: 0,
-  loading: false
+  loading: false,
+  isCloseDialog: false
 };
 
 export type Action = CustomerActions.All;
@@ -16,9 +19,12 @@ export type Action = CustomerActions.All;
 export function customerReducer(state: CustomerState = initialState, action: Action): CustomerState {
   switch (action.type) {
     case CustomerActions.GET_CUSTOMER:
-      return { ...state, loading: true };
+      return { ...state, loading: true, isCloseDialog: false };
     case CustomerActions.GET_CUSTOMER_SUCCESS:
-      return { ...state, loading: false };
+      return { ...state, loading: false, isCloseDialog: false  };
+    case CustomerActions.CREATE_CUSTOMER_SUCCESS:
+      return { ...state, loading: false, isCloseDialog: true };
+
     default:
       return state;
   }

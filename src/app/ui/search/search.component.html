@@ -1,5 +1,8 @@
 <div class="app-search">
   <div class="app-search__container">
-    <input class="app-search__input" type="text" placeholder="Search">
+    <form [formGroup]="form">
+      <input formControlName="search" class="app-search__input" type="text" placeholder="{{placeholder}}">
+    </form>
+
   </div>
 </div>

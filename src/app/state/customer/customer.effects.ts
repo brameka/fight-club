@@ -38,39 +38,18 @@ export class CustomerEffects {
   createCustomer$: Observable<Action> = this.actions$.ofType(customerActions.CREATE_CUSTOMER)
     .switchMap((action: any) => this.service.createCustomer(action.payload)
       .mergeMap(res => [
+        new customerActions.CreateCustomerSuccess(),
         new notificationActions.ShowNotification({ message: 'New tag successfully created', type: 'success' }),
-        new customerActions.CreateCustomerSuccess()
       ])
-      .do((respAction: customerActions.CreateCustomerSuccess) => {
-        console.log('navigate to new customer');
-        // if (respAction.payload.id) {
-        //   this.router.navigate(['/crm/users/' + respAction.payload.id + '/edit/']);
-        // }
-      })
+      // .do((respAction: customerActions.CreateCustomerSuccess) => {
+      //   // console.log('navigate to new customer: ', respAction);
+      //   // if (respAction.payload.id) {
+      //   //   this.router.navigate(['/crm/users/' + respAction.payload.id + '/edit/']);
+      //   // }
+      // })
       .catch(error => {
         console.log('failed: ', error);
         return Observable.of(new customerActions.CreateCustomerFail(error));
       })
   );
-
-
-
-  // .map((action: customerActions.CreateCustomer) => action.payload )
-  // .mergeMap(payload => [
-  //   console.log('notify store'),
-  //   this.store$.dispatch(new notificationActions.Notify({ message: 'New tag successfully created', type: 'success' })),
-  //   console.log('create user')
-  // ])
-  // .map(() => new customerActions.CreateCustomerSuccess())
-  // .catch(err => of (new customerActions.CreateCustomerFail({ error: err.message })) );
-
-  // @Effect()
-  // createCustomer$: Observable<Action> = this.actions$.ofType(customerActions.CREATE_CUSTOMER)
-  //   .map((action: customerActions.CreateCustomer) => action.payload )
-  //   .mergeMap(payload => of(this.db.object('posts/' + payload.post.pushKey)
-  //                        .update({
-  //                          votes: payload.post.votes + payload.val
-  //                        })))
-  //   .map(() => new postActions.VoteSuccess())
-  //   .catch(err => of (new postActions.VoteFail( { error: err.message } )) );
 }

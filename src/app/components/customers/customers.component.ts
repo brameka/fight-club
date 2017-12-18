@@ -1,46 +1,158 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { MatDialog } from '@angular/material';
-import { CustomerCreateDialogComponent } from './customer-create-dialog-component';
+import { MatDialog, MatSort, MatDialogRef } from '@angular/material';
+import { DataSource } from '@angular/cdk/collections';
+import { MatPaginator } from '@angular/material';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import { Customer } from '../../models/customer';
+import { CustomerCreateDialogComponent } from '../customers/customer-create-dialog-component';
+import { CustomerState } from '../../state/customer/customer.reducer';
+
+import 'rxjs/add/operator/startWith';
+import 'rxjs/add/observable/merge';
+import 'rxjs/add/operator/map';
 
 @Component({
-  selector: 'app-customers',
-  templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.scss']
+  selector: 'app-table-spike',
+  styleUrls: ['customers.component.scss'],
+  templateUrl: 'customers.component.html',
 })
-export class CustomersComponent implements AfterViewInit  {
-  contacts: any[] = [
-    {
-      id: 1,
-      name: 'Incredible Hulk'
-    }, {
-      id: 2,
-      name: 'Brad Pitt'
-    }, {
-      id: 3,
-      name: 'Colin Farrell'
-    }
-  ];
+export class CustomersComponent implements AfterViewInit, OnInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  displayedColumns = ['name', 'email', 'mobile', 'city'];
+  database = new CustomerDatabase();
+  dataSource: CustomerDataSource | null;
 
-  constructor(private slimService: SlimLoadingBarService, private router: Router, public dialog: MatDialog) {}
+  dialogRef: MatDialogRef<CustomerCreateDialogComponent>;
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private slimService: SlimLoadingBarService,
+    private router: Router,
+    public dialog: MatDialog,
+    private store: Store<any>) {
+      this.store.select(state => state)
+      .subscribe((x) => {
+        if (x.customer.isCloseDialog) {
+          this.close();
+        }
+      });
+  }
+
+  ngOnInit() {
+    this.dataSource = new CustomerDataSource(this.database, this.paginator, this.sort);
+  }
 
   ngAfterViewInit() {
     this.slimService.complete();
   }
 
+  search(term: any) {
+    this.dataSource.filter = term;
+  }
+
+  details(row: any) {
+    console.log('row: ', row);
+    const customer = {
+      id: 1
+    };
+    this.router.navigate(['/customers/', customer.id]);
+  }
+
   create (): void {
     const width = '800px';
-    const ref = this.dialog.open(CustomerCreateDialogComponent, {
+    this.dialogRef = this.dialog.open(CustomerCreateDialogComponent, {
       width: width
     });
 
-    ref.afterClosed().subscribe(result => {
+    this.dialogRef.afterClosed().subscribe(result => {
     });
   }
 
+  close() {
+    this.dialogRef.close();
+  }
+}
 
-  details(customer: any) {
-    this.router.navigate(['/customers/', customer.id]);
+export class CustomerDataSource extends DataSource<any> {
+  filterChange = new BehaviorSubject('');
+  get filter(): string { return this.filterChange.value; }
+  set filter(filter: string) { this.filterChange.next(filter); }
+
+  constructor(private database: CustomerDatabase,
+    private paginator: MatPaginator,
+    private sort: MatSort) {
+    super();
+  }
+
+  connect(): Observable<Customer[]> {
+    const displayDataChanges = [
+      this.database.dataChange,
+      this.paginator.page,
+      this.sort.sortChange,
+      this.filterChange
+    ];
+
+    return Observable.merge(...displayDataChanges).map(() => {
+      return this.getSortedData();
+    });
+
+  }
+
+  getSortedData(): Customer[] {
+    const data = this.database.data.slice();
+    const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
+    if (!this.sort.active || this.sort.direction === '') {
+      return data;
+    }
+    return data.splice(startIndex, this.paginator.pageSize);
+  }
+
+  disconnect() {}
+}
+
+
+export class CustomerDatabase {
+
+  dataChange: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
+  get data(): Customer[] {
+    return this.dataChange.value;
+  }
+
+  constructor() {
+    for (let i = 0; i < 100; i++) {
+      this.addCustomer(i);
+    }
+  }
+
+  /** Adds a new user to the database. */
+  addCustomer(index) {
+    const copiedData = this.data.slice();
+    copiedData.push(this.createNewUser(index));
+    this.dataChange.next(copiedData);
+  }
+
+  /** Builds and returns a new User. */
+  private createNewUser(index: number): Customer {
+    return {
+      name: this.generateName(),
+      firstname: 'Henrique',
+      lastname: 'Abud',
+      email: this.generateName() + '@gmail.com',
+      mobile: '+6149495586',
+      city: 'Perth'
+    };
+  }
+
+  generateName(): string {
+    let text = '';
+    const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (let i = 0; i < 5; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
   }
 }

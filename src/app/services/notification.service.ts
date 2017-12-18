@@ -13,7 +13,6 @@ export class NotificationService {
     const duration = 3000;
     const notificationClass = this.getClass(type);
     const classes = [NotificationClasses.notification, notificationClass];
-    console.log('classes: ', classes);
     const snackBarRef = this.snackBar.openFromComponent(SnackComponent, {
       duration,
       extraClasses: classes

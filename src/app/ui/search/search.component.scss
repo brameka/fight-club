@@ -1,11 +1,8 @@
 @import '../../styles/variables';
 
 .app-search {
-
-  position: relative;
   max-width: 720px;
   height: 100%;
-  // padding-top: 8px;
 
   // &:after {
   //   display: block;
@@ -19,16 +16,17 @@
   // }
 
   &__container {
-    background: rgba(0,0,0,.05);
+    background: #fafafa;
     border-radius: $border-radius;
+    border: 1px solid #eaeaea;
   }
 
   &__input {
-    width: 360px;
+    min-width: 360px;
     height: 40px;
     border: none;
     background: transparent;
-    padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 20px;
     color: #444;
     font-size: 16px;
     font-weight: 400;

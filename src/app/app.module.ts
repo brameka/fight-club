@@ -16,8 +16,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DndModule } from 'ng2-dnd';
 import { ResizableModule } from 'angular-resizable-element';
-import { UiComponentsModule } from './ui/ui-components.module';
-import { MaterialComponentsModule } from './ui/material.module';
+
 
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -25,6 +24,8 @@ import { MaterialComponentsModule } from './ui/material.module';
 import { environment } from '../environments/environment';
 export const firebaseConfig = environment.firebase;
 
+import { UiComponentsModule } from './ui/ui-components.module';
+import { MaterialComponentsModule } from './ui/material.module';
 import { StateModule } from './state/state.module';
 import { ServicesModule } from './services/services.module';
 import { ComponentsModule } from './components/components.module';

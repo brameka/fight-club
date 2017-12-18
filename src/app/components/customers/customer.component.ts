@@ -26,7 +26,7 @@ export class CustomerComponent implements AfterViewInit  {
   };
 
   constructor(
-      private slimService: SlimLoadingBarService, 
+      private slimService: SlimLoadingBarService,
       private store: Store<Object>,
       private router: Router) {
 
