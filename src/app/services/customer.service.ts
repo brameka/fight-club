@@ -4,13 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 
-import { Customer } from '../models/customer';
+import { Customer, CustomerResponse } from '../models/customer';
 
 @Injectable()
 export class CustomerService {
   customers = ['test1', 'test2', 'test3', 'test4'];
   customers$: Observable<string>;
-  customer$: Observable<Customer>;
+  customer$: Observable<CustomerResponse>;
 
     constructor() {}
 
@@ -19,9 +19,12 @@ export class CustomerService {
       return this.customers$;
     }
 
-    createCustomer(customer: Customer): Observable<Customer> {
+    createCustomer(customer: Customer): Observable<CustomerResponse> {
       this.customer$ = Observable.create(observer => {
-        observer.next(customer);
+        const response: CustomerResponse = {
+          id: '12345'
+        };
+        observer.next(response);
         observer.complete();
       });
       return this.customer$;

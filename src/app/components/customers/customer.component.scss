@@ -18,7 +18,7 @@
     }
 
     &__header-details {
-        margin-left: 15px;
+        margin-left: 10px;
     }
 
     &__header-details h4 {
@@ -44,8 +44,6 @@
         font-size: 13px;
     }
 
-
-
     &__avatar {
         overflow: hidden;
     }
@@ -67,20 +65,48 @@
         margin-bottom: 20px;
     }
 
+    &__label-title {
+      color: $primary;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-bottom: 1px dashed $primary;
+    }
+
     &__label {
-        color: #596981;
-        font-weight: 400;
+        color: #000;
+        font-weight: 600;
         font-size: 0.9rem;
+    }
+
+    &__label-icon {
+      font-size: 1rem;
+      width: 16px;
+      height: 16px;
+      line-height: 10px;
+      vertical-align: bottom;
+  }
+
+    &__value {
+      font-size: 0.9rem;
     }
 
     &__details .row {
         margin-bottom: 10px;
     }
 
-    &__details .col-3 {
+    &__details .col-3, &__details .col-5, &__details .col-2 {
         text-align: right;
     }
 
+    &__section  {
+    }
+
+    &__divider {
+      float: right;
+      margin: 20px 0;
+      width: 80%;
+      border-bottom: 1px solid #eaeaea;
+    }
 }
 
 .plain {

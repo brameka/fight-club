@@ -6,3 +6,7 @@ export interface Customer {
   email: string;
   city: string;
 }
+
+export interface CustomerResponse {
+  id: string;
+}

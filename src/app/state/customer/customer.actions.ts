@@ -1,11 +1,12 @@
 import { Action } from '@ngrx/store';
-import { Customer } from '../../models/customer';
+import { Customer, CustomerResponse } from '../../models/customer';
 
 export const GET_CUSTOMER = 'Get Customer';
 export const GET_CUSTOMER_SUCCESS = 'Get Customer Success';
 export const CREATE_CUSTOMER = 'Create Customer';
 export const CREATE_CUSTOMER_SUCCESS = 'Create Customer Success';
 export const CREATE_CUSTOMER_FAIL = 'Create Customer Fail';
+export const CLOSE_DIALOG_SUCCESS = 'Close Dialog Success';
 
 export class GetCustomer implements Action {
   readonly type = GET_CUSTOMER;
@@ -24,7 +25,7 @@ export class CreateCustomer implements Action {
 
 export class CreateCustomerSuccess implements Action {
   readonly type = CREATE_CUSTOMER_SUCCESS;
-  constructor() {}
+  constructor(public payload: CustomerResponse) {}
 }
 
 export class CreateCustomerFail implements Action {
@@ -32,9 +33,14 @@ export class CreateCustomerFail implements Action {
   constructor(public payload: any) {}
 }
 
+export class CloseDialogSuccess implements Action {
+  readonly type = CLOSE_DIALOG_SUCCESS;
+}
+
 export type All
   = GetCustomer
   | GetCustomerSuccess
   | CreateCustomer
   | CreateCustomerSuccess
-  | CreateCustomerFail;
+  | CreateCustomerFail
+  | CloseDialogSuccess;

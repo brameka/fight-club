@@ -10,6 +10,7 @@ import { Store } from '@ngrx/store';
 import { Customer } from '../../models/customer';
 import { CustomerCreateDialogComponent } from '../customers/customer-create-dialog-component';
 import { CustomerState } from '../../state/customer/customer.reducer';
+import * as actions from '../../state/customer/customer.actions';
 
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
@@ -36,6 +37,7 @@ export class CustomersComponent implements AfterViewInit, OnInit {
     private store: Store<any>) {
       this.store.select(state => state)
       .subscribe((x) => {
+        console.log('state: ', x);
         if (x.customer.isCloseDialog) {
           this.close();
         }
@@ -67,8 +69,8 @@ export class CustomersComponent implements AfterViewInit, OnInit {
     this.dialogRef = this.dialog.open(CustomerCreateDialogComponent, {
       width: width
     });
-
     this.dialogRef.afterClosed().subscribe(result => {
+      this.store.dispatch(new actions.CloseDialogSuccess());
     });
   }
 

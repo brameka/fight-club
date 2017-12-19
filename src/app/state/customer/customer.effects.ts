@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store, Action } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
@@ -18,7 +19,11 @@ export type Action = customerActions.All;
 @Injectable()
 export class CustomerEffects {
 
-  constructor(private actions$: Actions, private store$: Store<object>, private service: CustomerService) {}
+  constructor(private actions$: Actions,
+    private store$: Store<object>,
+    private service: CustomerService,
+    private router: Router,
+  ) {}
 
   @Effect()
   getCustomer$: Observable<Action> = this.actions$.ofType(customerActions.GET_CUSTOMER)
@@ -37,16 +42,15 @@ export class CustomerEffects {
   @Effect()
   createCustomer$: Observable<Action> = this.actions$.ofType(customerActions.CREATE_CUSTOMER)
     .switchMap((action: any) => this.service.createCustomer(action.payload)
-      .mergeMap(res => [
-        new customerActions.CreateCustomerSuccess(),
-        new notificationActions.ShowNotification({ message: 'New tag successfully created', type: 'success' }),
+      .mergeMap(response => [
+        new customerActions.CreateCustomerSuccess(response),
+        new notificationActions.ShowNotification({ message: 'Contact has been created', type: 'success' }),
       ])
-      // .do((respAction: customerActions.CreateCustomerSuccess) => {
-      //   // console.log('navigate to new customer: ', respAction);
-      //   // if (respAction.payload.id) {
-      //   //   this.router.navigate(['/crm/users/' + respAction.payload.id + '/edit/']);
-      //   // }
-      // })
+      .do((success: customerActions.CreateCustomerSuccess) => {
+        if (success.type === customerActions.CREATE_CUSTOMER_SUCCESS) {
+          this.router.navigate(['/customers/' + success.payload.id]);
+        }
+      })
       .catch(error => {
         console.log('failed: ', error);
         return Observable.of(new customerActions.CreateCustomerFail(error));
