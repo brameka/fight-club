@@ -16,7 +16,10 @@ interface AppState {
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements AfterViewInit  {
+  id: string;
   customer$: Observable<Customer>;
+  state$: Observable<any>;
+  routeSubscription: any;
 
   mode: 'static'|'edit'|'insurance' = 'static';
 
@@ -27,13 +30,18 @@ export class CustomerComponent implements AfterViewInit  {
 
   constructor(
       private slimService: SlimLoadingBarService,
+      private route: ActivatedRoute,
       private store: Store<Object>,
       private router: Router) {
-
+        this.state$ = this.store.select(state => state);
+        this.routeSubscription = this.route.params.subscribe(params => {
+          this.id = params['id']; // (+) converts string 'id' to a number
+          this.getCustomer(this.id);
+       });
   }
 
-  getCustomer () {
-    this.store.dispatch(new actions.GetCustomer(1));
+  getCustomer (id: string) {
+    this.store.dispatch(new actions.GetCustomer({id: this.id}));
   }
 
   ngAfterViewInit() {

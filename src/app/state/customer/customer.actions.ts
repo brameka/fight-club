@@ -10,7 +10,7 @@ export const CLOSE_DIALOG_SUCCESS = 'Close Dialog Success';
 
 export class GetCustomer implements Action {
   readonly type = GET_CUSTOMER;
-  constructor(public payload: number) {}
+  constructor(public payload: any) {}
 }
 
 export class GetCustomerSuccess implements Action {

@@ -1,50 +1,39 @@
 @import 'styles/variables';
 
 .app-header {
+  background: #fff;
+
   &__title {
     color: #666;
     margin-right: 20px !important;
     font-weight: 300 !important;
   }
+
+  .light-separator {
+    border-left: 1px dotted rgba(255, 255, 255, 0.3);
+  }
+
+  .accent-btn .mat-button.mat-primary, .mat-icon-button.mat-primary {
+    color: #fff;
+  }
 }
 
-// .app-customer-form .mat-horizontal-stepper-header {
-//   height: 40px;
-// }
+.app-header.mat-toolbar.mat-primary .app-header__title {
+  color: #fff;
+}
 
 .mat-toolbar h5.app-header__logo {
   margin-left: 20px;
 }
 
 .mat-toolbar {
-  background-color: #fff;
   box-shadow: 0 1px 8px rgba(0,0,0,.3);
   -webkit-box-shadow: 0 1px 8px rgba(0,0,0,.3);
 }
 
-.icon {
-  padding: 0 14px;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-.app-container {
-  // width: 500px;
-  // height: 300px;
-}
-
-// sub-menu
-.sub-menu {
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
+// toolbar
+.mat-toolbar .mat-toolbar-row.action-row {
+  height: inherit;
 }
 
 // tabs
@@ -61,10 +50,38 @@
   color: $primary;
 }
 
-// toolbar
-.mat-toolbar .mat-toolbar-row.action-row {
-  height: inherit;
+.app-header.mat-toolbar.mat-primary .mat-tab-group.mat-primary .mat-tab-label:focus,
+.app-header.mat-toolbar.mat-primary .mat-tab-group.mat-primary .mat-tab-link:focus,
+.app-header.mat-toolbar.mat-primary .mat-tab-nav-bar.mat-primary .mat-tab-label:focus,
+.app-header.mat-toolbar.mat-primary .mat-tab-nav-bar.mat-primary .mat-tab-link:focus {
+  background: transparent;
+  color: #fff;
 }
+
+.app-container__tabs-light .mat-tab-label {
+  color: rgba(255,255,255, 0.8);
+}
+
+
+.icon {
+  padding: 0 14px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+.sub-menu {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+
 
 .app-content {
   display: flex;

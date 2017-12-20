@@ -2,6 +2,9 @@ import { Component, ViewEncapsulation, OnDestroy, ViewChild  } from '@angular/co
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { MatSidenav } from '@angular/material';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import * as actions from './state/app/app.actions';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +20,15 @@ export class AppComponent implements OnDestroy {
   title: string;
   status: 'customers'|'customer'|'scheduler'|'default';
 
-  constructor (private slimLoader: SlimLoadingBarService, private router: Router) {
+  state$: Observable<any>;
+
+  constructor (
+    private slimLoader: SlimLoadingBarService,
+    private router: Router,
+    private store: Store<Object>
+  ) {
+    this.state$ = this.store.select(state => state);
+
     this.sub = this.router.events.subscribe(event => {
         if (event instanceof NavigationStart) {
             this.slimLoader.start();
@@ -35,6 +46,7 @@ export class AppComponent implements OnDestroy {
   setStyles() {
     switch (this.location) {
       case '/dash': {
+        this.store.dispatch(new actions.ShowHomeState());
         this.title = 'Scheduler';
         this.styles = {
           'margin-top': '110px'
@@ -44,6 +56,7 @@ export class AppComponent implements OnDestroy {
       break;
 
       case '/customers': {
+        this.store.dispatch(new actions.ShowHomeState());
         this.title = 'Customers';
         this.styles = {
           'margin-top': '64px'
@@ -53,6 +66,8 @@ export class AppComponent implements OnDestroy {
       break;
 
       case '/customers/1': {
+        this.store.dispatch(new actions.ShowContactState());
+
         this.title = 'Customer';
         this.styles = {
           'margin-top': '110px'

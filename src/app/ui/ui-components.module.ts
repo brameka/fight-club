@@ -7,13 +7,15 @@ import { SnackComponent } from './notifications/snack.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { TopBarMenuComponent } from './top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './search/search.component';
+import { ContentLoaderComponent } from './loader/content-loader.component';
 
 const components = [
   UiDatePickerComponent,
   SnackComponent,
   NotificationsComponent,
   TopBarMenuComponent,
-  SearchComponent
+  SearchComponent,
+  ContentLoaderComponent
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit, OnInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { MatDialog, MatSort, MatDialogRef } from '@angular/material';
@@ -21,12 +21,13 @@ import 'rxjs/add/operator/map';
   styleUrls: ['customers.component.scss'],
   templateUrl: 'customers.component.html',
 })
-export class CustomersComponent implements AfterViewInit, OnInit {
+export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns = ['name', 'email', 'mobile', 'city'];
   database = new CustomerDatabase();
   dataSource: CustomerDataSource | null;
-
+  state$: Observable<any>;
+  subscription$: any;
   dialogRef: MatDialogRef<CustomerCreateDialogComponent>;
 
   @ViewChild(MatSort) sort: MatSort;
@@ -35,13 +36,17 @@ export class CustomersComponent implements AfterViewInit, OnInit {
     private router: Router,
     public dialog: MatDialog,
     private store: Store<any>) {
-      this.store.select(state => state)
-      .subscribe((x) => {
-        console.log('state: ', x);
+      this.state$ = this.store.select(state => state);
+      this.subscription$ = this.state$.subscribe((x) => {
         if (x.customer.isCloseDialog) {
           this.close();
         }
       });
+  }
+
+  ngOnDestroy() {
+    this.subscription$.unsubscribe();
+    this.close();
   }
 
   ngOnInit() {
@@ -75,7 +80,9 @@ export class CustomersComponent implements AfterViewInit, OnInit {
   }
 
   close() {
-    this.dialogRef.close();
+    if (this.dialogRef) {
+      this.dialogRef.close();
+    }
   }
 }
 

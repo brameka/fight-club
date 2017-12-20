@@ -11,6 +11,7 @@ import 'rxjs/add/operator/delay';
 
 import * as customerActions from './customer.actions';
 import * as notificationActions from '../notification/notification.actions';
+import * as appActions from '../app/app.actions';
 
 import { CustomerService } from '../../services/customer.service';
 
@@ -27,24 +28,20 @@ export class CustomerEffects {
 
   @Effect()
   getCustomer$: Observable<Action> = this.actions$.ofType(customerActions.GET_CUSTOMER)
-    .map((action: customerActions.GetCustomer) => action.payload )
-    .delay(2000) // delay to show spinner
-    .mergeMap(id => [
-      // return this.db.object(payload);
-      console.log('get customer id: ', id)
-    ])
-    .map(customer => {
-      console.log('get customer success');
-      // post.pushKey = post.$key;
-      return new customerActions.GetCustomerSuccess();
-    });
+    .switchMap((action: any) => this.service.getCustomer(action.payload.id)
+      .mergeMap(response => [
+        new customerActions.GetCustomerSuccess()
+      ])
+      .delay(7000)
+    );
 
   @Effect()
   createCustomer$: Observable<Action> = this.actions$.ofType(customerActions.CREATE_CUSTOMER)
     .switchMap((action: any) => this.service.createCustomer(action.payload)
       .mergeMap(response => [
         new customerActions.CreateCustomerSuccess(response),
-        new notificationActions.ShowNotification({ message: 'Contact has been created', type: 'success' }),
+        new appActions.ShowContactState(),
+        new notificationActions.ShowNotification({ message: 'Contact has been created', type: 'success' })
       ])
       .do((success: customerActions.CreateCustomerSuccess) => {
         if (success.type === customerActions.CREATE_CUSTOMER_SUCCESS) {

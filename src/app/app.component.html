@@ -1,6 +1,6 @@
-<ng2-slim-loading-bar [color]="'#3f51b5'"></ng2-slim-loading-bar>
-<mat-toolbar class="app-header">
+<ng2-slim-loading-bar [color]="(state$ | async).app.loadingColour"></ng2-slim-loading-bar>
 
+<mat-toolbar class="app-header" [color]="(state$ | async).app.menuColour">
   <mat-toolbar-row>
     <button mat-icon-button (click)="toggle()">
       <mat-icon>menu</mat-icon>
@@ -42,17 +42,18 @@
       <div class="row">
         <div class="col-8">
             <div class="sub-menu">
-                <mat-tab-group>
+                <mat-tab-group class="app-container__tabs-light">
                   <mat-tab label="DETAILS"></mat-tab>
                   <mat-tab label="WORKFLOW"></mat-tab>
                   <mat-tab label="NOTIFICATIONS"></mat-tab>
                 </mat-tab-group>
-                <div class="separator" style="margin-top: 16px;"></div>
-                <button mat-button color="primary">SCHEDULE</button>
+                <div class="separator light-separator" style="margin-top: 16px;"></div>
+                <button mat-button class="accent-btn">SCHEDULE</button>
             </div>
         </div>
       </div>
     </div>
+
   </mat-toolbar-row>
 
 </mat-toolbar>
@@ -63,8 +64,7 @@
 
   <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
-      <div class="menu-container">
-
+      <div *ngIf="(state$ | async).app.state == 'home'" class="menu-container">
         <button class="mat-menu-item" mat-menu-item="" routerLink="/dash"><mat-icon>home</mat-icon> Home
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
@@ -92,7 +92,36 @@
         <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>account_circle</mat-icon> Account
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
+      </div>
 
+      <div *ngIf="(state$ | async).app.state == 'contact'" class="menu-container">
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/dash"><mat-icon>home</mat-icon> Summary
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>language</mat-icon> Clients
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>event</mat-icon> Loans
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>fingerprint</mat-icon> Insurance
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>person</mat-icon> Financials
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>people</mat-icon> Workflow
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
+
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>account_circle</mat-icon> Records
+          <div class="mat-menu-ripple mat-ripple" matRipple></div>
+        </button>
       </div>
 
   </mat-sidenav>

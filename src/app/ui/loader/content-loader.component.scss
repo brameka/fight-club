@@ -1,0 +1,131 @@
+@keyframes placeHolderShimmer {
+  0%{ background-position: -468px 0; }
+  100%{ background-position: 468px 0; }
+}
+
+.app-content-loader {
+
+  &__card {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid;
+    border-color: #e5e6e9 #e5e6e9 #e5e6e9;
+    border-radius: 3px;
+    padding: 20px;
+    min-height: 200px;
+    margin-bottom: 20px;
+  }
+
+  &__animated {
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: placeHolderShimmer;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+  }
+
+  &__mask {
+    background: #fff;
+    position: absolute;
+  }
+
+  /* Every thing below this is just positioning */
+  &__header-top,
+  &__header-bottom,
+  &__subheader-bottom {
+      top: 0;
+      left: 40px;
+      right: 0;
+      height: 10px;
+  }
+
+  &__header-left,
+  &__subheader-left,
+  &__header-right,
+  &__subheader-right {
+      top: 10px;
+      left: 40px;
+      height: 8px;
+      width: 10px;
+  }
+
+  &__header-bottom {
+      top: 18px;
+      height: 6px;
+  }
+
+  &__subheader-left,
+  &__subheader-right {
+      top: 24px;
+      height: 10px;
+  }
+
+
+  &__header-right,
+  &__subheader-right {
+      width: auto;
+      left: 80%;
+      right: 0;
+  }
+
+  &__subheader-right {
+      left: 60%;
+  }
+
+  &__subheader-bottom {
+      top: 32px;
+      height: 10px;
+  }
+
+  &__content-top,
+  &__content-second-line,
+  &__content-third-line,
+  &__content-second-end,
+  &__content-third-end,
+  &__content-first-end {
+      top: 40px;
+      left: 0;
+      right: 0;
+      height: 6px;
+  }
+
+  &__content-top {
+      height:20px;
+  }
+
+  &__content-first-end,
+  &__content-second-end,
+  &__content-third-end{
+      width: auto;
+      left: 380px;
+      right: 0;
+      top: 60px;
+      height: 8px;
+  }
+
+  &__content-second-line  {
+      top: 68px;
+  }
+
+  &__content-second-end {
+      left: 420px;
+      top: 74px;
+  }
+
+  &__content-third-line {
+      top: 82px;
+  }
+
+  &__content-third-end {
+      left: 300px;
+      top: 88px;
+  }
+
+
+}
+

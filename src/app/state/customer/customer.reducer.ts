@@ -25,7 +25,7 @@ export function customerReducer(state: CustomerState = initialState, action: Act
     case CustomerActions.CREATE_CUSTOMER_SUCCESS:
       return { ...state, loading: false, isCloseDialog: true };
     case CustomerActions.CLOSE_DIALOG_SUCCESS:
-      return { ...state, loading: false, isCloseDialog: false };
+      return { ...state, isCloseDialog: false };
 
     default:
       return state;

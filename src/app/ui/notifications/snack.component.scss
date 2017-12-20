@@ -6,12 +6,13 @@
 
 
 .cdk-overlay-pane .app-snackbar-notification {
-  color: $true-black;
+  color: #027b1d !important;
   padding: 20px 32px;
 
 
   &__block--success {
     background: $success-background;
+    color: #027b1d !important;
   }
 
   &__block--error {

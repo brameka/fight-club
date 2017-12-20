@@ -13,7 +13,7 @@ import { SnackType } from '../../models/notification';
   {{ message }}`
 })
 export class SnackComponent {
-  message: string;
+  message = 'Loading...';
   icon: string;
   type: SnackType = SnackType.success;
 
