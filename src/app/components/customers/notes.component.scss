@@ -20,8 +20,11 @@
     &__notes-input {
         width: 100%;
         border: none;
-        background: #fafafa;
+        background: #fff;
         height: 36px;
+        border-radius: $border-radius;
+        border: 1px solid #eaeaea;
+        overflow:auto;
     }
 
     &__note {
