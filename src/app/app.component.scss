@@ -54,13 +54,22 @@
 .app-header.mat-toolbar.mat-primary .mat-tab-group.mat-primary .mat-tab-link:focus,
 .app-header.mat-toolbar.mat-primary .mat-tab-nav-bar.mat-primary .mat-tab-label:focus,
 .app-header.mat-toolbar.mat-primary .mat-tab-nav-bar.mat-primary .mat-tab-link:focus {
-  background: transparent;
+  // background: transparent;
   color: #fff;
 }
 
 .app-container__tabs-light .mat-tab-label {
   color: rgba(255,255,255, 0.8);
 }
+
+.app-container__tabs-light.mat-tab-group.mat-primary .mat-ink-bar,
+.app-container__tabs-light.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #fff;
+}
+
+
+
+
 
 
 .icon {

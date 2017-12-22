@@ -28,7 +28,6 @@
               <!-- <div class="separator"></div>
               <span class="app-customer__status">Active</span> -->
               <div class="spacer"></div>
-              <button mat-icon-button><mat-icon>lock_outline</mat-icon></button>
               <button mat-icon-button><mat-icon>block</mat-icon></button>
               <button mat-icon-button><mat-icon>star</mat-icon></button>
               <button mat-icon-button><mat-icon>more_vert</mat-icon></button>
@@ -37,60 +36,72 @@
           <div class="app-customer__details" *ngIf="mode == 'static'">
 
             <div class="row app-customer__section">
-                <div class="col-2">
+                <div class="col-1">
                     <span class="app-customer__label-title">CLIENTS:</span>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <span class="app-customer__label">Adults:</span>
                 </div>
                 <div class="col-7">
                     <div class="app-customer__value">Mr Benjamin Rawiri Apaapa</div>
                     <div class="app-customer__value">Mr Crystal Adrianna Sharyn Ahipene-Farquharson</div>
                 </div>
+                <div class="col-2">
+                    <button mat-button>EDIT</button>
+                </div>
             </div>
 
             <div class="row">
-                <div class="col-5">
+                <div class="col-1"></div>
+                <div class="col-2">
                     <span class="app-customer__label">Children: </span>
                 </div>
                 <div class="col-7">
                     <div class="app-customer__value">Ms Harlem Linda Ramona Meredith</div>
                 </div>
+                <div class="col-2"></div>
             </div>
 
             <div class="app-customer__divider"></div>
 
             <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                     <span class="app-customer__label-title">DETAILS:</span>
                 </div>
-                <div class="col-3">
+                <div class="col-2">
                     <span class="app-customer__label">Phone:</span>
                 </div>
                 <div class="col-7">
                     <div class="app-customer__value">0273009735 (Benjamin)</div>
                     <div class="app-customer__value">0277494318 (Crystal)</div>
                 </div>
+                <div class="col-2">
+                    <button mat-button>EDIT</button>
+                </div>
             </div>
 
             <div class="row">
-                <div class="col-5">
+                <div class="col-1"></div>
+                <div class="col-2">
                     <span class="app-customer__label">Email: </span>
                 </div>
                 <div class="col-7">
                     <div class="app-customer__value">ben.apaapa@sgs.com</div>
                     <div class="app-customer__value">ahipenec@hotmail.com</div>
                 </div>
+                <div class="col-2"></div>
             </div>
 
             <div class="row">
-                <div class="col-5">
+                <div class="col-1"></div>
+                <div class="col-2">
                     <span class="app-customer__label">Address: </span>
                 </div>
                 <div class="col-7">
                     <div class="app-customer__value">22 John St</div>
                     <div class="app-customer__value">Tokoroa, New Zealand 3420</div>
                 </div>
+                <div class="col-2"></div>
             </div>
           </div>
 

@@ -32,7 +32,7 @@ export class CustomerEffects {
       .mergeMap(response => [
         new customerActions.GetCustomerSuccess()
       ])
-      .delay(7000)
+      .delay(2000)
     );
 
   @Effect()

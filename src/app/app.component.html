@@ -19,7 +19,7 @@
     <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
   </mat-toolbar-row>
 
-  <mat-toolbar-row class="action-row" *ngIf="status == 'scheduler'">
+  <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'home'">
     <button mat-button>Schedules</button>
     <mat-icon>keyboard_arrow_right</mat-icon>
     <button mat-button>Scheduler</button>
@@ -34,7 +34,7 @@
     </div>
   </mat-toolbar-row>
 
-  <mat-toolbar-row class="action-row" *ngIf="status == 'customer'">
+  <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'contact'">
     <button mat-button>Customers</button>
     <mat-icon>keyboard_arrow_right</mat-icon>
     <button mat-button>Details</button>
@@ -43,12 +43,16 @@
         <div class="col-8">
             <div class="sub-menu">
                 <mat-tab-group class="app-container__tabs-light">
-                  <mat-tab label="DETAILS"></mat-tab>
+                  <mat-tab label="SUMMARY"></mat-tab>
+                  <mat-tab label="CLIENTS"></mat-tab>
+                  <mat-tab label="LOANS"></mat-tab>
+                  <mat-tab label="INSURANCE"></mat-tab>
+                  <mat-tab label="FINANCIALS"></mat-tab>
                   <mat-tab label="WORKFLOW"></mat-tab>
-                  <mat-tab label="NOTIFICATIONS"></mat-tab>
+                  <mat-tab label="RECORDS"></mat-tab>
                 </mat-tab-group>
-                <div class="separator light-separator" style="margin-top: 16px;"></div>
-                <button mat-button class="accent-btn">SCHEDULE</button>
+                <!-- <div class="separator light-separator" style="margin-top: 16px;"></div>
+                <button mat-button class="accent-btn">SCHEDULE</button> -->
             </div>
         </div>
       </div>
@@ -95,7 +99,7 @@
       </div>
 
       <div *ngIf="(state$ | async).app.state == 'contact'" class="menu-container">
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/dash"><mat-icon>home</mat-icon> Summary
+        <button class="mat-menu-item" mat-menu-item="" routerLink="/dash"><mat-icon>arrow_back</mat-icon> Back
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
 
