@@ -8,6 +8,7 @@ import { SchedulesComponent } from './components/schedules/schedules.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CustomerComponent } from './components/customers/customer.component';
 import { InsuranceComponent } from './components/insurance/insurance.component';
+import { ClientsComponent } from './components/contacts/clients/clients.component';
 
 const appRoutes: Routes = [
 
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
     { path: 'login', component: CustomersComponent },
     { path: 'dash', component: CustomersComponent },
     { path: 'users', component: CustomersComponent },
+    { path: 'clients', component: ClientsComponent },
     { path: 'customers', component: CustomersComponent },
     { path: 'customers/:id', component: CustomerComponent },
     { path: 'customers/:id/insurance', component: InsuranceComponent },

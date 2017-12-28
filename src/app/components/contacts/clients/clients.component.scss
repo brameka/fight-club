@@ -1,0 +1,52 @@
+@import '../../../styles/variables';
+
+.app-clients {
+
+  &__clients--header {
+    background: #fff;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    padding: 4px 4px 4px 15px;
+    border: 1px solid #dedede;
+    margin-bottom: 10px;
+  }
+
+  &__clients--total {
+    color: $primary;
+    font-weight: 600;
+  }
+
+  &__add {
+    box-shadow: none;
+  }
+
+  h5 {
+    color: $primary;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+  border: $grey-border;
+  border-top: none;
+}
+
+.mat-expansion-panel:first-child {
+  border-top: $grey-border;
+}
+
+.mat-expansion-panel-spacing {
+  border-top: $grey-border !important;
+}
+
+.mat-expansion-panel-spacing + .mat-expansion-panel {
+  border-top: $grey-border;
+}

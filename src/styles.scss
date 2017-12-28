@@ -242,3 +242,17 @@ code {
 .mat-sort-header-arrow {
   margin: 3px 0 0 6px !important;
 }
+
+// Accordian
+.mat-expansion-panel-content {
+  font: inherit;
+}
+
+// Table
+.table td, .table th {
+  border-top: $grey-row-border;
+}
+
+.table thead th {
+  border-bottom: $grey-border;
+}
