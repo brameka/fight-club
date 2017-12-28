@@ -21,7 +21,7 @@ export type Action = customerActions.All;
 export class CustomerEffects {
 
   constructor(private actions$: Actions,
-    private store$: Store<object>,
+    private store$: Store<Object>,
     private service: CustomerService,
     private router: Router,
   ) {}

@@ -8,7 +8,7 @@
 
     <h5 class="app-header__logo">Fightclub</h5>
     <div class="menu-separator"></div>
-    <h5 class="app-header__title">{{title}}</h5>
+    <h5 class="app-header__title">{{(state$ | async).app.title}}</h5>
 
     <!-- <app-search></app-search> -->
 
@@ -19,7 +19,7 @@
     <button mat-icon-button routerLink="/dash"><mat-icon>delete</mat-icon></button>
   </mat-toolbar-row>
 
-  <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'home'">
+  <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'homex'">
     <button mat-button>Schedules</button>
     <mat-icon>keyboard_arrow_right</mat-icon>
     <button mat-button>Scheduler</button>
@@ -35,9 +35,10 @@
   </mat-toolbar-row>
 
   <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'contact'">
-    <button mat-button>Customers</button>
+    <!--<button mat-button>Customers</button>
     <mat-icon>keyboard_arrow_right</mat-icon>
-    <button mat-button>Details</button>
+    <button mat-button>Details</button>-->
+    <!--<button mat-button><mat-icon>arrow_back</mat-icon> Customers</button>-->
     <div class="container">
       <div class="row">
         <div class="col-8">
@@ -64,7 +65,7 @@
 
 <mat-menu></mat-menu>
 
-<mat-sidenav-container fullscreen class="app-container" [ngStyle]="styles" >
+<mat-sidenav-container fullscreen class="app-container" [ngStyle]="(state$ | async).app.styles" >
 
   <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 

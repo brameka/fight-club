@@ -12,10 +12,14 @@ import { notificationReducer } from './notification/notification.reducer';
 import { AppEffects } from './app/app.effects';
 import { appReducer } from './app/app.reducer';
 
+import { ContactEffects } from './contacts/contact.effects';
+import { contactReducer } from './contacts/contact.reducer';
+
 const effects = [
   AppEffects,
   CustomerEffects,
-  NotificationEffects
+  NotificationEffects,
+  ContactEffects
 ];
 
 @NgModule({
@@ -24,7 +28,8 @@ const effects = [
     StoreModule.forRoot({
       app: appReducer,
       customer: customerReducer,
-      notification: notificationReducer
+      notification: notificationReducer,
+      contact: contactReducer
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ]

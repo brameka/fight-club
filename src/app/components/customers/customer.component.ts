@@ -6,10 +6,6 @@ import { Customer } from '../../models/customer';
 import * as actions from '../../state/customer/customer.actions';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-interface AppState {
-  customer: Customer;
-}
-
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',

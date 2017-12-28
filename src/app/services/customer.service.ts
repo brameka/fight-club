@@ -21,26 +21,26 @@ export class CustomerService {
   customer$: Observable<Customer>;
   customerResponse$: Observable<CustomerResponse>;
 
-    constructor() {}
+  constructor() {}
 
-    getCustomers(): Observable<string> {
-      this.customers$ = Observable.from(this.customers);
-      return this.customers$;
-    }
+  getCustomers(): Observable<string> {
+    this.customers$ = Observable.from(this.customers);
+    return this.customers$;
+  }
 
-    getCustomer(id: string): Observable<Customer> {
-      this.customer$ = Observable.of(this.customer);
-      return this.customer$;
-    }
+  getCustomer(id: string): Observable<Customer> {
+    this.customer$ = Observable.of(this.customer);
+    return this.customer$;
+  }
 
-    createCustomer(customer: Customer): Observable<CustomerResponse> {
-      this.customerResponse$ = Observable.create(observer => {
-        const response: CustomerResponse = {
-          id: '12345'
-        };
-        observer.next(response);
-        observer.complete();
-      });
-      return this.customerResponse$;
-    }
+  createCustomer(customer: Customer): Observable<CustomerResponse> {
+    this.customerResponse$ = Observable.create(observer => {
+      const response: CustomerResponse = {
+        id: '12345'
+      };
+      observer.next(response);
+      observer.complete();
+    });
+    return this.customerResponse$;
+  }
 }

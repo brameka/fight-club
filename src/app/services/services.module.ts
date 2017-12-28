@@ -3,12 +3,14 @@ import { AuthenticationService } from './authentication.service';
 import { UserService } from './user.service';
 import { NotificationService } from './notification.service';
 import { CustomerService } from './customer.service';
+import { ContactService } from './contact.service';
 
 const services = [
   AuthenticationService,
   UserService,
   NotificationService,
-  CustomerService
+  CustomerService,
+  ContactService
 ];
 
 @NgModule({

@@ -47,32 +47,16 @@ export class AppComponent implements OnDestroy {
     switch (this.location) {
       case '/dash': {
         this.store.dispatch(new actions.ShowHomeState());
-        this.title = 'Scheduler';
-        this.styles = {
-          'margin-top': '110px'
-        };
-        this.status = 'scheduler';
       }
       break;
 
       case '/customers': {
         this.store.dispatch(new actions.ShowHomeState());
-        this.title = 'Customers';
-        this.styles = {
-          'margin-top': '64px'
-        };
-        this.status = 'customers';
       }
       break;
 
       case '/customers/1': {
         this.store.dispatch(new actions.ShowContactState());
-
-        this.title = 'Customer';
-        this.styles = {
-          'margin-top': '110px'
-        };
-        this.status = 'customer';
       }
       break;
 
