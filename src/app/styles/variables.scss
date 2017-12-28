@@ -3,7 +3,8 @@ $black: #444;
 $true-black: #000;
 $grey-lighter: #fafafa;
 $grey-light: #f1f1f1;
-$grey: #dbdbdb;
+$grey-lightish: #eaeaea;
+$grey: #dedede;
 $grey-dark: #999;
 $grey-darker: #757575;
 
@@ -31,6 +32,7 @@ $placeholder: #999;
 
 $border-radius: 5px;
 
+
 $umbra-color: black(0.2);
 $penumbra-color: black(0.14);
 $ambient-color: black(0.12);
@@ -54,7 +56,9 @@ $box-shadow-4: 0 2px 4px -1px $umbra-color, 0 4px 5px 0 $penumbra-color, 0 1px 1
 $box-shadow-5: 0 3px 5px -1px $umbra-color, 0 5px 8px 0 $penumbra-color, 0 1px 14px 0 $ambient-color;
 $box-shadow-6: 0 3px 6px -1px $umbra-color, 0 6px 10px 0 $penumbra-color, 0 1px 18px 0 $ambient-color;
 
+$grey-row-border: 1px dashed $grey-lightish;
 $grey-border: 1px solid $grey;
+
 $border-radius: 2px;
 $circle-radius: 50%;
 

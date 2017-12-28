@@ -19,6 +19,10 @@ import { CustomerComponent } from './customers/customer.component';
 import { CustomerFormComponent } from './customers/customer-form.component';
 import { CustomerCreateDialogComponent } from './customers/customer-create-dialog-component';
 import { NotesComponent } from './customers/notes.component';
+
+import { ClientsComponent } from './contacts/clients/clients.component';
+import { ClientsTableComponent } from './contacts/clients/clients-table.component';
+
 import { BlockDialogComponent } from './calendar/calendar-block.component';
 import { DragComponent } from './drag.component';
 import { AutoresizeDirective } from '../directives/autoresize.directive';
@@ -36,6 +40,8 @@ const components = [
   CustomerFormComponent,
   CustomerCreateDialogComponent,
   NotesComponent,
+  ClientsComponent,
+  ClientsTableComponent,
   InsuranceSummaryComponent,
   InsuranceComponent,
   AutoresizeDirective

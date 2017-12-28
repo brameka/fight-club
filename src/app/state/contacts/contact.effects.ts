@@ -28,9 +28,9 @@ export class ContactEffects {
 
   @Effect()
   getContacts$: Observable<Action> = this.actions$.ofType(contactActions.GET_CONTACTS)
-    .switchMap((action: any) => this.service.getContacts()
-      .mergeMap(response => [
-        new contactActions.GetContactsSuccess()
+    .switchMap((payload) => this.service.getContacts(payload)
+      .mergeMap(contacts => [
+        new contactActions.GetContactsSuccess(contacts)
       ])
       .delay(2000)
     );

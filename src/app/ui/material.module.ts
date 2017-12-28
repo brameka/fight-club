@@ -22,6 +22,7 @@ import {
   MatSnackBarModule,
   MatPaginatorModule,
   MatSortModule,
+  MatExpansionModule,
   MatCardModule } from '@angular/material';
 
 const modules = [
@@ -46,6 +47,7 @@ const modules = [
   MatCardModule,
   MatPaginatorModule,
   MatSnackBarModule,
+  MatExpansionModule,
   MatSortModule
 ];
 

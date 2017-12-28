@@ -1,0 +1,33 @@
+@import '../../../styles/variables';
+
+.clients-table {
+  &__primary-column {
+    color: $primary;
+    font-weight: 600;
+  }
+}
+
+thead {
+  border: $grey-border;
+  background: #fafafa
+}
+
+.table td {
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.table thead th {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 15px;
+}
+
+.table tbody {
+  border: $grey-border;
+  border-top: none;
+}
+
+.table {
+  background: #fff;
+}

@@ -1,0 +1,8 @@
+<div class="app-clients">
+  <div class="app-clients__clients--header">
+    <span class="app-clients__clients--total">3 Clients</span>
+    <div class="spacer"></div>
+    <button class="app-clients__add" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> ADD</button>
+  </div>
+  <app-clients-table [contacts]="(state$ | async).contact.contacts"></app-clients-table>
+</div>

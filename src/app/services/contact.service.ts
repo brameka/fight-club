@@ -9,7 +9,7 @@ import { Role } from '../models/role';
 
 @Injectable()
 export class ContactService {
-  contact: Contact = {
+  private contact: Contact = {
     name: 'Jon Jon Florence',
     firstname: 'Jon Jon',
     lastname: 'Florence',
@@ -19,17 +19,17 @@ export class ContactService {
     email: 'jonjon.florence@gmail.com',
     role: Role.Child
   };
-  contacts$: Observable<Contact>;
-  contact$: Observable<Contact>;
+  private contacts$: Observable<Contact[]>;
+  private contact$: Observable<Contact>;
 
   constructor() {}
 
-  getContacts(): Observable<Contact> {
+  getContacts(payload: any): Observable<Contact[]> {
     const contacts = [];
-    for(let i = 0; i < 20; i++) {
-      contacts.push(this.contact);  
+    for (let i = 0; i < 3; i++) {
+      contacts.push(this.contact);
     }
-    this.contacts$ = Observable.from(contacts);
+    this.contacts$ = Observable.of(contacts);
     return this.contacts$;
   }
 

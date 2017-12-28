@@ -77,4 +77,24 @@ export class AppComponent implements OnDestroy {
   toggle () {
     this.sidenav.toggle();
   }
+
+  goCLients () {
+    console.log('go clients');
+  }
+
+  goInsurance () {
+    console.log('go insurance');
+  }
+
+  goFinancials () {
+    console.log('go financials');
+  }
+
+  goWorkflow () {
+    console.log('go workflow');
+  }
+
+  goRecords () {
+    console.log('go records');
+  }
 }
