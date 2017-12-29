@@ -35,30 +35,21 @@
   </mat-toolbar-row>
 
   <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'contact'">
-    <!--<button mat-button>Customers</button>
-    <mat-icon>keyboard_arrow_right</mat-icon>
-    <button mat-button>Details</button>-->
-    <!--<button mat-button><mat-icon>arrow_back</mat-icon> Customers</button>-->
     <div class="container">
       <div class="row">
-        <div class="col-8">
-            <div class="sub-menu">
-                <mat-tab-group class="app-container__tabs-light">
-                  <mat-tab label="SUMMARY"></mat-tab>
-                  <mat-tab label="CLIENTS"></mat-tab>
-                  <mat-tab label="LOANS"></mat-tab>
-                  <mat-tab label="INSURANCE"></mat-tab>
-                  <mat-tab label="FINANCIALS"></mat-tab>
-                  <mat-tab label="WORKFLOW"></mat-tab>
-                  <mat-tab label="RECORDS"></mat-tab>
-                </mat-tab-group>
-                <!-- <div class="separator light-separator" style="margin-top: 16px;"></div>
-                <button mat-button class="accent-btn">SCHEDULE</button> -->
-            </div>
+        <div class="sub-menu">
+            <mat-tab-group class="app-container__tabs-light">
+              <mat-tab label="SUMMARY"></mat-tab>
+              <mat-tab label="CLIENTS" (click)="goCLientsx()"></mat-tab>
+              <mat-tab label="LOANS" (click)="goLoans()"></mat-tab>
+              <mat-tab label="INSURANCE" (click)="goInsurance()"></mat-tab>
+              <mat-tab label="FINANCIALS" (click)="goFinancials()"></mat-tab>
+              <mat-tab label="WORKFLOW" (click)="goWorkflow()"></mat-tab>
+              <mat-tab label="RECORDS" (click)="goRecords()"></mat-tab>
+            </mat-tab-group>
         </div>
       </div>
     </div>
-
   </mat-toolbar-row>
 
 </mat-toolbar>
