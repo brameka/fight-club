@@ -7,6 +7,8 @@ export const CREATE_CUSTOMER = 'Create Customer';
 export const CREATE_CUSTOMER_SUCCESS = 'Create Customer Success';
 export const CREATE_CUSTOMER_FAIL = 'Create Customer Fail';
 export const CLOSE_DIALOG_SUCCESS = 'Close Dialog Success';
+export const CHANGE_ROUTE = '[Customer] Change Route';
+export const RESET_ROUTE = '[Customer] Reset Route';
 
 export class GetCustomer implements Action {
   readonly type = GET_CUSTOMER;
@@ -37,10 +39,21 @@ export class CloseDialogSuccess implements Action {
   readonly type = CLOSE_DIALOG_SUCCESS;
 }
 
+export class ChangeRoute implements Action {
+  readonly type = CHANGE_ROUTE;
+  constructor(public payload: number) {}
+}
+
+export class ResetRoute implements Action {
+  readonly type = RESET_ROUTE;
+}
+
 export type All
   = GetCustomer
   | GetCustomerSuccess
   | CreateCustomer
   | CreateCustomerSuccess
   | CreateCustomerFail
-  | CloseDialogSuccess;
+  | CloseDialogSuccess
+  | ChangeRoute
+  | ResetRoute;

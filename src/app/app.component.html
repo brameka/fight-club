@@ -38,14 +38,14 @@
     <div class="container">
       <div class="row">
         <div class="sub-menu">
-            <mat-tab-group class="app-container__tabs-light">
-              <mat-tab label="SUMMARY"></mat-tab>
-              <mat-tab label="CLIENTS" (click)="goCLientsx()"></mat-tab>
-              <mat-tab label="LOANS" (click)="goLoans()"></mat-tab>
-              <mat-tab label="INSURANCE" (click)="goInsurance()"></mat-tab>
-              <mat-tab label="FINANCIALS" (click)="goFinancials()"></mat-tab>
-              <mat-tab label="WORKFLOW" (click)="goWorkflow()"></mat-tab>
-              <mat-tab label="RECORDS" (click)="goRecords()"></mat-tab>
+            <mat-tab-group (selectedIndexChange)="selectedIndexChange($event)" class="app-container__tabs-light">
+              <mat-tab label="SUMMARY" active="true"></mat-tab>
+              <mat-tab label="CLIENTS"></mat-tab>
+              <mat-tab label="LOANS"></mat-tab>
+              <mat-tab label="INSURANCE"></mat-tab>
+              <mat-tab label="FINANCIALS"></mat-tab>
+              <mat-tab label="WORKFLOW"></mat-tab>
+              <mat-tab label="RECORDS"></mat-tab>
             </mat-tab-group>
         </div>
       </div>
@@ -60,7 +60,7 @@
 
   <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
-      <div *ngIf="(state$ | async).app.state == 'home'" class="menu-container">
+      <div class="menu-container">
         <button class="mat-menu-item" mat-menu-item="" routerLink="/dash"><mat-icon>home</mat-icon> Home
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
@@ -90,36 +90,6 @@
         </button>
 
         <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>account_circle</mat-icon> Account
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-      </div>
-
-      <div *ngIf="(state$ | async).app.state == 'contact'" class="menu-container">
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/dash"><mat-icon>arrow_back</mat-icon> Back
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>language</mat-icon> Clients
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>event</mat-icon> Loans
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>fingerprint</mat-icon> Insurance
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>person</mat-icon> Financials
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>people</mat-icon> Workflow
-          <div class="mat-menu-ripple mat-ripple" matRipple></div>
-        </button>
-
-        <button class="mat-menu-item" mat-menu-item="" routerLink="/customers"><mat-icon>account_circle</mat-icon> Records
           <div class="mat-menu-ripple mat-ripple" matRipple></div>
         </button>
       </div>

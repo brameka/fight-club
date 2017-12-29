@@ -1,8 +1,30 @@
-<div class="app-clients">
-  <div class="app-clients__clients--header">
-    <span class="app-clients__clients--total">3 Clients</span>
-    <div class="spacer"></div>
-    <button class="app-clients__add" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> ADD</button>
+<div class="row" style="margin-bottom: 30px;">
+  <div class="col-9">
+      <div class="app-clients">
+        <div class="app-clients__clients--header">
+          <span class="app-clients__clients--total">CLIENTS</span>
+          <div class="spacer"></div>
+          <span class="app-clients__clients--total">3 Clients</span>
+          <div class="separator"></div>
+          <button class="app-clients__add" color="accent" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> ADD</button>
+        </div>
+        <app-clients-table [contacts]="(state$ | async).contact.contacts"></app-clients-table>
+      </div>
   </div>
-  <app-clients-table [contacts]="(state$ | async).contact.contacts"></app-clients-table>
 </div>
+
+<div class="row">
+  <div class="col-9">
+      <div class="app-clients">
+        <div class="app-clients__clients--header">
+          <span class="app-clients__clients--total">RELATIONSHIPS</span>
+          <div class="spacer"></div>
+          <span class="app-clients__clients--total">4 Entries</span>
+          <div class="separator"></div>
+          <button class="app-clients__add" color="accent" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> ADD</button>
+        </div>
+        <app-clients-table [contacts]="(state$ | async).contact.contacts"></app-clients-table>
+      </div>
+  </div>
+</div>
+

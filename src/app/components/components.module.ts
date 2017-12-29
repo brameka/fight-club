@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,19 +15,17 @@ import { CalendarCellComponent } from './calendar/calendar-cell.component';
 import { CalendarBarComponent } from './calendar/calendar-bar.component';
 import { CalendarActionsComponent } from './calendar/calendar-actions.component';
 import { SchedulesComponent } from './schedules/schedules.component';
+import { CustomerContainerComponent } from './customers/customer-container.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomerComponent } from './customers/customer.component';
 import { CustomerFormComponent } from './customers/customer-form.component';
 import { CustomerCreateDialogComponent } from './customers/customer-create-dialog-component';
 import { NotesComponent } from './customers/notes.component';
-
 import { ClientsComponent } from './contacts/clients/clients.component';
 import { ClientsTableComponent } from './contacts/clients/clients-table.component';
-
 import { BlockDialogComponent } from './calendar/calendar-block.component';
 import { DragComponent } from './drag.component';
 import { AutoresizeDirective } from '../directives/autoresize.directive';
-
 import { InsuranceSummaryComponent } from './insurance/insurance-summary.component';
 import { InsuranceComponent } from './insurance/insurance.component';
 import { UiComponentsModule } from '../ui/ui-components.module';
@@ -36,6 +35,7 @@ const components = [
   LoginComponent,
   UsersComponent,
   CustomersComponent,
+  CustomerContainerComponent,
   CustomerComponent,
   CustomerFormComponent,
   CustomerCreateDialogComponent,
@@ -49,6 +49,7 @@ const components = [
 
 @NgModule({
   imports: [
+    RouterModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

@@ -8,7 +8,6 @@ import { fakeBackendProvider } from './helpers/fake-backend';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { routes } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { AuthGuard } from './guards/auth.guard';
@@ -27,6 +26,8 @@ import { MaterialComponentsModule } from './ui/material.module';
 import { StateModule } from './state/state.module';
 import { ServicesModule } from './services/services.module';
 import { ComponentsModule } from './components/components.module';
+
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [

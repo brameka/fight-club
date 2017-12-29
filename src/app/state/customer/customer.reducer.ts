@@ -5,13 +5,16 @@ export interface CustomerState {
   loading: boolean;
   isCloseDialog: boolean;
   id: number;
-
+  index: number;
+  routing: boolean;
 }
 
 export const initialState: CustomerState = {
   id: 0,
   loading: false,
-  isCloseDialog: false
+  isCloseDialog: false,
+  index: 0,
+  routing: false
 };
 
 export type Action = CustomerActions.All;
@@ -26,6 +29,10 @@ export function customerReducer(state: CustomerState = initialState, action: Act
       return { ...state, loading: false, isCloseDialog: true };
     case CustomerActions.CLOSE_DIALOG_SUCCESS:
       return { ...state, isCloseDialog: false };
+    case CustomerActions.CHANGE_ROUTE:
+      return { ...state, isCloseDialog: false, index: action.payload, routing: true };
+    case CustomerActions.RESET_ROUTE:
+      return { ...state, isCloseDialog: false, index: 0, routing: false };
 
     default:
       return state;

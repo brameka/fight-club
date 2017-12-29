@@ -7,20 +7,35 @@ import { DragComponent } from './components/drag.component';
 import { SchedulesComponent } from './components/schedules/schedules.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CustomerComponent } from './components/customers/customer.component';
+import { CustomerContainerComponent } from './components/customers/customer-container.component';
 import { InsuranceComponent } from './components/insurance/insurance.component';
 import { ClientsComponent } from './components/contacts/clients/clients.component';
 
 const appRoutes: Routes = [
 
+    { path: '', component: CustomersComponent },
     { path: 'schedules', component: CustomersComponent },
     { path: 'login', component: CustomersComponent },
-    { path: 'dash', component: CustomersComponent },
     { path: 'users', component: CustomersComponent },
-    { path: 'clients', component: ClientsComponent },
     { path: 'customers', component: CustomersComponent },
-    { path: 'customers/:id', component: CustomerComponent },
-    { path: 'customers/:id/insurance', component: InsuranceComponent },
 
+    { path: 'customers/:id',
+      component: CustomerContainerComponent,
+      children: [
+        {
+          path: '',
+          component: CustomerComponent
+        },
+        {
+          path: 'clients',
+          component: ClientsComponent
+        },
+        {
+          path: 'insurance',
+          component: InsuranceComponent
+        }
+      ]
+    },
     // {   path: '',
     //     redirectTo: '/users',
     //     pathMatch: 'full'

@@ -3,15 +3,13 @@
 .app-clients {
 
   &__clients--header {
-    background: #fff;
     display: flex;
     box-sizing: border-box;
     width: 100%;
     flex-direction: row;
     align-items: center;
     white-space: nowrap;
-    padding: 4px 4px 4px 15px;
-    border: 1px solid #dedede;
+    padding: 4px;
     margin-bottom: 10px;
   }
 
@@ -22,6 +20,8 @@
 
   &__add {
     box-shadow: none;
+    line-height: 30px;
+    padding: 0 12px;
   }
 
   h5 {

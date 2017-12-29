@@ -62,7 +62,7 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   details(row: any) {
-    console.log('row: ', row);
+    this.store.dispatch(new actions.ResetRoute());
     const customer = {
       id: 1
     };
