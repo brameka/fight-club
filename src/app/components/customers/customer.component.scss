@@ -23,7 +23,7 @@
 
     &__header-details h4 {
         margin: 0;
-        font-size: 1.1rem;
+        font-size: 15px;
         font-weight: 500;
         line-height: 0.7rem;
         color: $primary;
@@ -50,9 +50,6 @@
     }
 
     &__avatar-icon {
-        // width: 32px;
-        // height: 32px;
-        // font-size: 32px;
         color: $primary;
     }
 
@@ -62,20 +59,20 @@
         border-right: 1px solid #dedede;
         border-bottom: 1px solid #dedede;
         padding: 25px;
-        font-size: 0.9rem;
+        font-size: 13px;
         margin-bottom: 20px;
     }
 
     &__label-title {
       color: $primary;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 13px;
     }
 
     &__label {
         color: #000;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 13px;
     }
 
     &__label-icon {
@@ -87,7 +84,7 @@
   }
 
     &__value {
-      font-size: 0.9rem;
+      font-size: 13px;
     }
 
     &__details .row {
@@ -96,9 +93,6 @@
 
     &__details .col-3, &__details .col-5, &__details .col-2 {
         text-align: right;
-    }
-
-    &__section  {
     }
 
     &__divider {

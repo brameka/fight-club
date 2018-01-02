@@ -7,7 +7,9 @@
 html {
   height: 100%;
 }
+
 body {
+  font-size: 13px;
   min-height: 100%;
   padding: 0;
   margin: 0;
@@ -32,7 +34,7 @@ body {
 
 .sub-menu .mat-tab-label, .sub-menu .mat-tab-link, .sub-menu .mat-button, .sub-menu .mat-fab, .sub-menu .mat-icon-button, .sub-menu .mat-mini-fab, .sub-menu .mat-raised-button
 {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 
@@ -256,3 +258,16 @@ code {
 .table thead th {
   border-bottom: $grey-border;
 }
+
+.no-shadow {
+    box-shadow: none !important;
+}
+
+.min-btn {
+    box-shadow: none !important;
+    line-height: 30px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+}
+
+

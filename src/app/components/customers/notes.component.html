@@ -4,7 +4,7 @@
         <!--<input type="text" class="app-notes__notes-input form-control" placeholder="Add a comment">-->
         <textarea autoresize [minHeight]="0" [maxHeight]="120" class="app-notes__notes-input form-control" placeholder="Add a comment"></textarea>
         <!-- <button mat-icon-button><mat-icon>send</mat-icon></button> -->
-        <button color="primary" mat-raised-button (click)="create()">POST</button>
+        <button class="no-shadow" color="primary" mat-raised-button (click)="create()">POST</button>
     </div>
     <div class="app-notes__note" *ngFor="let note of notes">
         <div class="media">
