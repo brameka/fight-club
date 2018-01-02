@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Customer } from '../../models/customer';
 import { Observable } from 'rxjs/Observable';
@@ -7,6 +7,7 @@ import { CustomerState } from '../../state/customer/customer.reducer';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import * as actions from '../../state/customer/customer.actions';
+import * as app from '../../state/app/app.actions';
 
 
 import 'rxjs/add/operator/startWith';
@@ -18,7 +19,7 @@ import 'rxjs/add/operator/map';
     <router-outlet></router-outlet>
   `
 })
-export class CustomerContainerComponent {
+export class CustomerContainerComponent implements AfterViewInit {
   index: 0;
   state$: Observable<any>;
   subscription$: any;
@@ -27,15 +28,19 @@ export class CustomerContainerComponent {
     private router: Router,
     private route: ActivatedRoute,
     private store: Store<any>) {
-    this.state$ = this.store.select(state => state);
-    this.subscription$ = this.state$.subscribe((x) => {
-      const tabIndex = x.customer.index;
-      const isRouting = x.customer.routing;
-      if (tabIndex !== this.index && isRouting) {
-        this.index = tabIndex;
-        this.navigateToRoute(this.index);
-      }
-    });
+      this.state$ = this.store.select(state => state);
+      this.subscription$ = this.state$.subscribe((x) => {
+        const tabIndex = x.customer.index;
+        const isRouting = x.customer.routing;
+        if (tabIndex !== this.index && isRouting) {
+          this.index = tabIndex;
+          this.navigateToRoute(this.index);
+        }
+      });
+  }
+
+  ngAfterViewInit () {
+    this.store.dispatch(new app.ShowContactState());
   }
 
   navigateToRoute (index: number) {

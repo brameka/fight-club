@@ -24,7 +24,9 @@ export class NotificationsComponent implements OnChanges, OnDestroy, OnInit {
   }
 
   ngOnDestroy () {
-    this.subscription.unsubscribe();
+    if (this.subscription) {
+      // this.subscription.unsubscribe();
+    }
   }
 
   ngOnChanges () {

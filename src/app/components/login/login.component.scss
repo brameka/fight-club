@@ -42,4 +42,48 @@
     }
 }
 
+ #stripes,#stripes span{position:absolute}
+ #stripes{width:100%;height:100%;overflow:hidden;transform:skewY(-12deg);transform-origin:0;background:linear-gradient(150deg,#53f 15%,#05d5ff 70%,#a6fffe 94%)}
+ #stripes span{height:40px}
+ #stripes :nth-child(1){width:50%;left:50%;top:40px;background:#4c29ff}
+ #stripes :nth-child(2){width:14%;right:0;bottom:40px;background:#2be7ff}
+ #stripes :nth-child(3){width:25%;bottom:0;right:0;background:#a1ffc8}
 
+ #cross,#cross span{position:absolute}
+ #cross {width:100%;height:100%;overflow:hidden;transform-origin:0;background:linear-gradient(167deg,#53f 15%,#05d5ff 70%,#53f 94%)}
+ #cross span{height:40px}
+ #cross :nth-child(1){width:50%;left:50%;top:40px;background:#4c29ff}
+ #cross :nth-child(2){width:14%;right:0;bottom:40px;background:#2be7ff}
+ #cross :nth-child(3){width:25%;bottom:0;right:0;background:#a1ffc8}
+
+ @media (min-width:670px) {
+   #stripes span{height:150px}
+   #stripes :nth-child(1){top:0;background:#4750ff}
+   #stripes :nth-child(2){width:16.66667%;top:300px;bottom:auto;background:#0dcfff}
+   #stripes :nth-child(3){width:33.33333%;right:auto;background:#11bdff}
+}
+
+@media (min-width:880px){
+  #stripes span{height:190px}
+  span {}
+  #stripes :nth-child(1){width:33.33333%;left:-16.66666%;background:#53f}
+  #stripes :nth-child(2){width:33.33333%;top:0;left:16.66666%;right:auto;background:#4553ff}
+  #stripes :nth-child(3){width:33.33333%;left:49.99999%;bottom:auto;background:#4f40ff}
+  #stripes :nth-child(4){width:33.33333%;top:380px;right:-16.66666%;background:#25ddf5}
+  #stripes :nth-child(5){width:33.33333%;bottom:0;background:#1fa2ff}
+}
+
+.login-header {
+  position: relative;
+  padding-top: 80px;
+  text-align: center;
+}
+
+
+
+.announcement{display:-ms-inline-flexbox;display:inline-flex;-ms-flex-align:center;align-items:center;padding:10px 20px;font-size:14px;line-height:17px;font-weight:500;color:#fff;text-decoration:none;background:rgba(0,0,140,.08)}#intro .message{-ms-flex:1;flex:1;margin:0 12px}
+.announcement{line-height:26px;padding:0 12px 0 5px;border-radius:15px}
+
+.message{margin:0 7px 0 6px}
+.announcement .new-pill {padding:0 6px;font-size:12px;line-height:16px;font-weight:600;background:#24b47e;text-transform:uppercase;border-radius:10px}
+h1{font-size:32px;font-weight:400;color:#fff}

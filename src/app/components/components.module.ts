@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialComponentsModule } from '../ui/material.module';
 
+import { AppContainerComponent } from './app/app-container.component';
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users.component';
@@ -31,6 +32,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
 import { UiComponentsModule } from '../ui/ui-components.module';
 
 const components = [
+  AppContainerComponent,
   DashComponent,
   LoginComponent,
   UsersComponent,
@@ -49,8 +51,8 @@ const components = [
 
 @NgModule({
   imports: [
-    RouterModule,
     CommonModule,
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
     MaterialComponentsModule,

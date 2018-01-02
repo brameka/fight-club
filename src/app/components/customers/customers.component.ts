@@ -11,6 +11,7 @@ import { Customer } from '../../models/customer';
 import { CustomerCreateDialogComponent } from '../customers/customer-create-dialog-component';
 import { CustomerState } from '../../state/customer/customer.reducer';
 import * as actions from '../../state/customer/customer.actions';
+import * as app from '../../state/app/app.actions';
 
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
@@ -34,6 +35,7 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
 
   constructor(private slimService: SlimLoadingBarService,
     private router: Router,
+    private route: ActivatedRoute,
     public dialog: MatDialog,
     private store: Store<any>) {
       this.state$ = this.store.select(state => state);
@@ -42,11 +44,14 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
           this.close();
         }
       });
+
   }
 
   ngOnDestroy() {
-    this.subscription$.unsubscribe();
-    this.close();
+    if (this.subscription$) {
+      // this.subscription$.unsubscribe();
+      this.close();
+    }
   }
 
   ngOnInit() {
@@ -54,6 +59,7 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   ngAfterViewInit() {
+    this.store.dispatch(new app.ShowHomeState());
     this.slimService.complete();
   }
 
@@ -66,7 +72,7 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
     const customer = {
       id: 1
     };
-    this.router.navigate(['/customers/', customer.id]);
+    this.router.navigate(['../customers/', customer.id], { relativeTo: this.route });
   }
 
   create (): void {

@@ -1,6 +1,6 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { Router } from '@angular/router';
-
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
@@ -9,14 +9,15 @@ import { AuthenticationService } from '../../services/authentication.service';
     styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
     model: any = {};
     loading = false;
     error = '';
 
     constructor(
-        private router: Router,
-        private authenticationService: AuthenticationService) { }
+      private slimService: SlimLoadingBarService,
+      private router: Router,
+      private authenticationService: AuthenticationService) { }
 
     ngOnInit() {
         this.authenticationService.logout();
@@ -33,5 +34,9 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 }
             });
+    }
+
+    ngAfterViewInit() {
+      this.slimService.complete();
     }
 }
