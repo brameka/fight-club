@@ -55,15 +55,15 @@ export class CustomerContainerComponent implements AfterViewInit {
       case 1:
         return 'clients';
       case 2:
-        return 'insurance';
+        return 'loans';
       case 3:
-        return '';
+        return 'insurance';
       case 4:
-        return 'clients';
+        return 'financials';
       case 5:
-        return 'insurance';
+        return 'workflows';
       case 6:
-        return 'insurance';
+        return 'records';
     }
   }
 

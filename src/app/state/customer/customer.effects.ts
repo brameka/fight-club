@@ -45,7 +45,7 @@ export class CustomerEffects {
       ])
       .do((success: customerActions.CreateCustomerSuccess) => {
         if (success.type === customerActions.CREATE_CUSTOMER_SUCCESS) {
-          this.router.navigate(['/customers/' + success.payload.id]);
+          this.router.navigate(['../app/customers/' + success.payload.id]);
         }
       })
       .catch(error => {

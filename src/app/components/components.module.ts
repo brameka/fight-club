@@ -31,6 +31,10 @@ import { InsuranceSummaryComponent } from './insurance/insurance-summary.compone
 import { InsuranceComponent } from './insurance/insurance.component';
 import { UiComponentsModule } from '../ui/ui-components.module';
 
+import { LoansDialogComponent } from '../components/loans/dialog/loans-dialog.component';
+import { LoansComponent } from '../components/loans/list/loans.component';
+import { LoansFormComponent } from '../components/loans/form/loans-form.component';
+
 const components = [
   AppContainerComponent,
   DashComponent,
@@ -46,6 +50,9 @@ const components = [
   ClientsTableComponent,
   InsuranceSummaryComponent,
   InsuranceComponent,
+  LoansDialogComponent,
+  LoansComponent,
+  LoansFormComponent,
   AutoresizeDirective
 ];
 
@@ -66,7 +73,8 @@ const components = [
     ...components,
   ],
   entryComponents: [
-    CustomerCreateDialogComponent
+    CustomerCreateDialogComponent,
+    LoansDialogComponent
   ]
 })
 export class ComponentsModule {}

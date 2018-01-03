@@ -1,45 +1,63 @@
-.card {
-  flex: 1 0 280px;
-  margin: 10px;
-  box-sizing: border-box;
+
+@import '../../styles/variables';
+
+.app-login {
+  &__logo {
+    position: relative;
+    margin: 0 auto 20px;
+    padding-top: 100px;
+    width: 70px;
+  }
+
+  &__container {
+    max-width: 430px;
+    margin: 0 auto 20px;
+    padding-top: 20px;
+  }
+
+  &__caption {
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  &__title {
+    text-align: center;
+    color: $primary;
+    margin: 30px 0;
+    font-size: 1.3rem;
+  }
+
+  &__group {
+    margin-top: 15px;
+  }
+
+  &__login-btn {
+    width: 100%;
+    margin-top: 15px;
+    background-image: -webkit-linear-gradient(left bottom,rgba(159,88,150,0) 0,rgb(85, 51, 255) 100%);
+    // background-image: -webkit-linear-gradient(left bottom, rgb(10, 200, 255) 0, #5533ff 100%);
+    height: 44px;
+    border-radius: 5px;
+  }
+
+  &__gradient {
+    position: absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background-image: linear-gradient(to bottom, #5534fd, #5336eb);
+    background-color: #5534fd;
+  }
+
 }
 
-.Aligner {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    min-height: 24em;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: #fff !important;
+}
 
-    .Aligner-item--fixed {
-        -webkit-box-flex: 0;
-        -webkit-flex: none;
-        -ms-flex: none;
-        flex: none;
-        max-width: 50%;
-    }
-
-    .Aligner-item {
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
-        flex: 1;
-    }
-
-    .Demo {
-        width: 100%;
-        padding: .8em 1em 0;
-        background: hsla(31,15%,50%,.1);
-        border-radius: 3px;
-    }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
 }
 
  #stripes,#stripes span{position:absolute}
@@ -73,11 +91,7 @@
   #stripes :nth-child(5){width:33.33333%;bottom:0;background:#1fa2ff}
 }
 
-.login-header {
-  position: relative;
-  padding-top: 80px;
-  text-align: center;
-}
+
 
 
 

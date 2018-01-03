@@ -24,21 +24,21 @@ export function appReducer(state: AppState = initialState, action: Action): AppS
 
   switch (action.type) {
     case actions.SHOW_HOME_STATE:
-      return { ...state, 
+      return { ...state,
         title: 'Home',
-        styles: { 'margin-top': '64px' }, 
-        state: 'home', 
-        menuColour: 'default', 
-        loadingColour: '#3f51b5' 
+        styles: { 'margin-top': '64px' },
+        state: 'home',
+        menuColour: 'default',
+        loadingColour: '#3f51b5'
       };
     case actions.SHOW_CONTACT_STATE:
-      return { 
-        ...state, 
+      return {
+        ...state,
         title: 'Contact',
-        styles: { 'margin-top': '110px' }, 
-        state: 'contact', 
-        menuColour: 'primary', 
-        loadingColour: '#fff'  
+        styles: { 'margin-top': '110px' },
+        state: 'contact',
+        menuColour: 'primary',
+        loadingColour: '#fff'
       };
 
     default:
