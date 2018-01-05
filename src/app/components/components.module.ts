@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialComponentsModule } from '../ui/material.module';
-
 import { AppContainerComponent } from './app/app-container.component';
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
@@ -34,6 +33,8 @@ import { LoansDialogComponent } from '../components/loans/dialog/loans-dialog.co
 import { LoansComponent } from '../components/loans/list/loans.component';
 import { LoansGeneralFormComponent } from '../components/loans/form/general/loans-general-form.component';
 
+import { FinancialComponent } from './financials/list/financials.component';
+
 const components = [
   AppContainerComponent,
   DashComponent,
@@ -51,6 +52,7 @@ const components = [
   LoansDialogComponent,
   LoansComponent,
   LoansGeneralFormComponent,
+  FinancialComponent,
   AutoresizeDirective
 ];
 

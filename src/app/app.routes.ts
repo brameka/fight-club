@@ -12,6 +12,7 @@ import { CustomerContainerComponent } from './components/customers/customer-cont
 import { InsuranceComponent } from './components/insurance/list/insurance.component';
 import { ClientsComponent } from './components/contacts/clients/clients.component';
 import { LoansComponent } from './components/loans/list/loans.component';
+import { FinancialComponent } from './components/financials/list/financials.component';
 
 const appRoutes: Routes = [
 
@@ -49,6 +50,10 @@ const appRoutes: Routes = [
             {
               path: 'loans',
               component: LoansComponent
+            },
+            {
+              path: 'financials',
+              component: FinancialComponent
             }
           ]
         },

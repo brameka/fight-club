@@ -1,3 +1,5 @@
+import { Frequency } from './frequency';
+
 export interface Insurance {
   name: string;
   type: InsuranceType;
@@ -15,11 +17,4 @@ export enum InsuranceType {
   Car,
   House,
   Income
-}
-
-export enum Frequency {
-  Weekly,
-  Fortnightly,
-  Monthly,
-  Yearly
 }

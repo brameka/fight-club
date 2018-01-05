@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Insurance, InsuranceType, Frequency } from '../models/insurance';
+import { Insurance, InsuranceType } from '../models/insurance';
+import { Frequency } from '../models/frequency';
 
 @Injectable()
 export class InsuranceService {

@@ -1,0 +1,74 @@
+<div *ngIf="(state$ | async)!.financial.loading" class="app-financial">
+    <div class="app-financial__loader">
+      <mat-spinner diameter="25" strokeWidth="3"></mat-spinner>
+    </div>
+  </div>
+
+  <div *ngIf="(state$ | async)!.financial.loading === false" class="app-financial">
+
+
+    <div class="row">
+      <div class="col-6">
+        <div class="app-financial__header">
+          <div class="app-financial__header--title">ASSETS</div>
+          <div class="spacer"></div>
+          <span class="app-financial__header--total">{{(state$ | async).financial.assets.length}} Assets</span>
+          <div class="separator"></div>
+          <button class="no-shadow app-financial__header--btn" color="accent" mat-raised-button (click)="create()">ADD</button>
+        </div>
+
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th class="app-financial__actions-col">
+                ...
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="app-financial__row" *ngFor="let asset of (state$ | async).financial.assets">
+              <td class="app-financial__primary-column">{{asset.name}}</td>
+              <td class="app-financial__actions-col">
+                <button class="app-financial__action-btn" mat-icon-button><mat-icon class="app-financial__action-icon">more_vert</mat-icon></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col-6">
+        <div class="app-financial__header">
+          <div class="app-financial__header--title">LIABILITIES</div>
+          <div class="spacer"></div>
+          <span class="app-financial__header--total">{{(state$ | async).financial.liabilities.length}} Liabilities</span>
+          <div class="separator"></div>
+          <button class="no-shadow app-financial__header--btn" color="accent" mat-raised-button (click)="create()">ADD</button>
+        </div>
+
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th class="app-financial__actions-col">
+                ...
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="app-financial__row" *ngFor="let liability of (state$ | async).financial.liabilities">
+              <td class="app-financial__primary-column">{{liability.name}}</td>
+              <td class="app-financial__actions-col">
+                <button class="app-financial__action-btn" mat-icon-button><mat-icon class="app-financial__action-icon">more_vert</mat-icon></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+    </div>
+
+
+
+  </div>
