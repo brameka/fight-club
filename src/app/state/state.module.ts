@@ -15,11 +15,19 @@ import { appReducer } from './app/app.reducer';
 import { ContactEffects } from './contacts/contact.effects';
 import { contactReducer } from './contacts/contact.reducer';
 
+import { LoansEffects } from './loans/loans.effects';
+import { loansReducer } from './loans/loans.reducer';
+
+import { InsuranceEffects } from './insurance/insurance.effects';
+import { insuranceReducer } from './insurance/insurance.reducer';
+
 const effects = [
   AppEffects,
   CustomerEffects,
   NotificationEffects,
-  ContactEffects
+  ContactEffects,
+  LoansEffects,
+  InsuranceEffects
 ];
 
 @NgModule({
@@ -29,7 +37,9 @@ const effects = [
       app: appReducer,
       customer: customerReducer,
       notification: notificationReducer,
-      contact: contactReducer
+      contact: contactReducer,
+      loans: loansReducer,
+      insurance: insuranceReducer
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25 })
   ]

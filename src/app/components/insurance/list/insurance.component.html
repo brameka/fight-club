@@ -1,0 +1,34 @@
+<div *ngIf="(state$ | async)!.insurance.loading" class="app-insurance">
+  <div class="app-insurance__loader">
+    <mat-spinner diameter="25" strokeWidth="3"></mat-spinner>
+  </div>
+</div>
+
+<div *ngIf="(state$ | async)!.insurance.loading === false" class="app-insurance">
+  <div class="col-8">
+    <div class="app-insurance__header">
+        <button class="mr5" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> NEW</button>
+        <div class="separator"></div>
+        <span class="app-insurance__header--total">{{(state$ | async).insurance.data.length}} Insurance</span>
+    </div>
+
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th class="app-insurance__actions-col">
+            ...
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="app-insurance__row" *ngFor="let insurance of (state$ | async).insurance.data">
+          <td class="app-insurance__primary-column">{{insurance.name}}</td>
+          <td class="app-insurance__actions-col">
+            <button class="app-insurance__action-btn" mat-icon-button><mat-icon class="app-insurance__action-icon">more_vert</mat-icon></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,22 +1,15 @@
-      <div class="app-clients" style="margin-bottom: 30px;">
-        <div class="app-clients__clients--header">
-          <span class="app-clients__clients--title">CLIENTS</span>
-          <div class="spacer"></div>
-          <span class="app-clients__clients--total">3 Clients</span>
-          <div class="separator"></div>
-          <button class="app-clients__add no-shadow" color="accent" mat-raised-button (click)="create()">Add</button>
-        </div>
-        <app-clients-table [contacts]="(state$ | async).contact.contacts"></app-clients-table>
-      </div>
+<div *ngIf="(state$ | async)!.contact.loading" class="app-clients">
+  <div class="app-clients__loader">
+    <mat-spinner diameter="25" strokeWidth="3"></mat-spinner>
+  </div>
+</div>
 
-      <div class="app-clients">
-        <div class="app-clients__clients--header">
-          <span class="app-clients__clients--title">RELATIONSHIPS</span>
-          <div class="spacer"></div>
-          <span class="app-clients__clients--total">4 Entries</span>
-          <div class="separator"></div>
-          <button class="app-clients__add no-shadow" color="accent" mat-raised-button (click)="create()">Add</button>
-        </div>
-        <app-clients-table [contacts]="(state$ | async).contact.contacts"></app-clients-table>
-      </div>
+<div *ngIf="(state$ | async)!.contact.loading === false" class="app-clients">
+  <div class="app-clients__header">
+      <button class="mr5" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> NEW</button>
+      <div class="separator"></div>
+      <span class="app-clients__header--total">{{(state$ | async).contact.contacts.length}} Clients</span>
+  </div>
+  <app-clients-table [contacts]="(state$ | async).contact.contacts"></app-clients-table>
+</div>
 

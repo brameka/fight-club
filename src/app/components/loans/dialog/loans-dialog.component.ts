@@ -6,7 +6,8 @@ import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-loans-dialog',
-  templateUrl: 'loans-dialog.component.html'
+  templateUrl: 'loans-dialog.component.html',
+  styleUrls: ['./loans-dialog.component.scss']
 })
 export class LoansDialogComponent implements OnInit {
   state: any;
@@ -15,6 +16,14 @@ export class LoansDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder) {
 
+  }
+
+  cancel() {
+    this.dialogRef.close();
+  }
+
+  save() {
+    this.dialogRef.close();
   }
 
   ngOnInit () {}

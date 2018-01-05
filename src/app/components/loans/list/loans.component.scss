@@ -1,4 +1,83 @@
+@import '../../../styles/variables';
+
 .app-loans {
 
+  &__loader {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: row;
+    // justify-content: center;
+    margin-top: 10px;
+  }
+
+  &__header {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+    flex-direction: row;
+    padding: 4px 4px 4px 6px;
+    margin-bottom: 10px;
+  }
+
+  &__header--total {
+    color: $primary;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+
+  &__primary-column {
+    color: $primary;
+    font-weight: 600;
+  }
+
+  &__actions-col {
+    width: 50px;
+    text-align: center;
+  }
+
+  &__action-btn {
+    width: 24px;
+    height: 24px;
+    line-height: 20px;
+  }
+
+  &__action-icon {
+    font-size: 18px;
+  }
+
+  &__row {
+    cursor: pointer;
+  }
+
+  thead {
+    border: $grey-border;
+    background: #fafafa
+  }
+
+  .table td {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+
+  .table thead th {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 15px;
+  }
+
+  .table tbody {
+    border: $grey-border;
+    border-top: none;
+  }
+
+  .table {
+    background: #fff;
+  }
 }
+
 

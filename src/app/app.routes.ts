@@ -9,7 +9,7 @@ import { SchedulesComponent } from './components/schedules/schedules.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CustomerComponent } from './components/customers/customer.component';
 import { CustomerContainerComponent } from './components/customers/customer-container.component';
-import { InsuranceComponent } from './components/insurance/insurance.component';
+import { InsuranceComponent } from './components/insurance/list/insurance.component';
 import { ClientsComponent } from './components/contacts/clients/clients.component';
 import { LoansComponent } from './components/loans/list/loans.component';
 

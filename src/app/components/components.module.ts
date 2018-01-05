@@ -27,13 +27,12 @@ import { ClientsTableComponent } from './contacts/clients/clients-table.componen
 import { BlockDialogComponent } from './calendar/calendar-block.component';
 import { DragComponent } from './drag.component';
 import { AutoresizeDirective } from '../directives/autoresize.directive';
-import { InsuranceSummaryComponent } from './insurance/insurance-summary.component';
-import { InsuranceComponent } from './insurance/insurance.component';
+import { InsuranceComponent } from './insurance/list/insurance.component';
 import { UiComponentsModule } from '../ui/ui-components.module';
 
 import { LoansDialogComponent } from '../components/loans/dialog/loans-dialog.component';
 import { LoansComponent } from '../components/loans/list/loans.component';
-import { LoansFormComponent } from '../components/loans/form/loans-form.component';
+import { LoansGeneralFormComponent } from '../components/loans/form/general/loans-general-form.component';
 
 const components = [
   AppContainerComponent,
@@ -48,11 +47,10 @@ const components = [
   NotesComponent,
   ClientsComponent,
   ClientsTableComponent,
-  InsuranceSummaryComponent,
   InsuranceComponent,
   LoansDialogComponent,
   LoansComponent,
-  LoansFormComponent,
+  LoansGeneralFormComponent,
   AutoresizeDirective
 ];
 

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -10,7 +10,7 @@ import * as actions from '../../../state/contacts/contact.actions';
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.scss']
 })
-export class ClientsComponent implements AfterViewInit {
+export class ClientsComponent {
   state$: Observable<any>;
 
   constructor(
@@ -22,10 +22,6 @@ export class ClientsComponent implements AfterViewInit {
 
   load() {
     this.store.dispatch(new actions.GetContacts({ id: 1 }));
-  }
-
-  ngAfterViewInit() {
-    this.slimService.complete();
   }
 
   save() {

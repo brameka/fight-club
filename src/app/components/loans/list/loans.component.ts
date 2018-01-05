@@ -7,18 +7,16 @@ import { MatPaginator } from '@angular/material';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-
 import { LoansDialogComponent } from '../dialog/loans-dialog.component';
-import * as app from '../../../state/app/app.actions';
-
+import * as actions from '../../../state/loans/loans.actions';
 
 @Component({
   selector: 'app-loans',
   styleUrls: ['loans.component.scss'],
   templateUrl: 'loans.component.html',
 })
-export class LoansComponent implements AfterViewInit {
-
+export class LoansComponent {
+  state$: Observable<any>;
   dialogRef: MatDialogRef<LoansDialogComponent>;
 
   constructor(private slimService: SlimLoadingBarService,
@@ -26,10 +24,9 @@ export class LoansComponent implements AfterViewInit {
     private route: ActivatedRoute,
     public dialog: MatDialog,
     private store: Store<any>) {
-  }
-
-  ngAfterViewInit() {
-    this.slimService.complete();
+      this.slimService.start();
+      this.store.dispatch(new actions.GetLoans({ id: 1 }));
+      this.state$ = this.store.select(state => state);
   }
 
   create (): void {

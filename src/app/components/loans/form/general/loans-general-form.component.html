@@ -1,0 +1,60 @@
+<div class="app-loans-general-form">
+  <form [formGroup]="generalFormGroup">
+      <div class="row">
+        <div class="col-4">
+            <mat-form-field class="app-loans-general-form__field">
+              <input matInput placeholder="Lender" formControlName="lender">
+              <mat-error *ngIf="generalFormGroup.controls['lender'].hasError('required')">
+                Lender <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field class="app-loans-general-form__field">
+              <input matInput placeholder="Reference" formControlName="reference">
+              <mat-error *ngIf="generalFormGroup.controls['reference'].hasError('required')">
+                Reference <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field class="app-loans-general-form__field">
+              <mat-select formControlName="status" placeholder="Status" >
+                <mat-option *ngFor="let stat of statuses" [value]="stat">
+                  {{ stat }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="generalFormGroup.controls['status'].hasError('required')">
+                Status <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-4">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="Settlement Date" formControlName="settlementDate">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker2" placeholder="Finance Date" formControlName="financeDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker3" placeholder="Approval Date" formControlName="approvalDate">
+            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+            <mat-datepicker #picker3></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+      </div>
+  </form>
+</div>

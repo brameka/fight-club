@@ -4,37 +4,30 @@ import { Router } from '@angular/router';
 import { Store, Action } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/delay';
-
-import * as contactActions from './contact.actions';
+import { LoanService } from '../../services/loan.service';
+import * as actions from './loans.actions';
 import * as notificationActions from '../notification/notification.actions';
 
-import { ContactService } from '../../services/contact.service';
-import { Contact } from '../../models/contact';
-
-export type Action = contactActions.All;
+export type Action = actions.All;
 
 @Injectable()
-export class ContactEffects {
+export class LoansEffects {
 
   constructor(private actions$: Actions,
     private store$: Store<Object>,
-    private service: ContactService,
-    private router: Router,
+    private service: LoanService,
     private slimService: SlimLoadingBarService
   ) {}
 
   @Effect()
-  getContacts$: Observable<Action> = this.actions$.ofType(contactActions.GET_CONTACTS)
-    .switchMap((payload) => this.service.getContacts(payload)
-      .mergeMap(contacts => [
-        new contactActions.GetContactsSuccess(contacts)
+  getLoans$: Observable<Action> = this.actions$.ofType(actions.GET_LOANS)
+    .switchMap((payload) => this.service.getLoans(payload)
+      .mergeMap(loans => [
+        new actions.GetLoansSuccess(loans)
       ])
-      .delay(2000)
+      .delay(3000)
       .do(x => {
         this.slimService.complete();
       })

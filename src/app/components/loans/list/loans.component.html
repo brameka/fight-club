@@ -1,1 +1,34 @@
-<button class="mr5" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> NEW</button>
+<div *ngIf="(state$ | async)!.loans.loading" class="app-loans">
+  <div class="app-loans__loader">
+    <mat-spinner diameter="25" strokeWidth="3"></mat-spinner>
+  </div>
+</div>
+
+<div *ngIf="(state$ | async)!.loans.loading === false" class="app-loans">
+  <div class="col-8">
+    <div class="app-loans__header">
+        <button class="mr5" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> NEW</button>
+        <div class="separator"></div>
+        <span class="app-loans__header--total">{{(state$ | async).loans.loans.length}} Loans</span>
+    </div>
+
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th class="app-loans__actions-col">
+            ...
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="app-loans__row" *ngFor="let loan of (state$ | async).loans.loans">
+          <td class="app-loans__primary-column">{{loan.name}}</td>
+          <td class="app-loans__actions-col">
+            <button class="app-loans__action-btn" mat-icon-button><mat-icon class="app-loans__action-icon">more_vert</mat-icon></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
