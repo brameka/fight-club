@@ -36,6 +36,10 @@
   height: inherit;
 }
 
+.toolbar-placeholder {
+  width: 200px;
+}
+
 // tabs
 .mat-tab-labels .mat-tab-label {
   min-width: 80px;
@@ -67,10 +71,11 @@
   background-color: #fff;
 }
 
-
-
-
-
+.mat-toolbar .mat-toolbar-row.subaction-row {
+  height: inherit;
+  background: #fff;
+  height: 46px;
+}
 
 .icon {
   padding: 0 14px;

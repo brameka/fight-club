@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { LoansDialogComponent } from '../dialog/loans-dialog.component';
 import * as actions from '../../../state/loans/loans.actions';
+import * as app from '../../../state/app/app.actions';
 
 @Component({
   selector: 'app-loans',
@@ -25,6 +26,14 @@ export class LoansComponent {
     public dialog: MatDialog,
     private store: Store<any>) {
       this.slimService.start();
+      this.store.dispatch(new app.ShowState({
+        title: 'Loans',
+        state: 'contact',
+        subState: '',
+        margin: '110px',
+        menuColor: 'primary',
+        loadingColor: '#fff'
+      }));
       this.store.dispatch(new actions.GetLoans({ id: 1 }));
       this.state$ = this.store.select(state => state);
   }

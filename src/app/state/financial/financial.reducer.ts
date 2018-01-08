@@ -26,7 +26,6 @@ export function financialReducer(state: InsuranceState = initialState, action: A
     case actions.GET_FINANCIALS:
       return { ...state, loading: true, isCloseDialog: false };
     case actions.GET_FINANCIALS_SUCCESS: {
-      console.log('Financial Success In Reducer: ', action.payload);
       return { ...state, loading: false, isCloseDialog: false, assets: action.payload.assets, liabilities: action.payload.liabilities };
     }
     default:

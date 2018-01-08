@@ -7,7 +7,7 @@
 <div *ngIf="(state$ | async)!.insurance.loading === false" class="app-insurance">
   <div class="col-8">
     <div class="app-insurance__header">
-        <button class="mr5" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> NEW</button>
+        <button class="mr5 action-btn" color="primary" mat-raised-button (click)="create()">NEW</button>
         <div class="separator"></div>
         <span class="app-insurance__header--total">{{(state$ | async).insurance.data.length}} Insurance</span>
     </div>

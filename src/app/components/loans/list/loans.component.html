@@ -7,7 +7,7 @@
 <div *ngIf="(state$ | async)!.loans.loading === false" class="app-loans">
   <div class="col-8">
     <div class="app-loans__header">
-        <button class="mr5" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> NEW</button>
+        <button class="mr5 action-btn" color="primary" mat-raised-button (click)="create()">NEW</button>
         <div class="separator"></div>
         <span class="app-loans__header--total">{{(state$ | async).loans.loans.length}} Loans</span>
     </div>

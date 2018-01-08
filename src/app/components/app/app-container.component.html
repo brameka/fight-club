@@ -19,6 +19,7 @@
       </mat-toolbar-row>
 
       <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'homex'">
+
         <button mat-button>Schedules</button>
         <mat-icon>keyboard_arrow_right</mat-icon>
         <button mat-button>Scheduler</button>
@@ -34,6 +35,7 @@
       </mat-toolbar-row>
 
       <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'contact'">
+        <div class="toolbar-placeholder"></div>
         <div class="container">
           <div class="row">
             <div class="sub-menu">
@@ -45,6 +47,20 @@
                   <mat-tab label="FINANCIALS"></mat-tab>
                   <mat-tab label="WORKFLOW"></mat-tab>
                   <mat-tab label="RECORDS"></mat-tab>
+                </mat-tab-group>
+            </div>
+          </div>
+        </div>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row class="subaction-row" *ngIf="(state$ | async).app.subState === 'financials'">
+        <div class="toolbar-placeholder"></div>
+        <div class="container">
+          <div class="row">
+            <div class="sub-menu">
+                <mat-tab-group (selectedIndexChange)="incomeSelectedIndexChange($event)">
+                  <mat-tab label="ASSETS/LIABILITIES" active="true"></mat-tab>
+                  <mat-tab label="INCOME/EXPENSES"></mat-tab>
                 </mat-tab-group>
             </div>
           </div>

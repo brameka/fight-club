@@ -8,10 +8,9 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import * as actions from '../../../state/insurance/insurance.actions';
+import * as app from '../../../state/app/app.actions';
 
 // import { LoansDialogComponent } from '../dialog/loans-dialog.component';
-
-
 
 @Component({
   selector: 'app-insurance',
@@ -27,13 +26,16 @@ export class InsuranceComponent {
     public dialog: MatDialog,
     private store: Store<any>) {
       this.slimService.start();
+      this.store.dispatch(new app.ShowState({
+        title: 'Insurance',
+        state: 'contact',
+        subState: 'default',
+        margin: '110px',
+        menuColor: 'primary',
+        loadingColor: '#fff'
+      }));
       this.store.dispatch(new actions.GetInsurances({ id: 1 }));
       this.state$ = this.store.select(state => state);
-      // this.state$.subscribe(x => {
-      //   if (!x.loans.loading) {
-      //     this.slimService.complete();
-      //   }
-      // });
   }
 
   // create (): void {

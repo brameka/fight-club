@@ -233,6 +233,15 @@ code {
     }
 }
 
+// action button:
+.action-btn {
+  line-height: 30px;
+  font-size: 13px;
+  padding: 0 10px;
+  min-width: 70px;
+  box-shadow: none !important;
+}
+
 //margins:
 .mr5 {
   margin-right: 5px !important;
@@ -278,6 +287,10 @@ code {
 .app-loans-dialog__group .mat-tab-header {
   background: #fafafa;
   border-bottom: 1px solid #eaeaea;
+}
+
+.app-financial__group .mat-tab-header {
+  display: none;
 }
 
 

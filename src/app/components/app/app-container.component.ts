@@ -19,7 +19,7 @@ export class AppContainerComponent implements OnDestroy {
   styles = {};
   location: string;
   title: string;
-  status: 'login'|'register'|'app';
+  status: 'login'|'register'|'app' = 'app';
   state$: Observable<any>;
 
   constructor (
@@ -37,22 +37,10 @@ export class AppContainerComponent implements OnDestroy {
                     event instanceof NavigationCancel ||
                     event instanceof NavigationError) {
             this.location = router.url;
-            this.setStyles();
         }
     }, (error: any) => {
         // this.slimLoader.complete();
     });
-  }
-
-  setStyles() {
-    switch (this.location) {
-      default: {
-        this.styles = {
-          'margin-top': '64px'
-        };
-        this.status = 'app';
-      }
-    }
   }
 
   ngOnDestroy(): any {

@@ -28,6 +28,7 @@ export class CustomerContainerComponent implements AfterViewInit {
     private router: Router,
     private route: ActivatedRoute,
     private store: Store<any>) {
+      this.store.dispatch(new app.ShowContactState());
       this.state$ = this.store.select(state => state);
       this.subscription$ = this.state$.subscribe((x) => {
         const tabIndex = x.customer.index;
@@ -40,7 +41,7 @@ export class CustomerContainerComponent implements AfterViewInit {
   }
 
   ngAfterViewInit () {
-    this.store.dispatch(new app.ShowContactState());
+    // this.store.dispatch(new app.ShowContactState());
   }
 
   navigateToRoute (index: number) {
