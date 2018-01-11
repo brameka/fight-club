@@ -20,8 +20,6 @@ import { LoansGeneralFormComponent } from '../components/loans/form/general/loan
 
 import { FinancialComponent } from './financials/list/financials.component';
 
-
-
 const components = [
   AppContainerComponent,
   DashComponent,
@@ -53,7 +51,6 @@ const components = [
     ...components,
   ],
   entryComponents: [
-    CustomerCreateDialogComponent,
     LoansDialogComponent
   ]
 })

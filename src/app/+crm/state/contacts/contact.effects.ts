@@ -11,10 +11,10 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/delay';
 
 import * as contactActions from './contact.actions';
-import * as notificationActions from '../notification/notification.actions';
+import * as notificationActions from 'app/state/notification/notification.actions';
 
 import { ContactService } from '../../services/contact.service';
-import { Contact } from '../../models/contact';
+import { Contact } from 'app/models/contact';
 
 export type Action = contactActions.All;
 

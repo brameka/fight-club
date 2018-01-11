@@ -3,7 +3,7 @@ import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import * as actions from '../../../state/contacts/contact.actions';
+// import * as actions from '../../../state/contacts/contact.actions';
 
 @Component({
   selector: 'app-clients',
@@ -21,7 +21,7 @@ export class ClientsComponent {
   }
 
   load() {
-    this.store.dispatch(new actions.GetContacts({ id: 1 }));
+    // this.store.dispatch(new actions.GetContacts({ id: 1 }));
   }
 
   save() {

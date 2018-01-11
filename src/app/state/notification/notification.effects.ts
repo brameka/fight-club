@@ -10,15 +10,12 @@ import 'rxjs/add/operator/do';
 import * as actions from './notification.actions';
 import { NotificationService } from '../../services/notification.service';
 
-import { CustomerService } from '../../services/customer.service';
-
 @Injectable()
 export class NotificationEffects {
 
   constructor (
     private actions$: Actions,
     private notificationService: NotificationService,
-    private customerService: CustomerService
   ) { }
 
   // @Effect()

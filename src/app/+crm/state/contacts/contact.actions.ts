@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Contact } from '../../models/contact';
+import { Contact } from 'app/models/contact';
 import { Observable } from 'rxjs/Observable';
 
 export const GET_CONTACTS = '[Contact] Get Contacts';

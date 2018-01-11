@@ -4,7 +4,6 @@ import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationErr
 import { MatSidenav } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import * as customerActions from './state/customer/customer.actions';
 import * as actions from './state/app/app.actions';
 
 @Component({

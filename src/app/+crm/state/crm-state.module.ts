@@ -18,4 +18,4 @@ const effects = [
     StoreModule.forFeature('customer', customerReducer)
   ]
 })
-export class StateModule {}
+export class CrmStateModule {}

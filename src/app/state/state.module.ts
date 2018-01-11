@@ -9,9 +9,6 @@ import { notificationReducer } from './notification/notification.reducer';
 import { AppEffects } from './app/app.effects';
 import { appReducer } from './app/app.reducer';
 
-import { ContactEffects } from './contacts/contact.effects';
-import { contactReducer } from './contacts/contact.reducer';
-
 import { LoansEffects } from './loans/loans.effects';
 import { loansReducer } from './loans/loans.reducer';
 
@@ -26,9 +23,7 @@ import { usersReducer } from './users/users.reducer';
 
 const effects = [
   AppEffects,
-  CustomerEffects,
   NotificationEffects,
-  ContactEffects,
   LoansEffects,
   InsuranceEffects,
   FinancialEffects,
@@ -40,9 +35,7 @@ const effects = [
     EffectsModule.forRoot([...effects]),
     StoreModule.forRoot({
       app: appReducer,
-      customer: customerReducer,
       notification: notificationReducer,
-      contact: contactReducer,
       loans: loansReducer,
       insurance: insuranceReducer,
       financial: financialReducer,

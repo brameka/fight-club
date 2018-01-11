@@ -17,6 +17,7 @@ import { ResizableModule } from 'angular-resizable-element';
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireDatabaseModule } from 'angularfire2/database';
 // export const firebaseConfig = environment.firebase;
+
 import { environment } from '../environments/environment';
 import { UiComponentsModule } from './ui/ui-components.module';
 import { MaterialComponentsModule } from './ui/material.module';

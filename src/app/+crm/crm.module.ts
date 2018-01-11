@@ -12,6 +12,7 @@ import { CustomerCreateDialogComponent } from './customers/customer-create-dialo
 import { NotesComponent } from './customers/notes.component';
 import { ContactService } from './services/contact.service';
 import { CustomerService } from './services/customer.service';
+import { CrmStateModule } from './state/crm-state.module';
 
 const components = [
   CustomersComponent,
@@ -29,7 +30,8 @@ const components = [
     ReactiveFormsModule,
     MaterialComponentsModule,
     UiComponentsModule,
-    CrmRoutingModule
+    CrmRoutingModule,
+    CrmStateModule
   ],
   declarations: []
 })

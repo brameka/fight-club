@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 import * as contactActions from './contact.actions';
-import { Contact } from '../../models/contact';
+import { Contact } from 'app/models/contact';
 
 export interface ContactState {
   contacts: Contact[];
