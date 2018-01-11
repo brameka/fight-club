@@ -7,12 +7,7 @@ import { MaterialComponentsModule } from '../ui/material.module';
 import { AppContainerComponent } from './app/app-container.component';
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
-import { CustomerContainerComponent } from './customers/customer-container.component';
-import { CustomersComponent } from './customers/customers.component';
-import { CustomerComponent } from './customers/customer.component';
-import { CustomerFormComponent } from './customers/customer-form.component';
-import { CustomerCreateDialogComponent } from './customers/customer-create-dialog-component';
-import { NotesComponent } from './customers/notes.component';
+
 import { ClientsComponent } from './contacts/clients/clients.component';
 import { ClientsTableComponent } from './contacts/clients/clients-table.component';
 import { AutoresizeDirective } from '../directives/autoresize.directive';
@@ -31,12 +26,6 @@ const components = [
   AppContainerComponent,
   DashComponent,
   LoginComponent,
-  CustomersComponent,
-  CustomerContainerComponent,
-  CustomerComponent,
-  CustomerFormComponent,
-  CustomerCreateDialogComponent,
-  NotesComponent,
   ClientsComponent,
   ClientsTableComponent,
   InsuranceComponent,

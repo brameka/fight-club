@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Customer, CustomerResponse } from '../../models/customer';
+import { Customer, CustomerResponse } from 'app/models/customer';
 
 export const GET_CUSTOMER = 'Get Customer';
 export const GET_CUSTOMER_SUCCESS = 'Get Customer Success';

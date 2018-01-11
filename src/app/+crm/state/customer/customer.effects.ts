@@ -11,8 +11,8 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/do';
 
 import * as customerActions from './customer.actions';
-import * as notificationActions from '../notification/notification.actions';
-import * as appActions from '../app/app.actions';
+import * as notificationActions from 'app/state/notification/notification.actions';
+import * as appActions from 'app/state/app/app.actions';
 
 import { CustomerService } from '../../services/customer.service';
 

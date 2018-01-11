@@ -9,9 +9,9 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { Customer } from '../../models/customer';
 import { CustomerCreateDialogComponent } from '../customers/customer-create-dialog-component';
-import { CustomerState } from '../../state/customer/customer.reducer';
-import * as actions from '../../state/customer/customer.actions';
-import * as app from '../../state/app/app.actions';
+import { CustomerState } from '../state/customer/customer.reducer';
+import * as actions from '../state/customer/customer.actions';
+import * as app from 'app/state/app/app.actions';
 
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';

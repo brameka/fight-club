@@ -1,5 +1,5 @@
 import * as CustomerActions from './customer.actions';
-import { Customer } from '../../models/customer';
+import { Customer } from 'app/models/customer';
 
 export interface CustomerState {
   loading: boolean;

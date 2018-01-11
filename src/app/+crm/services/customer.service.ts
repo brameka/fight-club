@@ -5,10 +5,11 @@ import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/from';
 
-import { Customer, CustomerResponse } from '../models/customer';
+import { Customer, CustomerResponse } from 'app/models/customer';
 
 @Injectable()
 export class CustomerService {
+
   customers = ['test1', 'test2', 'test3', 'test4'];
   customer: Customer = {
     name: 'Kelly Slater',

@@ -3,9 +3,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { CustomerEffects } from './customer/customer.effects';
-import { customerReducer } from './customer/customer.reducer';
-
 import { NotificationEffects } from './notification/notification.effects';
 import { notificationReducer } from './notification/notification.reducer';
 

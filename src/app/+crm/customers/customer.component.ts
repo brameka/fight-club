@@ -2,8 +2,8 @@ import { Component, AfterViewInit } from '@angular/core';
 import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { Customer } from '../../models/customer';
-import * as actions from '../../state/customer/customer.actions';
+import { Customer } from 'app/models/customer';
+import * as actions from '../state/customer/customer.actions';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
