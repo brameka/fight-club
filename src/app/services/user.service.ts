@@ -9,10 +9,10 @@ import { User } from '../models/user';
 @Injectable()
 export class UserService {
   private user: User = {
-    username: 'test',
+    username: '@kellyslater',
     password: 'test',
-    firstName: 'firstname',
-    lastName: 'lastname'
+    firstname: 'Kelly',
+    lastname: 'Slater'
   };
 
   private users$: Observable<User[]>;
@@ -25,7 +25,7 @@ export class UserService {
 
   getUsers(payload: any): Observable<User[]> {
     const users = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 9; i++) {
       users.push(this.user);
     }
     this.users$ = Observable.of(users);

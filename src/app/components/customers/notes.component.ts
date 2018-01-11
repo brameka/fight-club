@@ -33,6 +33,10 @@ export class NotesComponent implements AfterViewInit {
       this.notes = this.data;
     }
 
+    create() {
+
+    }
+
     ngAfterViewInit() {
         // this.notes = this.data;
     }

@@ -18,7 +18,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   `
 })
 export class UiDateTimePickerComponent {
-  @Input() placeholder: string = 'Choose date';
+  @Input() placeholder = 'Choose date';
 
   selectDate (date: string) {
     console.log(date);

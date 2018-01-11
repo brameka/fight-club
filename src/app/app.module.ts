@@ -12,15 +12,12 @@ import { RouterModule } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { AuthGuard } from './guards/auth.guard';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DndModule } from 'ng2-dnd';
 import { ResizableModule } from 'angular-resizable-element';
 
 // import { AngularFireModule } from 'angularfire2';
 // import { AngularFireDatabaseModule } from 'angularfire2/database';
-
+// export const firebaseConfig = environment.firebase;
 import { environment } from '../environments/environment';
-export const firebaseConfig = environment.firebase;
-
 import { UiComponentsModule } from './ui/ui-components.module';
 import { MaterialComponentsModule } from './ui/material.module';
 import { StateModule } from './state/state.module';
@@ -48,7 +45,6 @@ import { routes } from './app.routes';
     StateModule,
     ServicesModule,
     ComponentsModule,
-    DndModule.forRoot(),
     NgbModule.forRoot()
   ],
   providers: [

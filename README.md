@@ -59,3 +59,19 @@ https://github.com/grpc/grpc/issues/11239
 
 Material Data Table API
 https://material.angular.io/guide/cdk-table
+
+
+
+# create the app
+ng new lazyload-app --routing
+
+# create the home component
+ng g component home
+
+# create the dashboard module
+ng g module dashboard --routing
+
+# create the dashboard home page
+ng g component dashboard/dashboard-home
+
+https://scotch.io/tutorials/lazy-loading-in-angular-v2

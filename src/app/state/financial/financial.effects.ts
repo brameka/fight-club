@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 import { Store, Action } from '@ngrx/store';
 import { Effect, Actions } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import { forkJoin } from 'rxjs/observable/forkJoin';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/delay';
+import 'rxjs/add/observable/forkJoin';
 
 import { FinancialService } from '../../services/financial.service';
 import * as actions from './financial.actions';

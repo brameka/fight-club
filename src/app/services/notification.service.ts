@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Notification, SnackType, NotificationClasses } from '../models/notification';
 import { SnackComponent } from '../ui/notifications/snack.component';
 

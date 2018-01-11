@@ -3,9 +3,6 @@ import { AppContainerComponent } from './components/app/app-container.component'
 import { LoginComponent } from './components/login/login.component';
 import { DashComponent } from './components/dash/dash.component';
 import { AuthGuard } from './guards/auth.guard';
-import { UsersComponent } from './components/users.component';
-import { DragComponent } from './components/drag.component';
-import { SchedulesComponent } from './components/schedules/schedules.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { CustomerComponent } from './components/customers/customer.component';
 import { CustomerContainerComponent } from './components/customers/customer-container.component';
@@ -30,6 +27,14 @@ const appRoutes: Routes = [
         {
           path: '',
           component: CustomersComponent
+        },
+        {
+          path: 'dashboard',
+          loadChildren: 'app/+dashboard/dashboard.module#DashboardModule'
+        },
+        {
+          path: 'users',
+          loadChildren: 'app/+users/users.module#UsersModule'
         },
         { path: 'customers', component: CustomersComponent },
         { path: 'customers/:id',

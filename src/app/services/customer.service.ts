@@ -3,6 +3,7 @@ import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/from';
 
 import { Customer, CustomerResponse } from '../models/customer';
 

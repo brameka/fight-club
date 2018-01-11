@@ -78,7 +78,8 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
   create (): void {
     const width = '800px';
     this.dialogRef = this.dialog.open(CustomerCreateDialogComponent, {
-      width: width
+      width: width,
+      panelClass: 'app-create-customers__panel'
     });
     this.dialogRef.afterClosed().subscribe(result => {
       this.store.dispatch(new actions.CloseDialogSuccess());

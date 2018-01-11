@@ -1,0 +1,40 @@
+<div class="app-create-user">
+    <form [formGroup]="contactFormGroup">
+        <div class="row">
+          <div class="col-sm-4">
+              <mat-form-field class="app-create-user__field">
+                <input matInput placeholder="Home Phone" formControlName="homePhone">
+              </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="app-create-user__field">
+              <input matInput placeholder="Business Phone" formControlName="businessPhone">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="app-create-user__field">
+              <input matInput placeholder="Mobile Phone" formControlName="mobilePhone">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4">
+              <mat-form-field class="app-create-user__field">
+                <input matInput placeholder="Occupation" formControlName="occupation">
+              </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="app-create-user__field">
+              <input matInput placeholder="Company" formControlName="company">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="app-create-user__actions">
+            <div class="spacer"></div>
+            <button mat-button class="app-create-user__back">Back</button>
+            <!-- <button mat-button color="primary" mat-raised-button (click)='save()' [disabled]="this.personalFormGroup.valid === false">Save</button> -->
+            <button mat-button color="primary" mat-raised-button (click)='save()'>Save</button>
+        </div>
+    </form>
+</div>

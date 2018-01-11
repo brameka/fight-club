@@ -7,14 +7,6 @@ import { MaterialComponentsModule } from '../ui/material.module';
 import { AppContainerComponent } from './app/app-container.component';
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
-import { UsersComponent } from './users.component';
-import { DayCalendarComponent } from './calendar/day-calendar.component';
-import { CalendarBlockComponent } from './calendar/calendar-block.component';
-import { CalendarDraggableDirective } from './calendar/calendar-draggable';
-import { CalendarCellComponent } from './calendar/calendar-cell.component';
-import { CalendarBarComponent } from './calendar/calendar-bar.component';
-import { CalendarActionsComponent } from './calendar/calendar-actions.component';
-import { SchedulesComponent } from './schedules/schedules.component';
 import { CustomerContainerComponent } from './customers/customer-container.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomerComponent } from './customers/customer.component';
@@ -23,8 +15,6 @@ import { CustomerCreateDialogComponent } from './customers/customer-create-dialo
 import { NotesComponent } from './customers/notes.component';
 import { ClientsComponent } from './contacts/clients/clients.component';
 import { ClientsTableComponent } from './contacts/clients/clients-table.component';
-import { BlockDialogComponent } from './calendar/calendar-block.component';
-import { DragComponent } from './drag.component';
 import { AutoresizeDirective } from '../directives/autoresize.directive';
 import { InsuranceComponent } from './insurance/list/insurance.component';
 import { UiComponentsModule } from '../ui/ui-components.module';
@@ -35,11 +25,12 @@ import { LoansGeneralFormComponent } from '../components/loans/form/general/loan
 
 import { FinancialComponent } from './financials/list/financials.component';
 
+
+
 const components = [
   AppContainerComponent,
   DashComponent,
   LoginComponent,
-  UsersComponent,
   CustomersComponent,
   CustomerContainerComponent,
   CustomerComponent,

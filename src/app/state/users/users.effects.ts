@@ -16,7 +16,7 @@ import * as actions from './users.actions';
 export type Action = actions.All;
 
 @Injectable()
-export class FinancialEffects {
+export class UsersEffects {
 
   constructor(private actions$: Actions,
     private store$: Store<Object>,
@@ -27,8 +27,8 @@ export class FinancialEffects {
   @Effect()
   getLoans$: Observable<Action> = this.actions$.ofType(actions.GET_USERS)
     .switchMap((payload) => this.service.getUsers(payload)
-      .mergeMap(loans => [
-        // new actions.GetUsersSuccess()
+      .mergeMap(users => [
+        new actions.GetUsersSuccess(users)
       ])
       .delay(3000)
       .do(x => {

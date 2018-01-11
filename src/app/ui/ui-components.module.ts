@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UiDatePickerComponent } from './components/date-picker/ui-date-picker.component';
+import { UiDateTimePickerComponent } from './components/date-time-picker/ui-date-time-picker.component';
 import { MaterialComponentsModule } from './material.module';
 import { SnackComponent } from './notifications/snack.component';
 import { NotificationsComponent } from './notifications/notifications.component';
@@ -11,6 +12,7 @@ import { ContentLoaderComponent } from './loader/content-loader.component';
 
 const components = [
   UiDatePickerComponent,
+  UiDateTimePickerComponent,
   SnackComponent,
   NotificationsComponent,
   TopBarMenuComponent,

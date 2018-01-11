@@ -6,7 +6,7 @@
   &__title {
     color: #666;
     margin-right: 20px !important;
-    font-weight: 400;
+    font-weight: 400 !important;
   }
 
   .light-separator {
@@ -29,6 +29,7 @@
 .mat-toolbar {
   box-shadow: 0 1px 8px rgba(0,0,0,.3);
   -webkit-box-shadow: 0 1px 8px rgba(0,0,0,.3);
+  overflow: hidden;
 }
 
 // toolbar
@@ -93,6 +94,15 @@
     display: flex;
     -webkit-flex-direction: row;
     flex-direction: row;
+}
+
+.light-menu .mat-tab-label-active, .light-menu .mat-tab-label:focus {
+  color: $primary !important;
+  font-weight: 600;
+}
+
+.sub-menu .mat-tab-label-active {
+  opacity: 1;
 }
 
 
