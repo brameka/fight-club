@@ -1,23 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CustomersComponent } from './customers/customers.component';
-import { CustomerComponent } from './customers/customer.component';
-import { CustomerContainerComponent } from './customers/customer-container.component';
-
+import { ContactsComponent } from './contacts/list/contacts.component';
+import { ContactContainerComponent } from './contacts/contact-container.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: CustomersComponent
-  },
-  { path: 'customers/:id',
-    component: CustomerContainerComponent,
-    children: [
-      {
-        path: '',
-        component: CustomerComponent
-      }
+    component: ContactsComponent
+  }
+  // { path: 'customers/:id',
+  //   component: CustomerContainerComponent,
+  //   children: [
+      // {
+      //   path: '',
+      //   component: CustomerComponent
+      // }
       // {
       //   path: 'clients',
       //   component: ClientsComponent
@@ -34,8 +32,8 @@ const routes: Routes = [
       //   path: 'financials',
       //   component: FinancialComponent
       // }
-    ]
-  },
+  //   ]
+  // },
 ];
 
 @NgModule({

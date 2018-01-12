@@ -5,15 +5,15 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'app-customer-create-dialog-component',
-  templateUrl: 'customer-create-dialog-component.html'
+  selector: 'app-contact-create-dialog-component',
+  templateUrl: 'create-contact-dialog-component.html'
 })
-export class CustomerCreateDialogComponent implements OnInit {
+export class CreateContactDialogComponent implements OnInit {
   // loading$: Observable<boolean> = this.store.select(selectTagsLoading);
   // closeDialog$: Observable<boolean> = this.store.select(selectIsCloseDialog);
   state: any;
 
-  constructor (public dialogRef: MatDialogRef<CustomerCreateDialogComponent>,
+  constructor (public dialogRef: MatDialogRef<CreateContactDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder) {
 

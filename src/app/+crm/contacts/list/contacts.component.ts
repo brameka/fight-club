@@ -7,10 +7,11 @@ import { MatPaginator } from '@angular/material';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { Customer } from '../../models/customer';
-import { CustomerCreateDialogComponent } from '../customers/customer-create-dialog-component';
-import { CustomerState } from '../state/customer/customer.reducer';
-import * as actions from '../state/customer/customer.actions';
+import { Contact } from 'app/models/contact';
+import { Role } from 'app/models/role';
+import { CreateContactDialogComponent } from '../dialog/create-contact-dialog-component';
+import { ContactState } from 'app/+crm/state/contacts/contact.reducer';
+import * as actions from 'app/+crm/state/contacts/contact.actions';
 import * as app from 'app/state/app/app.actions';
 
 import 'rxjs/add/operator/startWith';
@@ -19,17 +20,17 @@ import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-table-spike',
-  styleUrls: ['customers.component.scss'],
-  templateUrl: 'customers.component.html',
+  styleUrls: ['contacts.component.scss'],
+  templateUrl: 'contacts.component.html',
 })
-export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
+export class ContactsComponent implements AfterViewInit, OnInit, OnDestroy {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   displayedColumns = ['name', 'email', 'mobile', 'city'];
-  database = new CustomerDatabase();
-  dataSource: CustomerDataSource | null;
+  database = new ContactDatabase();
+  dataSource: ContactDataSource | null;
   state$: Observable<any>;
   subscription$: any;
-  dialogRef: MatDialogRef<CustomerCreateDialogComponent>;
+  dialogRef: MatDialogRef<CreateContactDialogComponent>;
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -40,9 +41,9 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
     private store: Store<any>) {
       this.state$ = this.store.select(state => state);
       this.subscription$ = this.state$.subscribe((x) => {
-        if (x.customer.isCloseDialog) {
-          this.close();
-        }
+        // if (x.Contact.isCloseDialog) {
+        //   this.close();
+        // }
       });
 
   }
@@ -55,7 +56,7 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.dataSource = new CustomerDataSource(this.database, this.paginator, this.sort);
+    this.dataSource = new ContactDataSource(this.database, this.paginator, this.sort);
   }
 
   ngAfterViewInit() {
@@ -68,21 +69,21 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 
   details(row: any) {
-    this.store.dispatch(new actions.ResetRoute());
-    const customer = {
-      id: 1
-    };
-    this.router.navigate(['../customers/', customer.id], { relativeTo: this.route });
+    // this.store.dispatch(new actions.ResetRoute());
+    // const Contact = {
+    //   id: 1
+    // };
+    // this.router.navigate(['../Contacts/', Contact.id], { relativeTo: this.route });
   }
 
   create (): void {
     const width = '800px';
-    this.dialogRef = this.dialog.open(CustomerCreateDialogComponent, {
+    this.dialogRef = this.dialog.open(CreateContactDialogComponent, {
       width: width,
-      panelClass: 'app-create-customers__panel'
+      panelClass: 'app-create-contacts__panel'
     });
     this.dialogRef.afterClosed().subscribe(result => {
-      this.store.dispatch(new actions.CloseDialogSuccess());
+      // this.store.dispatch(new actions.CloseDialogSuccess());
     });
   }
 
@@ -93,18 +94,18 @@ export class CustomersComponent implements AfterViewInit, OnInit, OnDestroy {
   }
 }
 
-export class CustomerDataSource extends DataSource<any> {
+export class ContactDataSource extends DataSource<any> {
   filterChange = new BehaviorSubject('');
   get filter(): string { return this.filterChange.value; }
   set filter(filter: string) { this.filterChange.next(filter); }
 
-  constructor(private database: CustomerDatabase,
+  constructor(private database: ContactDatabase,
     private paginator: MatPaginator,
     private sort: MatSort) {
     super();
   }
 
-  connect(): Observable<Customer[]> {
+  connect(): Observable<Contact[]> {
     const displayDataChanges = [
       this.database.dataChange,
       this.paginator.page,
@@ -118,7 +119,7 @@ export class CustomerDataSource extends DataSource<any> {
 
   }
 
-  getSortedData(): Customer[] {
+  getSortedData(): Contact[] {
     const data = this.database.data.slice();
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     if (!this.sort.active || this.sort.direction === '') {
@@ -131,35 +132,37 @@ export class CustomerDataSource extends DataSource<any> {
 }
 
 
-export class CustomerDatabase {
+export class ContactDatabase {
 
-  dataChange: BehaviorSubject<Customer[]> = new BehaviorSubject<Customer[]>([]);
-  get data(): Customer[] {
+  dataChange: BehaviorSubject<Contact[]> = new BehaviorSubject<Contact[]>([]);
+  get data(): Contact[] {
     return this.dataChange.value;
   }
 
   constructor() {
     for (let i = 0; i < 100; i++) {
-      this.addCustomer(i);
+      this.addContact(i);
     }
   }
 
   /** Adds a new user to the database. */
-  addCustomer(index) {
+  addContact(index) {
     const copiedData = this.data.slice();
     copiedData.push(this.createNewUser(index));
     this.dataChange.next(copiedData);
   }
 
   /** Builds and returns a new User. */
-  private createNewUser(index: number): Customer {
+  private createNewUser(index: number): Contact {
     return {
       name: this.generateName(),
       firstname: 'Henrique',
       lastname: 'Abud',
       email: this.generateName() + '@gmail.com',
       mobile: '+6149495586',
-      city: 'Perth'
+      homePhone: '+6149495586',
+      workPhone: '+6149495586',
+      role: Role.Adult
     };
   }
 

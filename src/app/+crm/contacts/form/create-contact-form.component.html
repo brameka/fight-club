@@ -1,11 +1,11 @@
-<div class="app-customer-form">
+<div class="app-contact-form">
     <mat-horizontal-stepper [linear]="isLinear">
       <mat-step [stepControl]="personalFormGroup">
         <form [formGroup]="personalFormGroup">
           <ng-template matStepLabel>Personal Information</ng-template>
           <div class="row">
             <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
+                <mat-form-field class="app-contact-form__field">
                   <input matInput placeholder="First Name" formControlName="firstname">
                   <mat-error *ngIf="personalFormGroup.controls['middlename'].hasError('required')">
                     First name is <strong>required</strong>
@@ -13,12 +13,12 @@
                 </mat-form-field>
             </div>
             <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
+                <mat-form-field class="app-contact-form__field">
                   <input matInput placeholder="Middle Name" formControlName="middlename">
                 </mat-form-field>
             </div>
             <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
+                <mat-form-field class="app-contact-form__field">
                   <input matInput placeholder="Last Name" formControlName="surname">
                   <mat-error *ngIf="personalFormGroup.controls['surname'].hasError('required')">
                     Last name is <strong>required</strong>
@@ -29,7 +29,7 @@
 
           <div class="row">
             <div class="col-sm-12">
-              <mat-form-field class="app-customer-form__field">
+              <mat-form-field class="app-contact-form__field">
                   <input matInput placeholder="Email" formControlName="email">
                   <mat-error *ngIf="personalFormGroup.controls['email'].hasError('pattern')">
                     Please enter a valid email address
@@ -83,7 +83,7 @@
                 </mat-form-field>
             </div>
           </div>
-          <div class="row app-customer-form__actions">
+          <div class="row app-contact-form__actions">
               <div class="spacer"></div>
               <button mat-button matStepperNext>Next</button>
           </div>
@@ -96,17 +96,17 @@
 
           <div class="row">
             <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
+                <mat-form-field class="app-contact-form__field">
                   <input matInput placeholder="Home Phone" formControlName="homePhone">
                 </mat-form-field>
             </div>
             <div class="col-sm-4">
-              <mat-form-field class="app-customer-form__field">
+              <mat-form-field class="app-contact-form__field">
                 <input matInput placeholder="Business Phone" formControlName="businessPhone">
               </mat-form-field>
             </div>
             <div class="col-sm-4">
-              <mat-form-field class="app-customer-form__field">
+              <mat-form-field class="app-contact-form__field">
                 <input matInput placeholder="Mobile Phone" formControlName="mobilePhone">
               </mat-form-field>
             </div>
@@ -114,19 +114,19 @@
 
           <div class="row">
             <div class="col-sm-4">
-                <mat-form-field class="app-customer-form__field">
+                <mat-form-field class="app-contact-form__field">
                   <input matInput placeholder="Occupation" formControlName="occupation">
                 </mat-form-field>
             </div>
             <div class="col-sm-4">
-              <mat-form-field class="app-customer-form__field">
+              <mat-form-field class="app-contact-form__field">
                 <input matInput placeholder="Company" formControlName="company">
               </mat-form-field>
             </div>
           </div>
-          <div class="row app-customer-form__actions">
+          <div class="row app-contact-form__actions">
               <div class="spacer"></div>
-              <button mat-button matStepperPrevious class="app-customer-form__back">Back</button>
+              <button mat-button matStepperPrevious class="app-contact-form__back">Back</button>
               <!-- <button mat-button color="primary" mat-raised-button (click)='save()' [disabled]="this.personalFormGroup.valid === false">Save</button> -->
               <button mat-button color="primary" mat-raised-button (click)='save()'>Save</button>
           </div>

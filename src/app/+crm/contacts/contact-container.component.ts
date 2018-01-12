@@ -1,12 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Customer } from 'app/models/customer';
 import { Observable } from 'rxjs/Observable';
-import { CustomerCreateDialogComponent } from './customer-create-dialog-component';
-import { CustomerState } from '../state/customer/customer.reducer';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import * as actions from '../state/customer/customer.actions';
 import * as app from 'app/state/app/app.actions';
 
 
@@ -16,10 +12,11 @@ import 'rxjs/add/operator/map';
 
 @Component({
   template: `
+    Hello From Contact Container
     <router-outlet></router-outlet>
   `
 })
-export class CustomerContainerComponent implements AfterViewInit {
+export class ContactContainerComponent implements AfterViewInit {
   index: 0;
   state$: Observable<any>;
   subscription$: any;

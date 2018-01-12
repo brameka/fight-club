@@ -9,6 +9,7 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { TopBarMenuComponent } from './top-bar-menu/top-bar-menu.component';
 import { SearchComponent } from './search/search.component';
 import { ContentLoaderComponent } from './loader/content-loader.component';
+import { AutoresizeDirective } from 'app/directives/autoresize.directive';
 
 const components = [
   UiDatePickerComponent,
@@ -17,7 +18,8 @@ const components = [
   NotificationsComponent,
   TopBarMenuComponent,
   SearchComponent,
-  ContentLoaderComponent
+  ContentLoaderComponent,
+  AutoresizeDirective
 ];
 
 @NgModule({

@@ -2,21 +2,22 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { Customer } from 'app/models/customer';
-import * as actions from '../state/customer/customer.actions';
+import { Contact } from 'app/models/contact';
+import { Role } from 'app/models/role';
+import * as actions from 'app/+crm/state/contacts/contact.actions';
 import * as notifications from 'app/state/notification/notification.actions';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 @Component({
-  selector: 'app-customer-form',
-  templateUrl: './customer-form.component.html',
-  styleUrls: ['./customer-form.component.scss']
+  selector: 'app-create-contact-form',
+  templateUrl: './create-contact-form.component.html',
+  styleUrls: ['./create-contact-form.component.scss']
 })
-export class CustomerFormComponent implements AfterViewInit, OnInit  {
+export class CreateContactFormComponent implements AfterViewInit, OnInit  {
   personalFormGroup: FormGroup;
   contactFormGroup: FormGroup;
-  customer: Customer;
+  contact: Contact;
   isLinear = false;
 
   roles: any[] = [
@@ -67,14 +68,17 @@ export class CustomerFormComponent implements AfterViewInit, OnInit  {
   }
 
   save() {
-    this.customer = {
+    this.contact = {
       name: 'test',
       firstname: 'test',
       lastname: 'test',
       mobile: '0456569896',
+      homePhone: '0456569896',
+      workPhone: '0456569896',
       email: 'bronson.rameka@gmail.com',
-      city: 'Perth'
+      role: Role.Adult
     };
-    this.store.dispatch(new actions.CreateCustomer(this.customer));
+
+    // this.store.dispatch(new actions.CreateContact(this.contact));
   }
 }

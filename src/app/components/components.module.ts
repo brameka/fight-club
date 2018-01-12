@@ -8,9 +8,6 @@ import { AppContainerComponent } from './app/app-container.component';
 import { DashComponent } from './dash/dash.component';
 import { LoginComponent } from './login/login.component';
 
-import { ClientsComponent } from './contacts/clients/clients.component';
-import { ClientsTableComponent } from './contacts/clients/clients-table.component';
-import { AutoresizeDirective } from '../directives/autoresize.directive';
 import { InsuranceComponent } from './insurance/list/insurance.component';
 import { UiComponentsModule } from '../ui/ui-components.module';
 
@@ -24,14 +21,11 @@ const components = [
   AppContainerComponent,
   DashComponent,
   LoginComponent,
-  ClientsComponent,
-  ClientsTableComponent,
   InsuranceComponent,
   LoansDialogComponent,
   LoansComponent,
   LoansGeneralFormComponent,
-  FinancialComponent,
-  AutoresizeDirective
+  FinancialComponent
 ];
 
 @NgModule({

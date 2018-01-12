@@ -5,7 +5,6 @@ import { DashComponent } from './components/dash/dash.component';
 import { AuthGuard } from './guards/auth.guard';
 
 import { InsuranceComponent } from './components/insurance/list/insurance.component';
-import { ClientsComponent } from './components/contacts/clients/clients.component';
 import { LoansComponent } from './components/loans/list/loans.component';
 import { FinancialComponent } from './components/financials/list/financials.component';
 
@@ -16,7 +15,6 @@ const appRoutes: Routes = [
         redirectTo: '/app',
         pathMatch: 'full'
     },
-    
     { path: 'login', component: LoginComponent },
     { path: 'register', component: LoginComponent },
     {
@@ -27,7 +25,7 @@ const appRoutes: Routes = [
         //   path: '',
         //   component: CustomersComponent
         // },
-        {   
+        {
           path: '',
           redirectTo: 'dashboard',
           pathMatch: 'full'
@@ -39,6 +37,10 @@ const appRoutes: Routes = [
         {
           path: 'users',
           loadChildren: 'app/+users/users.module#UsersModule'
+        },
+        {
+          path: 'contacts',
+          loadChildren: 'app/+crm/crm.module#CrmModule'
         }
       ]
     },
