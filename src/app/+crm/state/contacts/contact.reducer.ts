@@ -19,6 +19,7 @@ export const initialState: ContactState = {
 export type Action = contactActions.All;
 
 export function contactReducer(state: ContactState = initialState, action: Action): ContactState {
+  console.log('action type: ', action.type);
   switch (action.type) {
     case contactActions.GET_CONTACTS:
       return { ...state, loading: true, isCloseDialog: false };

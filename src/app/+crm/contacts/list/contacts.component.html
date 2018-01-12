@@ -1,5 +1,11 @@
-<div class="app-contacts">
+<div [hidden]="(state$ | async)!.crm.contacts.loading === false" class="app-contacts">
+    <div class="app-contacts__loader">
+      <mat-spinner diameter="25" strokeWidth="3"></mat-spinner>
+    </div>
+  </div>
 
+<div [hidden]="(state$ | async)!.crm.contacts.loading" class="app-contacts">
+<!-- <div class="app-contacts"> -->
   <div class="app-contacts__header">
     <button class="mr5" color="primary" mat-raised-button (click)="create()"><mat-icon>add</mat-icon> NEW</button>
     <!-- <button color="primary" mat-button>MERGE</button> -->

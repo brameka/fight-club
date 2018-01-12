@@ -5,6 +5,15 @@
   flex-direction: column;
   margin-bottom: 20px;
 
+  &__loader {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
   &__header {
     background: #fff;
     display: flex;

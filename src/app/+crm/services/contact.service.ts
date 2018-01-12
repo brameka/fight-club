@@ -21,6 +21,7 @@ export class ContactService {
   constructor() {}
 
   getContacts(payload: any): Observable<Contact[]> {
+    console.log('get contacts service:');
     const contacts = [];
     for (let i = 0; i < 3; i++) {
       contacts.push(this.contact);

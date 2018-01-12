@@ -39,6 +39,7 @@ export class ContactsComponent implements AfterViewInit, OnInit, OnDestroy {
     private route: ActivatedRoute,
     public dialog: MatDialog,
     private store: Store<any>) {
+      this.store.dispatch(new actions.GetContacts({id: 1}));
       this.state$ = this.store.select(state => state);
       this.subscription$ = this.state$.subscribe((x) => {
         // if (x.Contact.isCloseDialog) {
@@ -61,7 +62,6 @@ export class ContactsComponent implements AfterViewInit, OnInit, OnDestroy {
 
   ngAfterViewInit() {
     this.store.dispatch(new app.ShowHomeState());
-    this.slimService.complete();
   }
 
   search(term: any) {
