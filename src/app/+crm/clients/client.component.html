@@ -1,0 +1,35 @@
+<div *ngIf="(state$ | async)!.loading" class="app-client">
+    <div class="app-client__loader">
+      <mat-spinner diameter="25" strokeWidth="3"></mat-spinner>
+    </div>
+  </div>
+
+  <div *ngIf="(state$ | async)!.loading === false" class="app-client">
+    <div class="col-8">
+      <div class="app-client__header">
+          <button class="mr5 action-btn" color="primary" mat-raised-button (click)="create()">NEW</button>
+          <div class="separator"></div>
+          <span class="app-client__header--total">{{(state$ | async).clients.length}} Clients</span>
+      </div>
+
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th class="app-client__actions-col">
+              ...
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="app-client__row" *ngFor="let client of (state$ | async).clients">
+            <td class="app-client__primary-column">Client</td>
+            <td class="app-client__actions-col">
+              <button class="app-client__action-btn" mat-icon-button><mat-icon class="app-client__action-icon">more_vert</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+

@@ -9,7 +9,6 @@ import { LoansComponent } from './components/loans/list/loans.component';
 import { FinancialComponent } from './components/financials/list/financials.component';
 
 const appRoutes: Routes = [
-
     // { path: '', component: CustomersComponent },
     {   path: '',
         redirectTo: '/app',
@@ -21,10 +20,6 @@ const appRoutes: Routes = [
       path: 'app',
       component: AppContainerComponent,
       children: [
-        // {
-        //   path: '',
-        //   component: CustomersComponent
-        // },
         {
           path: '',
           redirectTo: 'dashboard',
@@ -39,7 +34,7 @@ const appRoutes: Routes = [
           loadChildren: 'app/+users/users.module#UsersModule'
         },
         {
-          path: 'contacts',
+          path: 'clients',
           loadChildren: 'app/+crm/crm.module#CrmModule'
         }
       ]

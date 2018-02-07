@@ -1,39 +1,41 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContactsComponent } from './contacts/list/contacts.component';
-import { ContactContainerComponent } from './contacts/contact-container.component';
+import { ClientsComponent } from 'app/+crm/clients/list/clients.component';
+import { ClientComponent } from 'app/+crm/clients/client.component';
+import { CreateClientInitialComponent } from 'app/+crm/clients/form/create-client-initial.component';
+
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ContactsComponent
-  }
-  // { path: 'customers/:id',
-  //   component: CustomerContainerComponent,
-  //   children: [
-      // {
-      //   path: '',
-      //   component: CustomerComponent
-      // }
-      // {
-      //   path: 'clients',
-      //   component: ClientsComponent
-      // },
-      // {
-      //   path: 'insurance',
-      //   component: InsuranceComponent
-      // },
-      // {
-      //   path: 'loans',
-      //   component: LoansComponent
-      // },
-      // {
-      //   path: 'financials',
-      //   component: FinancialComponent
-      // }
-  //   ]
-  // },
+    component: ClientsComponent
+  },
+  { path: ':id',
+    component: ClientComponent,
+    // children: [
+    //   {
+    //     path: '',
+    //     component: CustomerComponent
+    //   }
+    //   {
+    //     path: 'clients',
+    //     component: ClientsComponent
+    //   },
+    //   {
+    //     path: 'insurance',
+    //     component: InsuranceComponent
+    //   },
+    //   {
+    //     path: 'loans',
+    //     component: LoansComponent
+    //   },
+    //   {
+    //     path: 'financials',
+    //     component: FinancialComponent
+    //   }
+    // ]
+  },
 ];
 
 @NgModule({

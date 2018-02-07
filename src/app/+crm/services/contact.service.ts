@@ -10,10 +10,7 @@ export class ContactService {
     firstname: 'Jon Jon',
     lastname: 'Florence',
     mobile: '000000000',
-    homePhone: '000000000',
-    workPhone: '000000000',
-    email: 'jonjon.florence@gmail.com',
-    role: Role.Child
+    email: 'jonjon.florence@gmail.com'
   };
   private contacts$: Observable<Contact[]>;
   private contact$: Observable<Contact>;
@@ -21,7 +18,6 @@ export class ContactService {
   constructor() {}
 
   getContacts(payload: any): Observable<Contact[]> {
-    console.log('get contacts service:');
     const contacts = [];
     for (let i = 0; i < 3; i++) {
       contacts.push(this.contact);

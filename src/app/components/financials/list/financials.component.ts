@@ -7,7 +7,6 @@ import { MatPaginator } from '@angular/material';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import * as actions from '../../../state/financial/financial.actions';
 import * as app from '../../../state/app/app.actions';
 
 
@@ -36,7 +35,7 @@ export class FinancialComponent {
         loadingColor: '#fff'
       }));
 
-      this.store.dispatch(new actions.GetFinancials({ id: 1 }));
+      // this.store.dispatch(new actions.GetFinancials({ id: 1 }));
       this.state$ = this.store.select(state => state);
   }
 

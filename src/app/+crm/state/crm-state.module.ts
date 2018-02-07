@@ -5,23 +5,18 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { ContactEffects } from './contacts/contact.effects';
-import { contactReducer } from './contacts/contact.reducer';
-
-import { CustomerEffects } from './customer/customer.effects';
-import { customerReducer } from './customer/customer.reducer';
+import { ClientEffects } from './clients/client.effects';
+import { clientReducer } from './clients/client.reducer';
 
 const effects = [
-  CustomerEffects,
-  ContactEffects
+  ClientEffects
 ];
 
 @NgModule({
   imports: [
     EffectsModule.forFeature([...effects]),
     StoreModule.forFeature('crm', {
-      contacts: contactReducer,
-      customers: customerReducer
+      clients: clientReducer
     })
   ]
 })

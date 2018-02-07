@@ -283,8 +283,7 @@ code {
     font-size: 12px !important;
 }
 
-//Loans:
-.app-loans__panel .mat-dialog-container, .app-create-contacts__panel .mat-dialog-container {
+.app-dialog__panel .mat-dialog-container {
   padding: 0;
 }
 
@@ -295,6 +294,25 @@ code {
 
 .app-financial__group .mat-tab-header {
   display: none;
+}
+
+.app-full-dialog__panel {
+  top: 0;
+  position: absolute !important;
+}
+
+.app-full-dialog__panel .mat-dialog-container {
+  box-shadow: none;
+  background: transparent;
+}
+
+.cdk-overlay-backdrop.app-full-dialog__backdrop.cdk-overlay-backdrop-showing {
+  background-color: #fff;
+  opacity: 0.9;
+}
+
+.right {
+  float: right;
 }
 
 

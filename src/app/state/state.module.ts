@@ -9,24 +9,12 @@ import { notificationReducer } from './notification/notification.reducer';
 import { AppEffects } from './app/app.effects';
 import { appReducer } from './app/app.reducer';
 
-import { LoansEffects } from './loans/loans.effects';
-import { loansReducer } from './loans/loans.reducer';
-
-import { InsuranceEffects } from './insurance/insurance.effects';
-import { insuranceReducer } from './insurance/insurance.reducer';
-
-import { FinancialEffects } from './financial/financial.effects';
-import { financialReducer } from './financial/financial.reducer';
-
 import { UsersEffects } from './users/users.effects';
 import { usersReducer } from './users/users.reducer';
 
 const effects = [
   AppEffects,
   NotificationEffects,
-  LoansEffects,
-  InsuranceEffects,
-  FinancialEffects,
   UsersEffects
 ];
 
@@ -36,9 +24,6 @@ const effects = [
     StoreModule.forRoot({
       app: appReducer,
       notification: notificationReducer,
-      loans: loansReducer,
-      insurance: insuranceReducer,
-      financial: financialReducer,
       users: usersReducer
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25 })

@@ -7,7 +7,6 @@ import { MatPaginator } from '@angular/material';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import * as actions from '../../../state/insurance/insurance.actions';
 import * as app from '../../../state/app/app.actions';
 
 // import { LoansDialogComponent } from '../dialog/loans-dialog.component';
@@ -34,7 +33,7 @@ export class InsuranceComponent {
         menuColor: 'primary',
         loadingColor: '#fff'
       }));
-      this.store.dispatch(new actions.GetInsurances({ id: 1 }));
+      // this.store.dispatch(new actions.GetInsurances({ id: 1 }));
       this.state$ = this.store.select(state => state);
   }
 

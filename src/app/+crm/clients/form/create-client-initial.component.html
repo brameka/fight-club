@@ -1,0 +1,25 @@
+<div class="app-create-client-initial">
+  <form [formGroup]="group" (ngSubmit)="save()">
+
+    <div class="app-create-client-initial__row">
+      <img class="app-create-client-initial__hero" src="assets/images/client-initial.png" alt="">
+    </div>
+    <div class="app-create-client-initial__content">
+      <div class="app-create-client-initial__row">
+          <h2>Create a new client</h2>
+          <p>It's time to create a new client</p>
+      </div>
+
+      <div class="app-create-client-initial__row">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name">
+          </div>
+      </div>
+    </div>
+    <div class="app-create-client-initial__actions">
+      <div class="spacer"></div>
+      <button type="button" class="mr5" color="primary" mat-button (click)="cancel()">CANCEL</button>
+      <button color="primary" mat-raised-button>SAVE</button>
+    </div>
+  </form>
+</div>

@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { LoansDialogComponent } from '../dialog/loans-dialog.component';
-import * as actions from '../../../state/loans/loans.actions';
 import * as app from '../../../state/app/app.actions';
 
 @Component({
@@ -34,7 +33,7 @@ export class LoansComponent {
         menuColor: 'primary',
         loadingColor: '#fff'
       }));
-      this.store.dispatch(new actions.GetLoans({ id: 1 }));
+      // this.store.dispatch(new actions.GetLoans({ id: 1 }));
       this.state$ = this.store.select(state => state);
   }
 
