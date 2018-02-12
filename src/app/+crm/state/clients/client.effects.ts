@@ -44,7 +44,7 @@ export class ClientEffects {
         .mergeMap(client => [
           new actions.GetClientSuccess(client)
         ])
-        .delay(2000)
+        .delay(1000)
         .do(x => {
           this.slimService.complete();
         })

@@ -1,3 +1,38 @@
+@import '../../styles/variables';
+
 .app-client {
 
+  &__loader {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  &__hero {
+    width: 75%;
+    margin: 30px 0;
+  }
+
+  &__empty-state {
+    text-align: center;
+    margin-top: 50px
+  }
+
+  &__empty-state h2 {
+    color: #434548;
+  }
+
+  &__empty-state p {
+    font-size: 15px;
+  }
+
+
+
 }
+
+
+
+

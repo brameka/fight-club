@@ -5,31 +5,41 @@
   </div>
 
   <div *ngIf="(state$ | async)!.loading === false" class="app-client">
-    <div class="col-8">
-      <div class="app-client__header">
-          <button class="mr5 action-btn" color="primary" mat-raised-button (click)="create()">NEW</button>
-          <div class="separator"></div>
-          <span class="app-client__header--total">{{(state$ | async).clients.length}} Clients</span>
-      </div>
 
-      <table class="table table-responsive">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th class="app-client__actions-col">
-              ...
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="app-client__row" *ngFor="let client of (state$ | async).clients">
-            <td class="app-client__primary-column">Client</td>
-            <td class="app-client__actions-col">
-              <button class="app-client__action-btn" mat-icon-button><mat-icon class="app-client__action-icon">more_vert</mat-icon></button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div *ngIf="(state$ | async).client.contacts.length == 0">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 app-client__empty-state">
+            <h2>Alright, let's add some clients</h2>
+            <img class="app-client__hero" src="assets/images/space-illo.svg" alt="">
+            <p>We know all the shortcuts because we live here! We'll help you find and create the campaigns you need.</p>
+            <button class="no-shadow" color="accent" mat-raised-button (click)="create()">CREATE NEW CLIENT</button>
+        </div>
+      </div>
     </div>
+
+    <div *ngIf="(state$ | async).client.contacts.length > 0">
+
+        <mat-tab-group>
+          <mat-tab label="CONTACTS">
+            <app-contacts [client]="(state$ | async).client"></app-contacts>
+          </mat-tab>
+          <mat-tab label="FINANCIALS">
+            <p>...</p>
+          </mat-tab>
+          <mat-tab label="PROTECTION">
+            <p>...</p>
+          </mat-tab>
+          <mat-tab label="PREFERENCES">
+            <p>...</p>
+          </mat-tab>
+        </mat-tab-group>
+
+
+    </div>
+
+
   </div>
+
+
 

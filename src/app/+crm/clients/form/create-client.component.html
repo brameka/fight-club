@@ -2,7 +2,7 @@
   <mat-horizontal-stepper [linear]="isLinear">
     <mat-step [stepControl]="personalFormGroup">
       <form [formGroup]="personalFormGroup">
-        <ng-template matStepLabel>Personal Information</ng-template>
+        <ng-template matStepLabel>Contact Information</ng-template>
         <div class="row">
           <div class="col-sm-4">
               <mat-form-field class="app-create-client-form__field">
@@ -132,5 +132,19 @@
         </div>
       </form>
     </mat-step>
+
+    <mat-step [stepControl]="personalFormGroup">
+      <ng-template matStepLabel>Financial Information</ng-template>
+    </mat-step>
+
+    <mat-step [stepControl]="personalFormGroup">
+      <ng-template matStepLabel>Protection</ng-template>
+    </mat-step>
+
+    <mat-step [stepControl]="personalFormGroup">
+      <ng-template matStepLabel>Preferences</ng-template>
+    </mat-step>
+
+
   </mat-horizontal-stepper>
 </div>

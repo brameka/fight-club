@@ -26,8 +26,10 @@ export function clientReducer(state: ClientState = initialState, action: Action)
       return { ...state, loading: true, isCloseDialog: false };
     case actions.GET_CLIENTS_SUCCESS:
       return { ...state, loading: false, isCloseDialog: false, clients: action.payload };
+    case actions.GET_CLIENT:
+      return { ...state, loading: true };
     case actions.GET_CLIENT_SUCCESS:
-      return { ...state, loading: false, isCloseDialog: false, client: action.payload, id: action.payload.id };
+      return { ...state, loading: false, client: action.payload, id: action.payload.id };
     default:
       return state;
   }

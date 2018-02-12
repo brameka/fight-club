@@ -75,7 +75,7 @@
 
       <mat-sidenav #sidenav class="app-sidenav" mode="side" opened="true">
 
-          <!-- <div class="menu-container">
+          <div *ngIf="(state$ | async).app.state === 'home'" class="menu-container">
             <button class="mat-menu-item" mat-menu-item="" routerLink=""><mat-icon>home</mat-icon> Home
               <div class="mat-menu-ripple mat-ripple" matRipple></div>
             </button>
@@ -107,7 +107,22 @@
             <button class="mat-menu-item" mat-menu-item="" routerLink="customers"><mat-icon>account_circle</mat-icon> Account
               <div class="mat-menu-ripple mat-ripple" matRipple></div>
             </button>
-          </div> -->
+          </div>
+
+          <div *ngIf="(state$ | async).app.state === 'client'" class="menu-container">
+            <button class="mat-menu-item" mat-menu-item="" routerLink=""><mat-icon>home</mat-icon> Home
+              <div class="mat-menu-ripple mat-ripple" matRipple></div>
+            </button>
+            <button class="mat-menu-item" mat-menu-item="" routerLink="customers"><mat-icon>event</mat-icon> Sessions
+              <div class="mat-menu-ripple mat-ripple" matRipple></div>
+            </button>
+            <button class="mat-menu-item" mat-menu-item="" routerLink="dashboard"><mat-icon>fingerprint</mat-icon> Australia
+              <div class="mat-menu-ripple mat-ripple" matRipple></div>
+            </button>
+            <button class="mat-menu-item" mat-menu-item="" routerLink="clients"><mat-icon>people</mat-icon> Contacts
+              <div class="mat-menu-ripple mat-ripple" matRipple></div>
+            </button>
+          </div>
 
       </mat-sidenav>
 

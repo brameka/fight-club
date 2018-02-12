@@ -13,7 +13,7 @@ body {
   min-height: 100%;
   padding: 0;
   margin: 0;
-  background-color: #f1f1f1;
+  // background-color: #f1f1f1;
   position: relative;
   font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,sans-serif !important;
 }
@@ -239,10 +239,10 @@ code {
 
 // action button:
 .action-btn {
-  line-height: 30px;
-  font-size: 13px;
-  padding: 0 10px;
-  min-width: 70px;
+  line-height: 30px !important;
+  font-size: 13px !important;
+  padding: 0 10px !important;
+  min-width: 70px !important;
   box-shadow: none !important;
 }
 
@@ -313,6 +313,29 @@ code {
 
 .right {
   float: right;
+}
+
+//Clients
+
+.app-client .mat-tab-body-content {
+  padding-top: 20px;
+}
+
+code {
+  color: #596981;
+  background: #f5f7fa;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.1);
+  font-size: 90%;
+}
+
+.row {
+  margin-right: 0;
+  margin-left:  0;
+}
+
+.mat-tab-label-active {
+  color: $primary;
+  opacity: 1 !important;
 }
 
 

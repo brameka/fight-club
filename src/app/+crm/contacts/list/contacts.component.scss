@@ -1,0 +1,67 @@
+@import '../../../styles/variables';
+
+.app-contacts {
+
+  margin-top: 30px;
+
+  h2 {
+    color: #434548;
+    font-size: 22px;
+  }
+
+  &__header {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+    flex-direction: row;
+    padding: 10px;
+    // margin-top: 10px;
+  }
+
+  &__header--title {
+    color: #96a3b6;
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  &__col {
+    padding-left: 0;
+  }
+
+  &__contact {
+    padding: 10px;
+    border-bottom: 1px solid $silverback;
+    color: $black;
+    font-size: 14px;
+    display: flex;
+
+    &--name {
+      color: $primary;
+      font-weight: 500;
+      font-size: 16px;
+      margin-bottom: 1px;
+    }
+
+    &--email {
+      color: #96a3b6;
+      font-weight: 400;
+    }
+
+    &--phone {
+      font-weight: 500;
+      font-size: 13px;
+    }
+
+    &--dot {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 14px;
+      display: inline-block;
+    }
+
+  }
+}
+
+

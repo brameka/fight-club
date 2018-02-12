@@ -10,6 +10,9 @@ import { CreateClientInitialComponent } from './clients/form/create-client-initi
 import { ClientsDialogComponent } from './clients/dialog/clients-dialog.component';
 import { CreateClientDialogComponent } from './clients/dialog/create-dialog.component';
 import { ClientComponent } from './clients/client.component';
+
+import { ContactsComponent } from './contacts/list/contacts.component';
+
 import { ContactService } from './services/contact.service';
 import { ClientService } from './services/client.service';
 import { CrmStateModule } from './state/crm-state.module';
@@ -20,7 +23,8 @@ const components = [
   CreateClientDialogComponent,
   CreateClientInitialComponent,
   CreateClientComponent,
-  ClientComponent
+  ClientComponent,
+  ContactsComponent
 ];
 
 const services = [
