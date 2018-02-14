@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ClientsComponent } from 'app/+crm/clients/list/clients.component';
 import { ClientComponent } from 'app/+crm/clients/client.component';
 import { CreateClientInitialComponent } from 'app/+crm/clients/form/create-client-initial.component';
-
-
+import { CreateContactComponent } from './contacts/form/create-contact.component';
+import { ClientSetupComponent } from 'app/+crm/clients/client-setup.component';
 
 const routes: Routes = [
   {
@@ -12,29 +12,20 @@ const routes: Routes = [
     component: ClientsComponent
   },
   { path: ':id',
-    component: ClientComponent,
-    // children: [
-    //   {
-    //     path: '',
-    //     component: CustomerComponent
-    //   }
-    //   {
-    //     path: 'clients',
-    //     component: ClientsComponent
-    //   },
-    //   {
-    //     path: 'insurance',
-    //     component: InsuranceComponent
-    //   },
-    //   {
-    //     path: 'loans',
-    //     component: LoansComponent
-    //   },
-    //   {
-    //     path: 'financials',
-    //     component: FinancialComponent
-    //   }
-    // ]
+    children: [
+      {
+        path: '',
+        component: ClientComponent
+      },
+      {
+        path: 'new',
+        component: ClientSetupComponent
+      },
+      {
+        path: 'create',
+        component: CreateContactComponent
+      }
+    ]
   },
 ];
 

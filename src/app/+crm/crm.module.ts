@@ -10,8 +10,11 @@ import { CreateClientInitialComponent } from './clients/form/create-client-initi
 import { ClientsDialogComponent } from './clients/dialog/clients-dialog.component';
 import { CreateClientDialogComponent } from './clients/dialog/create-dialog.component';
 import { ClientComponent } from './clients/client.component';
+import { ClientSetupComponent } from './clients/client-setup.component';
 
 import { ContactsComponent } from './contacts/list/contacts.component';
+import { CreateContactDialogComponent } from './contacts/dialog/create-contact-dialog.component';
+import { CreateContactComponent } from './contacts/form/create-contact.component';
 
 import { ContactService } from './services/contact.service';
 import { ClientService } from './services/client.service';
@@ -24,7 +27,10 @@ const components = [
   CreateClientInitialComponent,
   CreateClientComponent,
   ClientComponent,
-  ContactsComponent
+  ContactsComponent,
+  CreateContactDialogComponent,
+  CreateContactComponent,
+  ClientSetupComponent
 ];
 
 const services = [
@@ -48,7 +54,8 @@ const services = [
   declarations: [...components],
   entryComponents: [
     ClientsDialogComponent,
-    CreateClientDialogComponent
+    CreateClientDialogComponent,
+    CreateContactDialogComponent
   ]
 })
 export class CrmModule { }

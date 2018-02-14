@@ -8,12 +8,12 @@
 
     <div *ngIf="(state$ | async).client.contacts.length == 0">
       <div class="row">
-        <div class="col-3"></div>
+        <div class="col-2"></div>
         <div class="col-6 app-client__empty-state">
-            <h2>Alright, let's add some clients</h2>
+            <h2>Alright, let's get personal</h2>
             <img class="app-client__hero" src="assets/images/space-illo.svg" alt="">
             <p>We know all the shortcuts because we live here! We'll help you find and create the campaigns you need.</p>
-            <button class="no-shadow" color="accent" mat-raised-button (click)="create()">CREATE NEW CLIENT</button>
+            <button class="no-shadow" color="accent" mat-raised-button (click)="createContact()">ADD PERSONAL INFORMATION</button>
         </div>
       </div>
     </div>
@@ -22,24 +22,16 @@
 
         <mat-tab-group>
           <mat-tab label="CONTACTS">
-            <app-contacts [client]="(state$ | async).client"></app-contacts>
           </mat-tab>
           <mat-tab label="FINANCIALS">
-            <p>...</p>
           </mat-tab>
           <mat-tab label="PROTECTION">
-            <p>...</p>
           </mat-tab>
           <mat-tab label="PREFERENCES">
-            <p>...</p>
           </mat-tab>
         </mat-tab-group>
 
+        <app-contacts [client]="(state$ | async).client"></app-contacts>
 
     </div>
-
-
   </div>
-
-
-

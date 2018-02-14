@@ -1,0 +1,85 @@
+<div class="app-create-contact">
+  <div class="col-8">
+    <form [formGroup]="group" (ngSubmit)="save()">
+      <div class="app-create-contact__content">
+
+        <div class="app-create-contact__row app-create-contact__header">
+            <h2>Personal Information</h2>
+        </div>
+
+        <div class="app-create-contact__row row">
+            <div class="form-group">
+              <label for="fullname">Fullname</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+            <div class="form-group">
+              <label for="dob">Date Of Birth</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+            <div class="form-group">
+              <label for="country">Country of Birth</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+            <div class="form-group">
+              <label for="country">Home Number</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+            <div class="form-group">
+              <label for="country">Mobile</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+            <div class="form-group">
+              <label for="country">Email</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+            <div class="form-group">
+              <label for="country">Employer</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+
+          <div class="app-create-contact__col col-6">
+            <div class="form-group">
+              <label for="country">Pay Rate</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+          </div>
+          <div class="app-create-contact__col--end col-6">
+            <div class="form-group">
+              <label for="country">Frequency</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+      <div class="app-create-contact__actions">
+        <div class="spacer"></div>
+        <button type="button" class="mr5" color="primary" mat-button (click)="cancel()">CANCEL</button>
+        <button color="primary" class="no-shadow" mat-raised-button>SAVE</button>
+      </div>
+    </form>
+  </div>
+</div>

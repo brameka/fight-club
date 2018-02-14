@@ -1,0 +1,66 @@
+<div *ngIf="(state$ | async)!.loading" class="app-client-new">
+    <div class="app-client-new__loader">
+      <mat-spinner diameter="25" strokeWidth="3"></mat-spinner>
+    </div>
+  </div>
+
+  <div *ngIf="(state$ | async)!.loading === false" class="app-client-new">
+    <div class="row">
+      <div class="col-8">
+
+        <div class="app-client-new__header">
+          <h1>Kelly Slater</h1>
+        </div>
+
+        <div class="app-client-new__item">
+          <div class="app-client-new__avatar"></div>
+          <div class="app-client-new__content">
+            <h2>Add Personal Information</h2>
+            <p>Create contacts and save personal information for contacts</p>
+          </div>
+          <div class="spacer"></div>
+          <button class="app-client-new__check--active" mat-icon-button>
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </div>
+
+        <div class="app-client-new__item">
+          <div class="app-client-new__avatar"></div>
+          <div class="app-client-new__content">
+            <h2>Financial Information</h2>
+            <p>This is a sub description hopefully under the title</p>
+          </div>
+          <div class="spacer"></div>
+          <button class="app-client-new__check--inactive" mat-icon-button>
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </div>
+
+        <div class="app-client-new__item">
+          <div class="app-client-new__avatar"></div>
+          <div class="app-client-new__content">
+            <h2>Protection</h2>
+            <p>This is a sub description hopefully under the title</p>
+          </div>
+          <div class="spacer"></div>
+          <button class="app-client-new__check--inactive" mat-icon-button>
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </div>
+
+        <div class="app-client-new__item">
+          <div class="app-client-new__avatar"></div>
+          <div class="app-client-new__content">
+              <h2>Preferences</h2>
+              <p>This is a sub description hopefully under the title</p>
+            </div>
+          <div class="spacer"></div>
+          <button class="app-client-new__check--inactive" mat-icon-button>
+            <mat-icon>check_circle</mat-icon>
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>

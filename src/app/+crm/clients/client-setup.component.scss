@@ -1,0 +1,87 @@
+@import '../../styles/variables';
+
+.app-client-new {
+
+  &__loader {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    background: #eaeaea;
+    margin-right: 20px;
+    border-radius: 3px;
+  }
+
+  &__header {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+    flex-direction: row;
+    padding: 20px;
+
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #434548;
+    }
+  }
+
+  &__item {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+    flex-direction: row;
+    padding: 20px;
+    border-bottom: 1px solid $silverback;
+
+
+
+  }
+
+  &__item:hover {
+    cursor: pointer;
+    background: #f9f9f9;
+  }
+
+  &__content {
+    p {
+      color: #96a3b6;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__check--inactive {
+    color: #e2e7ec;
+  }
+
+  &__check--active {
+    color: $green;
+  }
+
+  h2 {
+    color: $primary;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4px;
+  }
+
+
+
+}
+
+
+
+

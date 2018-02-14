@@ -1,0 +1,55 @@
+@import '../../../styles/variables';
+
+.app-create-contact {
+  &__hero {
+    text-align: center;
+    width: 100%;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    color: #434548;
+    font-size: 22px;
+  }
+
+  &__input {
+    width: 400px;
+  }
+
+  &__actions {
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__row {
+
+  }
+
+  &__col {
+
+    &--end {
+      padding-right: 0;
+    }
+
+    padding-left: 0;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  label {
+    color: #484848;
+    font-weight: 600;
+    display: block;
+  }
+
+}

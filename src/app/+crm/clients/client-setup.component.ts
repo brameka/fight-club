@@ -12,11 +12,11 @@ import * as app from 'app/state/app/app.actions';
 import { CreateContactDialogComponent } from 'app/+crm/contacts/dialog/create-contact-dialog.component';
 
 @Component({
-  selector: 'app-client',
-  styleUrls: ['client.component.scss'],
-  templateUrl: 'client.component.html',
+  selector: 'app-client-setup',
+  styleUrls: ['client-setup.component.scss'],
+  templateUrl: 'client-setup.component.html',
 })
-export class ClientComponent {
+export class ClientSetupComponent {
   id: string;
   state$: Observable<any>;
   routeSubscription: Subscription;

@@ -18,7 +18,6 @@ export interface Contact {
   previousEmployers?: string[];
   height?: number;
   weight?: number;
-
   preferences?: {
     homeLoan?: {
       interestRate?: boolean;
