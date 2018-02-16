@@ -3,12 +3,19 @@
     <form [formGroup]="group" (ngSubmit)="save()">
       <div class="app-create-contact__content">
 
+        <div class="app-create-contact__actions">
+          <h2>Create Contact</h2>
+          <div class="spacer"></div>
+          <!--<button type="button" class="mr5" color="primary" mat-button (click)="cancel()">CANCEL</button>-->
+          <button class="no-shadow mr5" mat-raised-button>BACK</button>
+          <button color="primary" class="no-shadow" mat-raised-button>SAVE</button>
+        </div>
+
         <div class="app-create-contact__row app-create-contact__header">
             <h2>Personal Information</h2>
         </div>
 
         <div class="app-create-contact__row row">
-
           <div class="app-create-contact__col col-6">
             <div class="form-group">
               <label for="name">Fullname</label>
@@ -16,18 +23,11 @@
             </div>
           </div>
           <div class="app-create-contact__col--end col-6">
-
             <div class="form-group">
               <label for="name">Date Of Birth (dd/mm/yyyy)</label>
               <input type="text" class="form-control" placeholder="Date Of Birth">
-              <!-- <mat-form-field>
-                <input matInput [matDatepicker]="picker" formControlName="dob">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field> -->
             </div>
           </div>
-
         </div>
 
         <div class="app-create-contact__row row">
@@ -79,68 +79,82 @@
             </div>
           </div>
           <div class="app-create-contact__col--end col-6">
-
-              <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button class="dropdown-item">Action - 1</button>
-                  <button class="dropdown-item">Another Action</button>
-                  <button class="dropdown-item">Something else is here</button>
+              <div class="form-group">
+                <label for="name">Frequency</label>
+                <div ngbDropdown class="d-inline-block">
+                  <button class="btn app-create-contact__btn" id="dropdownBasic1" ngbDropdownToggle>Frequency</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item">Weekly</button>
+                    <button class="dropdown-item">Fortnightly</button>
+                    <button class="dropdown-item">Monthly</button>
+                    <button class="dropdown-item">Annual</button>
+                  </div>
                 </div>
               </div>
-
           </div>
-
-        </div>
-
-
-
-
-        <div class="app-create-contact__row row">
-            <div class="form-group">
-              <label for="country">Mobile</label>
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
         </div>
 
         <div class="app-create-contact__row row">
-            <div class="form-group">
-              <label for="country">Email</label>
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
-        </div>
-
-        <div class="app-create-contact__row row">
-            <div class="form-group">
-              <label for="country">Employer</label>
-              <input type="text" class="form-control" placeholder="Name">
-            </div>
-        </div>
-
-        <div class="app-create-contact__row row">
-
           <div class="app-create-contact__col col-6">
             <div class="form-group">
-              <label for="country">Pay Rate</label>
-              <input type="text" class="form-control" placeholder="Name">
+              <label for="name">Employer</label>
+              <input type="text" class="form-control" placeholder="Employer">
             </div>
           </div>
           <div class="app-create-contact__col--end col-6">
             <div class="form-group">
-              <label for="country">Frequency</label>
-              <input type="text" class="form-control" placeholder="Name">
+              <label for="name">Duration</label>
+              <input type="text" class="form-control" placeholder="Duration">
             </div>
           </div>
-
         </div>
 
+        <div class="app-create-contact__row row">
+          <div class="app-create-contact__col col-6">
+            <div class="form-group">
+              <label for="name">Previous Employers (If less than 3 years)</label>
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-contact__col--end col-6">
+            <div class="form-group">
+              <label for="name">Duration</label>
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
 
+        <div class="app-create-contact__row row">
+          <div class="app-create-contact__col col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-contact__col--end col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-contact__row row">
+          <div class="app-create-contact__col col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-contact__col--end col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="app-create-contact__actions">
+      <!--<div class="app-create-contact__actions">
         <div class="spacer"></div>
         <button type="button" class="mr5" color="primary" mat-button (click)="cancel()">CANCEL</button>
         <button color="primary" class="no-shadow" mat-raised-button>SAVE</button>
-      </div>
+      </div>-->
     </form>
   </div>
 </div>

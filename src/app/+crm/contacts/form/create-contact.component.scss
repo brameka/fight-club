@@ -1,6 +1,8 @@
 @import '../../../styles/variables';
 
 .app-create-contact {
+  margin-bottom: 40px;
+
   &__hero {
     text-align: center;
     width: 100%;
@@ -26,7 +28,13 @@
   &__actions {
     display: flex;
     box-sizing: border-box;
-    padding: 20px;
+    border-bottom: 1px solid $silverback;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+
+    h2 {
+      color: $primary;
+    }
   }
 
   &__content {
@@ -62,6 +70,13 @@
 
   input {
     border: 2px solid #c9c9c9;
+  }
+
+  &__btn {
+    border: 2px solid #c9c9c9;
+    background: #fff;
+    width: 100%;
+    color: #495057;
   }
 
 }

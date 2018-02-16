@@ -29,6 +29,79 @@
     font-size: 15px;
   }
 
+  &__outstanding {
+    border: 1px solid #eaea68;
+    background: #fffee0;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    background: #eaeaea;
+    margin-right: 20px;
+    border-radius: 3px;
+  }
+
+  &__header {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+    flex-direction: row;
+    padding: 20px;
+
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #434548;
+    }
+  }
+
+  &__item {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: nowrap;
+    width: 100%;
+    flex-direction: row;
+    padding: 10px;
+    border-bottom: 1px solid #f5f5c0;
+
+    &--end {
+      border-bottom: none;
+    }
+  }
+
+  &__item:hover {
+    cursor: pointer;
+    background: #fffdce;
+  }
+
+  &__content {
+    p {
+      color: #96a3b6;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__check--inactive {
+    color: #efefba;
+  }
+
+  &__check--active {
+    color: $green;
+  }
+
+  h2 {
+    color: #434548;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4px;
+  }
+
 
 
 }
