@@ -75,3 +75,5 @@ ng g module dashboard --routing
 ng g component dashboard/dashboard-home
 
 https://scotch.io/tutorials/lazy-loading-in-angular-v2
+
+Hello
