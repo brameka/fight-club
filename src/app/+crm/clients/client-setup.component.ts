@@ -47,15 +47,7 @@ export class ClientSetupComponent {
   }
 
   createContact () {
-    this.router.navigate(['create'], { relativeTo: this.route });
-    // const width = '700px';
-    // this.dialogRef = this.dialog.open(CreateContactDialogComponent, {
-    //   width: width,
-    //   panelClass: 'app-dialogx__panel'
-    //   // backdropClass: 'app-full-dialog__backdrop'
-    // });
-    // this.dialogRef.afterClosed().subscribe(result => {
-    //   // this.store.dispatch(new actions.CloseDialogSuccess());
-    // });
+    this.router.navigate(['../create'], { relativeTo: this.route });
   }
+
 }

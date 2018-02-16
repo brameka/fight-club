@@ -10,6 +10,10 @@
     margin-bottom: 20px;
   }
 
+  &__section {
+    margin: 20px 0;
+  }
+
   h2 {
     color: #434548;
     font-size: 22px;
@@ -42,6 +46,10 @@
     padding-left: 0;
   }
 
+  &__check {
+    margin-top: 34px;
+  }
+
   .form-group {
     width: 100%;
   }
@@ -50,6 +58,10 @@
     color: #484848;
     font-weight: 600;
     display: block;
+  }
+
+  input {
+    border: 2px solid #c9c9c9;
   }
 
 }

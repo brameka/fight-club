@@ -20,6 +20,8 @@ import { ContactService } from './services/contact.service';
 import { ClientService } from './services/client.service';
 import { CrmStateModule } from './state/crm-state.module';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 const components = [
   ClientsComponent,
   ClientsDialogComponent,
@@ -46,7 +48,8 @@ const services = [
     MaterialComponentsModule,
     UiComponentsModule,
     CrmRoutingModule,
-    CrmStateModule
+    CrmStateModule,
+    NgbModule.forRoot()
   ],
   providers: [
     ...services
