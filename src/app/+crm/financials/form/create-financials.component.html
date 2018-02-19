@@ -1,0 +1,193 @@
+<div class="app-create-financials">
+  <div class="col-8">
+    <form [formGroup]="group" (ngSubmit)="save()">
+      <div class="app-create-financials__content">
+
+        <div class="app-create-financials__row app-create-financials__header">
+            <h2>Financial Information</h2>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Salary/Wages</label>
+              <input type="text" class="form-control" placeholder="Salary/Wages">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Salary/Wages</label>
+              <input type="text" class="form-control" placeholder="Salaray/Wages">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Commisions/Overtime</label>
+              <input type="text" class="form-control" placeholder="Commisions/Overtime">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Commisions/Overtime</label>
+              <input type="text" class="form-control" placeholder="Commisions/Overtime">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Investment Income</label>
+              <input type="text" class="form-control" placeholder="Investment Income">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Investment Income</label>
+              <input type="text" class="form-control" placeholder="Investment Income">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Pension</label>
+              <input type="text" class="form-control" placeholder="Pension">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Pension</label>
+              <input type="text" class="form-control" placeholder="Pension">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="app-create-financials__row app-create-financials__section">
+            <h2>Employment Information</h2>
+        </div>
+
+        <div class="app-create-financials__row row">
+            <div class="form-group">
+              <label for="country">Employer</label>
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <label for="name">Wages/Salary/Rate</label>
+              <input type="text" class="form-control" placeholder="Salary">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+              <div class="form-group">
+                <label for="name">Frequency</label>
+                <div ngbDropdown class="d-inline-block">
+                  <button class="btn app-create-financials__btn" id="dropdownBasic1" ngbDropdownToggle>Frequency</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item">Weekly</button>
+                    <button class="dropdown-item">Fortnightly</button>
+                    <button class="dropdown-item">Monthly</button>
+                    <button class="dropdown-item">Annual</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <label for="name">Employer</label>
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <label for="name">Duration</label>
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <label for="name">Previous Employers (If less than 3 years)</label>
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <label for="name">Duration</label>
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="app-create-financials__actions">
+          <div class="spacer"></div>
+          <button class="no-shadow mr5 action-btn" mat-raised-button>BACK</button>
+          <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
+        </div>
+    </form>
+  </div>
+</div>

@@ -8,13 +8,13 @@ export class ClientService {
     id: '12345',
     name: 'Kelly Slater',
     contacts: [
-      {
-        name: 'Jon Jon Florence',
-        firstname: 'Jon Jon',
-        lastname: 'Florence',
-        mobile: '000000000',
-        email: 'jonjon.florence@gmail.com'
-      }
+      // {
+      //   name: 'Jon Jon Florence',
+      //   firstname: 'Jon Jon',
+      //   lastname: 'Florence',
+      //   mobile: '000000000',
+      //   email: 'jonjon.florence@gmail.com'
+      // }
     ],
     taxNumber: 'TFN1234',
     bank: 'BW1234'
