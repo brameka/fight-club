@@ -17,6 +17,7 @@ import { CreateContactDialogComponent } from './contacts/dialog/create-contact-d
 import { CreateContactComponent } from './contacts/form/create-contact.component';
 
 import { CreateFinancialsComponent } from './financials/form/create-financials.component';
+import { HomeLoanComponent } from './financials/form/home-loan.component';
 
 import { ContactService } from './services/contact.service';
 import { ClientService } from './services/client.service';
@@ -35,7 +36,8 @@ const components = [
   CreateContactDialogComponent,
   CreateContactComponent,
   ClientSetupComponent,
-  CreateFinancialsComponent
+  CreateFinancialsComponent,
+  HomeLoanComponent
 ];
 
 const services = [

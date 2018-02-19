@@ -15,9 +15,23 @@
     margin: 20px 0;
   }
 
+  &__heading {
+    margin: 20px 0;
+
+    h2 {
+      color: $primary !important;
+    }
+  }
+
   h2 {
     color: #434548;
     font-size: 1rem;
+  }
+
+  .mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
+    color: #434548;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   &__input {
@@ -27,7 +41,7 @@
   &__actions {
     display: flex;
     box-sizing: border-box;
-    padding: 20px;
+    padding-top: 20px;
     margin-bottom: 30px;
 
     h2 {
@@ -75,6 +89,10 @@
     background: #fff;
     width: 100%;
     color: #495057;
+  }
+
+  &__tabs {
+    margin-bottom: 40px;
   }
 
 }

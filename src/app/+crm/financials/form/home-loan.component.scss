@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+
+.app-home-loan {
+
+    &__col {
+        &--end {
+            padding-right: 0;
+        }
+        padding-left: 0;
+    }
+}

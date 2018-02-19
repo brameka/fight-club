@@ -11,8 +11,14 @@ import { Store } from '@ngrx/store';
   styleUrls: ['./create-financials.component.scss']
 })
 export class CreateFinancialsComponent implements AfterViewInit {
+  
   state: any;
-  group: FormGroup;
+  incomeGroup: FormGroup;
+  expensesGroup: FormGroup;
+  assetsGroup: FormGroup;
+  liabilitiesGroup: FormGroup;
+  index: number = 0;
+  banks: any = [];
 
   roles: any[] = [
     'Adult',
@@ -32,7 +38,8 @@ export class CreateFinancialsComponent implements AfterViewInit {
   genders: any[] = [ 'Male', 'Female' ];
 
   constructor (private formBuilder: FormBuilder, private slim: SlimLoadingBarService) {
-    this.group = this.formBuilder.group({
+    
+    this.incomeGroup = this.formBuilder.group({
       name: ['', Validators.required],
       dob: ['', Validators.required],
       country: ['', Validators.required],
@@ -44,11 +51,23 @@ export class CreateFinancialsComponent implements AfterViewInit {
       payRate: [''],
       payFrequency: ['Weekly']
     });
+
+    this.expensesGroup = this.formBuilder.group({
+      name: ['', Validators.required]
+    });
+
   }
 
   ngAfterViewInit() {
     this.slim.complete();
   }
 
+  tabChanged(event: any) {
+    this.index = event;
+  }
+
+  addBank() {
+    this.banks.push({});
+  }
 
 }

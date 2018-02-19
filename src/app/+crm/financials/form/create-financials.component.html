@@ -1,10 +1,19 @@
 <div class="app-create-financials">
   <div class="col-8">
-    <form [formGroup]="group" (ngSubmit)="save()">
+
+    <mat-tab-group class="app-create-financials__tabs"  (selectedIndexChange)="tabChanged($event)">
+      <mat-tab label="INCOME"></mat-tab>
+      <mat-tab label="EXPENSES"></mat-tab>
+      <mat-tab label="ASSETS"></mat-tab>
+      <mat-tab label="LIABILITIES"></mat-tab>
+    </mat-tab-group>
+
+
+    <form [formGroup]="incomeGroup" (ngSubmit)="save()" *ngIf="index == 0">
       <div class="app-create-financials__content">
 
-        <div class="app-create-financials__row app-create-financials__header">
-            <h2>Financial Information</h2>
+        <div class="app-create-financials__row app-create-financials__header app-create-financials__heading">
+            <h2>Monthly Income</h2>
         </div>
 
         <div class="app-create-financials__row row">
@@ -16,7 +25,7 @@
           </div>
           <div class="app-create-financials__col col-4">
             <div class="form-group">
-              <label for="name">Salary/Wages</label>
+              <label for="name">&nbsp;</label>
               <input type="text" class="form-control" placeholder="Salaray/Wages">
             </div>
           </div>
@@ -37,7 +46,7 @@
           </div>
           <div class="app-create-financials__col col-4">
             <div class="form-group">
-              <label for="name">Commisions/Overtime</label>
+              <label for="name">&nbsp;</label>
               <input type="text" class="form-control" placeholder="Commisions/Overtime">
             </div>
           </div>
@@ -58,7 +67,7 @@
           </div>
           <div class="app-create-financials__col col-4">
             <div class="form-group">
-              <label for="name">Investment Income</label>
+              <label for="name">&nbsp;</label>
               <input type="text" class="form-control" placeholder="Investment Income">
             </div>
           </div>
@@ -79,8 +88,29 @@
           </div>
           <div class="app-create-financials__col col-4">
             <div class="form-group">
-              <label for="name">Pension</label>
+              <label for="name">&nbsp;</label>
               <input type="text" class="form-control" placeholder="Pension">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Other</label>
+              <input type="text" class="form-control" placeholder="">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="">
             </div>
           </div>
           <div class="app-create-financials__col--end col-4">
@@ -92,96 +122,10 @@
         </div>
         
 
-        <div class="app-create-financials__row app-create-financials__section">
-            <h2>Employment Information</h2>
-        </div>
+        
 
-        <div class="app-create-financials__row row">
-            <div class="form-group">
-              <label for="country">Employer</label>
-              <input type="text" class="form-control" placeholder="Employer">
-            </div>
-        </div>
+        
 
-        <div class="app-create-financials__row row">
-
-          <div class="app-create-financials__col col-6">
-            <div class="form-group">
-              <label for="name">Wages/Salary/Rate</label>
-              <input type="text" class="form-control" placeholder="Salary">
-            </div>
-          </div>
-          <div class="app-create-financials__col--end col-6">
-              <div class="form-group">
-                <label for="name">Frequency</label>
-                <div ngbDropdown class="d-inline-block">
-                  <button class="btn app-create-financials__btn" id="dropdownBasic1" ngbDropdownToggle>Frequency</button>
-                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                    <button class="dropdown-item">Weekly</button>
-                    <button class="dropdown-item">Fortnightly</button>
-                    <button class="dropdown-item">Monthly</button>
-                    <button class="dropdown-item">Annual</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-        </div>
-
-        <div class="app-create-financials__row row">
-          <div class="app-create-financials__col col-6">
-            <div class="form-group">
-              <label for="name">Employer</label>
-              <input type="text" class="form-control" placeholder="Employer">
-            </div>
-          </div>
-          <div class="app-create-financials__col--end col-6">
-            <div class="form-group">
-              <label for="name">Duration</label>
-              <input type="text" class="form-control" placeholder="Duration">
-            </div>
-          </div>
-        </div>
-
-        <div class="app-create-financials__row row">
-          <div class="app-create-financials__col col-6">
-            <div class="form-group">
-              <label for="name">Previous Employers (If less than 3 years)</label>
-              <input type="text" class="form-control" placeholder="Employer">
-            </div>
-          </div>
-          <div class="app-create-financials__col--end col-6">
-            <div class="form-group">
-              <label for="name">Duration</label>
-              <input type="text" class="form-control" placeholder="Duration">
-            </div>
-          </div>
-        </div>
-
-        <div class="app-create-financials__row row">
-          <div class="app-create-financials__col col-6">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Employer">
-            </div>
-          </div>
-          <div class="app-create-financials__col--end col-6">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Duration">
-            </div>
-          </div>
-        </div>
-
-        <div class="app-create-financials__row row">
-          <div class="app-create-financials__col col-6">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Employer">
-            </div>
-          </div>
-          <div class="app-create-financials__col--end col-6">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Duration">
-            </div>
-          </div>
-        </div>
       </div>
       <div class="app-create-financials__actions">
           <div class="spacer"></div>
@@ -189,5 +133,340 @@
           <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
         </div>
     </form>
+
+
+    <form [formGroup]="expensesGroup" (ngSubmit)="save()" *ngIf="index == 1">
+      <div class="app-create-financials__content">
+
+          <div class="app-create-financials__row app-create-financials__heading">
+              <h2>Monthly Living Expenses</h2>
+          </div>
+
+          <div class="app-create-financials__row row">
+            <div class="app-create-financials__col col-4">
+              <div class="form-group">
+                <label for="name">Rent/Mortgage</label>
+                <input type="text" class="form-control" placeholder="Rent/Mortgage">
+              </div>
+            </div>
+            <div class="app-create-financials__col col-4">
+              <div class="form-group">
+                <label for="name">&nbsp;</label>
+                <input type="text" class="form-control" placeholder="Rent/Mortgage">
+              </div>
+            </div>
+            <div class="app-create-financials__col--end col-4">
+              <div class="form-group">
+                <label for="name">Total</label>
+                <input type="text" class="form-control" placeholder="0" readonly>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-create-financials__row app-create-financials__section">
+            <h2>Insurance</h2>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Income Protection</label>
+              <input type="text" class="form-control" placeholder="Income Protection">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Income Protection">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Trauma</label>
+              <input type="text" class="form-control" placeholder="Trauma">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Trauma">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Life</label>
+              <input type="text" class="form-control" placeholder="Life">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Life">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Medical</label>
+              <input type="text" class="form-control" placeholder="Medical">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Medical">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="app-create-financials__row app-create-financials__section">
+            <h2>Rates</h2>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Water</label>
+              <input type="text" class="form-control" placeholder="Water Rates">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Water Rates">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Later</label>
+              <input type="text" class="form-control" placeholder="Later Rates">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Later Rates">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row app-create-financials__section">
+            <h2>Vehicle</h2>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Fuel & Oil</label>
+              <input type="text" class="form-control" placeholder="Fuel & Oil">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Fuel & Oil">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Rego & WOF</label>
+              <input type="text" class="form-control" placeholder="Rego & WOF">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Rego & WOF">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">Service</label>
+              <input type="text" class="form-control" placeholder="Service">
+            </div>
+          </div>
+          <div class="app-create-financials__col col-4">
+            <div class="form-group">
+              <label for="name">&nbsp;</label>
+              <input type="text" class="form-control" placeholder="Service">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-4">
+            <div class="form-group">
+              <label for="name">Total</label>
+              <input type="text" class="form-control" placeholder="0" readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-create-financials__actions">
+        <div class="spacer"></div>
+        <button class="no-shadow mr5 action-btn" mat-raised-button>BACK</button>
+        <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
+      </div>
+
+    </form>
+
+    <form [formGroup]="incomeGroup" (ngSubmit)="save()" *ngIf="index == 2">
+      <div class="app-create-financials__content">
+        <div class="app-create-financials__row app-create-financials__header app-create-financials__heading">
+            <h2>Assets</h2>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <label for="name">Bank Accounts</label>
+              <input type="text" class="form-control" placeholder="Joint Bank Accounts">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <label for="name">Vehicles</label>
+              <input type="text" class="form-control" placeholder="Vehicles">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <label for="name">Personal Effects</label>
+              <input type="text" class="form-control" placeholder="Personal Effects">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <label for="name">Kiwisaver/s</label>
+              <input type="text" class="form-control" placeholder="Kiwisaver">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <label for="name">Other savings amount</label>
+              <input type="text" class="form-control" placeholder="Personal Effects">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <label for="name">Total Property - Home/Investment</label>
+              <input type="text" class="form-control" placeholder="Property">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-financials__row row">
+          <div class="app-create-financials__col col-6">
+            <div class="form-group">
+              <label for="name">Boat/s</label>
+              <input type="text" class="form-control" placeholder="Boats">
+            </div>
+          </div>
+          <div class="app-create-financials__col--end col-6">
+            <div class="form-group">
+              <label for="name">Other (Art, Jewelry etc)</label>
+              <input type="text" class="form-control" placeholder="Other">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="app-create-financials__actions">
+        <div class="spacer"></div>
+        <button class="no-shadow mr5 action-btn" mat-raised-button>BACK</button>
+        <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
+      </div>
+    </form>
+
+    <form [formGroup]="incomeGroup" (ngSubmit)="save()" *ngIf="index == 3">
+      <div class="app-create-financials__content">
+        <div class="app-create-financials__row app-create-financials__header app-create-financials__heading">
+            <h2>Liabilities</h2>
+        </div>
+      </div>
+      
+      <div class="bank" *ngFor='let bank of banks'>
+        <app-home-loan ></app-home-loan>
+      </div>
+      <button color="primary" class="no-shadow action-btn" mat-raised-button (click)="addBank()">Add Bank</button>
+
+
+      <div class="app-create-financials__actions">
+        <div class="spacer"></div>
+        <button class="no-shadow mr5 action-btn" mat-raised-button>BACK</button>
+        <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
+      </div>
+    </form>
+
   </div>
 </div>
