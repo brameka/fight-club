@@ -19,64 +19,6 @@
     </div>
 
     <div *ngIf="(state$ | async).client.contacts.length > 0" class="app-client">
-      
-            <!--<div class="app-client__header">
-              <h1>Kelly Slater</h1>
-            </div>
-
-            <div class="app-client__outstanding">
-
-              <div class="app-client__item" (click)="createContact()">
-                <div class="app-client__avatar"></div>
-                <div class="app-client__content">
-                  <h2>Add Personal Information</h2>
-                  <p>Create contacts and save personal information for contacts</p>
-                </div>
-                <div class="spacer"></div>
-                <button class="app-client__check--active" mat-icon-button>
-                  <mat-icon>check_circle</mat-icon>
-                </button>
-              </div>
-
-              <div class="app-client__item">
-                <div class="app-client__avatar"></div>
-                <div class="app-client__content">
-                  <h2>Financial Information</h2>
-                  <p>This is a sub description hopefully under the title</p>
-                </div>
-                <div class="spacer"></div>
-                <button class="app-client__check--inactive" mat-icon-button>
-                  <mat-icon>check_circle</mat-icon>
-                </button>
-              </div>
-
-              <div class="app-client__item">
-                <div class="app-client__avatar"></div>
-                <div class="app-client__content">
-                  <h2>Protection</h2>
-                  <p>This is a sub description hopefully under the title</p>
-                </div>
-                <div class="spacer"></div>
-                <button class="app-client__check--inactive" mat-icon-button>
-                  <mat-icon>check_circle</mat-icon>
-                </button>
-              </div>
-
-              <div class="app-client__item app-client__item--end">
-                <div class="app-client__avatar"></div>
-                <div class="app-client__content">
-                    <h2>Preferences</h2>
-                    <p>This is a sub description hopefully under the title</p>
-                  </div>
-                <div class="spacer"></div>
-                <button class="app-client__check--inactive" mat-icon-button>
-                  <mat-icon>check_circle</mat-icon>
-                </button>
-              </div>
-
-      </div>-->
-
-
         <!--<mat-tab-group>
           <mat-tab label="CONTACTS">
           </mat-tab>
@@ -87,8 +29,7 @@
           <mat-tab label="PREFERENCES">
           </mat-tab>
         </mat-tab-group>-->
-
         <app-contacts [client]="(state$ | async).client"></app-contacts>
-
     </div>
+    
   </div>

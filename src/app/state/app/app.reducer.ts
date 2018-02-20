@@ -8,6 +8,7 @@ export interface AppState {
   menuColour: string;
   loadingColour: string;
   title: string;
+  index: number;
 }
 
 export const primaryState: AppState = {
@@ -17,7 +18,8 @@ export const primaryState: AppState = {
   active: 'home',
   menuColour: 'primary',
   loadingColour: '#fff',
-  title: 'Home'
+  title: 'Home',
+  index: 0
 };
 
 export const initialState: AppState = {
@@ -27,7 +29,8 @@ export const initialState: AppState = {
   active: 'home',
   menuColour: 'default',
   loadingColour: '#3f51b5',
-  title: 'Home'
+  title: 'Home',
+  index: 0
 };
 
 export type Action = actions.All;
@@ -56,11 +59,17 @@ export function appReducer(state: AppState = primaryState, action: Action): AppS
     //   };
 
     case actions.SHOW_STATE:
-      console.log(action.payload);
       return {
         ...state,
         state: action.payload.state,
-        title: action.payload.title
+        title: action.payload.title,
+        styles: {'margin-top': action.payload.top},
+      };
+
+    case actions.CHANGE_INDEX:
+      return {
+        ...state,
+        index: action.payload
       };
 
     default:

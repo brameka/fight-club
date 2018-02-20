@@ -6,7 +6,7 @@ import { UiComponentsModule } from '../ui/ui-components.module';
 import { CrmRoutingModule } from './crm-routing.module';
 import { ClientsComponent } from './clients/list/clients.component';
 import { CreateClientComponent } from './clients/form/create-client.component';
-import { CreateClientInitialComponent } from './clients/form/create-client-initial.component';
+
 import { ClientsDialogComponent } from './clients/dialog/clients-dialog.component';
 import { CreateClientDialogComponent } from './clients/dialog/create-dialog.component';
 import { ClientComponent } from './clients/client.component';
@@ -29,7 +29,6 @@ const components = [
   ClientsComponent,
   ClientsDialogComponent,
   CreateClientDialogComponent,
-  CreateClientInitialComponent,
   CreateClientComponent,
   ClientComponent,
   ContactsComponent,

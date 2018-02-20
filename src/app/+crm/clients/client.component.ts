@@ -38,7 +38,8 @@ export class ClientComponent {
       });
       this.store.dispatch(new app.ShowState({
         state: 'client',
-        title: 'Client'
+        title: 'Client',
+        top: '110px'
       }));
   }
 

@@ -5,7 +5,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { MatSidenav } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import * as actions from 'app/state/app/app.actions';
+import * as app from 'app/state/app/app.actions';
 
 @Component({
   selector: 'app-container',
@@ -60,6 +60,7 @@ export class AppContainerComponent implements OnDestroy, AfterViewChecked {
   // }
 
   selectedIndexChange(event: any) {
-    // this.store.dispatch(new customerActions.ChangeRoute(event));
+    console.log(event);
+    this.store.dispatch(new app.ChangeIndex(event));
   }
 }

@@ -1,150 +1,152 @@
-<div class="app-create-client-form">
-  <mat-horizontal-stepper [linear]="isLinear">
-    <mat-step [stepControl]="personalFormGroup">
-      <form [formGroup]="personalFormGroup">
-        <ng-template matStepLabel>Contact Information</ng-template>
-        <div class="row">
-          <div class="col-sm-4">
-              <mat-form-field class="app-create-client-form__field">
-                <input matInput placeholder="First Name" formControlName="firstname">
-                <mat-error *ngIf="personalFormGroup.controls['middlename'].hasError('required')">
-                  First name is <strong>required</strong>
-                </mat-error>
-              </mat-form-field>
-          </div>
-          <div class="col-sm-4">
-              <mat-form-field class="app-create-client-form__field">
-                <input matInput placeholder="Middle Name" formControlName="middlename">
-              </mat-form-field>
-          </div>
-          <div class="col-sm-4">
-              <mat-form-field class="app-create-client-form__field">
-                <input matInput placeholder="Last Name" formControlName="surname">
-                <mat-error *ngIf="personalFormGroup.controls['surname'].hasError('required')">
-                  Last name is <strong>required</strong>
-                </mat-error>
-              </mat-form-field>
-          </div>
+<div class="app-create-client">
+    <form [formGroup]="group" (ngSubmit)="save()">
+      
+
+        <div class="app-create-client__row app-create-client__header">
+            <h2>Personal Information</h2>
         </div>
 
-        <div class="row">
-          <div class="col-sm-12">
-            <mat-form-field class="app-create-client-form__field">
-                <input matInput placeholder="Email" formControlName="email">
-                <mat-error *ngIf="personalFormGroup.controls['email'].hasError('pattern')">
-                  Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="personalFormGroup.controls['email'].hasError('required')">
-                  Email is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
-          </div>
-        </div>
+        <div class="app-create-client__content">
 
-        <div class="row">
-
-            <div class="col-sm-4">
-              <mat-form-field>
-                <mat-select formControlName="gender" placeholder="Gender" >
-                  <mat-option *ngFor="let gend of genders" [value]="gend">
-                    {{ gend }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
+        <div class="app-create-client__row row">
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <label for="name">Fullname</label>
+              <input type="text" class="form-control" placeholder="Name">
             </div>
-
-            <div class="col-sm-4">
-              <mat-form-field>
-                <mat-select formControlName="title" placeholder="Title" >
-                  <mat-option *ngFor="let titl of titles" [value]="titl">
-                    {{ titl }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
+          </div>
+          <div class="app-create-client__col--end col-6">
+            <div class="form-group">
+              <label for="name">Date Of Birth (dd/mm/yyyy)</label>
+              <input type="text" class="form-control" placeholder="Date Of Birth">
             </div>
-
-            <div class="col-sm-4">
-              <mat-form-field>
-                <mat-select formControlName="role" placeholder="Role" >
-                  <mat-option *ngFor="let rol of roles" [value]="rol">
-                    {{ rol }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-              <mat-form-field>
-                <input matInput [matDatepicker]="picker" placeholder="Date Of Birth" formControlName="dob">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
           </div>
         </div>
-        <div class="row app-create-client-form__actions">
-            <div class="spacer"></div>
-            <button mat-button matStepperNext>Next</button>
+
+        <div class="app-create-client__row row">
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <label for="name">Mobile</label>
+              <input type="text" class="form-control" placeholder="Mobile">
+            </div>
+          </div>
+          <div class="app-create-client__col--end col-6">
+            <div class="form-group">
+              <label for="name">Home Phone</label>
+              <input type="text" class="form-control" placeholder="Home Phone">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-client__row row">
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <label for="name">Email</label>
+              <input type="text" class="form-control" placeholder="Email">
+            </div>
+          </div>
+          <div class="app-create-client__col--end col-6">
+            <div class="app-create-client__check">
+                <mat-checkbox>Unsubscribe to emails</mat-checkbox>
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="app-create-client__row app-create-client__section">
+            <h2>Employment Information</h2>
+        </div>
+
+        <div class="app-create-client__row row">
+            <div class="form-group">
+              <label for="country">Employer</label>
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+        </div>
+
+        <div class="app-create-client__row row">
+
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <label for="name">Wages/Salary/Rate</label>
+              <input type="text" class="form-control" placeholder="Salary">
+            </div>
+          </div>
+          <div class="app-create-client__col--end col-6">
+              <div class="form-group">
+                <label for="name">Frequency</label>
+                <div ngbDropdown class="d-inline-block">
+                  <button class="btn app-create-client__btn" id="dropdownBasic1" ngbDropdownToggle>Frequency</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item">Weekly</button>
+                    <button class="dropdown-item">Fortnightly</button>
+                    <button class="dropdown-item">Monthly</button>
+                    <button class="dropdown-item">Annual</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="app-create-client__row row">
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <label for="name">Employer</label>
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-client__col--end col-6">
+            <div class="form-group">
+              <label for="name">Duration</label>
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-client__row row">
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <label for="name">Previous Employers (If less than 3 years)</label>
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-client__col--end col-6">
+            <div class="form-group">
+              <label for="name">Duration</label>
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-client__row row">
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-client__col--end col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>
+
+        <div class="app-create-client__row row">
+          <div class="app-create-client__col col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Employer">
+            </div>
+          </div>
+          <div class="app-create-client__col--end col-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+        </div>-->
+      </div>
+      <div class="app-create-client__actions">
+          <div class="spacer"></div>
+          <button class="no-shadow mr5 action-btn" mat-button color="primary">BACK</button>
+          <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
         </div>
     </form>
-
-    </mat-step>
-    <mat-step [stepControl]="contactFormGroup">
-      <form [formGroup]="contactFormGroup">
-        <ng-template matStepLabel>Contact Information</ng-template>
-
-        <div class="row">
-          <div class="col-sm-4">
-              <mat-form-field class="app-create-client-form__field">
-                <input matInput placeholder="Home Phone" formControlName="homePhone">
-              </mat-form-field>
-          </div>
-          <div class="col-sm-4">
-            <mat-form-field class="app-create-client-form__field">
-              <input matInput placeholder="Business Phone" formControlName="businessPhone">
-            </mat-form-field>
-          </div>
-          <div class="col-sm-4">
-            <mat-form-field class="app-create-client-form__field">
-              <input matInput placeholder="Mobile Phone" formControlName="mobilePhone">
-            </mat-form-field>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-4">
-              <mat-form-field class="app-create-client-form__field">
-                <input matInput placeholder="Occupation" formControlName="occupation">
-              </mat-form-field>
-          </div>
-          <div class="col-sm-4">
-            <mat-form-field class="app-create-client-form__field">
-              <input matInput placeholder="Company" formControlName="company">
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="row app-create-client-form__actions">
-            <div class="spacer"></div>
-            <button mat-button matStepperPrevious class="app-create-client-form__back">Back</button>
-            <!-- <button mat-button color="primary" mat-raised-button (click)='save()' [disabled]="this.personalFormGroup.valid === false">Save</button> -->
-            <button mat-button color="primary" mat-raised-button (click)='save()'>Save</button>
-        </div>
-      </form>
-    </mat-step>
-
-    <mat-step [stepControl]="personalFormGroup">
-      <ng-template matStepLabel>Financial Information</ng-template>
-    </mat-step>
-
-    <mat-step [stepControl]="personalFormGroup">
-      <ng-template matStepLabel>Protection</ng-template>
-    </mat-step>
-
-    <mat-step [stepControl]="personalFormGroup">
-      <ng-template matStepLabel>Preferences</ng-template>
-    </mat-step>
-
-
-  </mat-horizontal-stepper>
 </div>

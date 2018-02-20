@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -15,9 +15,11 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
   styleUrls: ['./create-client.component.scss']
 })
 export class CreateClientComponent implements AfterViewInit, OnInit  {
+  @Output() close = new EventEmitter<any>();
+  group: FormGroup;
+  client: Client;
   personalFormGroup: FormGroup;
   contactFormGroup: FormGroup;
-  client: Client;
   isLinear = false;
 
   roles: any[] = [
@@ -38,7 +40,7 @@ export class CreateClientComponent implements AfterViewInit, OnInit  {
 
   genders: any[] = [ 'Male', 'Female' ];
 
-  constructor(private formBuilder: FormBuilder, private store: Store<object>) { }
+  constructor(private formBuilder: FormBuilder, private store: Store<Object>) { }
 
   ngOnInit() {
     this.personalFormGroup = this.formBuilder.group({
@@ -54,7 +56,7 @@ export class CreateClientComponent implements AfterViewInit, OnInit  {
       title: [''],
       dob: ['', Validators.required]
     });
-    this.contactFormGroup = this.formBuilder.group({
+    this.group = this.formBuilder.group({
       homePhone: ['', Validators.required],
       businessPhone: [''],
       mobilePhone: [''],

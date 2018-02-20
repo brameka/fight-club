@@ -40,7 +40,7 @@ export class ClientsComponent {
 
   create () {
     // this.router.navigate(['create'], { relativeTo: this.route });
-    const width = '440px';
+    const width = '800px';
     this.dialogRef = this.dialog.open(CreateClientDialogComponent, {
       width: width,
       panelClass: 'app-dialog__panel'
