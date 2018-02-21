@@ -1,9 +1,11 @@
 import { Component, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { MatDialogRef, MatDialog } from '@angular/material';
 import { Client } from 'app/models/client';
-import { CreateClientDialogComponent } from '../../clients/dialog/create-dialog.component';
+import { CreateContactDialogComponent } from '../dialog/create-contact-dialog.component';
 import * as actions from 'app/+crm/state/clients/client.actions';
 import * as app from 'app/state/app/app.actions';
 
@@ -12,31 +14,29 @@ import * as app from 'app/state/app/app.actions';
   styleUrls: ['contacts.component.scss'],
   templateUrl: 'contacts.component.html',
 })
-export class ContactsComponent {
+export class ContactsComponent implements AfterViewInit {
   state$: Observable<any>;
-  dialogRef: MatDialogRef<CreateClientDialogComponent>;
+  dialogRef: MatDialogRef<CreateContactDialogComponent>;
   @Input() client: Client;
 
-  constructor(private store: Store<any>, private dialog: MatDialog) {
-
+  constructor(private store: Store<any>,
+    private dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute,
+    private service: SlimLoadingBarService) {
   }
 
   create () {
-    // this.router.navigate(['create'], { relativeTo: this.route });
-    const width = '440px';
-    this.dialogRef = this.dialog.open(CreateClientDialogComponent, {
-      width: width,
-      panelClass: 'app-dialog__panel'
-      // backdropClass: 'app-full-dialog__backdrop'
-    });
-    this.dialogRef.afterClosed().subscribe(result => {
-      // this.store.dispatch(new actions.CloseDialogSuccess());
-    });
+    this.router.navigate(['../create'], { relativeTo: this.route });
   }
 
   close() {
     if (this.dialogRef) {
       this.dialogRef.close();
     }
+  }
+
+  ngAfterViewInit() {
+    this.service.complete();
   }
 }

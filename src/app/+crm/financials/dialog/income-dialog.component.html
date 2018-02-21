@@ -1,0 +1,98 @@
+<div class="app-income-dialog">
+
+    <form [formGroup]="group" (ngSubmit)="save()">
+
+        <div class="app-income-dialog__row app-income-dialog__header">
+            <h2>Income</h2>
+        </div>
+
+        <div class="app-income-dialog__content">
+
+            <div class="app-income-dialog__row row">
+                <div class="app-income-dialog__col col-6">
+                    <div class="form-group">
+                        <label for="name">Income Type</label>
+                        <div ngbDropdown class="app-income-dialog__drop">
+                            <button class="btn app-income-dialog__btn" id="dropdownBasic1" ngbDropdownToggle>Type</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button class="dropdown-item">Salary/Wages</button>
+                                <button class="dropdown-item">Business</button>
+                                <button class="dropdown-item">Benefits</button>
+                                <button class="dropdown-item">Interest/Dividends</button>
+                                <button class="dropdown-item">Boarder/Flatmate</button>
+                                <button class="dropdown-item">Rental</button>
+                                <button class="dropdown-item">Bonus</button>
+                                <button class="dropdown-item">Commission</button>
+                                <button class="dropdown-item">Other</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-income-dialog__col--end col-6">
+                    <div class="form-group">
+                        <label for="name">Contact</label>
+                        <div class="app-income-dialog__drop" ngbDropdown>
+                            <button class="btn app-income-dialog__btn" id="dropdownBasic2" ngbDropdownToggle>Frequency</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                                <button class="dropdown-item">Contact #1</button>
+                                <button class="dropdown-item">Contact #2</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="app-income-dialog__row row">
+                <div class="app-income-dialog__col col-6">
+                    <div class="form-group">
+                    <label for="name">Fullname</label>
+                    <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                </div>
+                <div class="app-income-dialog__col--end col-6">
+                    <div class="form-group">
+                    <label for="name">Date Of Birth (dd/mm/yyyy)</label>
+                    <input type="text" class="form-control" placeholder="Date Of Birth">
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-income-dialog__row row">
+                <div class="app-income-dialog__col col-6">
+                    <div class="form-group">
+                    <label for="name">Mobile</label>
+                    <input type="text" class="form-control" placeholder="Mobile">
+                    </div>
+                </div>
+                <div class="app-income-dialog__col--end col-6">
+                    <div class="form-group">
+                    <label for="name">Home Phone</label>
+                    <input type="text" class="form-control" placeholder="Home Phone">
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-income-dialog__row row">
+                <div class="app-income-dialog__col col-6">
+                    <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="text" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+                <div class="app-income-dialog__col--end col-6">
+                    <div class="app-income-dialog__check">
+                        <mat-checkbox>Unsubscribe to emails</mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-income-dialog__actions">
+            <div class="spacer"></div>
+            <button class="no-shadow mr5 action-btn" mat-button>BACK</button>
+            <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
+        </div>
+    </form>
+
+</div>

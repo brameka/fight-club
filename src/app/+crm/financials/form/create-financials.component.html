@@ -1,14 +1,6 @@
 <div class="app-create-financials">
   <div class="col-8">
 
-    <mat-tab-group class="app-create-financials__tabs"  (selectedIndexChange)="tabChanged($event)">
-      <mat-tab label="INCOME"></mat-tab>
-      <mat-tab label="EXPENSES"></mat-tab>
-      <mat-tab label="ASSETS"></mat-tab>
-      <mat-tab label="LIABILITIES"></mat-tab>
-    </mat-tab-group>
-
-
     <form [formGroup]="incomeGroup" (ngSubmit)="save()" *ngIf="index == 0">
       <div class="app-create-financials__content">
 
@@ -17,6 +9,7 @@
         </div>
 
         <div class="app-create-financials__row row">
+          
           <div class="app-create-financials__col col-4">
             <div class="form-group">
               <label for="name">Salary/Wages</label>
@@ -35,6 +28,7 @@
               <input type="text" class="form-control" placeholder="0" readonly>
             </div>
           </div>
+
         </div>
 
         <div class="app-create-financials__row row">

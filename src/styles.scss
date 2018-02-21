@@ -344,7 +344,15 @@ code {
     line-height: 0.25;
 }
 
+.form-control:focus {
+  border: 1px solid $primary !important;
+  box-shadow: 0 0 0 2px rgba(157,112,208,.4);
+  outline: none;
+}
+
 .btn {
   font-size: 0.9rem;
 }
+
+
 

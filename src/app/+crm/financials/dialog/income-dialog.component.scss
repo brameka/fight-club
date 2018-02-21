@@ -1,0 +1,95 @@
+@import '../../../styles/variables';
+
+.app-income-dialog {
+
+  &__hero {
+    text-align: center;
+    width: 100%;
+  }
+
+  &__header {
+    padding: 20px;
+    color: $primary;
+    border-bottom: 1px solid #eaeaea;
+
+    h2 {
+      padding: 0;
+      margin: 0;
+      font-weight: 600;
+      color: $primary !important;
+    }
+  }
+
+  &__section {
+    margin: 20px 0;
+  }
+
+  &__drop {
+      width: 100%;
+  }
+
+  h2 {
+    color: #434548;
+    font-size: 1rem;
+  }
+
+  &__input {
+    width: 400px;
+  }
+
+  &__actions {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px;
+    border-top: 1px solid #eaeaea;
+    background: #fafafa;
+
+    h2 {
+      color: $primary;
+    }
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__row {
+
+  }
+
+  &__col {
+
+    &--end {
+      padding-right: 0;
+    }
+
+    padding-left: 0;
+  }
+
+  &__check {
+    margin-top: 34px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  label {
+    color: #484848;
+    font-weight: 600;
+    display: block;
+  }
+
+  input {
+    border: 2px solid #c9c9c9;
+  }
+
+  &__btn {
+    border: 2px solid #c9c9c9;
+    background: #fff;
+    width: 100%;
+    color: #495057;
+    width: 100%;
+  }
+
+}

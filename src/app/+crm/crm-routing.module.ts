@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClientsComponent } from 'app/+crm/clients/list/clients.component';
+import { ClientContainerComponent } from 'app/+crm/clients/client-container.component';
 import { ClientComponent } from 'app/+crm/clients/client.component';
 import { CreateContactComponent } from './contacts/form/create-contact.component';
-import { ClientSetupComponent } from 'app/+crm/clients/client-setup.component';
+import { ContactsComponent } from './contacts/list/contacts.component'; 
+
+import { FinancialsComponent } from 'app/+crm/financials/financials.component';
 import { CreateFinancialsComponent } from 'app/+crm/financials/form/create-financials.component';
 
 const routes: Routes = [
@@ -15,20 +18,33 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ClientComponent
+        component: ClientContainerComponent,
+        children: [
+          {
+            path: 'overview',
+            component: ClientComponent
+          },
+          {
+            path: 'contacts',
+            component: ContactsComponent
+          },
+
+          {
+            path: 'create-contact',
+            component: CreateContactComponent
+          },
+          {
+            path: 'financials',
+            component: FinancialsComponent
+          },
+          {
+            path: 'create-financials',
+            component: CreateFinancialsComponent
+          }
+        ]
+        
       },
-      {
-        path: 'new',
-        component: ClientSetupComponent
-      },
-      {
-        path: 'create',
-        component: CreateContactComponent
-      },
-      {
-        path: 'create-financials',
-        component: CreateFinancialsComponent
-      }
+     
     ]
   },
 ];

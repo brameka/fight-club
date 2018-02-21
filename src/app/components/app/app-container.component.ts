@@ -60,7 +60,6 @@ export class AppContainerComponent implements OnDestroy, AfterViewChecked {
   // }
 
   selectedIndexChange(event: any) {
-    console.log(event);
     this.store.dispatch(new app.ChangeIndex(event));
   }
 }

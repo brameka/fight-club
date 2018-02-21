@@ -12,7 +12,7 @@
 
   h2 {
     color: #434548;
-    font-size: 22px;
+    font-size: 1rem;
   }
 
   &__input {
@@ -27,6 +27,8 @@
 
   &__content {
     padding: 20px;
+    overflow-y: scroll;
+    max-height: 90vh;
   }
 
   &__row {
@@ -50,6 +52,18 @@
     color: #484848;
     font-weight: 600;
     display: block;
+  }
+
+  &__actions {
+    display: flex;
+    box-sizing: border-box;
+    padding: 10px;
+    border-top: 1px solid #eaeaea;
+    background: #fafafa;
+
+    h2 {
+      color: $primary;
+    }
   }
 
 }

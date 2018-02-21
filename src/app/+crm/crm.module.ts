@@ -9,20 +9,22 @@ import { CreateClientComponent } from './clients/form/create-client.component';
 
 import { ClientsDialogComponent } from './clients/dialog/clients-dialog.component';
 import { CreateClientDialogComponent } from './clients/dialog/create-dialog.component';
+
+import { ClientContainerComponent } from './clients/client-container.component';
 import { ClientComponent } from './clients/client.component';
-import { ClientSetupComponent } from './clients/client-setup.component';
 
 import { ContactsComponent } from './contacts/list/contacts.component';
 import { CreateContactDialogComponent } from './contacts/dialog/create-contact-dialog.component';
 import { CreateContactComponent } from './contacts/form/create-contact.component';
 
+import { FinancialsComponent } from 'app/+crm/financials/financials.component';
 import { CreateFinancialsComponent } from './financials/form/create-financials.component';
-import { HomeLoanComponent } from './financials/form/home-loan.component';
+import { IncomeDialogComponent } from 'app/+crm/financials/dialog/income-dialog.component';
 
+import { HomeLoanComponent } from './financials/form/home-loan.component';
 import { ContactService } from './services/contact.service';
 import { ClientService } from './services/client.service';
 import { CrmStateModule } from './state/crm-state.module';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const components = [
@@ -30,12 +32,14 @@ const components = [
   ClientsDialogComponent,
   CreateClientDialogComponent,
   CreateClientComponent,
+  ClientContainerComponent,
   ClientComponent,
   ContactsComponent,
   CreateContactDialogComponent,
   CreateContactComponent,
-  ClientSetupComponent,
   CreateFinancialsComponent,
+  FinancialsComponent,
+  IncomeDialogComponent,
   HomeLoanComponent
 ];
 
@@ -62,7 +66,8 @@ const services = [
   entryComponents: [
     ClientsDialogComponent,
     CreateClientDialogComponent,
-    CreateContactDialogComponent
+    CreateContactDialogComponent,
+    IncomeDialogComponent
   ]
 })
 export class CrmModule { }

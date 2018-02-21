@@ -19,6 +19,7 @@ import { CreateContactDialogComponent } from 'app/+crm/contacts/dialog/create-co
 export class ClientComponent {
   id: string;
   state$: Observable<any>;
+  app$: Observable<any>;
   routeSubscription: Subscription;
   dialogRef: MatDialogRef<CreateContactDialogComponent>;
 
@@ -29,9 +30,8 @@ export class ClientComponent {
     private store: Store<any>) {
       this.slimService.start();
       this.state$ = this.store.select(state => state.crm.clients);
-      this.state$.subscribe(x => {
-
-      });
+      this.app$ = this.store.select(state => state.app);
+      
       this.routeSubscription = this.route.params.subscribe(params => {
         this.id = params['id']; // (+) converts string 'id' to a number
         this.getClient(this.id);
