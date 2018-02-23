@@ -20,6 +20,7 @@ import { CreateContactComponent } from './contacts/form/create-contact.component
 import { FinancialsComponent } from 'app/+crm/financials/financials.component';
 import { CreateFinancialsComponent } from './financials/form/create-financials.component';
 import { IncomeDialogComponent } from 'app/+crm/financials/dialog/income-dialog.component';
+import { ExpenseDialogComponent } from 'app/+crm/financials/dialog/expense-dialog.component';
 
 import { HomeLoanComponent } from './financials/form/home-loan.component';
 import { ContactService } from './services/contact.service';
@@ -40,6 +41,7 @@ const components = [
   CreateFinancialsComponent,
   FinancialsComponent,
   IncomeDialogComponent,
+  ExpenseDialogComponent,
   HomeLoanComponent
 ];
 
@@ -67,7 +69,8 @@ const services = [
     ClientsDialogComponent,
     CreateClientDialogComponent,
     CreateContactDialogComponent,
-    IncomeDialogComponent
+    IncomeDialogComponent,
+    ExpenseDialogComponent
   ]
 })
 export class CrmModule { }

@@ -26,12 +26,16 @@ const routes: Routes = [
           },
           {
             path: 'contacts',
-            component: ContactsComponent
-          },
-
-          {
-            path: 'create-contact',
-            component: CreateContactComponent
+            children: [
+              {
+                path: '',
+                component: ContactsComponent
+              },
+              {
+                path: 'create-contact',
+                component: CreateContactComponent
+              }
+            ]
           },
           {
             path: 'financials',

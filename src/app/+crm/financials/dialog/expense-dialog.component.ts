@@ -5,15 +5,15 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'app-income-dialog',
-  templateUrl: 'income-dialog.component.html',
-  styleUrls: ['./income-dialog.component.scss']
+  selector: 'app-expense-dialog',
+  templateUrl: 'expense-dialog.component.html',
+  styleUrls: ['./expense-dialog.component.scss']
 })
-export class IncomeDialogComponent implements OnInit, AfterViewInit {
+export class ExpenseDialogComponent implements OnInit, AfterViewInit {
   state: any;
   group: FormGroup;
 
-  constructor (public dialogRef: MatDialogRef<IncomeDialogComponent>,
+  constructor (public dialogRef: MatDialogRef<ExpenseDialogComponent>,
     private formBuilder: FormBuilder) {
 
     this.group = this.formBuilder.group({

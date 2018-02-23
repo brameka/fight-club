@@ -341,7 +341,6 @@ code {
 
 .form-control {
     font-size: 0.9rem;
-    line-height: 0.25;
 }
 
 .form-control:focus {
@@ -352,6 +351,11 @@ code {
 
 .btn {
   font-size: 0.9rem;
+}
+
+.custom-select {
+  border: 2px solid #c9c9c9;
+  width: 100%;
 }
 
 

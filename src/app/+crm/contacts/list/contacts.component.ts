@@ -27,7 +27,7 @@ export class ContactsComponent implements AfterViewInit {
   }
 
   create () {
-    this.router.navigate(['../create'], { relativeTo: this.route });
+    this.router.navigate(['create-contact'], { relativeTo: this.route });
   }
 
   close() {

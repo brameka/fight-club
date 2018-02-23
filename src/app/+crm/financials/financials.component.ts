@@ -10,6 +10,7 @@ import * as actions from 'app/+crm/state/clients/client.actions';
 import * as app from 'app/state/app/app.actions';
 
 import { IncomeDialogComponent } from './dialog/income-dialog.component';
+import { ExpenseDialogComponent } from './dialog/expense-dialog.component';
 
 @Component({
   selector: 'app-financials',
@@ -19,7 +20,8 @@ import { IncomeDialogComponent } from './dialog/income-dialog.component';
 export class FinancialsComponent implements AfterViewInit {
   state$: Observable<any>;
   app$: Observable<any>;
-  dialogRef: MatDialogRef<IncomeDialogComponent>;
+  expenseDialog: MatDialogRef<ExpenseDialogComponent>;
+  incomeDialog: MatDialogRef<IncomeDialogComponent>;
 
   constructor(private slimService: SlimLoadingBarService,
     private router: Router,
@@ -35,11 +37,22 @@ export class FinancialsComponent implements AfterViewInit {
 
     createIncome() {
         const width = '800px';
-        this.dialogRef = this.dialog.open(IncomeDialogComponent, {
+        this.incomeDialog = this.dialog.open(IncomeDialogComponent, {
           width: width,
           panelClass: 'app-dialog__panel'
         });
-        this.dialogRef.afterClosed().subscribe(result => {
+        this.incomeDialog.afterClosed().subscribe(result => {
+          // this.store.dispatch(new actions.CloseDialogSuccess());
+        });
+    }
+
+    createExpense() {
+        const width = '800px';
+        this.expenseDialog = this.dialog.open(ExpenseDialogComponent, {
+          width: width,
+          panelClass: 'app-dialog__panel'
+        });
+        this.expenseDialog.afterClosed().subscribe(result => {
           // this.store.dispatch(new actions.CloseDialogSuccess());
         });
     }
