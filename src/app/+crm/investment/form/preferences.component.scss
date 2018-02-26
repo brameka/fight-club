@@ -1,6 +1,6 @@
 @import '../../../styles/variables';
 
-.app-income-dialog {
+.app-preferences {
 
   &__hero {
     text-align: center;
@@ -8,28 +8,31 @@
   }
 
   &__header {
-    padding: 20px;
-
-    h2 {
-      padding: 0;
-      margin: 0;
-      font-weight: 600;
-      font-size: 1.4rem !important;
-    }
+    margin-bottom: 20px;
   }
 
   &__section {
     margin: 20px 0;
   }
 
-  &__drop {
-      display: inline-block;
-      width: 100%;
+  &__heading {
+    margin: 20px 0;
+
+    h2 {
+      color: $primary !important;
+      font-size: 1.4rem !important;
+    }
   }
 
   h2 {
     color: #434548;
     font-size: 1rem;
+  }
+
+  .mat-expansion-panel-header-description, .mat-expansion-panel-header-title {
+    color: #434548;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   &__input {
@@ -39,9 +42,8 @@
   &__actions {
     display: flex;
     box-sizing: border-box;
-    padding: 10px;
-    border-top: 1px solid #eaeaea;
-    background: #fafafa;
+    padding-top: 20px;
+    margin-bottom: 30px;
 
     h2 {
       color: $primary;
@@ -49,7 +51,7 @@
   }
 
   &__content {
-    padding: 20px;
+    margin-top: 20px;
   }
 
   &__row {
@@ -58,19 +60,16 @@
 
   &__col {
 
+    &--nopad {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
     &--end {
       padding-right: 0;
     }
 
     padding-left: 0;
-  }
-
-  &__no-padding {
-    padding: 0;
-  }
-
-  &__check {
-    margin-top: 34px;
   }
 
   .form-group {
@@ -83,16 +82,29 @@
     display: block;
   }
 
-  input, textarea {
+  input {
     border: 2px solid #c9c9c9;
   }
 
   &__btn {
     border: 2px solid #c9c9c9;
     background: #fff;
-    color: #495057;
     width: 100%;
-    text-align: left;
+    color: #495057;
+  }
+
+  &__tabs {
+    margin-bottom: 40px;
+  }
+
+  &__group {
+      padding: 10px 20px;
+      border: 1px solid #c9c9c9;
+      background: #fafafa;
+      margin-bottom: 10px;
+  }
+
+  &__check {
   }
 
 }

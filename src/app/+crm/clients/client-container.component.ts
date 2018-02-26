@@ -44,15 +44,19 @@ export class ClientContainerComponent {
                 break; 
             }
             case 3: { 
-                this.router.navigate(['create-financials'], { relativeTo: this.route });
+                this.router.navigate(['protection'], { relativeTo: this.route });
                 break; 
-            } 
+            }
+            case 4: { 
+                this.router.navigate(['investment'], { relativeTo: this.route });
+                break; 
+            }
+
             default: { 
                 this.router.navigate(['create-financials'], { relativeTo: this.route });
                 break; 
             } 
-        } 
-
+        }
       });
       
       this.routeSubscription = this.route.params.subscribe(params => {

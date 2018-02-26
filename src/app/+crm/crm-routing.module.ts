@@ -9,6 +9,11 @@ import { ContactsComponent } from './contacts/list/contacts.component';
 import { FinancialsComponent } from 'app/+crm/financials/financials.component';
 import { CreateFinancialsComponent } from 'app/+crm/financials/form/create-financials.component';
 
+import { CurrentProtectionComponent } from 'app/+crm/protection/form/current-protection.component';
+import { FutureProtectionComponent } from 'app/+crm/protection/form/future-protection.component';
+
+import { PreferencesComponent } from 'app/+crm/investment/form/preferences.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -39,12 +44,51 @@ const routes: Routes = [
           },
           {
             path: 'financials',
-            component: FinancialsComponent
+            children: [
+              {
+                path: '',
+                component: FinancialsComponent
+              },
+              {
+                path: 'create-financials',
+                component: CreateFinancialsComponent
+              }
+            ]
           },
           {
-            path: 'create-financials',
-            component: CreateFinancialsComponent
-          }
+            path: 'protection',
+            children: [
+              {
+                path: '',
+                component: CurrentProtectionComponent
+              },
+              {
+                path: 'current-protection',
+                component: CurrentProtectionComponent
+              },
+              {
+                path: 'future-protection',
+                component: FutureProtectionComponent
+              }
+            ]
+          },
+          {
+            path: 'investment',
+            children: [
+              {
+                path: '',
+                component: PreferencesComponent
+              },
+              {
+                path: 'preferences',
+                component: PreferencesComponent
+              }
+            ]
+          },
+
+
+
+          
         ]
         
       },

@@ -1,0 +1,236 @@
+<div class="app-preferences">
+  <div class="col-8">
+
+    <form [formGroup]="incomeGroup">
+      <div class="app-preferences__content">
+
+        <div class="app-preferences__row app-preferences__header app-preferences__heading">
+            <h2>Preferences</h2>
+        </div>
+
+        <div class="app-preferences__row app-preferences__section">
+            <h2>Understanding investment preferences</h2>
+        </div>
+
+        <div class="app-preferences__row row">
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+              <label for="name">How long do you plan to invest your money for?</label>
+            </div>
+          </div>
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">0-3 years</option>
+                    <option value="2">3-5 years</option>
+                    <option value="3">5-10 years</option>
+                    <option value="3">10+ years</option>
+                </select>
+            </div>
+          </div>
+          <div class="app-preferences__col--nopad col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">0-3 years</option>
+                    <option value="2">3-5 years</option>
+                    <option value="3">5-10 years</option>
+                    <option value="3">10+ years</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-preferences__row row">
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+              <label for="name">Taking into account current interest rates (4% gross), what level of return do you wish to receive over the period of time you plan to invest?</label>
+            </div>
+          </div>
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">3-4%</option>
+                    <option value="2">4-6%</option>
+                    <option value="3">6-8%</option>
+                    <option value="3">8%+</option>
+                </select>
+            </div>
+          </div>
+          <div class="app-preferences__col--nopad col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">3-4%</option>
+                    <option value="2">4-6%</option>
+                    <option value="3">6-8%</option>
+                    <option value="3">8%+</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-preferences__row row">
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+              <label for="name">What is your level of experience and knowledge regarding investing?</label>
+            </div>
+          </div>
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">3-4%</option>
+                    <option value="2">4-6%</option>
+                    <option value="3">6-8%</option>
+                    <option value="3">8%+</option>
+                </select>
+            </div>
+          </div>
+          <div class="app-preferences__col--nopad col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">3-4%</option>
+                    <option value="2">4-6%</option>
+                    <option value="3">6-8%</option>
+                    <option value="3">8%+</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-preferences__row row">
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+              <label for="name">How would you describe your attitudes to investment risk?</label>
+            </div>
+          </div>
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">None</option>
+                    <option value="2">A little</option>
+                    <option value="3">Understand diversification and time frame to minimise risk</option>
+                    <option value="4">Experienced</option>
+                </select>
+            </div>
+          </div>
+          <div class="app-preferences__col--nopad col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">None</option>
+                    <option value="2">A little</option>
+                    <option value="3">Understand diversification and time frame to minimise risk</option>
+                    <option value="4">Experienced</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-preferences__row row">
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+              <label for="name">What would your reaction be if 6 months after investing your money it declined in value by 20%?</label>
+            </div>
+          </div>
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">Not happy, didn’t intend to invest in this</option>
+                    <option value="2">Change to safer investment</option>
+                    <option value="3">Concerned, wait to see improvement</option>
+                    <option value="4">Invest more, understand market</option>
+                </select>
+            </div>
+          </div>
+          <div class="app-preferences__col--nopad col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">Not happy, didn’t intend to invest in this</option>
+                    <option value="2">Change to safer investment</option>
+                    <option value="3">Concerned, wait to see improvement</option>
+                    <option value="4">Invest more, understand market</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-preferences__row row">
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+              <label for="name">What is your reason for investing?</label>
+            </div>
+          </div>
+          <div class="app-preferences__col col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">Safety</option>
+                    <option value="2">Income</option>
+                    <option value="3">Income & Growth</option>
+                    <option value="4">Growth</option>
+                </select>
+            </div>
+          </div>
+          <div class="app-preferences__col--nopad col-4">
+            <div class="form-group">
+                <select class="custom-select" placeholder="Time">
+                    <option value="1">Safety</option>
+                    <option value="2">Income</option>
+                    <option value="3">Income & Growth</option>
+                    <option value="4">Growth</option>
+                </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-preferences__row row">
+            <div class="app-preferences__totals">
+
+            </div>
+        </div>
+
+        <div class="app-preferences__row row">
+            <div class="app-preferences__col col-4">
+                <label for="name">Are you happy with your score?</label>
+            </div>
+            <div class="app-preferences__col col-4">
+                <div class="app-preferences__check">
+                    <mat-checkbox>Yes (client 1)</mat-checkbox>
+                </div>
+            </div>
+            <div class="app-preferences__col col-4">
+                <div class="app-preferences__check">
+                    <mat-checkbox>Yes  (client 2)</mat-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-preferences__row row">
+            <div class="app-preferences__col--nopad col-12">
+                <div class="form-group">
+                    <label for="name">Agreed Strategy</label>
+                    <textarea class="form-control" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-preferences__row row">
+            <div class="app-preferences__col--nopad col-12">
+                <div class="form-group">
+                    <label for="name">Reason if different score system</label>
+                    <textarea class="form-control" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+
+
+      </div>
+      <div class="app-preferences__actions">
+          <div class="spacer"></div>
+          <button class="no-shadow mr5 action-btn" mat-raised-button>BACK</button>
+          <button color="primary" class="no-shadow action-btn" mat-raised-button>SAVE</button>
+        </div>
+    </form>
+
+
+    
+
+  </div>
+</div>

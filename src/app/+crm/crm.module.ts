@@ -19,10 +19,17 @@ import { CreateContactComponent } from './contacts/form/create-contact.component
 
 import { FinancialsComponent } from 'app/+crm/financials/financials.component';
 import { CreateFinancialsComponent } from './financials/form/create-financials.component';
+
 import { IncomeDialogComponent } from 'app/+crm/financials/dialog/income-dialog.component';
 import { ExpenseDialogComponent } from 'app/+crm/financials/dialog/expense-dialog.component';
+import { AssetDialogComponent } from 'app/+crm/financials/dialog/asset-dialog.component';
+import { LiabilityDialogComponent } from 'app/+crm/financials/dialog/liability-dialog.component';
 
-import { HomeLoanComponent } from './financials/form/home-loan.component';
+import { CurrentProtectionComponent } from './protection/form/current-protection.component';
+import { FutureProtectionComponent } from './protection/form/future-protection.component';
+
+import { PreferencesComponent } from './investment/form/preferences.component';
+
 import { ContactService } from './services/contact.service';
 import { ClientService } from './services/client.service';
 import { CrmStateModule } from './state/crm-state.module';
@@ -42,7 +49,11 @@ const components = [
   FinancialsComponent,
   IncomeDialogComponent,
   ExpenseDialogComponent,
-  HomeLoanComponent
+  AssetDialogComponent,
+  LiabilityDialogComponent,
+  CurrentProtectionComponent,
+  FutureProtectionComponent,
+  PreferencesComponent
 ];
 
 const services = [
@@ -70,7 +81,10 @@ const services = [
     CreateClientDialogComponent,
     CreateContactDialogComponent,
     IncomeDialogComponent,
-    ExpenseDialogComponent
+    ExpenseDialogComponent,
+    AssetDialogComponent,
+    LiabilityDialogComponent,
+    CurrentProtectionComponent
   ]
 })
 export class CrmModule { }

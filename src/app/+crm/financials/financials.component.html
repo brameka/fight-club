@@ -1,27 +1,86 @@
 <div class="app-financials">
     <div class="row">
         <div class="app-financials__col col-8">
-            <mat-tab-group>
+            <mat-tab-group (selectedIndexChange)="selectedIndexChange($event)">
                 <mat-tab label="Income/Expeses"></mat-tab>
                 <mat-tab label="Assets/Liabilities"></mat-tab>
             </mat-tab-group>
         </div>
     </div>
 
-    <div class="row" style="margin-top: 30px;">
+    <div class="row" style="margin-top: 10px;" *ngIf="index == 0">
 
-      
-
-
-      <div class="app-financials__col col-8">
-
+      <div class="app-financials__col col-6">
         <div class="app-financials__actions">
             <span class="app-financials__header--title">Income</span>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th class="app-financials__column--80" scope="col">Amount</th>
+                        <th class="app-financials__column--80" scope="col">Period</th>
+                        <th class="app-financials__column--50" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="app-financials__primary-column text-nowrap">Mark Ruffalo</td>
+                        <td>
+                            Main source of income
+                        </td>
+                        <td>$57,000.00</td>
+                        <td>Annual</td>
+                        <td>
+                            <button class="app-financials__action-btn" mat-icon-button>
+                                <mat-icon class="app-financials__action-icon">more_vert</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="app-financials__primary-column text-nowrap">Mark Ruffalo</td>
+                        <td>
+                            Main source of income
+                        </td>
+                        <td>$57,000.00</td>
+                        <td>Annual</td>
+                        <td>
+                            <button class="app-financials__action-btn" mat-icon-button>
+                                <mat-icon class="app-financials__action-icon">more_vert</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="app-financials__primary-column text-nowrap">Mark Ruffalo</td>
+                        <td>
+                            Main source of income
+                        </td>
+                        <td>$57,000.00</td>
+                        <td>Annual</td>
+                        <td>
+                            <button class="app-financials__action-btn" mat-icon-button>
+                                <mat-icon class="app-financials__action-icon">more_vert</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="app-financials__actions">
             <div class="spacer"></div>
             <span class="app-financials__header--total">3 Sources</span>
             <div class="separator"></div>
             <button class="action-btn" color="primary" mat-raised-button (click)="createIncome()">Add</button>
         </div>
+      </div>
+
+      <div class="app-financials__col col-6">
+
+        <div class="app-financials__actions">
+            <span class="app-financials__header--title">Expenses</span>
+        </div>
 
         <div class="table-responsive">
             <table class="table">
@@ -77,22 +136,21 @@
                 </tbody>
             </table>
         </div>
-      </div>
-    </div>
-
-
-
-    <div class="row" style="margin-top: 30px;">
-      <div class="app-financials__col col-8">
-
-        <div class="app-financials__actions">
-            <span class="app-financials__header--title">Expenses</span>
+         <div class="app-financials__actions">
             <div class="spacer"></div>
-            
             <span class="app-financials__header--total">8 Expenses</span>
             <div class="separator"></div>
             <button class="action-btn" color="primary" mat-raised-button (click)="createExpense()">Add</button>
         </div>
+      </div>
+    </div>
+    
+    <div class="row" style="margin-top: 10px;" *ngIf="index == 1">
+      <div class="app-financials__col col-6">
+
+        <div class="app-financials__actions">
+            <span class="app-financials__header--title">Assets</span>
+        </div>
 
         <div class="table-responsive">
             <table class="table">
@@ -148,9 +206,83 @@
                 </tbody>
             </table>
         </div>
+        <div class="app-financials__actions">
+            <div class="spacer"></div>
+            <span class="app-financials__header--total">8 Assets</span>
+            <div class="separator"></div>
+            <button class="action-btn" color="primary" mat-raised-button (click)="createAsset()">Add</button>
+        </div>
+      </div>
+
+      <div class="app-financials__col col-6">
+
+        <div class="app-financials__actions">
+            <span class="app-financials__header--title">Liabilities</span>
+            <div class="spacer"></div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th class="app-financials__column--80" scope="col">Amount</th>
+                        <th class="app-financials__column--80" scope="col">Period</th>
+                        <th class="app-financials__column--50" scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="app-financials__primary-column text-nowrap">Mark Ruffalo</td>
+                        <td>
+                            Main source of income
+                        </td>
+                        <td>$57,000.00</td>
+                        <td>Annual</td>
+                        <td>
+                            <button class="app-financials__action-btn" mat-icon-button>
+                                <mat-icon class="app-financials__action-icon">more_vert</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="app-financials__primary-column text-nowrap">Mark Ruffalo</td>
+                        <td>
+                            Main source of income
+                        </td>
+                        <td>$57,000.00</td>
+                        <td>Annual</td>
+                        <td>
+                            <button class="app-financials__action-btn" mat-icon-button>
+                                <mat-icon class="app-financials__action-icon">more_vert</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="app-financials__primary-column text-nowrap">Mark Ruffalo</td>
+                        <td>
+                            Main source of income
+                        </td>
+                        <td>$57,000.00</td>
+                        <td>Annual</td>
+                        <td>
+                            <button class="app-financials__action-btn" mat-icon-button>
+                                <mat-icon class="app-financials__action-icon">more_vert</mat-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="app-financials__actions">
+            <div class="spacer"></div>
+            <span class="app-financials__header--total">8 Liabilities</span>
+            <div class="separator"></div>
+            <button class="action-btn" color="primary" mat-raised-button (click)="createLiability()">Add</button>
+        </div>
       </div>
     </div>
-    
 </div>
 
 

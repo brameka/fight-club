@@ -11,6 +11,9 @@ import * as app from 'app/state/app/app.actions';
 
 import { IncomeDialogComponent } from './dialog/income-dialog.component';
 import { ExpenseDialogComponent } from './dialog/expense-dialog.component';
+import { AssetDialogComponent } from './dialog/asset-dialog.component';
+import { LiabilityDialogComponent } from './dialog/liability-dialog.component';
+
 
 @Component({
   selector: 'app-financials',
@@ -22,6 +25,9 @@ export class FinancialsComponent implements AfterViewInit {
   app$: Observable<any>;
   expenseDialog: MatDialogRef<ExpenseDialogComponent>;
   incomeDialog: MatDialogRef<IncomeDialogComponent>;
+  assetDialog: MatDialogRef<AssetDialogComponent>;
+  liabilityDialog: MatDialogRef<LiabilityDialogComponent>;
+  index: number = 0;
 
   constructor(private slimService: SlimLoadingBarService,
     private router: Router,
@@ -55,5 +61,31 @@ export class FinancialsComponent implements AfterViewInit {
         this.expenseDialog.afterClosed().subscribe(result => {
           // this.store.dispatch(new actions.CloseDialogSuccess());
         });
+    }
+
+    createAsset() {
+        const width = '800px';
+        this.assetDialog = this.dialog.open(AssetDialogComponent, {
+          width: width,
+          panelClass: 'app-dialog__panel'
+        });
+        this.incomeDialog.afterClosed().subscribe(result => {
+          // this.store.dispatch(new actions.CloseDialogSuccess());
+        });
+    }
+
+    createLiability() {
+        const width = '800px';
+        this.liabilityDialog = this.dialog.open(LiabilityDialogComponent, {
+          width: width,
+          panelClass: 'app-dialog__panel'
+        });
+        this.expenseDialog.afterClosed().subscribe(result => {
+          // this.store.dispatch(new actions.CloseDialogSuccess());
+        });
+    }
+
+    selectedIndexChange(index: number) {
+      this.index = index;
     }
 }
