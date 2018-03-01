@@ -18,23 +18,8 @@
         <button mat-icon-button routerLink="/login"><mat-icon>person</mat-icon></button>
       </mat-toolbar-row>
 
-      <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'homex'">
 
-        <button mat-button>Schedules</button>
-        <mat-icon>keyboard_arrow_right</mat-icon>
-        <button mat-button>Scheduler</button>
-        <div class="sub-menu">
-          <mat-tab-group>
-            <mat-tab label="FOLLOWING"></mat-tab>
-            <mat-tab label="SCHEDULER"></mat-tab>
-            <mat-tab label="TYPES"></mat-tab>
-          </mat-tab-group>
-          <div class="separator" style="margin-top: 16px;"></div>
-          <button mat-button color="primary">SCHEDULE</button>
-        </div>
-      </mat-toolbar-row>
-
-      <mat-toolbar-row class="action-row">
+      <mat-toolbar-row class="action-row" *ngIf="(state$ | async).app.state === 'client'">
         <div class="toolbar-placeholder"></div>
         <div class="container">
           <div class="row">
@@ -132,9 +117,7 @@
       <div class="app-content">
 
           <div class="container" style="padding-top: 20px;">
-
             <router-outlet></router-outlet>
-
           </div>
 
       </div>

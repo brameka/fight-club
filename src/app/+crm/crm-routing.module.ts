@@ -14,10 +14,16 @@ import { FutureProtectionComponent } from 'app/+crm/protection/form/future-prote
 
 import { PreferencesComponent } from 'app/+crm/investment/form/preferences.component';
 
+import { FactFinderComponent } from './clients/form/fact-finder.component';
+
 const routes: Routes = [
   {
     path: '',
     component: ClientsComponent
+  },
+  {
+    path: 'fact-finder',
+    component: FactFinderComponent
   },
   { path: ':id',
     children: [
