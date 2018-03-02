@@ -9,6 +9,12 @@
 
   &__header {
     margin-bottom: 20px;
+
+    h2 {
+      color: $primary !important;
+      font-size: 1.4rem !important;
+    }
+
   }
 
   &__section {
