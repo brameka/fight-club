@@ -28,6 +28,8 @@ import { LiabilityDialogComponent } from 'app/+crm/financials/dialog/liability-d
 
 import { CurrentProtectionComponent } from './protection/form/current-protection.component';
 import { FutureProtectionComponent } from './protection/form/future-protection.component';
+import { ProtectionComponent } from './protection/protection.component';
+import { CreateProtectionDialogComponent } from './protection/dialog/create-protection-dialog.component';
 
 import { PreferencesComponent } from './investment/form/preferences.component';
 
@@ -54,6 +56,8 @@ const components = [
   LiabilityDialogComponent,
   CurrentProtectionComponent,
   FutureProtectionComponent,
+  ProtectionComponent,
+  CreateProtectionDialogComponent,
   PreferencesComponent,
   FactFinderComponent
 ];
@@ -86,7 +90,7 @@ const services = [
     ExpenseDialogComponent,
     AssetDialogComponent,
     LiabilityDialogComponent,
-    CurrentProtectionComponent
+    CreateProtectionDialogComponent
   ]
 })
 export class CrmModule { }

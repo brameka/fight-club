@@ -246,9 +246,17 @@ code {
   box-shadow: none !important;
 }
 
+.gray-btn {
+  background: #dcdcdc;
+}
+
 //margins:
 .mr5 {
   margin-right: 5px !important;
+}
+
+.mr10 {
+  margin-right: 10px !important;
 }
 
 //Hacks:
@@ -354,10 +362,24 @@ code {
 }
 
 .custom-select {
-  border: 2px solid #c9c9c9;
+  border: 1px solid #c9c9c9;
   width: 100%;
 }
 
 .mat-checkbox-frame {
   border-color: #c9c9c9
+}
+
+.btn-outline-secondary {
+  border-color: #c9c9c9 !important;
+}
+
+.btn-calendar {
+  padding-top: 8px;
+  padding-bottom: 2px;
+}
+
+.btn-calendar svg {
+  width: 16px !important;
+  height: 16px !important;
 }

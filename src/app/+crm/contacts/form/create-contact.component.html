@@ -3,7 +3,7 @@
       <div class="app-create-contact__content">
 
         <div class="app-create-contact__row app-create-contact__header">
-            <h2>Create Contact</h2>
+            <h2>CREATE CONTACT</h2>
         </div>
 
         <div class="app-create-contact__row app-create-contact__section">
@@ -25,6 +25,37 @@
           </div>
         </div>
 
+
+        <div class="app-create-contact__row row">
+          <div class="app-create-contact__col col-6">
+            <div class="form-group">
+              <label for="name">Fullname</label>
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+          </div>
+          <div class="app-create-contact__col--end col-6">
+            
+
+              <div class="form-group">
+                <label for="name">Dob</label>
+                <div class="input-group">
+
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary btn-calendar" (click)="d.toggle()" type="button">
+                      <svg class="mat-datepicker-toggle-default-icon ng-star-inserted" fill="currentColor" focusable="false" height="24px" viewBox="0 0 24 24" width="24px"><path d="M0 0h24v24H0z" fill="none"></path><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path></svg>
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+
+          </div>
+        </div>
+
+        
+
         <div class="app-create-contact__row row">
           <div class="app-create-contact__col col-6">
             <div class="form-group">
@@ -40,19 +71,24 @@
           </div>
         </div>
 
-        <div class="app-create-contact__row row">
-          <div class="app-create-contact__col col-6">
-            <div class="form-group">
-              <label for="name">Email</label>
-              <input type="text" class="form-control" placeholder="Email">
+        <div class="mb-3">
+          <label for="username">Email</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
             </div>
-          </div>
-          <div class="app-create-contact__col--end col-6">
-            <div class="app-create-contact__check">
-                <mat-checkbox>Unsubscribe to emails</mat-checkbox>
+            <input type="text" class="form-control" id="username" placeholder="you@email.com" required>
+            <div class="invalid-feedback" style="width: 100%;">
+              Your username is required.
             </div>
           </div>
         </div>
+
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address">Unsubscribe to emails</label>
+        </div>
+        <hr class="mb-4">
 
         <div class="app-create-contact__row app-create-contact__section">
             <h2>Employment Information</h2>

@@ -20,7 +20,7 @@
 
     h2 {
       color: $primary !important;
-      font-size: 1.4rem !important;
+      font-size: 1rem !important;
     }
   }
 
@@ -82,11 +82,11 @@
   }
 
   input {
-    border: 2px solid #c9c9c9;
+    border: 1px solid #c9c9c9;
   }
 
   &__btn {
-    border: 2px solid #c9c9c9;
+    border: 1px solid #c9c9c9;
     background: #fff;
     width: 100%;
     color: #495057;

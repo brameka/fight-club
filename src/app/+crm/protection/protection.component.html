@@ -1,0 +1,85 @@
+<div class="app-protection">
+    <div class="row" style="margin-top: 10px;" *ngIf="index == 0">
+      <div class="app-protection__col col-12">
+        <div class="app-protection__table-actions">
+            <button class="action-btn mr5 gray-btn" mat-raised-button>Information</button>
+            <button class="action-btn gray-btn mr5" mat-raised-button>Export</button>
+            <button class="action-btn gray-btn mr5" mat-raised-button>
+                Actions
+                <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+            <button class="action-btn mr5" color="warn" mat-raised-button>Delete</button>
+            <div class="spacer"></div>
+            <button class="action-btn" color="primary" mat-raised-button (click)="createProtection()">Add</button>
+        </div>
+        <!--<div class="app-protection__header">
+            <span class="app-protection__header--title">Insurance Protection</span>
+        </div>-->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="app-protection__column--50" scope="col"></th>
+                        <th scope="col">Person</th>
+                        <th scope="col">Benefit</th>
+                        <th scope="col">Excess</th>
+                        <th scope="col">Insurer</th>
+                        <th scope="col">Policy</th>
+                        <th scope="col">Commencement Date</th>
+                        <th scope="col">Premiums</th>
+                        <th scope="col">Weekly</th>
+                        <th scope="col">Loading</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <mat-checkbox></mat-checkbox>
+                        </td>
+                        <td class="app-protection__primary-column text-nowrap">Ruffalo</td>
+                        <td>Life Cover</td>
+                        <td>$510,000</td>
+                        <td>Partners Life</td>
+                        <td>012345679</td>
+                        <td>23 June 2017</td>
+                        <td>$6.94</td>
+                        <td>Weekly</td>
+                        <td>Loadin</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-checkbox></mat-checkbox>
+                        </td>
+                        <td class="app-protection__primary-column text-nowrap">Ruffalo</td>
+                        <td>Life Cover</td>
+                        <td>$510,000</td>
+                        <td>Partners Life</td>
+                        <td>012345679</td>
+                        <td>23 June 2017</td>
+                        <td>$6.94</td>
+                        <td>Weekly</td>
+                        <td>Loadin</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-checkbox></mat-checkbox>
+                        </td>
+                        <td class="app-protection__primary-column text-nowrap">Ruffalo</td>
+                        <td>Life Cover</td>
+                        <td>$510,000</td>
+                        <td>Partners Life</td>
+                        <td>012345679</td>
+                        <td>23 June 2017</td>
+                        <td>$6.94</td>
+                        <td>Weekly</td>
+                        <td>Loadin</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+      </div>
+    </div>
+</div>
+
+

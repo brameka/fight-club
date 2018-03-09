@@ -11,6 +11,7 @@ import { CreateFinancialsComponent } from 'app/+crm/financials/form/create-finan
 
 import { CurrentProtectionComponent } from 'app/+crm/protection/form/current-protection.component';
 import { FutureProtectionComponent } from 'app/+crm/protection/form/future-protection.component';
+import { ProtectionComponent } from 'app/+crm/protection/protection.component';
 
 import { PreferencesComponent } from 'app/+crm/investment/form/preferences.component';
 
@@ -66,7 +67,7 @@ const routes: Routes = [
             children: [
               {
                 path: '',
-                component: CurrentProtectionComponent
+                component: ProtectionComponent
               },
               {
                 path: 'current-protection',
