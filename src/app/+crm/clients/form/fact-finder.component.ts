@@ -15,6 +15,7 @@ import * as app from 'app/state/app/app.actions';
 })
 export class FactFinderComponent implements AfterViewInit, OnInit  {
   contactFormGroup: FormGroup;
+  state = 0;
 
   constructor(private formBuilder: FormBuilder, private store: Store<Object>) { }
 
@@ -24,6 +25,10 @@ export class FactFinderComponent implements AfterViewInit, OnInit  {
         title: 'Facts',
         top: '64px'
       }));
+  }
+
+  changeState(index: number) {
+    this.state = index;
   }
 
   ngAfterViewInit() {}

@@ -16,7 +16,7 @@ export const primaryState: AppState = {
   state: 'home',
   subState: 'default',
   active: 'home',
-  menuColour: 'primary',
+  menuColour: 'default',
   loadingColour: '#fff',
   title: 'Home',
   index: 0

@@ -1,4 +1,71 @@
+@import '../../../styles/variables';
+
 .app-facts {
+
+    &__heading {
+        font-size: 1rem;
+        color: $primary;
+        font-weight: 500;
+    }
+
+    &__contact-container {
+        margin-top: 50px;
+    }
+
+    &__contacts {
+        margin: 20px 0;
+        border-bottom: 1px dashed #e0e0e0;
+    }
+
+    &__contact {
+        border-top: 1px dashed #e0e0e0;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    &__contact:hover {
+        background: #f9f9f9;
+    }
+
+    &__contact--avatar {
+        border-radius: 3px;
+        background: #007eff;
+        margin-right: 10px;
+        width: 36px;
+        height: 36px;
+        display: inline-block;
+        margin-top: 6px;
+    }
+
+    &__contact--text {
+        display: inline-block;
+        vertical-align: top;
+        display: inline-block;
+    }
+
+    &__contact--title {
+        font-weight: 600;
+        font-size: 1rem;
+        display: block;
+        line-height: 1.5rem;
+    }
+
+    &__contact--description {
+        font-weight: 400;
+        font-size: 0.9rem;
+        display: block;
+    }
+
+    &__contact--content {
+        position: relative;
+    }
+
+    &__contact--arrow {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        color: #888;
+    }
     
     &__step {
         display: inline-block;
@@ -14,5 +81,47 @@
         &--button {
             font-weight: 700;
         }
+    }
+
+    &__section--heading {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        margin-top: 30px;
+    }
+
+    &__section {
+        border: 1px solid #e8e8e8;
+        border-radius: 5px;
+        padding: .6rem 0 .6rem 1rem;
+        margin-bottom: 1.2rem;
+
+        &--content {
+            height: 36px;
+            position: relative;
+        }
+
+        &--avatar {
+            border-radius: 3px;
+            background: #007eff;
+            margin-right: 10px;
+            width: 36px;
+            height: 36px;
+            display: inline-block;
+        }
+
+        &--title {
+            font-size: 1rem;
+            font-weight: 500;
+            vertical-align: top;
+            line-height: 36px;
+            display: inline-block;
+        }
+
+        &--action {
+            position: absolute;
+            right: 15px;
+            top: 3px;
+        }
+
     }
 }
