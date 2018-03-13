@@ -9,6 +9,7 @@ export interface AppState {
   loadingColour: string;
   title: string;
   index: number;
+  menuOpen: boolean;
 }
 
 export const primaryState: AppState = {
@@ -19,7 +20,8 @@ export const primaryState: AppState = {
   menuColour: 'default',
   loadingColour: '#fff',
   title: 'Home',
-  index: 0
+  index: 0,
+  menuOpen: false
 };
 
 export const initialState: AppState = {
@@ -30,7 +32,8 @@ export const initialState: AppState = {
   menuColour: 'default',
   loadingColour: '#3f51b5',
   title: 'Home',
-  index: 0
+  index: 0,
+  menuOpen: false
 };
 
 export type Action = actions.All;

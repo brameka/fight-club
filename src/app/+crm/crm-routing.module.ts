@@ -15,7 +15,8 @@ import { ProtectionComponent } from 'app/+crm/protection/protection.component';
 
 import { PreferencesComponent } from 'app/+crm/investment/form/preferences.component';
 
-import { FactFinderComponent } from './clients/form/fact-finder.component';
+import { FactFinderComponent } from './facts/fact-finder.component';
+import { FactContactsComponent } from './facts/contacts/fact-contacts.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,16 @@ const routes: Routes = [
   },
   {
     path: 'fact-finder',
-    component: FactFinderComponent
+    children: [
+      {
+        path: '',
+        component: FactFinderComponent
+      },
+      {
+        path: 'fact-contact',
+        component: FactContactsComponent
+      }
+    ]
   },
   { path: ':id',
     children: [

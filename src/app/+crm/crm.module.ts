@@ -12,7 +12,6 @@ import { CreateClientDialogComponent } from './clients/dialog/create-dialog.comp
 
 import { ClientContainerComponent } from './clients/client-container.component';
 import { ClientComponent } from './clients/client.component';
-import { FactFinderComponent } from './clients/form/fact-finder.component';
 
 import { ContactsComponent } from './contacts/list/contacts.component';
 import { CreateContactDialogComponent } from './contacts/dialog/create-contact-dialog.component';
@@ -38,6 +37,10 @@ import { ClientService } from './services/client.service';
 import { CrmStateModule } from './state/crm-state.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { FactFinderComponent } from './facts/fact-finder.component';
+import { FactContactsComponent } from './facts/contacts/fact-contacts.component';
+import { FactMenuComponent } from './facts/menu/fact-menu.component';
+
 const components = [
   ClientsComponent,
   ClientsDialogComponent,
@@ -59,7 +62,9 @@ const components = [
   ProtectionComponent,
   CreateProtectionDialogComponent,
   PreferencesComponent,
-  FactFinderComponent
+  FactFinderComponent,
+  FactContactsComponent,
+  FactMenuComponent
 ];
 
 const services = [

@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+
+.fact-menu {
+    // border-top: 1px dashed #e0e0e0;
+    
+    &__item {
+        border-radius: 5px;
+        padding: 5px 15px;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 5px;
+
+        &--title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            vertical-align: top;
+            line-height: 36px;
+            display: inline-block;
+        }
+
+        mat-icon {
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+    }
+
+    &__active-item {
+        background: #fff;
+
+        .fact-menu__item--title {
+            color: $primary;
+        }
+
+        mat-icon {
+            color: $primary;
+        }
+
+    }
+
+    &__item:hover {
+        background: #fbfbfb;
+        cursor: pointer;
+    }
+}

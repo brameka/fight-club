@@ -1,10 +1,16 @@
-@import '../../../styles/variables';
+@import '../../styles/variables';
 
 .app-facts {
 
+    // &__heading {
+    //     font-size: 1rem;
+    //     color: $primary;
+    //     font-weight: 500;
+    // }
+
     &__heading {
         font-size: 1rem;
-        color: $primary;
+        margin-bottom: 20px;
         font-weight: 500;
     }
 
@@ -19,7 +25,7 @@
 
     &__contact {
         border-top: 1px dashed #e0e0e0;
-        padding: 20px;
+        padding: 10px 15px;
         cursor: pointer;
     }
 
@@ -29,12 +35,18 @@
 
     &__contact--avatar {
         border-radius: 3px;
-        background: #007eff;
+        background: #ddd;
         margin-right: 10px;
         width: 36px;
         height: 36px;
         display: inline-block;
         margin-top: 6px;
+        text-align: center;
+    }
+
+    &__contact--avatar mat-icon {
+        color: #fff;
+        margin-top: 5px;
     }
 
     &__contact--text {
@@ -83,17 +95,18 @@
         }
     }
 
-    &__section--heading {
-        font-size: 1rem;
-        margin-bottom: 10px;
-        margin-top: 30px;
-    }
-
     &__section {
-        border: 1px solid #e8e8e8;
+        border: 1px solid #d8d8d8;
         border-radius: 5px;
         padding: .6rem 0 .6rem 1rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 10px;
+
+        &--heading {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            font-weight: 500;
+        }
 
         &--content {
             height: 36px;
@@ -102,11 +115,18 @@
 
         &--avatar {
             border-radius: 3px;
-            background: #007eff;
-            margin-right: 10px;
+            // background: #fff;
+            // border: 1px solid #e8e8e8;
+            margin-right: 7px;
             width: 36px;
             height: 36px;
             display: inline-block;
+            text-align: center;
+        }
+
+        &--avatar mat-icon {
+            margin-top: 5px;
+            // color: #fff;
         }
 
         &--title {
@@ -121,6 +141,58 @@
             position: absolute;
             right: 15px;
             top: 3px;
+        }
+
+        &--action-btn {
+            border: 1px solid #d8d8d8;
+            background: transparent;
+        }
+
+        &--action-btn:hover {
+            background: #fff;
+        }
+    }
+
+    &__active-section {
+        background: #fff;
+
+        .app-facts__section--title {
+            color: $primary;
+        }
+
+        .app-facts__section--action-btn {
+            border: none;
+        }
+
+        .app-facts__section--avatar {
+            background: transparent;
+            border: none;
+        }
+
+        .app-facts__section--avatar mat-icon {
+            color: $primary;
+            margin-top: 7px;
+        }
+    }
+
+    &__active-contact {
+        background: #fff;
+        border-right: 1px dashed #e0e0e0;
+        border-left: 1px dashed #e0e0e0;
+
+        .app-facts__contact--avatar {
+            background: #007eff;
+            margin-top: 0;
+        }
+
+        .app-facts__contact--title {
+            line-height: 36px;
+            color: $primary;
+        }
+
+        .app-facts__contact--arrow {
+            top: 8px;
+            color: $primary;
         }
 
     }
