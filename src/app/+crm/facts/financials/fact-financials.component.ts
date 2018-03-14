@@ -1,30 +1,28 @@
 import { Component, AfterViewInit, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as actions from 'app/+crm/state/clients/client.actions';
 import * as notifications from 'app/state/notification/notification.actions';
 import * as app from 'app/state/app/app.actions';
 
 @Component({
-  selector: 'app-fact-menu',
-  templateUrl: './fact-menu.component.html',
-  styleUrls: ['./fact-menu.component.scss']
+  selector: 'app-fact-financials',
+  templateUrl: './fact-financials.component.html',
+  styleUrls: ['./fact-financials.component.scss']
 })
-export class FactMenuComponent implements AfterViewInit, OnInit  {
-  
-  constructor(private store: Store<Object>,
-    private router: Router,
-    private route: ActivatedRoute) { }
+export class FactFinancialsComponent implements AfterViewInit, OnInit  {
+
+  constructor(private formBuilder: FormBuilder, private store: Store<Object>) { }
 
   ngOnInit() {
+      this.store.dispatch(new app.ShowState({
+        state: 'facts',
+        title: 'Facts',
+        top: '64px'
+      }));
   }
 
   ngAfterViewInit() {}
-
-  navigateRoute(path: string) {
-    this.router.navigate(['../' + path], { relativeTo: this.route });
-  }
 
   save() {}
 }

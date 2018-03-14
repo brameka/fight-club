@@ -34,6 +34,7 @@ export class AppContainerComponent implements OnDestroy, AfterViewChecked {
 
     this.sub = this.router.events.subscribe(event => {
         if (event instanceof NavigationStart) {
+            console.log('nav start');
             this.slimLoader.start();
         } else if ( event instanceof NavigationEnd ||
                     event instanceof NavigationCancel ||

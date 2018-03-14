@@ -17,6 +17,11 @@ export class FactContactsComponent implements AfterViewInit, OnInit  {
   constructor(private formBuilder: FormBuilder, private store: Store<Object>) { }
 
   ngOnInit() {
+      this.store.dispatch(new app.ShowState({
+        state: 'facts',
+        title: 'Facts',
+        top: '64px'
+      }));
   }
 
   ngAfterViewInit() {}

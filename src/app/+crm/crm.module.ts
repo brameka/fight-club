@@ -39,6 +39,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FactFinderComponent } from './facts/fact-finder.component';
 import { FactContactsComponent } from './facts/contacts/fact-contacts.component';
+import { FactFinancialsComponent } from './facts/financials/fact-financials.component';
+import { FactPreferencesComponent } from './facts/preferences/fact-preferences.component';
 import { FactMenuComponent } from './facts/menu/fact-menu.component';
 
 const components = [
@@ -64,6 +66,8 @@ const components = [
   PreferencesComponent,
   FactFinderComponent,
   FactContactsComponent,
+  FactFinancialsComponent,
+  FactPreferencesComponent,
   FactMenuComponent
 ];
 

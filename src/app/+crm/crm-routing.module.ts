@@ -17,6 +17,8 @@ import { PreferencesComponent } from 'app/+crm/investment/form/preferences.compo
 
 import { FactFinderComponent } from './facts/fact-finder.component';
 import { FactContactsComponent } from './facts/contacts/fact-contacts.component';
+import { FactFinancialsComponent } from './facts/financials/fact-financials.component';
+import { FactPreferencesComponent } from './facts/preferences/fact-preferences.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,14 @@ const routes: Routes = [
       {
         path: 'fact-contact',
         component: FactContactsComponent
+      },
+      {
+        path: 'fact-financials',
+        component: FactFinancialsComponent
+      },
+      {
+        path: 'fact-preferences',
+        component: FactPreferencesComponent
       }
     ]
   },

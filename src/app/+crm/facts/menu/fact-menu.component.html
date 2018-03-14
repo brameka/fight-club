@@ -1,22 +1,43 @@
 <div class="fact-menu">
-    <div class="fact-menu__item fact-menu__active-item">
-        <mat-icon>check_circle</mat-icon>
+    <div class="fact-menu__item fact-menu__active-item" (click)="navigateRoute('')">
+        <mat-icon>dashboard</mat-icon>
         <span class="fact-menu__item--title">
-            Clients
+            Summary
         </span>
     </div>
 
-    <div class="fact-menu__item fact-menu__active-item">
+    <div class="fact-menu__item fact-menu__active-item" (click)="navigateRoute('fact-contact')">
         <mat-icon>person</mat-icon>
+        <span class="fact-menu__item--title">
+            Contact
+        </span>
+    </div>
+
+    <div class="fact-menu__item fact-menu__active-item" (click)="navigateRoute('fact-financials')">
+        <mat-icon>attach_money</mat-icon>
         <span class="fact-menu__item--title">
             Financials
         </span>
     </div>
 
-    <div class="fact-menu__item">
-        <mat-icon>person</mat-icon>
+    <div class="fact-menu__item fact-menu__active-item" (click)="navigateRoute('fact-preferences')">
+        <mat-icon>star</mat-icon>
         <span class="fact-menu__item--title">
-            Clients
+            Preferences
+        </span>
+    </div>
+
+    <div class="fact-menu__item fact-menu__active-item" (click)="navigateRoute('fact-financials')">
+        <mat-icon>train</mat-icon>
+        <span class="fact-menu__item--title">
+            Protection
+        </span>
+    </div>
+
+    <div class="fact-menu__item fact-menu__active-item" (click)="navigateRoute('fact-financials')">
+        <mat-icon>map</mat-icon>
+        <span class="fact-menu__item--title">
+            Future
         </span>
     </div>
 

@@ -1,7 +1,5 @@
 @import '../../styles/variables';
 
-
-
 .app-header {
   background: #fff;
 
@@ -186,18 +184,23 @@
     }
 
     .app-sidenav {
-        width: 200px;
+        width: 250px;
     }
 
     .menu-container {
-        margin-top: 20px;
+        margin-top: 8px;
     }
 
     .mat-menu-item {
         padding: 0 22px;
         font-size: 14px;
         font-weight: 400;
-        color: #777;
+        // color: #777;
+    }
+
+    .mat-menu-item:hover {
+      color: $primary !important;
+      background: #fff;
     }
 
     .mat-menu-item .mat-icon, .mat-menu-item-submenu-trigger::after {
@@ -205,6 +208,12 @@
     }
 }
 
+.breadcrumb {
+    margin-bottom: 0;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0;
+}
 
 
 
