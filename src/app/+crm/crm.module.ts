@@ -41,6 +41,7 @@ import { FactFinderComponent } from './facts/fact-finder.component';
 import { FactContactsComponent } from './facts/contacts/fact-contacts.component';
 import { FactFinancialsComponent } from './facts/financials/fact-financials.component';
 import { FactPreferencesComponent } from './facts/preferences/fact-preferences.component';
+import { FactProtectionComponent } from './facts/protection/fact-protection.component';
 import { FactMenuComponent } from './facts/menu/fact-menu.component';
 
 const components = [
@@ -68,6 +69,7 @@ const components = [
   FactContactsComponent,
   FactFinancialsComponent,
   FactPreferencesComponent,
+  FactProtectionComponent,
   FactMenuComponent
 ];
 

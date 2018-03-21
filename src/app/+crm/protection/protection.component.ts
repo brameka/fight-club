@@ -12,7 +12,7 @@ import * as app from 'app/state/app/app.actions';
 import { CreateProtectionDialogComponent } from './dialog/create-protection-dialog.component';
 
 @Component({
-  selector: 'app-protetion',
+  selector: 'app-protection',
   styleUrls: ['protection.component.scss'],
   templateUrl: 'protection.component.html',
 })
