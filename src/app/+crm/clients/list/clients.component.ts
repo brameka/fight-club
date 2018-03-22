@@ -21,6 +21,14 @@ export class ClientsComponent {
   state$: Observable<any>;
   dialogRef: MatDialogRef<CreateClientDialogComponent>;
 
+  rows = [];
+
+  columns = [
+    { name: 'Company' },
+    { name: 'Name' },
+    { name: 'Gender' }
+  ];
+
   constructor(private slimService: SlimLoadingBarService,
     private router: Router,
     private route: ActivatedRoute,
@@ -36,6 +44,9 @@ export class ClientsComponent {
       // }));
       this.store.dispatch(new actions.GetClients({ id: 1 }));
       this.state$ = this.store.select(state => state.crm.clients);
+      this.fetch((data) => {
+        this.rows = data;
+      });
   }
 
   create () {
@@ -55,5 +66,17 @@ export class ClientsComponent {
     if (this.dialogRef) {
       this.dialogRef.close();
     }
+  }
+
+  fetch(cb) {
+    const req = new XMLHttpRequest();
+    req.open('GET', `assets/data/company.json`);
+
+    req.onload = () => {
+      const data = JSON.parse(req.response);
+      cb(data);
+    };
+
+    req.send();
   }
 }

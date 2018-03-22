@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -46,6 +47,7 @@ import { routes } from './app.routes';
     StateModule,
     ServicesModule,
     ComponentsModule,
+    NgxDatatableModule,
     NgbModule.forRoot()
   ],
   providers: [

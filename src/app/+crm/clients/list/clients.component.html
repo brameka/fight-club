@@ -12,7 +12,7 @@
         <span class="app-clients__header--total">{{(state$ | async).clients.length}} Clients</span>
     </div>
 
-    <table class="table">
+    <!--<table class="table">
       <thead>
         <tr>
           <th>Name</th>
@@ -29,7 +29,45 @@
           </td>
         </tr>
       </tbody>
-    </table>
+    </table>-->
+    <!--<ngx-datatable
+      class="bootstrap"
+      [rows]="rows"
+      [columns]="columns"
+      [sortType]="'multi'"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="50"
+      [scrollbarV]="true"
+      [limit]="10"
+    >
+    </ngx-datatable>-->
+
+    <!--<ngx-datatable
+        class="bootstrap"
+        [rows]="rows"
+        [loadingIndicator]="loadingIndicator"
+        [columns]="columns"
+        [columnMode]="'force'"
+        [headerHeight]="40"
+        [footerHeight]="40"
+        [limit]="10"
+        [rowHeight]="'auto'"
+        [reorderable]="reorderable">
+      </ngx-datatable>-->
+
+    <ngx-datatable
+        class="material"
+        [rows]="rows"
+        [columns]="[{name:'Name'},{name:'Gender'},{name:'Company'}]"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [limit]="10">
+      </ngx-datatable>
+
   </div>
 </div>
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialComponentsModule } from '../ui/material.module';
 import { UiComponentsModule } from '../ui/ui-components.module';
@@ -87,6 +88,7 @@ const services = [
     UiComponentsModule,
     CrmRoutingModule,
     CrmStateModule,
+    NgxDatatableModule,
     NgbModule.forRoot()
   ],
   providers: [
