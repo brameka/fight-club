@@ -1,5 +1,6 @@
 <div *ngIf="status == 'app'">
-    <mat-toolbar class="app-header" [color]="(state$ | async).app.menuColour">
+    <!--<mat-toolbar class="app-header" [color]="(state$ | async).app.menuColour">-->
+    <mat-toolbar class="app-header" color="primary">
       <mat-toolbar-row>
         <button mat-icon-button (click)="toggle()">
           <mat-icon>menu</mat-icon>
