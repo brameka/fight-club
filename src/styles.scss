@@ -384,3 +384,8 @@ code {
   width: 16px !important;
   height: 16px !important;
 }
+
+.ngx-datatable.material {
+  border: $grey-border;
+  box-shadow: none;
+}

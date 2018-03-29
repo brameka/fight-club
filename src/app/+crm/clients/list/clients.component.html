@@ -5,11 +5,20 @@
 </div>
 
 <div *ngIf="(state$ | async)!.loading === false" class="app-clients">
-  <div class="col-8">
+  <div class="col-12 app-clients__table">
     <div class="app-clients__header">
         <button class="mr5 action-btn" color="primary" mat-raised-button (click)="create()">NEW</button>
-        <div class="separator"></div>
-        <span class="app-clients__header--total">{{(state$ | async).clients.length}} Clients</span>
+        <div class="spacer"></div>
+        <div class="app-clients__search">
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Clients">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">Search</button>
+            </div>
+          </div>
+
+        </div>
     </div>
 
     <!--<table class="table">
@@ -66,6 +75,14 @@
         [footerHeight]="50"
         [rowHeight]="'auto'"
         [limit]="10">
+        <ngx-datatable-column name="Name">
+          <ng-template let-column="column" ngx-datatable-header-template>
+            Select
+          </ng-template>
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            Select
+          </ng-template>
+        </ngx-datatable-column>
       </ngx-datatable>
 
   </div>
